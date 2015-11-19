@@ -1,8 +1,8 @@
 ---
-title: 'To Prove L_Hedge &#8211; Pseudo loss function'
+title: 'Pseudo loss function in distributed Adaboost'
 author: aaditya prakash
 layout: post
-permalink: /2014/12/to-prove-l_hedge-pseudo-loss-function/
+permalink: /2014/12/pseudo-loss-function-in-distributed-adaboost/
 categories:
   - computer science
   - math

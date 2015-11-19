@@ -14,13 +14,11 @@ After doing some reading on decision under un-certainity, I get the feeling that
 Solution to Hamilton-Jacobi-Bellman (great story on how the -Bellman part was added to the equation) has been worked by several researchers, but I am looking into the prospect of applying the same under &#8216;uncertainity&#8217;.
 
 The problem:  
-$$  
-V(x(0), 0) = \min\_u \left\{ \int\_0^T C[x(t),u(t)]\,dt + D[x(T)] \right\}  
-$$  
+\\[   V(x(0), 0) = \min\_u  \int\_0^T C[x(t),u(t)]\,dt + D[x(T)] \\]
+  
 The Solution:  
-$$  
-\dot{V}(x,t) + \min_u \left\{ \nabla V(x,t) \cdot F(x, u) + C(x,u) \right\} = 0  
-$$  
+\\[  \dot{V}(x,t) + \min_u ( \nabla V(x,t) \cdot F(x, u) + C(x,u) ) = 0 \\]
+  
 usual constraints and conditions apply, full description at <a title="Hamilton-Jacobi-Equation" href="http://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi%E2%80%93Bellman_equation" target="_blank">this wiki page</a>
 
 Last one month, I did some work; tried my hand with varies forms of solution. I looked into Stochastic Approaches in CFD simulations (Stochastic collocation), Chebyshev Polynomials, Galerkin Approximation, Pontryagin Maximum Principle). But I have failed and right now in life other priorities (grad-school applications) is keeping me from giving another serious look. (This work was part of the reason why no blog posts for a whole month).
