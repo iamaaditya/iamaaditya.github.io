@@ -5,32 +5,213 @@ layout: page
 dsq_thread_id:
   - 
 ---
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+# Aaditya Prakash
 
-I am an independent researcher with interests in  computational mathematics, artificial intelligence, machine learning and non-linear systems.
+<table>
 
-You may want to see [this page][1] for my research details. For more general bio, see the main page <http://aaditya.info>
+<tbody>
 
-I love to read, code, solve, play chess and listen to music. Would love to hear from anyone who shares similar interests.
+<tr>
 
-If you are wondering what &#8220;if(e^i*pi) printf(&#8220;P=NP&#8221;);&#8221; means, then for completeness *(not the NP kind)*, let me explain.
+<td class="L">Boston, MA</td>
 
-**Math**  
-\\( e^i*pi + 1 = 0 \\), is called [Euler&#8217;s Identity][2] and most widely recognized mathematical formula. Some (like Sal Khan of khanacademy.org) consider it be one of the secrets of universe which we haven&#8217;t unraveled yet.
+<td>Email: aprakash[at]brandeis.edu</td>
 
-**Programming**  
-printf(), is the one of most widely used C statement and every coder (who has programmed C or C++) has written it over and over again. For those who don&#8217;t know C or programming, [printf][3] is used to print any text/number to the screen.
+<td>[Public PGP](http://aaditya.info/pgp_public_aaditya.txt)</td>
 
-**Computer Science**  
-P=NP, (or P!=NP), is the most challenging problem in Theoretical Computer Science. While most of the empirical evidence and poll of computer scientists suggest that P!=NP, but the proof eludes us. May be like Fermat&#8217;s Last Theorem, this one will take years and collaborative effort and yet produce non-elegant proof nonetheless there are thousands if not millions are looking for it. If you want more info see the wiki, [P versus NP][4] and also, [List of unsolved problems in computer science][5]. If you have no clue what I am talking about, please see the movie &#8220;[Travelling Salesman (2012)][6]&#8221;
+<td class="R">[Contact Form](http://aaditya.info/contact.html)</td>
 
-These three subjects underlay all of my work and most of my life.
+<td>B$ 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv</td>
 
+</tr>
+
+</tbody>
+
+</table>
+
+* * *
+
+<div id="bio">
+
+### <a name="biography" id="biography"></a>Biography
+
+<div>I am a PhD Student at Brandeis University. My research focus is in application of deep learning in problems of computer vision. Before joining grad school I was a Senior Systems Engineer at Infosys Limited. I am from Kathmandu, Nepal. My name means "Sun", and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love rock climbing, running, playing chess and listening to classical Indian songs.</div>
+
+<div id="content">
+
+### Links
+
+*   [CV [pdf]](http://www.cs.brandeis.edu//~aprakash/CV.pdf)
+*   [Research](http://aaditya.info/research)
+*   [Blog](http://aaditya.info/blog)  
+
+<div>
+
+### Recent Posts
+
+<table cellspacing="10px">
+
+<tbody>
+
+<tr>
+
+<td class="L">[Extension of Hidden Markov Models – Formulas in two state HMM](http://aaditya.info/blog/2015/02/extension-of-hidden-markov-models-formulas-in-two-state-hmm/)</td>
+
+<td class="L">[To Prove L_Hedge – Pseudo loss function](http://aaditya.info/blog/2014/12/to-prove-l_hedge-pseudo-loss-function/)</td>
+
+</tr>
+
+<tr>
+
+<td class="L">[Dokuwiki for Personal Notebook and Note taking](http://aaditya.info/blog/2013/03/dokuwiki-for-personal-notebook-and-note-taking/)</td>
+
+<td class="L">[Solutions to Hamilton-Jacobi-Bellman under uncertainity](http://aaditya.info/blog/2013/03/solutions-to-hamilton-jacobi-bellman-under-uncertainity/)</td>
+
+</tr>
+
+<tr>
+
+<td class="L">[Moments and transition probability of Trinomial Tree](http://aaditya.info/blog/2013/01/moments-and-transition-probability-of-trinomial-tree/)</td>
+
+<td class="L">[Pascal’s Triangle in Standard ML](http://aaditya.info/blog/2013/01/pascal-triangle-in-sml/)</td>
+
+</tr>
+
+<tr>
+
+<td class="L">[Monte Carlo Simulation in R](http://aaditya.info/blog/2012/11/monte-carlo-simulation-in-r/)</td>
+
+<td class="L">[Bootstrap sampling in R](http://aaditya.info/blog/2012/11/bootstrap-sampling-in-r/)</td>
+
+</tr>
+
+<tr>
+
+<td class="L">[Notes on Discrete Painlevé Equations](http://aaditya.info/blog/2012/11/notes-on-discrete-painleve-equations/)</td>
+
+<td class="L">[Hello ‘Lucene’ World – Web Implementation](http://aaditya.info/blog/2012/10/hello-lucene-world-web-implementation/)</td>
+
+</tr>
+
+<tr>
+
+<td class="L">[Why Simulated Annealing works](http://aaditya.info/blog/2012/10/why-simulated-annealing-works/)</td>
+
+<td class="L">[Value of Interdisciplinary Research](http://aaditya.info/blog/2012/09/value-of-interdisciplinary-research/)</td>
+
+</tr>
+
+<tr>
+
+<td class="L">[When in Pain: Read](http://aaditya.info/blog/2012/09/when-in-pain-read/)</td>
+
+<td class="L">[Clipboard to Email – Python Code](http://aaditya.info/blog/2012/08/clipboard-to-email-python-code/)</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div id="research">
+
+### Publications
+
+*   Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for better visual interpretation of large unstructured datasets. _Infosys Lab Briefings, Infosys._ Vol 11(1). _Jan 2013_
+
+<div>
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td class="L">[[Abstract]](http://aaditya.info/research/abstract_graph.txt) [[Full-pdf]](http://aaditya.info/research/graph.pdf) [[INFY]](http://www.infosys.com/infosys-labs/publications/infosyslabs-briefings/Pages/bigdata-challenges-opportunities.aspx) [[slides]](http://aaditya.info/research/slides_graph.pdf)</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+*   Prakash, A., & Jha, R. K. (2012). New Interface Protocol to Connect Multiple Bank Networks from a Single Outlet. _International Journal of Computer Applications, NY, USA_ Vol. 55(1) pp 1-9.
+
+<div>
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td class="L">[[Abstract]](http://aaditya.info/research/abstract_protocol.txt) [[Full-pdf]](http://aaditya.info/research/protocol.pdf) [[IJCA]](http://www.ijcaonline.org/archives/volume55/number12/8804-3034) [[slides]](http://aaditya.info/research/slides_protocol.pdf)</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+*   Prakash, A. (2012). Measures of Fault Tolerance in Distributed Simulated Annealing. _Proceedings of International Conference on Perspective of Computer Confluence with Sciences._ Vol 1 pp 111-114\.
+
+<div>
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td class="L">[[Abstract]](http://aaditya.info/research/abstract_fault.txt) [[Full-pdf]](http://aaditya.info/research/fault.pdf) [[arXiv]](http://arxiv.org/abs/1212.3295) [[slides]](http://aaditya.info/research/slides_fault.pdf)</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+* * *
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td>[Quora](http://www.quora.com/Aaditya-Prakash)</td>
+
+<td>[Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya)</td>
+
+<td>[Google+](https://plus.google.com/u/0/100303074762902184969?rel=author)</td>
+
+<td>[Twitter](http://twitter.com/aaditya_prakash)</td>
+
+<td>[Linkedin](http://in.linkedin.com/pub/aaditya-prakash/38/533/684)</td>
+
+<td>[Academia.edu](http://infosys.academia.edu/aadityaprakash)</td>
+
+<td>[SlideShare](http://www.slideshare.net/aadityaprakash/)</td>
+
+<td>[GitHub](https://github.com/iamaaditya)</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
 Aaditya
-
- [1]: http://aaditya.info/research
- [2]: http://en.wikipedia.org/wiki/Euler%27s_identity
- [3]: http://en.wikipedia.org/wiki/Printf_format_string
- [4]: http://en.wikipedia.org/wiki/P_versus_NP_problem
- [5]: http://en.wikipedia.org/wiki/Unsolved_problems_in_computer_science
- [6]: http://www.travellingsalesmanmovie.com/
