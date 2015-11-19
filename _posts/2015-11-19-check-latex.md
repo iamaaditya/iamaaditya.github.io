@@ -2,7 +2,7 @@
 title: 'Extension of Hidden Markov Models &#8211; Formulas in two state HMM'
 author: aaditya prakash
 layout: post
-permalink: /2015/02/extension-of-hidden-markov-models-formulas-in-two-state-hmm/
+permalink: /2015/11/Checking-latex/
 categories:
   - computer science
   - math
