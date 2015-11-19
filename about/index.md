@@ -14,7 +14,7 @@ I love to read, code, solve, play chess and listen to music. Would love to hear 
 If you are wondering what &#8220;if(e^i*pi) printf(&#8220;P=NP&#8221;);&#8221; means, then for completeness *(not the NP kind)*, let me explain.
 
 **Math**  
-e^i*pi + 1 = 0, is called [Euler&#8217;s Identity][2] and most widely recognized mathematical formula. Some (like Sal Khan of khanacademy.org) consider it be one of the secrets of universe which we haven&#8217;t unraveled yet.
+\\( e^i*pi + 1 = 0 \\), is called [Euler&#8217;s Identity][2] and most widely recognized mathematical formula. Some (like Sal Khan of khanacademy.org) consider it be one of the secrets of universe which we haven&#8217;t unraveled yet.
 
 **Programming**  
 printf(), is the one of most widely used C statement and every coder (who has programmed C or C++) has written it over and over again. For those who don&#8217;t know C or programming, [printf][3] is used to print any text/number to the screen.
