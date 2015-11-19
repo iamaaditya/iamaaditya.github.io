@@ -5,6 +5,8 @@ layout: page
 dsq_thread_id:
   - 
 ---
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 I am an independent researcher with interests in  computational mathematics, artificial intelligence, machine learning and non-linear systems.
 
 You may want to see [this page][1] for my research details. For more general bio, see the main page <http://aaditya.info>
