@@ -1,5 +1,5 @@
 ---
-title: 'Extension of Hidden Markov Models &#8211; Formulas in two state HMM'
+title: 'Checking Latex'
 author: aaditya prakash
 layout: post
 permalink: /2015/11/Checking-latex/
