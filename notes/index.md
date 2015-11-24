@@ -15,7 +15,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Learning
   * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ )
   * [Machine Learning]( {{ site.baseurl }}/notes/machine_learning/ )
-  * [Papers]( {{ page.url }}papers/ )
+  * [Papers]( {{site.baseurl}}/notes/papers/ )
 
 # Courses
 ## Computer Science
