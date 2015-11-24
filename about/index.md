@@ -6,7 +6,7 @@ dsq_thread_id:
   - 
 ---
 
-| Boston, MA | Email: aprakash[at]brandeis.edu | [Public PGP](http://aaditya.info/pgp_public_aaditya.txt) | [Contact Form](http://aaditya.info/contact.html) | B$ 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv |
+| Boston, MA | Email: aprakash[at]brandeis.edu | [Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt) | B$ 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv |
 
 * * *
 
