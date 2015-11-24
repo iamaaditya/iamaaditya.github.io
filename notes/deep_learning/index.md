@@ -16,6 +16,7 @@ dsq_thread_id:
   * Deep Learning Hardware Guide http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
   * Initiating and launching Theano in Amazon AWS, step by step guide http://blog.eduardovalle.com/tag/lenet/
   * Galaxy Zoo Kaggle competition winner's description of his strategy and experience http://benanne.github.io/2014/04/05/galaxy-zoo.html
+  * Single Artificial Neuron taught to recognize hundres of patterns http://www.technologyreview.com/view/543486/single-artificial-neuron-taught-to-recognize-hundreds-of-patterns/
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version http://www.iro.umontreal.ca/~bengioy/dlbook/
