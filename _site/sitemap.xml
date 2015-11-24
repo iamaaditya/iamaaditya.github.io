@@ -83,9 +83,6 @@
     <loc>http://iamaaditya.github.io/about/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
-  </url>
-  <url>
     <loc>http://iamaaditya.github.io/</loc>
   </url>
   <url>
@@ -96,6 +93,9 @@
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/machine_learning/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/temp/</loc>

@@ -13,8 +13,8 @@ However, I would welcome anyone to add or make minor changes to these notes. In 
 If you however prefer to email, then :: aprakash   @     brandeis     .     edu  
 
 # Learning
-  * [Deep Learning]( {{ page.url }}deep_learning/ )
-  * [Machine Learning]( {{ page.url }}machine_learning/ )
+  * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ )
+  * [Machine Learning]( {{ site.baseurl }}/notes/machine_learning/ )
   * [Papers]( {{ page.url }}papers/ )
 
 # Courses

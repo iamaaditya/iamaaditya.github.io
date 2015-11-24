@@ -1,9 +1,0 @@
-This wiki is used to collect notes.
-
-If you landed on this page and you are not me, then probably the link I sent you did not work. In other words, this is 404 or also called as "The page you requested does not exist".
-
-Don't worry, in that case, there is a webstructure link on the left, I hope that helps you find the webpage you were looking for.
-
-Incase that fails please email me:: aprakash   @     brandeis     .     edu    (remove the trailing spaces, that is just to fool the web-crawling robots from spamming my email) 
-
-{{::comic404.gif|}}
