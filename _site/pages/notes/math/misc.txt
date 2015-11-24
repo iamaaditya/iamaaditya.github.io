@@ -1,0 +1,16 @@
+====Miscellaneous Notes====
+
+==Fixed Ratio Money Management==
+
+$$ N = 0.5 \times \left ( \sqrt{1+8\frac{P}{\Delta}} +1 \right ) $$
+
+where, \\ 
+N = Number of Contracts \\
+P = Account Profit to Date \\
+$ \Delta $ = $ amount needed to trade another contract \\
+
+
+==Logic==
+$$ p \rightarrow q \Leftrightarrow \neg p \vee q $$
+$$ \neg p \rightarrow  \neg q \Leftrightarrow q \rightarrow p $$
+$$ \neg p \rightarrow q \Leftrightarrow p \vee q $$

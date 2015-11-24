@@ -1,0 +1,5 @@
+1. Gaussian distribution
+
+$$ P(z) = \frac{e^{-\frac{(z-\bar{z})^2}{2\sigma^2}}}{\sqrt{2\pi}\sigma} $$
+
+**** MORE TO COME FIXME *****

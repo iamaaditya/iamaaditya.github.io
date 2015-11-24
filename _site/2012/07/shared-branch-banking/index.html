@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>
+    <title>Paradigm towards shared Branch Banking – Aaditya Prakash (Adi) – Random Musings of Computer Vision grad student</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Long time ago when I was in my native town I had to do some banking operations on my account. To my surprise I found that the place didn&#8217;t have a branch of the bank where I had my account.
+" />
+    <meta property="og:description" content="Long time ago when I was in my native town I had to do some banking operations on my account. To my surprise I found that the place didn&#8217;t have a branch of the bank where I had my account.
+" />
+    
+    <meta name="author" content="Aaditya Prakash (Adi)" />
+
+    
+    <meta property="og:title" content="Paradigm towards shared Branch Banking" />
+    <meta property="twitter:title" content="Paradigm towards shared Branch Banking" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Aaditya Prakash (Adi) - Random Musings of Computer Vision grad student" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/profile_image.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Aaditya Prakash (Adi)</a></h1>
+            <p class="site-description">Random Musings of Computer Vision grad student</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/notes">Notes</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Paradigm towards shared Branch Banking</h1>
+
+  <div class="entry">
+    <p>Long time ago when I was in my native town I had to do some banking operations on my account. To my surprise I found that the place didn&#8217;t have a branch of the bank where I had my account.</p>
+
+<p>This was not a cash transfer issue from one account to another, this could have been easily solved by various Interbank settlements like SWIFT, ECS etc. This was a hardcore banking operation which could be completed only if bank&#8217;s own server were accessible.</p>
+
+<p>Soon I realized that branches of other banks couldn&#8217;t serve my purpose. I wished there were ways in which banks could link together to serve larger area. While is it not financially sound for a bank to have branches at all the possible locations, at least banks coming together and connecting their network could solve most of the problem. This lead me into discussing the problems prohibiting the same with some of the senior managers at various bank. It seems all the banks work on their own legacy system thus are highly incompatible for any form of integration.</p>
+
+<p>I thought there should be some solution because this problem of networking was rather trivial compared to modern day networking problems faced by computer scientists. Thus started a long journey into researching ways to combined banks server so that one outlet could serve multiple banks. When I found none existed I decided to attempt and provide the solution to this problem. Since this involved banking domain knowledge my friend Rajan Jha, who has several years of experience in handling technology of banking softwares, gladly accepted my request for joint research work.</p>
+
+<p>I am glad to say that after months and months of pouring over available solutions, technology, breakthroughs, possible problems (which seemed infinite) we completed our model. Experts of this domain have given their stamp of approval for our model. Currently the paper describing the model is in review at an international journal. However you may read the preprint of the same here:<br>
+<a href="http://aaditya.info/blog/wp-content/uploads/2012/07/Paper_Protocol_for_Common_Branch_Platform.pdf" target="_blank">Interface Protocol for common branch platform</a></p>
+
+<p>For a quick overview, you may want to see a <a href="https://sites.google.com/site/researchbyprakash/sharedbanking/Paper_Protocol_for_Common_Branch_Platform_Slides.pdf?attredirects=0&" target="_blank">17 slide presentation here</a></p>
+
+<p>For those who only want the gist of it, the Abstract of the paper is given below.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>ABSTRACT</strong></p>
+
+<p>Majority of banking transactions are done from branches. Internet Banking and mobile Banking have grown very slowly due to lack of technological sophistication among masses. ATMs have spread well but haven’t been able to provide low cost solution.</p>
+
+<p>All the above alternate banking means are also very limited in scope of banking transactions. Thus branches will remain major source of transactions. Any solution that wants to reduce overhead of transaction cost must reduce cost of running a branch.</p>
+
+<p>We propose an innovative interface protocol that will allow an access to multiple banks from a single outlet. This will enable a single branch to serve customers of several banks. This will in essence deleverage infrastructure of branch from banking business, allow banks to focus on service and product and not infrastructure, which is not its core competency. Having common branch will drastically reduce the number of branches required for given population and area; this will reduce operational cost of banking by manifolds.</p>
+
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+
+<p>I would like to thank my friend/co-author Rajan K Jha for the support and all the help.</p>
+
+  </div>
+
+  <div class="date">
+    Written on July  8, 2012
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+
+	    var disqus_shortname = 'iamaaditya';
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:aprakash [at] brandeis . edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/barryclark/jekyll-now"><i class="svg-icon github"></i></a>
+
+<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+<a href="https://plus.google.com//u/0/100303074762902184969?rel=author"><i class="svg-icon googleplus"></i></a>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-70371377-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/2012/07/shared-branch-banking/',
+		  'title': 'Paradigm towards shared Branch Banking'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

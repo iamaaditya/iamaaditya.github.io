@@ -1,0 +1,61 @@
+
+==Complete online courses==
+  - COMPLETE Graduate Course Materials OXFORD University http://tcc.maths.ox.ac.uk/archive/index.shtml http://tcc.maths.ox.ac.uk/archive/2011-2012/index.shtml
+  - Maths Probability (MTH5118 Probability II) Ilya Goldshield http://www.maths.qmul.ac.uk/~ig/MTH5118/  (D)
+  - Maths Probability (MTH6130 Probability III) Ilya Goldshield http://www.maths.qmul.ac.uk/~ig/MAS338/ (D)
+  - Principles of Applied Mathematics [[http://ocw.mit.edu/courses/mathematics/18-310c-principles-of-applied-mathematics-fall-2007/lecture-notes/|OCW Material link]]
+  - Application of parallel computers , Jim Demmel (berkeley)http://www.cs.berkeley.edu/~demmel/cs267_Spr12/
+  - Summer School Science Cloudhttps://portal.futuregrid.org/projects/241
+  - Computational Thinking comp 140 RICE Univhttp://www.clear.rice.edu/comp140/modules/
+  - Linear Programming Math 407 University of Washington http://www.math.washington.edu/~burke/crs/407/index.html
+  - Linear Programming Foundations and Extensions Math 307 //**UG Level**// Princeton University http://www.orfe.princeton.edu/~rvdb/307/lectures.html
+  - Linear Programming Foundations and Extensions Math 522 //**PG Level**// Princeton University http://www.princeton.edu/~rvdb/522/Fall12/lectures/lectures.html
+== Other sources for Online learning==
+
+  - http://tutori'al.math.lamar.edu/(courses available algebra, calculus I, II, III, differential equations)
+  - http://ocw.mit.edu/courses/mathematics/complete list of MIT OCW for mathematics (incls Undergrad and Grad courses)
+  - Videos from Australian Mathematical Society (incl. videos by Terence Tao)http://w3.unisa.edu.au/austms2009/videos/default.asp
+
+==Roadmaps==
+  * http://mathoverflow.net/questions/28158/a-learning-roadmap-request-from-high-school-to-mid-undergraduate-studies
+  * http://www.quora.com/Mathematics/What-are-some-must-read-books-for-aspiring-mathematicians
+  
+
+
+A General note on self-studying mathematics ---------------
+<nowiki>
+It is important to get a good grasp of the basic concepts, so learn Linear Algebra, Analysis I-II and Group Theory I
+as good as you can. In the second year you can continue with Algebra, Analysis III-IV, Topology, Ordinary Differential Equations. In the third year learn Partial Differential Equations, Differential Geometry for Curves, Probability Theory,  Complex Analysis, Mathematical Physics. In the fourth year I suggest Differential Geometry of Surfaces, Number Theory, Functional Analysis. In the fifth year (I would suggest one! ), go on with Differential Manifolds, Differential Forms,  Tensor Calculus, Theory of Relativity. 
+
+The list is somewhat biased towards Geometry and Analysis. If you see that you like Algebra more, you can continue with Singularity Theory of Algebraic Curves and Algebraic Topology in the fifth year. 
+
+According to me, even if you want to be a pure mathematician, you will not be "complete" if you don't learn at least the standard material on Statistics and maybe even Control Theory, so maybe you would want to try them too. YMMV. 
+</nowiki>
+From <http://www.karakas-online.de/forum/viewtopic.php?t=9703> 
+
+<nowiki>
+A Guideline for self -study by unknot
+
+0) Learn whatever high school math
+1) Learn calculus
+2) Learn linear algebra (with Hoffman you will get some taste of abstract algebra too)
+3) Learn multivariable calculus
+4) Learn classical analysis (Rudin PMA is a good choice, but if you want to self study you probably want to look at other options. What really matters is how strong you are mathematically)
+5) Learn abstract algebra (lot of choices again. Dummit and Hungerford come to mind.)
+6) Learn complex analysis (Ahlfors is the classic - now I don't know many other books, but I hear Stein's new book is good)
+7) Learn real analysis (people would normally mention Royden, Folland, etc...)
+
+These are the basics. I think everyone should know it and that will take you to the graduate level. A question I got was "where do I pick up number theory? where do I do topology?" Well, I really think to get good introductions for other areas you need to know those seven things very, very well. Sure you can learn differential geometry after doing calculus. But I don't believe in that.
+
+You should always keep in mind that blindly following someone's program might really frustrate you, especially when you don't have lectures to go with your readings. So I would wait and see what other posters say.
+
+[EDIT: I must mention that even getting to multivariable calculus is a challenge for a lot of people. If you are not THAT interested in math, just going over a classical analysis book is a real achievement. It rarely happens that the same person comes to you after doing those suggested to see what he/she needs to after that.]
+</nowiki>
+From <http://www.physicsforums.com/archive/index.php/t-290682.html> 
+
+
+
+
+Interesting image
+{{http://space.mit.edu/home/tegmark/toe.gif}}
+From <http://space.mit.edu/home/tegmark/toe.gif> 

@@ -1,0 +1,5 @@
+====Algorithms====
+
+=== Lecture Slides (curated) ====
+
+  * Euler Path, Euler Circuit and Fleury's Algorithm https://www.math.ku.edu/~jmartin/courses/math105-F11/Lectures/chapter5-part2.pdf

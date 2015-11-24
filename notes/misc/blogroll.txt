@@ -1,0 +1,5 @@
+==== List of Blogs to follow ====
+
+=== Deep Learning ===
+ * http://benanne.github.io/ \\
+ * http://iamtrask.github.io/

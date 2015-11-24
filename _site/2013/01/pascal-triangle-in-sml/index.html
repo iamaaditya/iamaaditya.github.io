@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>
+    <title>Pascal&#8217;s Triangle in Standard ML – Aaditya Prakash (Adi) – Random Musings of Computer Vision grad student</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to &#8216;no-state&#8217; concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.
+" />
+    <meta property="og:description" content="It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to &#8216;no-state&#8217; concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.
+" />
+    
+    <meta name="author" content="Aaditya Prakash (Adi)" />
+
+    
+    <meta property="og:title" content="Pascal&#8217;s Triangle in Standard ML" />
+    <meta property="twitter:title" content="Pascal&#8217;s Triangle in Standard ML" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Aaditya Prakash (Adi) - Random Musings of Computer Vision grad student" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/profile_image.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Aaditya Prakash (Adi)</a></h1>
+            <p class="site-description">Random Musings of Computer Vision grad student</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/notes">Notes</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Pascal&#8217;s Triangle in Standard ML</h1>
+
+  <div class="entry">
+    <p>It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to &#8216;no-state&#8217; concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.</p>
+
+<p>For a nice 73 slide introduction on SML <a href="http://courses.cs.vt.edu/~cs3304/Spring02/lectures/lect04.pdf" title="Introduction to SML" target="_blank">see this</a>. One of power of SML lies in doing proofs. For those who are already intiated with SML, you might want to look <a href="https://github.com/agentcoops/SML-Proof-Manipulation" title="SML Proof Manipulation" target="_blank">SML Proof Manipulation</a>. If you want to learn how to start writing proofs in SML then here is a nice tutorial on the same <a href="http://www.cs.bham.ac.uk/research/projects/poplog/paradigms_lectures/Theorem.html" title="Proofs in SML">Implementing Constructive Proof Rules for SML in MetaSML</a></p>
+
+<p>I like to write Pascal&#8217;s triangle as my generic hello world program. Given below is my attempt at pascal&#8217;s triangle, a beautiful binomial expansion tree. Though I will confess that this is not the most elegant solution to Pascal&#8217;s triangle but I have considered readibility over conciseness.</p>
+
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="line_numbers">
+        <pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre>
+      </td>
+      
+      <td class="code">
+        <pre class="pascal" style="font-family:monospace;">fun choose<span style="color: #009900;">&#40;</span>r <span style="color: #000066;">:</span> int<span style="color: #000066;">,</span> k <span style="color: #000066;">:</span> int<span style="color: #009900;">&#41;</span> <span style="color: #000066;">=</span> 
+    <span style="color: #000000; font-weight: bold;">if</span> k <span style="color: #000066;">=</span> <span style="color: #cc66cc;">1</span> <span style="color: #000000; font-weight: bold;">then</span> r
+    <span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">if</span> k <span style="color: #000066;">=</span> <span style="color: #cc66cc;"></span> orelse k <span style="color: #000066;">=</span> r <span style="color: #000000; font-weight: bold;">then</span> <span style="color: #cc66cc;">1</span>
+    <span style="color: #000000; font-weight: bold;">else</span> choose<span style="color: #009900;">&#40;</span>r<span style="color: #000066;">-</span><span style="color: #cc66cc;">1</span><span style="color: #000066;">,</span>k<span style="color: #009900;">&#41;</span> <span style="color: #000066;">+</span> choose<span style="color: #009900;">&#40;</span>r<span style="color: #000066;">-</span><span style="color: #cc66cc;">1</span><span style="color: #000066;">,</span>k<span style="color: #000066;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span>
+&nbsp;
+fun pascal_triangle<span style="color: #009900;">&#40;</span>x <span style="color: #000066;">:</span> int<span style="color: #009900;">&#41;</span> <span style="color: #000066;">=</span>
+    <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>x &lt;<span style="color: #000066;">=</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">then</span> <span style="color: #009900;">&#91;</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#93;</span>
+    <span style="color: #000000; font-weight: bold;">else</span>
+        let fun count <span style="color: #009900;">&#40;</span>from<span style="color: #000066;">:</span>int<span style="color: #009900;">&#41;</span> <span style="color: #000066;">=</span>
+            <span style="color: #000000; font-weight: bold;">if</span> from<span style="color: #000066;">=</span>x <span style="color: #000000; font-weight: bold;">then</span> <span style="color: #cc66cc;">1</span><span style="color: #000066;">::</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #000000; font-weight: bold;">else</span> choose<span style="color: #009900;">&#40;</span>x<span style="color: #000066;">,</span>from<span style="color: #009900;">&#41;</span> <span style="color: #000066;">::</span> count<span style="color: #009900;">&#40;</span>from<span style="color: #000066;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span>            
+        <span style="color: #000000; font-weight: bold;">in</span> count<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;"></span><span style="color: #009900;">&#41;</span><span style="color: #000066;">::</span>pascal_triangle<span style="color: #009900;">&#40;</span>x<span style="color: #000066;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #000000; font-weight: bold;">end</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>*Note while the &#8220;choose&#8221; function could have been written as nested function inside &#8220;pascal_triangle&#8221; (like the &#8220;count&#8221; function), for the reasons of simplicity and comprehension I have put is as separate code. Same goes for the parenthesis around attributes, which are not required by the compiler.</p>
+
+  </div>
+
+  <div class="date">
+    Written on January 26, 2013
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+
+	    var disqus_shortname = 'iamaaditya';
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:aprakash [at] brandeis . edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/barryclark/jekyll-now"><i class="svg-icon github"></i></a>
+
+<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+<a href="https://plus.google.com//u/0/100303074762902184969?rel=author"><i class="svg-icon googleplus"></i></a>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-70371377-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/2013/01/pascal-triangle-in-sml/',
+		  'title': 'Pascal&#8217;s Triangle in Standard ML'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

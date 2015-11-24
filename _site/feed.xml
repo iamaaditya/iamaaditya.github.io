@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aaditya Prakash (Adi)</title>
+    <description>Random Musings of Computer Vision grad student</description>
+    <link>http://iamaaditya.github.io</link>
+    <atom:link href="http://iamaaditya.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Extension of Hidden Markov Models &amp;#8211; Formulas in two state HMM</title>
+        <description>&lt;p&gt;Extending the hidden markov models, where the current state is affected by past two states. This can be useful in simulation of games or in less sophisticated pricing models (more accurate would be an exponential decay of all past terms).&lt;/p&gt;
+
+&lt;h2&gt;Notations&lt;/h2&gt;
+
+&lt;p&gt;I have kept the notations close to as provided in Chapter 6 of &amp;#8220;Speech and Language Processing&amp;#8221;, Second Edition by Martin and Jurafsky.&lt;/p&gt;
+
+&lt;p&gt;\(\lambda\) Common term for all HMM parameters. All the probabilties&lt;br&gt;
+will be conditioned to this term i.e \(P(&amp;#8230;&amp;#8230;|\lambda)\)&lt;/p&gt;
+
+&lt;p&gt;\(T\) denotes the total number of time steps&lt;/p&gt;
+
+&lt;p&gt;\(N\) denotes the total number of states&lt;/p&gt;
+
+&lt;p&gt;\(o_{t}\) denotes the observed variable (state) at time step t&lt;/p&gt;
+
+&lt;p&gt;\(q_{t}\) denotes the hidden variale (state) at time step t&lt;/p&gt;
+
+&lt;h2&gt;Formulas&lt;/h2&gt;
+
+&lt;h3&gt;Distribution of \(\alpha_{t}(i,j)\)&lt;/h3&gt;
+
+&lt;p&gt;\(\alpha_{t}(i,j)\) denotes the joint probability distribution of all observed variables until time \(t\) and current and the last states.&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\alpha_{t}(i,j)=P(o_{1},o_{2},\dots,o_{t},q_{t-1}=i,q_{t}=j|\lambda)&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;Where \(\lambda\) is the given HMM parameters.&lt;/p&gt;
+
+&lt;h3&gt;Base case of \(\alpha_{t}(i,j)\)&lt;/h3&gt;
+
+&lt;p&gt;Consider the following notation:&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+a_{ij}=P(q_{t}=j|q_{t-1}=i)&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+a_{ijk}=P(q_{t+1}=k|q_{t}=j,q_{t-1}=i)&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;then base cases are &amp;#8211;&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\alpha_{1}(i=0,j)=a_{i=0,j}b_{j}(o_{1})&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\alpha_{2}(i,j)=\alpha_{1}(0,j)a_{ij}b_{j}(o_{2})&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;It should be noted that if the second state (\(q_{2}\() is also allowed to be entry point, then it needs an additional base case of &amp;#8212;&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\alpha_{2}(i=0,j)=\sum_{i=1}^{N}\alpha_{1}(i=0,j)a_{ij}b_{j}(o_{2})&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;h3&gt;Inductive step&lt;/h3&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\alpha_{t}(j,k)=\sum_{i=1}^{N}\alpha_{t-1}(i,j)\times a_{ijk}\times b_{k}(o_{t})\text{ where, }3\leq t\leq T&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;h3&gt;Termination step&lt;/h3&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{jF}\times a_{ijF}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;h2&gt;Estimated Expected Transitions&lt;/h2&gt;
+
+&lt;h3&gt;\(\xi_{t}\)&lt;/h3&gt;
+
+&lt;p&gt;\(\xi_{t}\) = Probability of being in state k at t+1, j at t and i at t-1&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\xi_{t}=P(q_{t+1}=k,q_{t}=j,q_{t-1}=i|o_{1},\dots o_{T})=\frac{\alpha_{t}(i,j)\times\beta_{t+1}(j,k)\times a_{ijk}b_{k}(o_{t+1})}{\alpha(q_{f})}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;h3&gt;\(\gamma_{t}\)&lt;/h3&gt;
+
+&lt;p&gt;\(\gamma_{t}\) = Probability of being in state i at &amp;#8216;t&amp;#8217;, given all the obervations&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\gamma_{t}=P(q_{t}=i|o_{1},\dots,o_{T})=\frac{\sum_{j}^{N}\alpha(j,i),\beta(j,i)}{\alpha(q_{f})}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;where \(\alpha(q_{f})=P(o_{1},\dots,o_{T})\) (joint probability of all observed variables)&lt;/p&gt;
+
+&lt;p&gt;{*}Please note that for \(\gamma_{t}\) values, the \(i\) and \(j\) are interchanged in \(\alpha\) and \(\beta\) values, because I wanted to keep the input as \(q_{t}=i\), as provided in the problem, whereas convention in textbook is to denote \(i\) as antecedent to \(j\).&lt;/p&gt;
+
+&lt;p&gt;&lt;a title=&quot;Proofs for the two state hidden markov model&quot; href=&quot;http://aaditya.info/research/hmm_two_states.pdf&quot; target=&quot;_blank&quot;&gt;Detailed proofs has been provided here&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Feb 2015 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2015/02/extension-of-hidden-markov-models-formulas-in-two-state-hmm/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2015/02/extension-of-hidden-markov-models-formulas-in-two-state-hmm/</guid>
+      </item>
+    
+      <item>
+        <title>Pseudo loss function in distributed Adaboost</title>
+        <description>&lt;h1&gt;$$L_{Hedge(\beta)}$$&lt;/h1&gt;
+
+&lt;p&gt;This is the sketch of proof of correctness of &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{Hedge(\beta)} &#39; title=&#39;L_{Hedge(\beta)} &#39; class=&#39;latex&#39; /&gt;, pseudo loss function, in the case of distributed boosting algorithm. It has been known that boosting of functions with each applicator with more than 0.5 accuracy is sufficient to guarantee lowest minimum accuracy in iterative pooling. A similar sketch is presented for the distributed case where the score from each stage is not shared across all the computing nodes. While this guarantees the correctness, it does not guarantee the convergence, which is still a highly sought after problem in distributed algorithm.&lt;/p&gt;
+
+&lt;p&gt;For people uninitiated in the problem, it is highly advised to &lt;a href=&quot;http://www-users.cs.umn.edu/%7Ealeks/papers/kdd_01.pdf&quot;&gt;read this paper&lt;/a&gt; or for much simpler and faster read, &lt;a href=&quot;http://www-users.cs.umn.edu/%7Ebanerjee/Teaching/Spring06/talks/Paper02Tim1.ppt&quot;&gt;these slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Notations&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=w+%3D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w = &#39; title=&#39;w = &#39; class=&#39;latex&#39; /&gt; weights Vector&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=T+%3D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;T = &#39; title=&#39;T = &#39; class=&#39;latex&#39; /&gt; Number of iterations&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta&#39; title=&#39;\beta&#39; class=&#39;latex&#39; /&gt; = Parameter &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cepsilon%5B0%2C1%5D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\epsilon[0,1] &#39; title=&#39;\epsilon[0,1] &#39; class=&#39;latex&#39; /&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\ell^{t} &#39; title=&#39;\ell^{t} &#39; class=&#39;latex&#39; /&gt;= Loss Vector for the &lt;img src=&#39;http://s0.wp.com/latex.php?latex=t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;t &#39; title=&#39;t &#39; class=&#39;latex&#39; /&gt; iteration (trials)&lt;/p&gt;
+
+&lt;p&gt;N = Total Number of weak learners&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7BL_i%3D+%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{L_i= } &#39; title=&#39;{L_i= } &#39; class=&#39;latex&#39; /&gt;Strategy i&amp;#8217;s cumulative loss = &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cell_%7Bi%7D%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\sum_{t=1}^{T}\ell_{i}^{t} &#39; title=&#39;\sum_{t=1}^{T}\ell_{i}^{t} &#39; class=&#39;latex&#39; /&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BA%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{A} &#39; title=&#39;L_{A} &#39; class=&#39;latex&#39; /&gt;= Algorithm A&amp;#8217;s total cumulative loss = &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; title=&#39;\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2&gt;Algorithm&lt;/h2&gt;
+
+&lt;p&gt;Consider the following Algorithm&lt;/p&gt;
+
+&lt;p&gt;Hedge(&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;) :&lt;/p&gt;
+
+&lt;p&gt;Do for t = 1, 2, &amp;#8230;, &lt;em&gt;T&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Choose Allocation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\mathbf{p}^{t}=\frac{\mathbf{w}^{t}}{\sum_{i-1}^{N}w_{i}^{t}}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Receive loss vector &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D%5Cepsilon%5B0%2C1%5D%5E%7BN%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\ell^{t}\epsilon[0,1]^{N} &#39; title=&#39;\ell^{t}\epsilon[0,1]^{N} &#39; class=&#39;latex&#39; /&gt; from environment&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Suffer loss &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\mathbf{p}^{t}.\ell^{t} &#39; title=&#39;\mathbf{p}^{t}.\ell^{t} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set the new weights&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+w_{i}^{t+1}=w_{i}^{t}\beta^{\ell_{i}^{t}}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;h2&gt;To Prove&lt;/h2&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+ln(\sum_{i=1}^{N}w_{i}^{T+1})\leq-(1-\beta)L_{Hedge(\beta)}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;h2&gt;Proof&lt;/h2&gt;
+
+&lt;p&gt;From the Hedge(&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;) function, we know that&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}=\sum_{i=1}^{N}w_{i}^{t}\beta^{\ell_{i}^{t}}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;For &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Calpha%5Cgeq0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\alpha\geq0 &#39; title=&#39;\alpha\geq0 &#39; class=&#39;latex&#39; /&gt; and &lt;img src=&#39;http://s0.wp.com/latex.php?latex=r%5Cepsilon%5B0%2C1%5D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;r\epsilon[0,1] &#39; title=&#39;r\epsilon[0,1] &#39; class=&#39;latex&#39; /&gt;, by convexity we know that&lt;br&gt;
+&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Calpha%5E%7Br%7D%5Cleq1-%281-%5Calpha%29r&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\alpha^{r}\leq1-(1-\alpha)r&#39; title=&#39;\alpha^{r}\leq1-(1-\alpha)r&#39; class=&#39;latex&#39; /&gt;, therefore above eqn can be rewritten&lt;br&gt;
+as,&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\sum_{i=1}^{N}w_{i}^{t}(1-(1-\beta)\ell_{i}^{t})&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\left(\sum_{i=1}^{N}w_{i}^{t}\right)(1-(1-\beta)\mathbf{p}^{t}.\ell_{i}^{t})&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;For all the trials &lt;img src=&#39;http://s0.wp.com/latex.php?latex=t%3D1%2C%5Cldots%2CT+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;t=1,\ldots,T &#39; title=&#39;t=1,\ldots,T &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\prod_{t=1}^{T}(1-(1-\beta)\mathbf{p}^{t}.\ell^{t}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;(since &lt;img src=&#39;http://s0.wp.com/latex.php?latex=1%2Bx%5Cleq+e%5E%7Bx%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;1+x\leq e^{x} &#39; title=&#39;1+x\leq e^{x} &#39; class=&#39;latex&#39; /&gt; )&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq exp\left(-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\right)&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;Taking log on both sides&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)\leq-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;Taking negative sign and switching the equality&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;Now from the definition of &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BA%7D+%3D+%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; title=&#39;L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; class=&#39;latex&#39; /&gt;,&lt;br&gt;
+since the algorithm here is Hedge(&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;), where &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;is the&lt;br&gt;
+parameter, &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BA%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{A} &#39; title=&#39;L_{A} &#39; class=&#39;latex&#39; /&gt;, is called as &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{Hedge(\beta)} &#39; title=&#39;L_{Hedge(\beta)} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;therefore,&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br&gt;
+L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p style=&quot;text-align: right;&quot;&gt;
+  &lt;span style=&quot;text-decoration: underline;&quot;&gt;QED&lt;/span&gt;
+&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2014/12/pseudo-loss-function-in-distributed-adaboost/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2014/12/pseudo-loss-function-in-distributed-adaboost/</guid>
+      </item>
+    
+      <item>
+        <title>Dokuwiki for Personal Notebook and Note taking</title>
+        <description>&lt;p&gt;As a researcher, you soon start wondering if you had centralized all your notes, possibly digitized them, life would be much better. Recently when I had to make a tough choice of leaving all my notes from years when I am about to shift country &lt;em&gt;(due to limited air travel baggage)&lt;/em&gt;, I wish I had them on computer. Since I will be making more notes in the future, at least a lesson is learnt. &lt;/p&gt;
+
+&lt;p&gt;For this reason, I started experimenting with different available tools. I tried Evernote, Catch.com, Microsoft Onenote and various personal wikis. Initially, I liked MS Onenote. Since it has several useful tools and very easy to use &amp;#8216;capturing methods&amp;#8217;. Later, I realized having it online would be more beneficial as I will be able to access it from anywhere and perhaps share it with friends/colleague if needed.&lt;/p&gt;
+
+&lt;p&gt;Then I started experimenting with several &amp;#8216;wiki&amp;#8217; sites. I tried &amp;#8216;&lt;a href=&quot;http://tiddlywiki.com/&quot; target=&quot;_blank&quot;&gt;tiddlywiki&lt;/a&gt;&amp;#8216; &amp;#8211; works great, very fluid, no installation, single file. But the idea that all the notes are in single file made me uncomfortable. I realized very soon these notes will be running thousands of pages and all of them in a single file will cause it to load very slowly. Also to have it online, I will have to give higher privileges to the file &lt;em&gt;(so that it can modify the source itself)&lt;/em&gt;, which I didn&amp;#8217;t like. &amp;#8216;Mediawiki&amp;#8217; (from Wikipedia.org) looked little overkill.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Comparision of various personal wiki services/softwares&lt;/strong&gt; is given &lt;a href=&quot;http://www.wikimatrix.org/compare/DokuWiki+MediaWiki+bLADE-Wiki+6of5-Wiki&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/Comparison_of_wiki_software&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Long story short, I ended up using &lt;strong&gt;&lt;a href=&quot;https://www.dokuwiki.org&quot; target=&quot;_blank&quot;&gt;Dokuwiki&lt;/a&gt;&lt;/strong&gt;. Great &lt;a href=&quot;https://www.dokuwiki.org/features&quot; target=&quot;_blank&quot;&gt;features&lt;/a&gt;, many &lt;a href=&quot;https://www.dokuwiki.org/features&quot; target=&quot;_blank&quot;&gt;plugins &lt;/a&gt;and with little knowledge of php you can customize it with ease. Last but not least, great support for $ \LaTeX $&lt;/p&gt;
+
+&lt;p&gt;You can see my installation &lt;em&gt;(link given below)&lt;/em&gt;, although the Notes are still in nascent stage, but I soon expect it to be full of information and my personal notes, especially in Maths and Computer Science.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://aaditya.info/wiki&quot; title=&quot;Personal Notebook using Dokuwiki&quot; target=&quot;_blank&quot;&gt;My Personal Notebook using Dokuwiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This also means, I will not be using this blog anymore for personal notes. My initial notes and rough drafts will be in wiki and final and polished articles will be in this blog.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Mar 2013 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2013/03/dokuwiki-for-personal-notebook-and-note-taking/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2013/03/dokuwiki-for-personal-notebook-and-note-taking/</guid>
+      </item>
+    
+      <item>
+        <title>Solutions to Hamilton-Jacobi-Bellman under uncertainity</title>
+        <description>&lt;p&gt;After doing some reading on decision under un-certainity, I get the feeling that this I will be looking more into this. More so because I have the feeling like there is more to this field, lot of unknowns yet(which is still partly due to my lack of profound knowledge in the field). I feel this field is yet to mature.&lt;/p&gt;
+
+&lt;p&gt;Solution to Hamilton-Jacobi-Bellman (great story on how the -Bellman part was added to the equation) has been worked by several researchers, but I am looking into the prospect of applying the same under &amp;#8216;uncertainity&amp;#8217;.&lt;/p&gt;
+
+&lt;p&gt;The problem:&lt;br&gt;
+\[   V(x(0), 0) = \min_u  \int_0^T C[x(t),u(t)]\,dt + D[x(T)] \]&lt;/p&gt;
+
+&lt;p&gt;The Solution:&lt;br&gt;
+\[  \dot{V}(x,t) + \min_u ( \nabla V(x,t) \cdot F(x, u) + C(x,u) ) = 0 \]&lt;/p&gt;
+
+&lt;p&gt;usual constraints and conditions apply, full description at &lt;a title=&quot;Hamilton-Jacobi-Equation&quot; href=&quot;http://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi%E2%80%93Bellman_equation&quot; target=&quot;_blank&quot;&gt;this wiki page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Last one month, I did some work; tried my hand with varies forms of solution. I looked into Stochastic Approaches in CFD simulations (Stochastic collocation), Chebyshev Polynomials, Galerkin Approximation, Pontryagin Maximum Principle). But I have failed and right now in life other priorities (grad-school applications) is keeping me from giving another serious look. (This work was part of the reason why no blog posts for a whole month).&lt;/p&gt;
+
+&lt;p&gt;I want to come back to this topic and work more, in the meantime, I am making note of some of the papers and materials I referred and will be doing so again in the near future.&lt;/p&gt;
+
+&lt;h3&gt;Light introduction and derivation of Hamilton-Jacobi-Bellman&lt;/h3&gt;
+
+&lt;p&gt;Ian Mitchell&lt;/p&gt;
+
+&lt;p&gt;http://www.cs.ubc.ca/~mitchell/Class/CS532M.2007W2/Talks/hjbSham.pdf&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;general read&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3&gt;Stochastic Perron&amp;#8217;s method for Hamilton-Jacobi-Bellman equations&lt;/h3&gt;
+
+&lt;p&gt;Bayraktar et al&lt;/p&gt;
+
+&lt;p&gt;http://arxiv.org/abs/1212.2170&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;new approach *&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Hamilton-Jacobi-Bellman Equations &amp;#8211; Analysis and Numerical Analysis&lt;/h3&gt;
+
+&lt;p&gt;Iain Smears&lt;/p&gt;
+
+&lt;p&gt;http://www.maths.dur.ac.uk/Ug/projects/highlights/PR4/Smears_HJB_report.pdf&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Complete Thesis *&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Stochastic Approaches To Uncertainity Quantification In CFD Simulations&lt;/h3&gt;
+
+&lt;p&gt;Mathelin et al&lt;/p&gt;
+
+&lt;p&gt;http://perso.limsi.fr/Individu/mathelin/research/NumUNC_MHZ.pdf&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inspiration from CFD *&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Solution of Hamilton Jacobi Bellman Equations&lt;/h3&gt;
+
+&lt;p&gt;Navasca et al&lt;/p&gt;
+
+&lt;p&gt;http://people.clarkson.edu/~cnavasca/KN1.pdf&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;using Pontryagin maximum principle *&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Potential use of Ito lemma&lt;/h3&gt;
+
+&lt;p&gt;See &lt;a title=&quot;Ito&#39;s Lemma&quot; href=&quot;http://en.wikipedia.org/wiki/It%C5%8D_calculus#It.C5.8D.27s_lemma&quot; target=&quot;_blank&quot;&gt;this equation&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 Mar 2013 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2013/03/solutions-to-hamilton-jacobi-bellman-under-uncertainity/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2013/03/solutions-to-hamilton-jacobi-bellman-under-uncertainity/</guid>
+      </item>
+    
+      <item>
+        <title>Moments and transition probability of Trinomial Tree</title>
+        <description>&lt;p&gt;I just switched from using WP-Latex to MathJax since Chrome is soon going to have built-in support for MathJax and it is easier to recover the tex codes for the reader.&lt;/p&gt;
+
+&lt;p&gt;To test out the functionality, I wanted to write down some equations befitting to the occasion. I scraped through my notes to see if there was anything interesting and worth posting. I stumbled upon &lt;a href=&quot;http://en.wikipedia.org/wiki/Trinomial_tree&quot; title=&quot;Trinomial Tree Wiki&quot; target=&quot;_blank&quot;&gt;Trinomial Tree&lt;/a&gt; ( \ddagger ). Now it is not that common and haven&amp;#8217;t seen much usage of Trinomial Tree outside finance (One of the ways for Options Pricing), nonetheless I thought it would be interesting to refresh these formulas, you never know when you might need them again.&lt;/p&gt;
+
+&lt;p&gt;Trinomial Tree, a special case of binomial tree where instead of two we have three branches, lets call them Up ( u ) , Middle ( m ) and Down (d ) . Transition of each step could then be defined as &amp;#8212;  &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;\( S(t + \Delta t) = S(t) \times u \) with probability  \( p_u \) &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;\( S(t + \Delta t) = S(t) \times 1 \) with probability  \( 1 - p_u - p_d \)&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;\( S(t + \Delta t) = S(t) \times d \) with probability  \( p_d \)&lt;/p&gt;
+
+&lt;p&gt;For simplicity sake let&amp;#8217;s consider that transition magnitude is same on each side, i.e&lt;br&gt;
+$$ u = e^{\sigma \sqrt{2 \Delta t} } \, , \,\, d = e^{-\sigma \sqrt{2 \Delta t }} \, , \,\, m=1 $$&lt;/p&gt;
+
+&lt;p&gt;then the &lt;strong&gt;transition probability&lt;/strong&gt; is given by&lt;br&gt;
+$$ p_u = \left ( \frac{e^\frac{r \Delta t}{2} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}}{e^{\sigma\sqrt{\frac{r \Delta t}{2}}} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}} \right ) ^2 $$&lt;/p&gt;
+
+&lt;p&gt;$$ p_u = \left ( \frac{ e^{\sigma\sqrt{\frac{r \Delta t}{2}}} + e^\frac{r \Delta t}{2} }{e^{\sigma\sqrt{\frac{r \Delta t}{2}}} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}} \right ) ^2 $$&lt;/p&gt;
+
+&lt;p&gt;$$ p_m = 1 &amp;#8211; p_u &amp;#8211; p_d $$&lt;/p&gt;
+
+&lt;p&gt;from above equations we can derive the *&lt;em&gt;moments *&lt;/em&gt;as given below,&lt;br&gt;
+$$ \mathbb{E}[S(t_{i+1})|S(t_i)] = e^{r \Delta t}S(t_i) $$&lt;/p&gt;
+
+&lt;p&gt;$$ \mathbb{V}ar[S(t_{i+1})|S(t_i)] = \Delta t S(t_i)^2 \sigma ^2 + \mathcal{O}(\Delta t^\frac{3}{2}) $$&lt;/p&gt;
+
+&lt;p&gt;\( \ddagger \) &lt;a href=&quot;http://en.wikipedia.org/wiki/Phelim_Boyle&quot; title=&quot;Phelim Boyle&quot; target=&quot;_blank&quot;&gt;Phelim Boyle&lt;/a&gt; in 1986.&lt;/p&gt;
+
+&lt;p&gt;An excellent&lt;a href=&quot;http://www41.homepage.villanova.edu/klaus.volpert/teaching/financial_math/Fall10/Presentations/Trinomial.pptx&quot; title=&quot;Background on Trinomial Tree&quot; target=&quot;_blank&quot;&gt; 23 slide &lt;/a&gt;background on Trinomial including other forms besides Boyle&amp;#8217;s.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Jan 2013 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2013/01/moments-and-transition-probability-of-trinomial-tree/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2013/01/moments-and-transition-probability-of-trinomial-tree/</guid>
+      </item>
+    
+      <item>
+        <title>Pascal&amp;#8217;s Triangle in Standard ML</title>
+        <description>&lt;p&gt;It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to &amp;#8216;no-state&amp;#8217; concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.&lt;/p&gt;
+
+&lt;p&gt;For a nice 73 slide introduction on SML &lt;a href=&quot;http://courses.cs.vt.edu/~cs3304/Spring02/lectures/lect04.pdf&quot; title=&quot;Introduction to SML&quot; target=&quot;_blank&quot;&gt;see this&lt;/a&gt;. One of power of SML lies in doing proofs. For those who are already intiated with SML, you might want to look &lt;a href=&quot;https://github.com/agentcoops/SML-Proof-Manipulation&quot; title=&quot;SML Proof Manipulation&quot; target=&quot;_blank&quot;&gt;SML Proof Manipulation&lt;/a&gt;. If you want to learn how to start writing proofs in SML then here is a nice tutorial on the same &lt;a href=&quot;http://www.cs.bham.ac.uk/research/projects/poplog/paradigms_lectures/Theorem.html&quot; title=&quot;Proofs in SML&quot;&gt;Implementing Constructive Proof Rules for SML in MetaSML&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I like to write Pascal&amp;#8217;s triangle as my generic hello world program. Given below is my attempt at pascal&amp;#8217;s triangle, a beautiful binomial expansion tree. Though I will confess that this is not the most elegant solution to Pascal&amp;#8217;s triangle but I have considered readibility over conciseness.&lt;/p&gt;
+
+&lt;div class=&quot;wp_syntax&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line_numbers&quot;&gt;
+        &lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;
+      &lt;/td&gt;
+      
+      &lt;td class=&quot;code&quot;&gt;
+        &lt;pre class=&quot;pascal&quot; style=&quot;font-family:monospace;&quot;&gt;fun choose&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;r &lt;span style=&quot;color: #000066;&quot;&gt;:&lt;/span&gt; int&lt;span style=&quot;color: #000066;&quot;&gt;,&lt;/span&gt; k &lt;span style=&quot;color: #000066;&quot;&gt;:&lt;/span&gt; int&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt; 
+    &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;if&lt;/span&gt; k &lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt; &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;then&lt;/span&gt; r
+    &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;else&lt;/span&gt; &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;if&lt;/span&gt; k &lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #cc66cc;&quot;&gt;&lt;/span&gt; orelse k &lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt; r &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;then&lt;/span&gt; &lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;
+    &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;else&lt;/span&gt; choose&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;r&lt;span style=&quot;color: #000066;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000066;&quot;&gt;,&lt;/span&gt;k&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;+&lt;/span&gt; choose&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;r&lt;span style=&quot;color: #000066;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000066;&quot;&gt;,&lt;/span&gt;k&lt;span style=&quot;color: #000066;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+fun pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;x &lt;span style=&quot;color: #000066;&quot;&gt;:&lt;/span&gt; int&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt;
+    &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;x &amp;lt;&lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;then&lt;/span&gt; &lt;span style=&quot;color: #009900;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#93;&lt;/span&gt;
+    &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;else&lt;/span&gt;
+        let fun count &lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;from&lt;span style=&quot;color: #000066;&quot;&gt;:&lt;/span&gt;int&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt;
+            &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;if&lt;/span&gt; from&lt;span style=&quot;color: #000066;&quot;&gt;=&lt;/span&gt;x &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;then&lt;/span&gt; &lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000066;&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;else&lt;/span&gt; choose&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;x&lt;span style=&quot;color: #000066;&quot;&gt;,&lt;/span&gt;from&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;::&lt;/span&gt; count&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;from&lt;span style=&quot;color: #000066;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt;            
+        &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;in&lt;/span&gt; count&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #000066;&quot;&gt;::&lt;/span&gt;pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;x&lt;span style=&quot;color: #000066;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt;
+    &lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;end&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;*Note while the &amp;#8220;choose&amp;#8221; function could have been written as nested function inside &amp;#8220;pascal_triangle&amp;#8221; (like the &amp;#8220;count&amp;#8221; function), for the reasons of simplicity and comprehension I have put is as separate code. Same goes for the parenthesis around attributes, which are not required by the compiler.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jan 2013 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</guid>
+      </item>
+    
+      <item>
+        <title>Monte Carlo Simulation in R</title>
+        <description>&lt;p&gt;While the last post dealt with Bootstrap Sampling, no sampling discussion can be complete without discussion &amp;#8216;Monte Carlo&amp;#8217; simulation. Readers please note, I will *&lt;em&gt;not *&lt;/em&gt;discuss &amp;#8220;MCMC (Markov Chain Monte Carlo)&amp;#8221; &lt;em&gt;(perhaps in the future)&lt;/em&gt;. MCMC primarily deals with distribution of equilibrium of the given Markov Chain.&lt;/p&gt;
+
+&lt;p&gt;Monte Carlo simulation is much used &lt;em&gt;(perhaps overused)&lt;/em&gt; sampling for all physical simulation techniques. While the algorithm for generating Monte Carlo samples is very simple, its usage is widespread. Particularly in Computational Physics for modeling behavior of sub-atomic particles, in Robotics for generating possible states where the actual game state could be exponentially large and in bioinformatics for probabilistic graphical models and last but not least Monte Carlo Integration.&lt;/p&gt;
+
+&lt;p&gt;Readers not familiar with Monte Carlo may benefit from this &lt;a href=&quot;http://www.cs.otago.ac.nz/cosc453/student_tutorials/monte_carlo.pdf&quot; title=&quot;Tutorial on Monte Carlo&quot; target=&quot;_blank&quot;&gt;tutorial by Jonathan Pengelly&lt;/a&gt;, as this blogpost restricts to presenting the simple code in R to do Monte Carlo simulation. Having a clean and grounds-up code is always beneficial as this helps tweak and reformulate the basics.&lt;/p&gt;
+
+&lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
+
+&lt;h3&gt;Output&lt;/h3&gt;
+
+&lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Monte Carlo in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/Monte_Carlo_Simulation_in_R.png&quot; alt=&quot;Monte Carlo in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;wp_syntax&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line_numbers&quot;&gt;
+        &lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+&lt;/pre&gt;
+      &lt;/td&gt;
+      
+      &lt;td class=&quot;code&quot;&gt;
+        &lt;pre class=&quot;rsplus&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #228B22;&quot;&gt;#Monte Carlo simulation &lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;#aaditya - 26/10/2012&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #228B22;&quot;&gt;######################################&lt;/span&gt;
+StartEq &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
+SuccessPcnt &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;61.54&lt;/span&gt;
+SuccessAvg &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2444.78&lt;/span&gt;
+FailureAvg &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1667.37&lt;/span&gt;
+Iterations &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1000&lt;/span&gt;
+NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
+Rf &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;#####################################&lt;/span&gt;
+eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+doMCRun &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;function&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
+  eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; StartEq
+  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;i &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;in&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;runif&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;/span&gt;,&lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;&lt;/span&gt; SuccessPcnt&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+      pl&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; SuccessAvg &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
+    &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;else&lt;/span&gt;
+      pl&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;FailureAvg &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
+      eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;  &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; pl
+  &lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
+&amp;nbsp;
+values &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;replicate&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;Iterations, doMCRun&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;par&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;xaxs&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;i&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;plot&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, 
+     xlab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Iterations&quot;&lt;/span&gt;, ylab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Growth&quot;&lt;/span&gt;,
+     ylim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;min&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;max&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,
+     xlim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, main&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Monte Carlo Simulation&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;matlines&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values,type&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;l&quot;&lt;/span&gt;,lty&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+sd1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sd&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+mean1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;mean&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;print&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;summary&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+sdString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;SD : &quot;&lt;/span&gt;, sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;sdString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;With 99.73% confidence the final growth will be between&quot;&lt;/span&gt;, 
+                     mean1 &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1, &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot; and &quot;&lt;/span&gt;, mean1 &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; 
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;outputString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</guid>
+      </item>
+    
+      <item>
+        <title>Bootstrap sampling in R</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29&quot; title=&quot;Bootstrap Sampling&quot; target=&quot;_blank&quot;&gt;Bootstrapping &lt;/a&gt;is a very useful sampling method. While it&amp;#8217;s robustness is not that simlar to MCMC or Metropolis-Hastings or Landau. Bootstrapping draws from provided distribution with replacement. &lt;/p&gt;
+
+&lt;p&gt;While there are lot of fancy and featured enabled simulation and sampling softwares, nothing is better than writing codes from groudup. While the sampling code given below is not much featured enabled but anyone with some background can easily add the features as they require. The bootstrapping could be used in several scenarios specially when dealing with very large simulation scenario where it becomes infeasible to use deterministic rules to obtain the observables. More importantly while coding for AI where the sample state grows exponentially, simple sampling techniques like Bootstrapping comes into handy.&lt;/p&gt;
+
+&lt;p&gt;This blogpost presents the simple code to achieve Bootstrapping in R, readers not familiar with concepts of Bootstrapping will benefit from this &lt;a href=&quot;http://people.revoledu.com/kardi/tutorial/Bootstrap/examples.htm&quot; title=&quot;Tutorial on Bootstrapping&quot; target=&quot;_blank&quot;&gt;tutorial with examples via MS Excel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
+
+&lt;h3&gt;Output&lt;/h3&gt;
+
+&lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Bootstrap in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/BootStrap_Sampling_in_R.png&quot; alt=&quot;bootstrap in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;wp_syntax&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line_numbers&quot;&gt;
+        &lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+&lt;/pre&gt;
+      &lt;/td&gt;
+      
+      &lt;td class=&quot;code&quot;&gt;
+        &lt;pre class=&quot;rsplus&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #228B22;&quot;&gt;#Bootstrap &lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;#aaditya - 26/10/2012&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #228B22;&quot;&gt;######################################&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;dt&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;read.&lt;span style=&quot;&quot;&gt;csv&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;successRatio.csv&quot;&lt;/span&gt;, stringsAsFactors&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## successRatio.csv is file which contains samples eg. &lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## SampleValue (Probabilty)&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0455&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0042&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0456&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0035&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## 0.0394&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;## 0.0094&lt;/span&gt;
+&amp;nbsp;
+StartEq &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
+Iterations &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1000&lt;/span&gt;
+NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
+Rf &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;####################################&lt;/span&gt;
+&amp;nbsp;
+eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+doBSRun &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;function&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
+  eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; StartEq
+  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;i &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;in&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
+    eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;  &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sample&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;dt&lt;/span&gt;$SampleValue,&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
+  &lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
+&amp;nbsp;
+values &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;replicate&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;Iterations, doBSRun&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;par&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;xaxs&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;i&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;plot&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, 
+     xlab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Iterations&quot;&lt;/span&gt;, ylab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Growth&quot;&lt;/span&gt;,
+     ylim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;min&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;max&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,
+     xlim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, main&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Bootstrap Sampling&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;matlines&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values,type&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;l&quot;&lt;/span&gt;,lty&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+sd1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sd&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+mean1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;mean&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;print&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;summary&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+sdString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;SD : &quot;&lt;/span&gt;, sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;sdString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;With 99.73% confidence the final growth will be between&quot;&lt;/span&gt;, 
+                     mean1 &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1, &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot; and &quot;&lt;/span&gt;, mean1 &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; 
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;outputString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Extensive list of Bootstrap functions &lt;em&gt;(SPlus/Unix shell scripts)&lt;/em&gt; can be found at &lt;a href=&quot;http://lib.stat.cmu.edu/S/bootstrap.funs&quot; title=&quot;Functions for BootStrap&quot; target=&quot;_blank&quot;&gt;http://lib.stat.cmu.edu/S/bootstrap.funs&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2012/11/bootstrap-sampling-in-r/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/bootstrap-sampling-in-r/</guid>
+      </item>
+    
+      <item>
+        <title>Notes on Discrete Painlevé Equations</title>
+        <description>&lt;p&gt;Painlevé equations are used to solve non-linear second order differential equation. For more on Painleve&amp;#8217;s work &lt;a title=&quot;Painlevé&#39;s Works&quot; href=&quot;http://www.math.h.kyoto-u.ac.jp/~takasaki/soliton-lab/chron/painleve.html&quot; target=&quot;_blank&quot;&gt;see this&lt;/a&gt; and for short refresher on Painlevé equations, &lt;a title=&quot;Painlevé&#39;s Equations&quot; href=&quot;http://www.encyclopediaofmath.org/index.php/Painlev%C3%A9_equation&quot; target=&quot;_blank&quot;&gt;Encylopedia of Mathmematics&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This note concerns more on the Discrete derivatives of Painlevé&amp;#8217;s Equations.&lt;/p&gt;
+
+&lt;p&gt;Integratibility is not a well defined term. Poincaré&amp;#8217;s definition of Integrabiliy is &amp;#8211; to integrate a DE is to find for the general solution, a finite expression, in a finite number of funtions. i.e Solution should be a single value.&lt;/p&gt;
+
+&lt;p&gt;Soliton Systems for e.g are single valued :&lt;br&gt;
+&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cforall+x+%28+x+%5Cepsilon+Domain%29+%5CRightarrow+1+%5Crightarrow+1+%2C+1+%5Crightarrow+M+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &#39; title=&#39;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Multi valued functions of a complex variable have branch points, i.e critical points. While implies critical singularities of a linear ODE are fixed&lt;/p&gt;
+
+&lt;p&gt;We can derive new functions from Non-linear equations :&lt;br&gt;
+&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bw%7D%27%3D%5Cfrac%7Bw-w%5E%7B3%7D%7D%7Bz%28z%2B1%29%7D+%2C+w%280%29+%3D+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &#39; title=&#39;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
+&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&#39;http://s0.wp.com/latex.php?latex=w%28z%29+%3D+c+%5Csqrt%7B%5Cfrac%7B1%2Bz%7D%7B1%2Bc%5E%7B2%7Dz%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &#39; title=&#39;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
+Singular at &lt;img src=&#39;http://s0.wp.com/latex.php?latex=z+%3D+-1+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;z = -1 &#39; title=&#39;z = -1 &#39; class=&#39;latex&#39; /&gt; is said to be fixed.&lt;/p&gt;
+
+&lt;p&gt;e.g&lt;br&gt;
+1. &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%2B+w%5E%7B2%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{w}&amp;#039; + w^{2} = 0 &#39; title=&#39;{w}&amp;#039; + w^{2} = 0 &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
+&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&#39;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B-1%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w = (z-z_{0})^{-1} &#39; title=&#39;w = (z-z_{0})^{-1} &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
+2. &lt;img src=&#39;http://s0.wp.com/latex.php?latex=2%7Bw%7D%27%2Bw%5E%7B3%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;2{w}&amp;#039;+w^{3} = 0 &#39; title=&#39;2{w}&amp;#039;+w^{3} = 0 &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
+&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&#39;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B%5Cfrac%7B-1%7D%7B2%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w = (z-z_{0})^{\frac{-1}{2}} &#39; title=&#39;w = (z-z_{0})^{\frac{-1}{2}} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Singularities of a nonlinear systems generally do not show Painlevé Property*&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;**Painlevé Property&lt;/em&gt;*&lt;br&gt;
+An ODE is said to possess the Painlevé property if all its solution are single valued. Beauty of having this property is it allows the transformation of Painlevé Equations into Riccati Equations, which could be solved using known techniques.&lt;br&gt;
+Riccati Equations are fo the form :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%3D+aw%5E%7B2%7D+%2B+bw+%2B+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{w}&amp;#039; = aw^{2} + bw + c &#39; title=&#39;{w}&amp;#039; = aw^{2} + bw + c &#39; class=&#39;latex&#39; /&gt; &amp;#8212; (I)&lt;/p&gt;
+
+&lt;p&gt;Painlevé Classified Equatios into 6 types (Transcedants). They were mostly forgotten but their revival was necessitated after soliton systems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/painleve-equations.png&quot;&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;painlevé equations&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/painleve-equations-300x147.png&quot; alt=&quot;painlevé equations&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Dicrete Painlevé was discovered mostly due to efforts on Quantum Gravity. See &lt;a title=&quot;Discrete Painleve in Quantum Gravity&quot; href=&quot;http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&amp;id=pdf_1&amp;handle=euclid.cmp/1104248588&quot; target=&quot;_blank&quot;&gt;Discrete Painlevé equations and their appearance in quantum gravity by AS Fokas et al.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;On discretisation, Riccati Equation given above at  (I) becomes&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bx%7D%27+%3D+%28x_%7Bn%2B1%7D+-+x_%7Bn%7D%29+%5CDelta+t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &#39; title=&#39;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &#39; class=&#39;latex&#39; /&gt; &lt;/p&gt;
+
+&lt;p&gt;A caveat though, Non-linear discretisation is not unique and may result in incorrect functions. Discretisation should be fo rational form and have homographic mapping. There are more than 20 discrete Painlevé Equations.&lt;/p&gt;
+
+&lt;p&gt;Solutions to Discrete Painlevé Equations can be found &lt;a title=&quot;Solutions to Discrete Painleve Equations&quot; href=&quot;http://www.sciencedirect.com/science/article/pii/S0898122101001808&quot; target=&quot;_blank&quot;&gt;on this paper by A.Ramani et al&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 10 Nov 2012 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2012/11/notes-on-discrete-painleve-equations/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/notes-on-discrete-painleve-equations/</guid>
+      </item>
+    
+      <item>
+        <title>Hello &amp;#8216;Lucene&amp;#8217; World &amp;#8211; Web Implementation</title>
+        <description>&lt;p&gt;Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the &lt;a title=&quot;Lucene from Apache&quot; href=&quot;http://lucene.apache.org/core/&quot; target=&quot;_blank&quot;&gt;Lucene&amp;#8217;s homepage&lt;/a&gt; :&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p id=&quot;scalable-high-performance-indexing&quot;&gt;
+  &lt;strong&gt;Scalable, High-Performance Indexing&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;over 95GB/hour on modern hardware&lt;/li&gt;
+&lt;li&gt;small RAM requirements &amp;#8212; only 1MB heap&lt;/li&gt;
+&lt;li&gt;incremental indexing as fast as batch indexing&lt;/li&gt;
+&lt;li&gt;index size roughly 20-30% the size of text indexed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p id=&quot;powerful-accurate-and-efficient-search-algorithms&quot;&gt;
+  &lt;strong&gt;Powerful, Accurate and Efficient Search Algorithms&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ranked searching &amp;#8212; best results returned first&lt;/li&gt;
+&lt;li&gt;many powerful query types: phrase queries, wildcard queries, proximity queries, range queries and more&lt;/li&gt;
+&lt;li&gt;fielded searching (e.g., title, author, contents)&lt;/li&gt;
+&lt;li&gt;date-range searching&lt;/li&gt;
+&lt;li&gt;sorting by any field&lt;/li&gt;
+&lt;li&gt;multiple-index searching with merged results&lt;/li&gt;
+&lt;li&gt;allows simultaneous update and searching&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div&gt;
+  If you want a quick 5 min tutorial on Lucene, &lt;a title=&quot;Lucene in 5 min&quot; href=&quot;http://www.lucenetutorial.com/lucene-in-5-minutes.html&quot; target=&quot;_blank&quot;&gt;here you go&lt;/a&gt;. Once you seen the structure of Lucene it would be nice to have hello world implementation of it so that you could see it&amp;#8217;s working in the barebone structure. Recently I had the similar problem; while there were numerous examples of Lucene implementation I couldn&amp;#8217;t find the minimal &amp;#8216;hello world&amp;#8217; implementation of web search using Lucene. I am a old-school, to understand working of a new language or library, I like to see the minimal implementation upon which I love to tinker.
+&lt;/div&gt;
+
+&lt;div&gt;
+  Thus, inability to find anything like that made me write one. Therefore I present you &amp;#8220;Hello World&amp;#8221; with Lucene Web interface.
+&lt;/div&gt;
+
+&lt;div&gt;
+  Note:
+&lt;/div&gt;
+
+&lt;div&gt;
+  -You need to have Lucene Library installed and index built (see the 5 min tutorial link above)
+&lt;/div&gt;
+
+&lt;div&gt;
+  -For real application it is not a good and safe practice to write Java inside JSP, instead you use servlets
+&lt;/div&gt;
+
+&lt;div&gt;
+  -This is not intended to be Lucene tutorial or Lucene best practice. This code is minimal required code to have a crude sample web search engine running on Lucene.
+&lt;/div&gt;
+
+&lt;h2&gt;Code&lt;/h2&gt;
+
+&lt;div class=&quot;wp_syntax&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line_numbers&quot;&gt;
+        &lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+&lt;/pre&gt;
+      &lt;/td&gt;
+      
+      &lt;td class=&quot;code&quot;&gt;
+        &lt;pre class=&quot;html4strict&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #00bbdd;&quot;&gt;&amp;lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&lt;/span&gt;
+&lt;span style=&quot;color: #00bbdd;&quot;&gt;   &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;!&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  Project :       Lucened Enabled Simple &lt;span style=&quot;color: #000066;&quot;&gt;Text&lt;/span&gt; Search&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  Author  :       Aaditya Prakash&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  Date    :       &lt;span style=&quot;color: #cc66cc;&quot;&gt;25&lt;/span&gt;- Sep-&lt;span style=&quot;color: #cc66cc;&quot;&gt;2012&lt;/span&gt; &lt;span style=&quot;color: #cc66cc;&quot;&gt;16&lt;/span&gt;:&lt;span style=&quot;color: #cc66cc;&quot;&gt;21&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;--&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;%@ page import&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;SearchWebCall&quot;&lt;/span&gt; %&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt; Lucene Enabled Simple Text Search &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+    &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;script&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;type&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+    &lt;span style=&quot;color: #808080; font-style: italic;&quot;&gt;&amp;lt;!-- Validation to prevent some characters, &lt;/span&gt;
+&lt;span style=&quot;color: #808080; font-style: italic;&quot;&gt;  currently Lucene Doesn&#39;t parse these characters --&amp;gt;&lt;/span&gt;
+            function isSpclChar(){
+                var iChars = &quot;!@#^&lt;span style=&quot;color: #ddbb00;&quot;&gt;&amp;amp;&lt;/span&gt;*()+=-[]\\\&#39;;,./{}|~`\&quot;:&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;?&quot;;
+                for (var i = 0; i &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt; document.lucene.input.&lt;span style=&quot;color: #000066;&quot;&gt;value&lt;/span&gt;.length; i++&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;                  if &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;iChars.indexOf&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;document.lucene.input.&lt;span style=&quot;color: #000066;&quot;&gt;value&lt;/span&gt;.charAt&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;i&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt; !&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; -&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;                      &lt;span style=&quot;color: #66cc66;&quot;&gt;//&lt;/span&gt;throwback the unallowed character&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;                      document.lucene.input.&lt;span style=&quot;color: #000066;&quot;&gt;value&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; document.lucene.input.&lt;span style=&quot;color: #000066;&quot;&gt;value&lt;/span&gt;.slice&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;&lt;/span&gt;,-&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;                      return false;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;                  &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;              &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;          &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;  &amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;Lucene Enabled Simple Text Search &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;form&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;name&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;lucene&quot;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;action&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;index.jsp&quot;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;method&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;get&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;input&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;name&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;input&quot;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;size&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;30&quot;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;id&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;input&quot;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;onkeyup&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;isSpclChar()&quot;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;br&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;input&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;type&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span style=&quot;color: #000066;&quot;&gt;value&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Search&quot;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;br&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;%&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  String searchString&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; new String&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  String result&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; new String&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;100&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  searchString&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;-query&quot;&lt;/span&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;  searchString&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; request.getParameter&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;input&quot;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;  if&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;searchString&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt; !&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; null&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;      &lt;span style=&quot;color: #66cc66;&quot;&gt;//&lt;/span&gt; send the Search term to obtain the result, &lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;      &lt;span style=&quot;color: #66cc66;&quot;&gt;//&lt;/span&gt;all processing happens in the &lt;span style=&quot;color: #000066;&quot;&gt;class&lt;/span&gt; &lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;      &lt;span style=&quot;color: #66cc66;&quot;&gt;//&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;keeping jsp &lt;span style=&quot;color: #000066;&quot;&gt;code&lt;/span&gt; to minimum&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;      result &lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; SearchWebCall.filter&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;searchString&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;      int noOfMatch&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #cc66cc;&quot;&gt;&lt;/span&gt;;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;      out.print&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Search Result of : &amp;lt;b&amp;gt;&lt;/span&gt;&lt;/span&gt;&quot; + searchString[1] + &quot;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;b&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;br&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;);
+        for(int i=0; i&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt; result.length; i++&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #009900;&quot;&gt;          &lt;span style=&quot;color: #66cc66;&quot;&gt;//&lt;/span&gt;format the results&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;          if &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;result&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#93;&lt;/span&gt; !&lt;span style=&quot;color: #66cc66;&quot;&gt;=&lt;/span&gt; null&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;              out.print&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;i+&lt;span style=&quot;color: #cc66cc;&quot;&gt;1&lt;/span&gt; + &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;. &quot;&lt;/span&gt;&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#41;&lt;/span&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;              &lt;span style=&quot;color: #66cc66;&quot;&gt;//&lt;/span&gt;results are displayed as hyperlinks to faciliate information retrieval&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;              out.print&lt;span style=&quot;color: #66cc66;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&amp;lt;a href=\&quot;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;+result[i]+&quot;&lt;/span&gt;\&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&quot;+result[i]+&quot;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;);
+                out.print(&quot;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;br&lt;/span&gt; &lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;);
+                noOfMatch++;
+            }
+        }
+        out.print(&quot;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;h2&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt; No. of Matches: &quot; + noOfMatch+ &quot; &lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;);
+    }
+//end of JSP
+%&amp;gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #009900;&quot;&gt;&amp;lt;&lt;span style=&quot;color: #66cc66;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #000000; font-weight: bold;&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 20 Oct 2012 00:00:00 -0400</pubDate>
+        <link>http://iamaaditya.github.io/2012/10/hello-lucene-world-web-implementation/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2012/10/hello-lucene-world-web-implementation/</guid>
+      </item>
+    
+  </channel>
+</rss>
