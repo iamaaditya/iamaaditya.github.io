@@ -14,6 +14,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Presentations
  These are the google doc links of the presentations I have given in class, or seminars or other invited talks. These were the most requested urls !
+
  * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing ) Presented on Nov 28, 2015 
  * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing ) Presnted on October 7, 2015
  * [Value of a feature]( https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing ) Presented on October 19, 2015
@@ -21,9 +22,9 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
  * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing ) Presnted on September 29, 2015
 
 # Learning
-  * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ )
-  * [Machine Learning]( {{ site.baseurl }}/notes/machine_learning/ )
-  * [Papers]( {{site.baseurl}}/notes/papers/ )
+  * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ ) - Collection of articles, codes, repos, tutorials, and other links which I have found useful.
+  * [Machine Learning]( {{ site.baseurl }}/notes/machine_learning/ ) - similar stuff but for Machine Learning
+  * [Papers]( {{site.baseurl}}/notes/papers/ ) - Collection of great papers in Computer Science in general, and machine learning in specific.
 
 # Courses
 ## Computer Science
