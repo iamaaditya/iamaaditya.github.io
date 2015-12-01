@@ -28,15 +28,17 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Courses
 ## Computer Science
-  * Todo
+  * [Data Structures and Algorithms]( {{ site.baseurl }}/notes/algorithms/ ) - Collection of references, tutorials, and links. I use this to refer to my students from CS 180. 
 
 ## Mathematics
   * Todo
 
 # Blogroll
+  * http://karpathy.github.io/
   * http://benanne.github.io/
   * http://iamtrask.github.io/
   * http://rocknrollnerd.github.io/
+  * http://www.wildml.com/
 
 # Links
 
