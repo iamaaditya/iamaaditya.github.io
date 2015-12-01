@@ -29,6 +29,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Courses
 ## Computer Science
   * [Data Structures and Algorithms]( {{ site.baseurl }}/notes/algorithms/ ) - Collection of references, tutorials, and links. I use this to refer to my students from CS 180. 
+  * [Programming]( {{ site.baseurl }}/notes/programming/ ) - Collection of programming related references, articles, and competitions and learning resources
 
 ## Mathematics
   * Todo
