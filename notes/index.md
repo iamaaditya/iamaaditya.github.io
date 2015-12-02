@@ -39,9 +39,16 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * http://benanne.github.io/
   * http://iamtrask.github.io/
   * http://rocknrollnerd.github.io/
+  * https://chrisjmccormick.wordpress.com/
   * http://www.wildml.com/
 
-# Links
+# Awesome Lists
+  * Awesome Deep Vision https://github.com/kjw0612/awesome-deep-vision
+  * Awesome Deep Learning https://github.com/ChristosChristofidis/awesome-deep-learning
+  * Awesome Machine Learning https://github.com/josephmisiti/awesome-machine-learning
+  * Awesome Python https://github.com/vinta/awesome-python
+  * Awesome Linux https://github.com/aleksandar-todorovic/awesome-linux
+  * Awesome list of awesome lists https://github.com/sindresorhus/awesome
 
 # Cheatsheets
   * Todo
