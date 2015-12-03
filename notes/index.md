@@ -15,6 +15,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Presentations
  These are the google doc links of the presentations I have given in class, or seminars or other invited talks. These were the most requested urls !
 
+ * [General purpose GPU Computing and CUDA]( https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing )
  * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing ) Presented on Nov 28, 2015 
  * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing ) Presnted on October 7, 2015
  * [Value of a feature]( https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing ) Presented on October 19, 2015
@@ -25,6 +26,9 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ ) - Collection of articles, codes, repos, tutorials, and other links which I have found useful.
   * [Machine Learning]( {{ site.baseurl }}/notes/machine_learning/ ) - similar stuff but for Machine Learning
   * [Papers]( {{site.baseurl}}/notes/papers/ ) - Collection of great papers in Computer Science in general, and machine learning in specific.
+
+# Research
+ * [Computer Vision / Deep Learning]( {{site.baseurl}}/notes/research/ ) - Notes related to my current work, papers I am reading, and some random scribble
 
 # Courses
 ## Computer Science
@@ -51,7 +55,11 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * Awesome list of awesome lists <https://github.com/sindresorhus/awesome>
 
 # Cheatsheets
-  * Todo
+  * IPython <https://damontallen.github.io/IPython-quick-ref-sheets/>
+  * LaTeX <http://wch.github.io/latexsheet/latexsheet.pdf>
+  * Oh-My-Zsh <https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet>
+  * Linux <https://gist.github.com/KamranMackey/5124174>
+
  
 
 
