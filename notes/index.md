@@ -15,12 +15,12 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Presentations
  These are the google doc links of the presentations I have given in class, or seminars or other invited talks. These were the most requested urls !
 
- * [General purpose GPU Computing and CUDA]( https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing )
- * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing ) Presented on Nov 28, 2015 
- * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing ) Presnted on October 7, 2015
- * [Value of a feature]( https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing ) Presented on October 19, 2015
- * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing ) Presented on September 16, 2015
- * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing ) Presnted on September 29, 2015
+ * [General purpose GPU Computing and CUDA]( https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing )  - Nov 30, 2015
+ * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing )  - Nov 18, 2015 
+ * [Value of a feature]( https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing ) - October 19, 2015
+ * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing )  - October 7, 2015
+ * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing )  - September 29, 2015
+ * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing )  - September 16, 2015
 
 # Learning
   * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ ) - Collection of articles, codes, repos, tutorials, and other links which I have found useful.
