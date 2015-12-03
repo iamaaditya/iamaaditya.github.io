@@ -32,7 +32,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * [Programming]( {{ site.baseurl }}/notes/programming/ ) - Collection of programming related references, articles, and competitions and learning resources
 
 ## Mathematics
-  * Todo
+  * [Probability And Statistics]( {{ site.baseurl }}/notes/probability_statistics/ ) - Collection of great articles, tutorials and very useful links about Proability and Statistics
 
 # Blogroll
   * <http://karpathy.github.io/>
