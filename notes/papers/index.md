@@ -7,13 +7,15 @@ dsq_thread_id:
 ---
 
 
-### CS
-**What Papers everyone should read** http://cstheory.stackexchange.com/questions/1168/what-papers-should-everyone-read
+## CS
+### What Papers everyone should read
+  * <http://cstheory.stackexchange.com/questions/1168/what-papers-should-everyone-read>
 
 
 
-### Math
-**A single paper everyone should read** http://mathoverflow.net/questions/2144/a-single-paper-everyone-should-read
+## Math
+### A single paper everyone should read
+  * <http://mathoverflow.net/questions/2144/a-single-paper-everyone-should-read>
 
 
 ### General
@@ -23,66 +25,67 @@ dsq_thread_id:
   * How not to write papers Oded Goldreich http://www.cs.iastate.edu/~honavar/write-not.pdf
 
 ### Big Data
-  * [[http://ilpubs.stanford.edu:8090/422/|The PageRank Citation Ranking: Bringing Order to the Web]]
-  * [[http://research.google.com/archive/mapreduce.html|MapReduce: Simplified Data Processing on Large Clusters]]
-  * [[http://research.google.com/archive/gfs.html|The Google File System]]
-  * [[http://www.allthingsdistributed.com/2007/10/amazons_dynamo.html|Amazon's Dynamo]]
-  * [[http://research.google.com/archive/bigtable.html|Bigtable: A Distributed Storage System for Structured Data]]
-  * [[http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf|A Few Useful Things to Know about Machine Learning]]
-  * [[http://oz.berkeley.edu/~breiman/randomforest2001.pdf|Random Forests]]
-  * [[http://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf|A Relational Model of Data for Large Shared Data Banks]]
-  * [[http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2006_725.pdf|Map-Reduce for Machine Learning on Multicore]]
-  * [[http://sci2s.ugr.es/keel/pdf/algorithm/articulo/1999-ML-Breiman-Pasting%20Small%20Votes%20for%20Classification%20in%20Large%20Databases%20and%20On-Line.pdf|Pasting Small Votes for Classification in Large Databases and On-Line]]
-  * [[http://www.win.tue.nl/~laroyo/2L340/resources/Amazon-Recommendations.pdf|Recommendations Item-to-Item Collaborative Filtering]]
-  * [[http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf|Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank]]
-  * [[http://research.google.com/archive/spanner.html|Spanner: Google's Globally-Distributed Database]]
-  * [[http://research.google.com/pubs/pub36971.html|Megastore: Providing Scalable, Highly Available Storage for Interactive Services]]
-  * [[http://research.google.com/pubs/pub41344.html|F1: A Distributed SQL Database That Scales]]
-  * [[http://online.liebertpub.com/doi/pdfplus/10.1089/big.2013.0011|APACHE DRILL: Interactive Ad-Hoc Analysis at Scale]]
-  * [[http://www.cs.unc.edu/~welch/kalman/media/pdf/Kalman1960.pdf|A New Approach to Linear Filtering and Prediction Problems]]
-  * [[http://www.cs.umd.edu/~samir/498/10Algorithms-08.pdf|Top 10 algorithms on Data mining]]
-  * [[https://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf|Resilient Distributed Data - SPARK]]
+  * [http://ilpubs.stanford.edu:8090/422/](The PageRank Citation Ranking: Bringing Order to the Web)
+  * [http://research.google.com/archive/mapreduce.html](MapReduce: Simplified Data Processing on Large Clusters)
+  * [http://research.google.com/archive/gfs.html](The Google File System)
+  * [http://www.allthingsdistributed.com/2007/10/amazons_dynamo.html](Amazon's Dynamo)
+  * [http://research.google.com/archive/bigtable.html](Bigtable: A Distributed Storage System for Structured Data)
+  * [http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf](A Few Useful Things to Know about Machine Learning)
+  * [http://oz.berkeley.edu/~breiman/randomforest2001.pdf](Random Forests)
+  * [http://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf](A Relational Model of Data for Large Shared Data Banks)
+  * [http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2006_725.pdf](Map-Reduce for Machine Learning on Multicore)
+  * [http://sci2s.ugr.es/keel/pdf/algorithm/articulo/1999-ML-Breiman-Pasting%20Small%20Votes%20for%20Classification%20in%20Large%20Databases%20and%20On-Line.pdf](Pasting Small Votes for Classification in Large Databases and On-Line)
+  * [http://www.win.tue.nl/~laroyo/2L340/resources/Amazon-Recommendations.pdf](Recommendations Item-to-Item Collaborative Filtering)
+  * [http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf](Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank)
+  * [http://research.google.com/archive/spanner.html](Spanner: Google's Globally-Distributed Database)
+  * [http://research.google.com/pubs/pub36971.html](Megastore: Providing Scalable, Highly Available Storage for Interactive Services)
+  * [http://research.google.com/pubs/pub41344.html](F1: A Distributed SQL Database That Scales)
+  * [http://online.liebertpub.com/doi/pdfplus/10.1089/big.2013.0011](APACHE DRILL: Interactive Ad-Hoc Analysis at Scale)
+  * [http://www.cs.unc.edu/~welch/kalman/media/pdf/Kalman1960.pdf](A New Approach to Linear Filtering and Prediction Problems)
+  * [http://www.cs.umd.edu/~samir/498/10Algorithms-08.pdf](Top 10 algorithms on Data mining)
+  * [https://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf](Resilient Distributed Data - SPARK)
+
 ### Computer Vision
-  * [[http://arxiv.org/pdf/1112.6209.pdf| Building High-level Features Using Large Scale Unsupervised Learning]]
-  * [[http://www.springerlink.com/index/H4L02691327PX768.pdf| Distinctive image features from scale-invariant keypoints]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=192463| A theory for multiresolution signal decomposition: The wavelet representation]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4767851| A computational approach to edge detection]]
-  * [[http://www.springerlink.com/index/q7g93335q86604x6.pdf| Snakes: Active contour models]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4767596| Stochastic relaxation, Gibbs distributions, and the Bayesian restoration of images]]
-  * [[http://www.mitpressjournals.org/doi/abs/10.1162/jocn.1991.3.1.71| Eigenfaces for Recognition]]
-  * [[http://www.sciencedirect.com/science/article/pii/0004370281900242| Determining optical flow]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=j29kMCwAAAAJ&amp;citation_for_view=j29kMCwAAAAJ:u5HHmVD_uO8C| Scale-space and edge detection using anisotropic diffusion]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=G2-nFaIAAAAJ&amp;citation_for_view=G2-nFaIAAAAJ:u5HHmVD_uO8C| Rapid object detection using a boosted cascade of simple features]]
-  * [[http://www.ri.cmu.edu/pub_files/pub3/lucas_bruce_d_1981_1/lucas_bruce_d_1981_1.ps.gz| An iterative image registration technique with an application to stereo vision]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:BqipwSGYUEgC| Normalized cuts and image segmentation]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1467360| Histograms of oriented gradients for human detection]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1000236| Mean shift: A robust approach toward feature space analysis]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1095851| The Laplacian pyramid as a compact image code]]
-  * [[http://www.springerlink.com/index/xl887466h454318k.pdf| Condensation—conditional density propagation for visual tracking]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=323794| Good features to track]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=730558| A model of saliency-based visual attention for rapid scene analysis]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:u5HHmVD_uO8C| A performance evaluation of local descriptors]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=r5QkMysAAAAJ&amp;citation_for_view=r5QkMysAAAAJ:u5HHmVD_uO8C| Fast approximate energy minimization via graph cuts]]
-  * [[http://www.springerlink.com/index/E580H2K58434P02K.pdf| Surf: Speeded up robust features]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=655647| Neural network-based face detection]]
-  * [[http://redwood.psych.cornell.edu/papers/olshausen_field_nature_1996.pdf| Emergence of simple-cell receptive field properties by learning a sparse code for natural images]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:GnPB-g6toBAC| Shape matching and object recognition using shape contexts]]
-  * [[http://scholar.google.com/scholar?hl=en&amp;q=Shape+modeling+with+front+propagation%3A+A+level+set+approach&amp;btnG=&amp;as_sdt=1%2C22&amp;as_sdtp=| Shape modeling with front propagation: A level set approach]]
-  * [[http://www.springerlink.com/index/N4311327HR414P7J.pdf| The structure of images]]
-  * [[http://www.springerlink.com/index/Q3546R1363324L8R.pdf| Shape and motion from image streams under orthography: a factorization method]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=927467| Active appearance models]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:u-x6o8ySG0sC| Scale &amp; affine invariant interest point detectors]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:O3NaXMp0MMsC| Modeling and rendering architecture from photographs: A hybrid geometry-and image-based approach]]
-  * [[http://www.springerlink.com/index/TP404612X8171265.pdf| Feature extraction from faces using deformable templates]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Al8dyb4AAAAJ&amp;citation_for_view=Al8dyb4AAAAJ:BqipwSGYUEgC| Region competition: Unifying snakes, region growing, and Bayes/MDL for multiband image segmentation]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=xKOEaRoAAAAJ&amp;citation_for_view=xKOEaRoAAAAJ:u5HHmVD_uO8C| Beyond bags of features: Spatial pyramid matching for recognizing natural scene categories]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1000242| Face detection in color images]]
-  * [[http://www.springerlink.com/index/n8110427355x2312.pdf| Efficient graph-based image segmentation]]
-  * [[http://217.109.185.161/layout/set/print/content/download/20785/148346/file/2004_010.pdf| Visual categorization with bags of keypoints]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=j29kMCwAAAAJ&amp;citation_for_view=j29kMCwAAAAJ:u-x6o8ySG0sC| Object class recognition by unsupervised scale-invariant learning]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:ns9cj8rnVeAC| Recovering high dynamic range radiance maps from photographs]]
-  * [[http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:2osOgNQ5qMEC| A comparison of affine region detectors]]
-  * [[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1467486| A bayesian hierarchical model for learning natural scene categories]]
+  * [http://arxiv.org/pdf/1112.6209.pdf]( Building High-level Features Using Large Scale Unsupervised Learning)
+  * [http://www.springerlink.com/index/H4L02691327PX768.pdf]( Distinctive image features from scale-invariant keypoints)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=192463]( A theory for multiresolution signal decomposition: The wavelet representation)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4767851]( A computational approach to edge detection)
+  * [http://www.springerlink.com/index/q7g93335q86604x6.pdf]( Snakes: Active contour models)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4767596]( Stochastic relaxation, Gibbs distributions, and the Bayesian restoration of images)
+  * [http://www.mitpressjournals.org/doi/abs/10.1162/jocn.1991.3.1.71]( Eigenfaces for Recognition)
+  * [http://www.sciencedirect.com/science/article/pii/0004370281900242]( Determining optical flow)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=j29kMCwAAAAJ&amp;citation_for_view=j29kMCwAAAAJ:u5HHmVD_uO8C]( Scale-space and edge detection using anisotropic diffusion)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=G2-nFaIAAAAJ&amp;citation_for_view=G2-nFaIAAAAJ:u5HHmVD_uO8C]( Rapid object detection using a boosted cascade of simple features)
+  * [http://www.ri.cmu.edu/pub_files/pub3/lucas_bruce_d_1981_1/lucas_bruce_d_1981_1.ps.gz]( An iterative image registration technique with an application to stereo vision)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:BqipwSGYUEgC]( Normalized cuts and image segmentation)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1467360]( Histograms of oriented gradients for human detection)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1000236]( Mean shift: A robust approach toward feature space analysis)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1095851]( The Laplacian pyramid as a compact image code)
+  * [http://www.springerlink.com/index/xl887466h454318k.pdf]( Condensation—conditional density propagation for visual tracking)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=323794]( Good features to track)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=730558]( A model of saliency-based visual attention for rapid scene analysis)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:u5HHmVD_uO8C]( A performance evaluation of local descriptors)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=r5QkMysAAAAJ&amp;citation_for_view=r5QkMysAAAAJ:u5HHmVD_uO8C]( Fast approximate energy minimization via graph cuts)
+  * [http://www.springerlink.com/index/E580H2K58434P02K.pdf]( Surf: Speeded up robust features)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=655647]( Neural network-based face detection)
+  * [http://redwood.psych.cornell.edu/papers/olshausen_field_nature_1996.pdf]( Emergence of simple-cell receptive field properties by learning a sparse code for natural images)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:GnPB-g6toBAC]( Shape matching and object recognition using shape contexts)
+  * [http://scholar.google.com/scholar?hl=en&amp;q=Shape+modeling+with+front+propagation%3A+A+level+set+approach&amp;btnG=&amp;as_sdt=1%2C22&amp;as_sdtp=]( Shape modeling with front propagation: A level set approach)
+  * [http://www.springerlink.com/index/N4311327HR414P7J.pdf]( The structure of images)
+  * [http://www.springerlink.com/index/Q3546R1363324L8R.pdf]( Shape and motion from image streams under orthography: a factorization method)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=927467]( Active appearance models)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:u-x6o8ySG0sC]( Scale &amp; affine invariant interest point detectors)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:O3NaXMp0MMsC]( Modeling and rendering architecture from photographs: A hybrid geometry-and image-based approach)
+  * [http://www.springerlink.com/index/TP404612X8171265.pdf]( Feature extraction from faces using deformable templates)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Al8dyb4AAAAJ&amp;citation_for_view=Al8dyb4AAAAJ:BqipwSGYUEgC]( Region competition: Unifying snakes, region growing, and Bayes/MDL for multiband image segmentation)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=xKOEaRoAAAAJ&amp;citation_for_view=xKOEaRoAAAAJ:u5HHmVD_uO8C]( Beyond bags of features: Spatial pyramid matching for recognizing natural scene categories)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1000242]( Face detection in color images)
+  * [http://www.springerlink.com/index/n8110427355x2312.pdf]( Efficient graph-based image segmentation)
+  * [http://217.109.185.161/layout/set/print/content/download/20785/148346/file/2004_010.pdf]( Visual categorization with bags of keypoints)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=j29kMCwAAAAJ&amp;citation_for_view=j29kMCwAAAAJ:u-x6o8ySG0sC]( Object class recognition by unsupervised scale-invariant learning)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=oY9R5YQAAAAJ&amp;citation_for_view=oY9R5YQAAAAJ:ns9cj8rnVeAC]( Recovering high dynamic range radiance maps from photographs)
+  * [http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:2osOgNQ5qMEC]( A comparison of affine region detectors)
+  * [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1467486]( A bayesian hierarchical model for learning natural scene categories)
 
 ### Machine Learning
 
