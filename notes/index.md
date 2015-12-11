@@ -29,6 +29,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Research
  * [Computer Vision / Deep Learning]( {{site.baseurl}}/notes/research/ ) - Notes related to my current work, papers I am reading, and some random scribble
+ * [GPU Hardware & Infrastructure]( {{site.baseurl}}/notes/hardware/ ) - Notes related to GPU cluster, my experiences with building one, and latest in the field
 
 # Courses
 ## Computer Science
@@ -59,6 +60,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * LaTeX <http://wch.github.io/latexsheet/latexsheet.pdf>
   * Oh-My-Zsh <https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet>
   * Linux <https://gist.github.com/KamranMackey/5124174>
+  * Git <http://luisbg.blogalia.com//historias/76017>
 
  
 
