@@ -46,6 +46,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * <http://rocknrollnerd.github.io/>
   * <https://chrisjmccormick.wordpress.com/>
   * <http://www.wildml.com/>
+  * <https://recommend-papers.org/>
 
 # Awesome Lists
   * Awesome Deep Vision <https://github.com/kjw0612/awesome-deep-vision>
@@ -62,6 +63,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * Linux <https://gist.github.com/KamranMackey/5124174>
   * Git <http://luisbg.blogalia.com//historias/76017>
 
- 
+# Chess 
+  * [Chess]( {{site.baseurl}}/notes/chess/ ) - Chess, a wonderful game. My collection of articles, amusing facts, etc. I also use this link to share the often requested inputs.
 
 
