@@ -47,6 +47,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * <https://chrisjmccormick.wordpress.com/>
   * <http://www.wildml.com/>
   * <https://recommend-papers.org/>
+  * <http://inverseprobability.com/blog.html>
 
 # Awesome Lists
   * Awesome Deep Vision <https://github.com/kjw0612/awesome-deep-vision>

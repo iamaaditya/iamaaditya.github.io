@@ -9,6 +9,7 @@ dsq_thread_id:
 ## Tutorials 
  * Great Overview of Algorithms, almost like cheatsheet of various algorithms <http://algorithmiccomplexity.com/algorithms/>
  * Great overview of DataStructures, <http://algorithmiccomplexity.com/data-structures/>
+ * Also checkout <http://iamaaditya.github.io/notes/programming/>
 
 ## Visualization
 
