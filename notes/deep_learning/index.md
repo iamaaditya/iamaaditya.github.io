@@ -17,6 +17,7 @@ dsq_thread_id:
   * Initiating and launching Theano in Amazon AWS, step by step guide <http://blog.eduardovalle.com/tag/lenet/>
   * Galaxy Zoo Kaggle competition winner's description of his strategy and experience <http://benanne.github.io/2014/04/05/galaxy-zoo.html>
   * Single Artificial Neuron taught to recognize hundres of patterns <http://www.technologyreview.com/view/543486/single-artificial-neuron-taught-to-recognize-hundreds-of-patterns/>
+  * Deep-learning algorithm predicts photos’ memorability at “near-human” levels <http://news.mit.edu/2015/csail-deep-learning-algorithm-predicts-photo-memorability-near-human-levels-1215>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>
@@ -38,6 +39,8 @@ dsq_thread_id:
   * Large-scale CelebFaces Attributes (CelebA) Dataset <http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html>
   * Video Description Dataset <http://www.cs.utexas.edu/users/ml/clamp/videoDescription/>
 
+### Online Tools (Demos)
+  * LaMem (memorability) <http://memorability.csail.mit.edu/demo.html>
 ### Challenges 
   * THUMOS Challenge Action Recognition in Temporally Untrimmed Videos <http://www.thumos.info/home.html>
 

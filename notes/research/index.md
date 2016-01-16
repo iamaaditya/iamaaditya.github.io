@@ -10,6 +10,7 @@ dsq_thread_id:
  * How transferable are features in deep neural networks? <http://arxiv.org/abs/1411.1792>
  * On Learning to Think: Algorithmic Information Theory for Novel Combinations of Reinforcement Learning Controllers and Recurrent Neural World Models <http://arxiv.org/abs/1511.09249>
  * GENERATING IMAGES FROM CAPTIONS WITH ATTENTION <http://arxiv.org/pdf/1511.02793v1.pdf>
+ * Neural Program interpreters <http://www-personal.umich.edu/~reedscot/iclr_project.html>
 
 ## Recently read papers
  * Exploring Person Context and Local Scene Context for Object Detection <http://arxiv.org/pdf/1511.08177.pdf>
