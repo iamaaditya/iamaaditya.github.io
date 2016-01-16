@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://iamaaditya.github.io/2016/01/Deep-Learning-software-installation-guide-on-fresh-Ubuntu/</loc>
+    <lastmod>2016-01-15T00:00:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://iamaaditya.github.io/2015/02/extension-of-hidden-markov-models-formulas-in-two-state-hmm/</loc>
     <lastmod>2015-02-10T00:00:00-05:00</lastmod>
   </url>
@@ -83,22 +87,46 @@
     <loc>http://iamaaditya.github.io/about/</loc>
   </url>
   <url>
+    <loc>http://iamaaditya.github.io/notes/misc/gpgpu/</loc>
+  </url>
+  <url>
     <loc>http://iamaaditya.github.io/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/about/</loc>
+    <loc>http://iamaaditya.github.io/notes/programming/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/</loc>
+    <loc>http://iamaaditya.github.io/notes/machine_learning/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
+    <loc>http://iamaaditya.github.io/notes/misc/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/algorithms/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/papers/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/machine_learning/</loc>
+    <loc>http://iamaaditya.github.io/notes/probability_statistics/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/research/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/chess/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/about/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/temp/</loc>
@@ -159,5 +187,8 @@
     </url>
     <url>
       <loc>http://iamaaditya.github.io/2015/02/extension-of-hidden-markov-models-formulas-in-two-state-hmm/</loc>
+    </url>
+    <url>
+      <loc>http://iamaaditya.github.io/2016/01/Deep-Learning-software-installation-guide-on-fresh-Ubuntu/</loc>
     </url>
 </urlset>
