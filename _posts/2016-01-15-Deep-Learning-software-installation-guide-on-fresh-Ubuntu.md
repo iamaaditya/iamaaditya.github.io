@@ -13,16 +13,18 @@ tags:
   - deep learning
 ---
 
-Recently, I assembled a machine with 4 GPU (Titan X), a clone of [NVIDIA DevBox](https://developer.nvidia.com/devbox). There are few other blog posts which describe the hardware guide, so I will not go into the same detail. Please refer [this](https://www.facebook.com/notes/chris-lengerich/build-your-own-nvidia-devbox/10152999419281541). 
-Here are the actual list of parts I bought, [PCPart Picker](https://pcpartpicker.com/user/iamaaditya/saved/LPmZxr)
+Recently I assembled a machine with 4 GPU (Titan X), a clone of [NVIDIA DevBox](https://developer.nvidia.com/devbox). There are few other blog posts which describe the hardware guide, so I will not go into the same detail. Please refer [this](https://www.facebook.com/notes/chris-lengerich/build-your-own-nvidia-devbox/10152999419281541). 
+The actual list of parts I bought can be found [ at PCPart Picker](https://pcpartpicker.com/user/iamaaditya/saved/LPmZxr).
 
 However this blog post is about the software guide. Although, most of the researchers or grad students like me will have their own custom requirement I thought I should share my software installation guide, for someone who might be new and would benefit from some of these. I have had to do this process couple of times now, and I have learned from my mistakes.
 
-NOTE 1: If getting maximum performance is not a requirement, I would suggest the reader to download Docker Images for Deep Learning packages freely available online, [for e.g](https://hub.docker.com/r/kaixhin/cuda-theano/). Time required for all these standalone installation is justified only when these are going to be used over and again, for e.g in a research lab.
+NOTE 1: **Docker** :  If getting maximum performance is not a requirement, I would suggest the reader to download Docker Images for Deep Learning packages freely available online, [for e.g](https://hub.docker.com/r/kaixhin/cuda-theano/). Time required for all these standalone installation is justified only when these are going to be used over and again, for e.g in a research lab.
 
-NOTE 2: Some of the commands can be combined to be done in a single line, especially installing libs from apt-get. But I prefer to run them one at a time, for more control and feedback on installation process.
+NOTE 2: **Redundancy** : Some of the commands can be combined to be done in a single line, especially installing libs from apt-get. But I prefer to run them one at a time, for more control and feedback on installation process.
 
-NOTE 3: While most of the scientific community is moving on with Python 3, it seems Deep Learning communmmunty is happy with Python 2. Thus all instllations except where mentioned pertain to Python 2.7.
+NOTE 3: **Python 2** : While most of the scientific community is moving on with Python 3, it seems Deep Learning communmmunty is happy with Python 2. Thus all instllations except where mentioned pertain to Python 2.7.
+
+NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installations with Anaconda, but it becomes messy with smaller libs, and also compiling OpenCV. More importantly, I do not need all the utils of Anaconda, and on this machine I would like to minimize the libs installed.
 
 # Upgrade the Ubuntu
 ---
@@ -103,6 +105,7 @@ NOTE 3: While most of the scientific community is moving on with Python 3, it se
 ## Install CuDNN
   CuDNN improves the performance of deep learning libraries. Unfornately, not all of them work with latest version. Google's Tensorflow requires v2, Theano & Caffe works with v3, whereas latest version is 4.
   To get the library you will have to register at [NVIDIA CuDNN](https://developer.nvidia.com/cudnn)
+
   * Download the archive folder
   * `cd <extracted_directory>`
   * `export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH`
