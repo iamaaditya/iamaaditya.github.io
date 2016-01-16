@@ -118,7 +118,7 @@ UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults
 
 &lt;h2&gt;Install NVIDIA Drivers&lt;/h2&gt;
 
-&lt;p&gt;I would highly advice against installing using apt-get as it always installs one version older, and with NVIDIA every generation of driver brings performance boosts.&lt;/p&gt;
+&lt;p&gt;I would highly advice against installation using apt-get as it always installs one version older, and with NVIDIA every generation of driver brings performance boosts.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo service lightdm stop&lt;/code&gt;   # stop the X server before running the installation
@@ -133,6 +133,18 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 &lt;li&gt;&lt;code&gt;sudo ln -s /usr/bin/g++-4.8 /usr/local/cuda/bin/g++&lt;/code&gt;   # this might be omitted if a symbolic link has been made from /usr/bin/g++ like mentioned above&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo ln -s /usr/bin/gcc-4.8 /usr/local/cuda/bin/gcc&lt;/code&gt;   # this might be omitted if a symbolic link has been made from /usr/bin/gcc like mentioned above&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2&gt;Install CuDNN&lt;/h2&gt;
+
+&lt;p&gt;CuDNN improves the performance of deep learning libraries. Unfornately, not all of them work with latest version. Google&amp;#39;s Tensorflow requires v2, Theano &amp;amp; Caffe works with v3, whereas latest version is 4.
+  To get the library you will have to register at &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;NVIDIA CuDNN&lt;/a&gt;
+  * Download the archive folder
+  * &lt;code&gt;cd &amp;lt;extracted_directory&amp;gt;&lt;/code&gt;
+  * &lt;code&gt;export LD_LIBRARY_PATH=&lt;/code&gt;pwd&lt;code&gt;:$LD_LIBRARY_PATH&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Although not required, I find it useful to rather install both the version of CuDNN (2 and 3). Put the libs of v2 in CUDA 6.5 or CUDA 7.0 (for Tensorflow), and v3 in CUDA 7.5.&lt;/p&gt;
+
+&lt;h2&gt;To be updated with instructions for Caffe &amp;amp; Nervana&lt;/h2&gt;
 
 &lt;h1&gt;Install GPU Libraries&lt;/h1&gt;
 

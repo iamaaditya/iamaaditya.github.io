@@ -89,7 +89,7 @@ NOTE 3: While most of the scientific community is moving on with Python 3, it se
 ---
 
 ## Install NVIDIA Drivers
-  I would highly advice against installing using apt-get as it always installs one version older, and with NVIDIA every generation of driver brings performance boosts.
+  I would highly advice against installation using apt-get as it always installs one version older, and with NVIDIA every generation of driver brings performance boosts.
 
   * `sudo service lightdm stop       `   # stop the X server before running the installation
     NOTE! Could not sign kernels, make a note of this. It might lead to problems with some libraries later on
@@ -99,6 +99,17 @@ NOTE 3: While most of the scientific community is moving on with Python 3, it se
   * `sudo ./cuda_7.0.28_linux.run --override  `   # for cuda 7.0
   * `sudo ln -s /usr/bin/g++-4.8 /usr/local/cuda/bin/g++ `   # this might be omitted if a symbolic link has been made from /usr/bin/g++ like mentioned above
   * `sudo ln -s /usr/bin/gcc-4.8 /usr/local/cuda/bin/gcc `   # this might be omitted if a symbolic link has been made from /usr/bin/gcc like mentioned above
+
+## Install CuDNN
+  CuDNN improves the performance of deep learning libraries. Unfornately, not all of them work with latest version. Google's Tensorflow requires v2, Theano & Caffe works with v3, whereas latest version is 4.
+  To get the library you will have to register at [NVIDIA CuDNN](https://developer.nvidia.com/cudnn)
+  * Download the archive folder
+  * `cd <extracted_directory>`
+  * `export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH`
+
+  Although not required, I find it useful to rather install both the version of CuDNN (2 and 3). Put the libs of v2 in CUDA 6.5 or CUDA 7.0 (for Tensorflow), and v3 in CUDA 7.5.
+
+## To be updated with instructions for Caffe & Nervana
 
 # Install GPU Libraries
 ---
