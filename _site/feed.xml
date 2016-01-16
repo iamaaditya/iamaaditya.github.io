@@ -13,9 +13,11 @@ Here are the actual list of parts I bought, &lt;a href=&quot;https://pcpartpicke
 
 &lt;p&gt;However this blog post is about the software guide. Although, most of the researchers or grad students like me will have their own custom requirement I thought I should share my software installation guide, for someone who might be new and would benefit from some of these. I have had to do this process couple of times now, and I have learned from my mistakes.&lt;/p&gt;
 
-&lt;p&gt;NOTE 1: If getting maximum performance is not a requirement, I would suggest the reader to download Docker Images for Deep Learning packages freely available online. Cost of time required for all these standalone installation is justified only when these are going to be used over and again, for e.g in a research lab.&lt;/p&gt;
+&lt;p&gt;NOTE 1: If getting maximum performance is not a requirement, I would suggest the reader to download Docker Images for Deep Learning packages freely available online, &lt;a href=&quot;https://hub.docker.com/r/kaixhin/cuda-theano/&quot;&gt;for e.g&lt;/a&gt;. Time required for all these standalone installation is justified only when these are going to be used over and again, for e.g in a research lab.&lt;/p&gt;
 
-&lt;p&gt;NOTE 2: Some of the commands can be combined to be done in single line, especially installing libs from apt-get. But I prefer to run them one at a time, for more control and feedback on installation process.&lt;/p&gt;
+&lt;p&gt;NOTE 2: Some of the commands can be combined to be done in a single line, especially installing libs from apt-get. But I prefer to run them one at a time, for more control and feedback on installation process.&lt;/p&gt;
+
+&lt;p&gt;NOTE 3: While most of the scientific community is moving on with Python 3, it seems Deep Learning communmmunty is happy with Python 2. Thus all instllations except where mentioned pertain to Python 2.7.&lt;/p&gt;
 
 &lt;h1&gt;Upgrade the Ubuntu&lt;/h1&gt;
 
@@ -35,7 +37,7 @@ Here are the actual list of parts I bought, &lt;a href=&quot;https://pcpartpicke
 
 &lt;h2&gt;Partition and mount the harddrives&lt;/h2&gt;
 
-&lt;p&gt;Since my configuration has two HDD of 3 TB, I have configured them as RAID 1, this provides data redundancy. You do not want to lose weeks worth of training due to HDD crash !&lt;/p&gt;
+&lt;p&gt;Since my configuration has two HDD of 3 TB, I have configured them as RAID 1, this provides data redundancy. You do not want to lose weeks worth of training due to HDD crash ! If you do not want RAID 1, then skip this step.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y mdadm&lt;/code&gt;   # Install mdadm, tool to manage RAID 1&lt;/li&gt;
@@ -45,15 +47,13 @@ Here are the actual list of parts I bought, &lt;a href=&quot;https://pcpartpicke
 &lt;h2&gt;Mounting&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;df -aTh&lt;/code&gt;   # shows list of all mounts
-### Manual mount&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo mount /dev/md0 /media/hdd/&lt;/code&gt;   # mount existing 
-### Mount permanently&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;df -aTh&lt;/code&gt;   # shows list of all mounts&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo mount /dev/md0 /media/hdd/&lt;/code&gt;   # (Manual) mount existing &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;blkid&lt;/code&gt;   # shows uuid for drives to add to fstab
 Add the following line to /etc/fstab
 # the RAID 1 mount of two hdd
 UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults    0    1&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo mount -a&lt;/code&gt;   # mount using fstab&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo mount -a&lt;/code&gt;   # (Permanent) mount using fstab&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1&gt;Install Essentials, Extras, Git, Zsh&lt;/h1&gt;
@@ -107,7 +107,7 @@ UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults
 &lt;h2&gt;Python3 and Ipython (Jupyter)&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install python3-pip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get install python3-pip&lt;/code&gt;  # to install jupyter for python3, it needs pip3 and does not work using pip&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo pip install jupyter&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo pip3 install jupyter&lt;/code&gt;   # I don&amp;#39;t know why it requires sepearate installation, especially when not done using Anaconda !&lt;/li&gt;
 &lt;/ul&gt;
@@ -155,13 +155,13 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 &lt;h2&gt;Keras&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install keras&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install keras&lt;/code&gt;  # Could it get any easier !! Thanks people developer of Keras !&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Lasagne&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip&lt;/code&gt;  # Preferred way to install Lasagne !&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1&gt;Optional&lt;/h1&gt;
@@ -207,7 +207,7 @@ Note - if some aspects of powerline does not show up, check &lt;a href=&quot;htt
 &lt;/ul&gt;
 
 &lt;p&gt;If you are curious on what this customization looks like, take a look at this screenshot. Here it shows Tmux session with multiple windows, and a multiple panes in the same window. Switching windows and panes in Tmux is very easy. Copy information across windows, sessions and servers is really at the tip of the finger. Also Solarized colors make it tolerable to use the screen for hours.
-  &lt;img src=&quot;https://github.com/iamaaditya&quot; alt=&quot;screenshot&quot;&gt;&lt;/p&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Screenshot.png&quot; alt=&quot;screenshot&quot;&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Jan 2016 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2016/01/Deep-Learning-software-installation-guide-on-fresh-Ubuntu/</link>

@@ -18,9 +18,11 @@ Here are the actual list of parts I bought, [PCPart Picker](https://pcpartpicker
 
 However this blog post is about the software guide. Although, most of the researchers or grad students like me will have their own custom requirement I thought I should share my software installation guide, for someone who might be new and would benefit from some of these. I have had to do this process couple of times now, and I have learned from my mistakes.
 
-NOTE 1: If getting maximum performance is not a requirement, I would suggest the reader to download Docker Images for Deep Learning packages freely available online. Cost of time required for all these standalone installation is justified only when these are going to be used over and again, for e.g in a research lab.
+NOTE 1: If getting maximum performance is not a requirement, I would suggest the reader to download Docker Images for Deep Learning packages freely available online, [for e.g](https://hub.docker.com/r/kaixhin/cuda-theano/). Time required for all these standalone installation is justified only when these are going to be used over and again, for e.g in a research lab.
 
-NOTE 2: Some of the commands can be combined to be done in single line, especially installing libs from apt-get. But I prefer to run them one at a time, for more control and feedback on installation process.
+NOTE 2: Some of the commands can be combined to be done in a single line, especially installing libs from apt-get. But I prefer to run them one at a time, for more control and feedback on installation process.
+
+NOTE 3: While most of the scientific community is moving on with Python 3, it seems Deep Learning communmmunty is happy with Python 2. Thus all instllations except where mentioned pertain to Python 2.7.
 
 # Upgrade the Ubuntu
 ---
@@ -33,21 +35,19 @@ NOTE 2: Some of the commands can be combined to be done in single line, especial
 # RAID 1
 ---
 ## Partition and mount the harddrives
-  Since my configuration has two HDD of 3 TB, I have configured them as RAID 1, this provides data redundancy. You do not want to lose weeks worth of training due to HDD crash !
+  Since my configuration has two HDD of 3 TB, I have configured them as RAID 1, this provides data redundancy. You do not want to lose weeks worth of training due to HDD crash ! If you do not want RAID 1, then skip this step.
 
   * `sudo apt-get install -y mdadm   `   # Install mdadm, tool to manage RAID 1
   * `sudo mdadm --assemble --scan    `   # check for existing raids ## found existing !! If not prepare, refer tutorial here <http://askubuntu.com/questions/526747/setting-up-raid-1-on-14-04-with-an-existing-drive>
 
 ## Mounting
   * `df -aTh                         `   # shows list of all mounts
-  ### Manual mount
-  * `sudo mount /dev/md0 /media/hdd/ `   # mount existing 
-  ### Mount permanently
+  * `sudo mount /dev/md0 /media/hdd/ `   # (Manual) mount existing 
   * `blkid                           `   # shows uuid for drives to add to fstab
   Add the following line to /etc/fstab
     # the RAID 1 mount of two hdd
     UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults    0    1
-  * `sudo mount -a                   `   # mount using fstab
+  * `sudo mount -a                   `   # (Permanent) mount using fstab
 
 # Install Essentials, Extras, Git, Zsh 
 ---
@@ -81,7 +81,7 @@ NOTE 2: Some of the commands can be combined to be done in single line, especial
   * `sudo pip install markupsafe`
 
 ## Python3 and Ipython (Jupyter)
-  * `sudo apt-get install python3-pip`
+  * `sudo apt-get install python3-pip`  # to install jupyter for python3, it needs pip3 and does not work using pip
   * `sudo pip install jupyter`
   * `sudo pip3 install jupyter `   # I don't know why it requires sepearate installation, especially when not done using Anaconda !
    
@@ -112,10 +112,10 @@ NOTE 2: Some of the commands can be combined to be done in single line, especial
 >  Tensorflow (as of Jan 15, 2016), works on Cuda 7.0 and CuDNN v2 ), thus change /usr/local/cuda softlink
 
 ## Keras
-  * `sudo pip install keras`
+  * `sudo pip install keras`  # Could it get any easier !! Thanks people developer of Keras !
 
 ## Lasagne
-  * `sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip`
+  * `sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip`  # Preferred way to install Lasagne !
 
 # Optional
 ---
@@ -154,4 +154,4 @@ NOTE 2: Some of the commands can be combined to be done in single line, especial
 
 
   If you are curious on what this customization looks like, take a look at this screenshot. Here it shows Tmux session with multiple windows, and a multiple panes in the same window. Switching windows and panes in Tmux is very easy. Copy information across windows, sessions and servers is really at the tip of the finger. Also Solarized colors make it tolerable to use the screen for hours.
-  ![screenshot](https://github.com/iamaaditya)
+  ![screenshot](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Screenshot.png)
