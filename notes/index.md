@@ -67,4 +67,5 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Chess 
   * [Chess]( {{site.baseurl}}/notes/chess/ ) - Chess, a wonderful game. My collection of articles, amusing facts, etc. I also use this link to share the often requested inputs.
 
-
+# Books
+  * [Books]( {{site.baseurl}}/notes/books/ ) - List of books I intend to read, reading or just a general recommendation for anyone looking for great book to read.

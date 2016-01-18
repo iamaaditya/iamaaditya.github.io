@@ -15,8 +15,5 @@ dsq_thread_id:
 ## Tutorial (Programming)
   * Khan Academy - JS, HTML/CSS, Advanced JS, SQL; starts very basic, a complete introduction and mostly interactive <https://www.khanacademy.org/computing/computer-programming>
   * How to think like a Computer Scientist - Introduction to programming and Python - Completely interactive <http://interactivepython.org/courselib/static/thinkcspy/index.html>
+  * Programming Python (nice and concise) (incl. videos in the side links) <http://pythonprogramminglanguage.com/>
 
-
-
-## Articles 
- * 
