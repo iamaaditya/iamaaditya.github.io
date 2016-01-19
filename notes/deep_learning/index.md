@@ -18,6 +18,7 @@ dsq_thread_id:
   * Galaxy Zoo Kaggle competition winner's description of his strategy and experience <http://benanne.github.io/2014/04/05/galaxy-zoo.html>
   * Single Artificial Neuron taught to recognize hundres of patterns <http://www.technologyreview.com/view/543486/single-artificial-neuron-taught-to-recognize-hundreds-of-patterns/>
   * Deep-learning algorithm predicts photos’ memorability at “near-human” levels <http://news.mit.edu/2015/csail-deep-learning-algorithm-predicts-photo-memorability-near-human-levels-1215>
+  * A brief history of Neural Nets and Deep Learning, Part 1 <http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>

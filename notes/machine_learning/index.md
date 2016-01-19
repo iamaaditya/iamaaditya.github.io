@@ -12,6 +12,10 @@ dsq_thread_id:
  * MCMC Sampling, tutorial and code <http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/>
  * Software tutorial, compilation (incl. Pandas) <https://github.com/hangtwenty/dive-into-machine-learning>
  * Recurrent Neural Network (3 part series) <http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/>
+ * Implementing a Neural Network from scratch <http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/>
+
+## Datasets
+ * Publicly available datasets github <http://www.kdnuggets.com/2015/04/awesome-public-datasets-github.html>
 
 ## Articles 
  * Weak Learning and Boosting <http://jeremykun.com/2015/05/18/boosting-census/>

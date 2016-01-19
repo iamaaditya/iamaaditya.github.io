@@ -17,3 +17,6 @@ dsq_thread_id:
   * How to think like a Computer Scientist - Introduction to programming and Python - Completely interactive <http://interactivepython.org/courselib/static/thinkcspy/index.html>
   * Programming Python (nice and concise) (incl. videos in the side links) <http://pythonprogramminglanguage.com/>
 
+## Articles
+  * How to C in 2016 <https://matt.sh/howto-c>
+
