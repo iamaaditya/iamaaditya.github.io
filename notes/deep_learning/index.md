@@ -19,6 +19,7 @@ dsq_thread_id:
   * Single Artificial Neuron taught to recognize hundres of patterns <http://www.technologyreview.com/view/543486/single-artificial-neuron-taught-to-recognize-hundreds-of-patterns/>
   * Deep-learning algorithm predicts photos’ memorability at “near-human” levels <http://news.mit.edu/2015/csail-deep-learning-algorithm-predicts-photo-memorability-near-human-levels-1215>
   * A brief history of Neural Nets and Deep Learning, Part 1 <http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/>
+  * The Top A.I. Breakthroughs of 2015 <http://futureoflife.org/2015/12/29/the-top-a-i-breakthroughs-of-2015/>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>
@@ -29,12 +30,26 @@ dsq_thread_id:
   * Recurrent Neural Networks <http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/>
   * Hacker's Guide to Neural Networks  (Detailed tutorial on writing your own code for NN) <http://karpathy.github.io/neuralnets/>
   * Crash course in learning theory <https://blogs.princeton.edu/imabandit/2015/10/13/crash-course-on-learning-theory-part-1/> (Also has part 2)
+  * Restricted Bolztman machines, very simplified <http://rocknrollnerd.github.io/ml/2015/07/14/memory-is-a-lazy-mistress.html> 
+  * General Bolztman machines, very simplified <http://rocknrollnerd.github.io/ml/2015/07/18/general-boltzmann-machines.html>
+  * End to End tensorflow examples <https://bcomposes.wordpress.com/2015/11/26/simple-end-to-end-tensorflow-examples/>
 
 ### Courses 
   * <https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/>
   * <https://computing.ece.vt.edu/~f15ece6504/>
   * <https://cs231n.github.io/>
   * <http://videolectures.net/deeplearning2015_montreal/>
+  * <https://www.udacity.com/course/deep-learning--ud730>
+
+### Deep Learning frameworks
+  * Comparision of frameworks <https://github.com/zer0n/deepframeworks/>
+  * Benchmarking of Convnets <https://github.com/soumith/convnet-benchmarks>
+  * Caffe
+  * Theano
+  * Tensorflow
+  * Torch
+  * Neon (Nervana)
+
 
 ### Datasets 
   * Large-scale CelebFaces Attributes (CelebA) Dataset <http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html>
@@ -42,6 +57,7 @@ dsq_thread_id:
 
 ### Online Tools (Demos)
   * LaMem (memorability) <http://memorability.csail.mit.edu/demo.html>
+
 ### Challenges 
   * THUMOS Challenge Action Recognition in Temporally Untrimmed Videos <http://www.thumos.info/home.html>
 

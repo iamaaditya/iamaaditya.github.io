@@ -13,6 +13,8 @@ dsq_thread_id:
  * Software tutorial, compilation (incl. Pandas) <https://github.com/hangtwenty/dive-into-machine-learning>
  * Recurrent Neural Network (3 part series) <http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/>
  * Implementing a Neural Network from scratch <http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/>
+ * Machine Learning iPython Notebook <https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb>
+ * Dive into Machine Learning <https://github.com/hangtwenty/dive-into-machine-learning>
 
 ## Datasets
  * Publicly available datasets github <http://www.kdnuggets.com/2015/04/awesome-public-datasets-github.html>
@@ -20,3 +22,8 @@ dsq_thread_id:
 ## Articles 
  * Weak Learning and Boosting <http://jeremykun.com/2015/05/18/boosting-census/>
  * Choosing an algorithm <http://scikit-learn.org/stable/tutorial/machine_learning_map/>
+ * Current state of machine intelligence <https://www.oreilly.com/ideas/the-current-state-of-machine-intelligence-2-0?utm_source=digg>
+
+## Blogs
+ * Alex Woods <http://alexhwoods.com/>
+ * KDnuggets (list of other blogs) <http://www.kdnuggets.com/websites/blogs.html>
