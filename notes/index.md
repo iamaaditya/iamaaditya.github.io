@@ -64,8 +64,8 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * Linux <https://gist.github.com/KamranMackey/5124174>
   * Git <http://luisbg.blogalia.com//historias/76017>
 
-# Chess 
+# Misc
   * [Chess]( {{site.baseurl}}/notes/chess/ ) - Chess, a wonderful game. My collection of articles, amusing facts, etc. I also use this link to share the often requested inputs.
-
-# Books
   * [Books]( {{site.baseurl}}/notes/books/ ) - List of books I intend to read, reading or just a general recommendation for anyone looking for great book to read.
+  * [Climbing]( {{site.baseurl}}/notes/climbing/ ) - Interesting articles about rock climbing, techniques, some cool videos from competitions or outdoor climbing and great climbers to follow on instagram.
+  * [Name]( {{site.baseurl}}/notes/name/ ) - The etymology, meaning, and history behind my name - Aaditya (or Aditya or Adi)?

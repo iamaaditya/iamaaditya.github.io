@@ -30,6 +30,7 @@ dsq_thread_id:
  * Ask Me Anything: Dynamic Memory Networks for Natural Language Processing <http://arxiv.org/pdf/1506.07285v3.pdf>
  * Object detectors emerge in deep scene cnns <http://arxiv.org/pdf/1412.6856v2.pdf>
  * 21 hottest papers from ICCV 2015 <http://www.computervisionblog.com/2015/12/iccv-2015-twenty-one-hottest-research.html>
+ * Memory Networks <http://arxiv.org/abs/1410.3916>
 
 ## Libraries currenty of interest
  * <https://github.com/karpathy/neuraltalk2>

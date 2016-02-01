@@ -13,16 +13,11 @@ dsq_thread_id:
 
 ### <a name="biography" id="biography"></a>Biography
 
-I am a PhD Student at Brandeis University. My research focus is in application of deep learning in problems of computer vision. Before joining grad school I was a Senior Systems Engineer at Infosys Limited. I am from Kathmandu, Nepal. My name means "Sun", and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love rock climbing, running, playing chess and listening to classical Indian songs.
-
-
-### Links
+I am a PhD Student at Brandeis University. My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at Infosys Limited. I am from Kathmandu, Nepal. My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/)], running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
 
 *   [CV [pdf]](http://www.cs.brandeis.edu//~aprakash/CV.pdf)
-*   [Research](http://aaditya.info/research)
-*   [Blog](http://aaditya.info/blog)
-
-
+*   [Blog]({{site.url}})
+*   [Notes]({{site.baseurl}}/notes/)
 
 
 ### Publications

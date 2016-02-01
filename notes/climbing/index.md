@@ -14,7 +14,9 @@ dsq_thread_id:
 
 
 ## Videos
+ * Slow motion - hard problems from Bouldering world cup at Vail, 2014 - excellent watch, 4.5 minutes <https://www.youtube.com/watch?v=SOsT1lEYp7A>
 
 
 
 ## Climbers to follow (links to instagram)
+ * Alex Puccio <https://www.instagram.com/alex_puccio89/>

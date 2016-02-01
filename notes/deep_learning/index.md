@@ -44,11 +44,12 @@ dsq_thread_id:
 ### Deep Learning frameworks
   * Comparision of frameworks <https://github.com/zer0n/deepframeworks/>
   * Benchmarking of Convnets <https://github.com/soumith/convnet-benchmarks>
-  * Caffe
-  * Theano
-  * Tensorflow
-  * Torch
+  * Caffe (UC Berkeley)
+  * Theano (LISA Lab, Univ of Montreal)
+  * Tensorflow (Google)
+  * Torch (Facebook)
   * Neon (Nervana)
+  * CNTK (Microsoft)
 
 
 ### Datasets 

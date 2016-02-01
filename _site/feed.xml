@@ -68,6 +68,7 @@ UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y vim&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y git&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y git-core&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;`sudo apt-get install -y checkinstall # allows for easy install/uninstall of packages from source&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y zsh&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y tmux&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y CMake&lt;/code&gt;&lt;/li&gt;
@@ -104,6 +105,7 @@ UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults
 &lt;li&gt;&lt;code&gt;sudo pip install -U scikit-learn&lt;/code&gt;   # Requires numpy and scipy&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo pip install nose&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo pip install markupsafe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;`sudo pip install h5py&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Python3 and Ipython (Jupyter)&lt;/h2&gt;
@@ -149,7 +151,18 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 
 &lt;p&gt;Although not required, I find it useful to rather install both the version of CuDNN (2 and 3). Put the libs of v2 in CUDA 6.5 or CUDA 7.0 (for Tensorflow), and v3 in CUDA 7.5.&lt;/p&gt;
 
-&lt;h2&gt;To be updated with instructions for Caffe &amp;amp; Nervana&lt;/h2&gt;
+&lt;h1&gt;Install OpenCV&lt;/h1&gt;
+
+&lt;p&gt;This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caffe, I did not have to tweak the settings, and pretty much their provided instructions worked.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download OpenCV from http://opencv.org/downloads.html and unpack. Enter the unpacked directory. Execute:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;mkdir build &amp;amp;&amp;amp; cd build/ # If you have Oh-my-zsh then just &lt;code&gt;take build&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cmake -D CMAKE&lt;em&gt;BUILD&lt;/em&gt;TYPE=RELEASE -D CMAKE&lt;em&gt;INSTALL&lt;/em&gt;PREFIX=/usr/local -D WITH&lt;em&gt;TBB=ON -D WITH&lt;/em&gt;V4L=ON -D WITH&lt;em&gt;QT=ON -D WITH&lt;/em&gt;OPENGL=ON ..&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;make -j12 # j 12 makes 12 parallel processes using all the cores to speed up the process, in a single core, the build might take couple of hours.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sudo checkinstall # to create the deb package, and install it.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1&gt;Install GPU Libraries&lt;/h1&gt;
 
@@ -180,6 +193,8 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip&lt;/code&gt;  # Preferred way to install Lasagne !&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2&gt;To be updated with instructions for Caffe &amp;amp; Nervana&lt;/h2&gt;
 
 &lt;h1&gt;Optional&lt;/h1&gt;
 

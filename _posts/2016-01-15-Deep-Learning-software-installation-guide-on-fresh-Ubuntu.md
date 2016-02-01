@@ -58,6 +58,7 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
   * `sudo apt-get install -y vim`
   * `sudo apt-get install -y git`
   * `sudo apt-get install -y git-core`
+  * `sudo apt-get install -y checkinstall # allows for easy install/uninstall of packages from source
   * `sudo apt-get install -y zsh`
   * `sudo apt-get install -y tmux`
   * `sudo apt-get install -y CMake`
@@ -81,6 +82,7 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
   * `sudo pip install -U scikit-learn `   # Requires numpy and scipy
   * `sudo pip install nose`
   * `sudo pip install markupsafe`
+  * `sudo pip install h5py
 
 ## Python3 and Ipython (Jupyter)
   * `sudo apt-get install python3-pip`  # to install jupyter for python3, it needs pip3 and does not work using pip
@@ -112,7 +114,22 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
 
   Although not required, I find it useful to rather install both the version of CuDNN (2 and 3). Put the libs of v2 in CUDA 6.5 or CUDA 7.0 (for Tensorflow), and v3 in CUDA 7.5.
 
-## To be updated with instructions for Caffe & Nervana
+# Install OpenCV
+
+This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caffe, I did not have to tweak the settings, and pretty much their provided instructions worked.
+
+ * sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip
+
+ * Download OpenCV from http://opencv.org/downloads.html and unpack. Enter the unpacked directory. Execute:
+
+ * mkdir build && cd build/ # If you have Oh-my-zsh then just `take build`
+
+ * cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..
+
+ * make -j12 # j 12 makes 12 parallel processes using all the cores to speed up the process, in a single core, the build might take couple of hours.
+
+ * sudo checkinstall # to create the deb package, and install it.
+
 
 # Install GPU Libraries
 ---
@@ -130,6 +147,8 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
 
 ## Lasagne
   * `sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip`  # Preferred way to install Lasagne !
+
+## To be updated with instructions for Caffe & Nervana
 
 # Optional
 ---
