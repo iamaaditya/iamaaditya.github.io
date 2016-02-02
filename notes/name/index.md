@@ -18,7 +18,7 @@ dsq_thread_id:
 
  According to Hindu mythology, Aditi is mother of Aditya(s). All the twelve sons of Aditi are collectively called [Āadityas](https://en.wikipedia.org/wiki/%C4%80dityas)
 
- In the tenth chapter of Bhagwad Gita (the holy book of Hindus), Lord Krishna when describing is majestic form to Arjun, says --
+ In the tenth chapter of Bhagwad Gita (the holy book of Hindus), Lord Krishna when describing His majestic form to Arjun, says --
 
                                             adityanam aham visnur
                                             jyotisam ravir amsuman

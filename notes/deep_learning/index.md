@@ -20,6 +20,7 @@ dsq_thread_id:
   * Deep-learning algorithm predicts photos’ memorability at “near-human” levels <http://news.mit.edu/2015/csail-deep-learning-algorithm-predicts-photo-memorability-near-human-levels-1215>
   * A brief history of Neural Nets and Deep Learning, Part 1 <http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/>
   * The Top A.I. Breakthroughs of 2015 <http://futureoflife.org/2015/12/29/the-top-a-i-breakthroughs-of-2015/>
+  * How convolutional neural networks see the world <http://blog.keras.io/how-convolutional-neural-networks-see-the-world.html>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>

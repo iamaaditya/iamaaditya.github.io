@@ -63,6 +63,7 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
   * `sudo apt-get install -y tmux`
   * `sudo apt-get install -y CMake`
   * `sudo apt-get install -y libopenblas-dev`
+  * `sudo apt-get install -y libhdf5-dev
   * `sudo apt-get install -y gcc-4.8 `   # because CUDA (7.0 & 7.5) works will less than 4.9.0
     * make soft link for gcc in /usr/bin
   * `sudo apt-get install -y g++-4.8 `   # because CUDA (7.0 & 7.5) works will less than 4.9.0

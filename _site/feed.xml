@@ -73,6 +73,7 @@ UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y tmux&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y CMake&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y libopenblas-dev&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;`sudo apt-get install -y libhdf5-dev&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y gcc-4.8&lt;/code&gt;   # because CUDA (7.0 &amp;amp; 7.5) works will less than 4.9.0
 
 &lt;ul&gt;

@@ -5,6 +5,8 @@ layout: page
 dsq_thread_id:
   - 
 ---
+## Sub-pages
+ * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/) 
 
 ## Burning thoughts 
  * Distributed representation (of features)
