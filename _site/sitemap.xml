@@ -96,10 +96,13 @@
     <loc>http://iamaaditya.github.io/notes/features/</loc>
   </url>
   <url>
+    <loc>http://iamaaditya.github.io/notes/machine_learning/</loc>
+  </url>
+  <url>
     <loc>http://iamaaditya.github.io/notes/algorithms/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/probability_statistics/</loc>
+    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/misc/</loc>
@@ -111,13 +114,16 @@
     <loc>http://iamaaditya.github.io/notes/papers/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/machine_learning/</loc>
+    <loc>http://iamaaditya.github.io/notes/probability_statistics/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/climbing/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
+    <loc>http://iamaaditya.github.io/notes/name/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/research/transfer/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/research/cnn/</loc>
@@ -132,7 +138,7 @@
     <loc>http://iamaaditya.github.io/notes/books/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/name/</loc>
+    <loc>http://iamaaditya.github.io/notes/visualization/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/</loc>

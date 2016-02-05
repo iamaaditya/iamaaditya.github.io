@@ -7,13 +7,13 @@ dsq_thread_id:
 ---
 ## Sub-pages
  * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/) 
+ * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/)
 
 ## Burning thoughts 
  * Distributed representation (of features)
    > Can you learn X, Y, and detect X + Y ?
  * Can you tell the difference between an artificially generated image and a real image ? (Generative image models : <http://arxiv.org/abs/1506.05751> )
  * Saliency map and guided backpropagation <https://github.com/Lasagne/Recipes/blob/master/examples/Saliency%20Maps%20and%20Guided%20Backpropagation.ipynb>
-
 
 ## Papers reading currently
  * How transferable are features in deep neural networks? <http://arxiv.org/abs/1411.1792>
@@ -25,7 +25,6 @@ dsq_thread_id:
  * Exploring Person Context and Local Scene Context for Object Detection <http://arxiv.org/pdf/1511.08177.pdf>
  * DeCAF: A Deep Convolutional Activation Feature for Generic Visual Recognition <http://arxiv.org/pdf/1310.1531v1.pdf>
  * On Learning Where To Look <http://www.cs.toronto.edu/~ranzato/publications/ranzato_arxiv14.pdf>
-
 
 ## Papers of interest
  * Human-level concept learning through probabilistic program induction <http://science.sciencemag.org/content/350/6266/1332.abstract>

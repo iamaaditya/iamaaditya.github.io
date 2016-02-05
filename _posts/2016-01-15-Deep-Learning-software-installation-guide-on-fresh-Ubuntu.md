@@ -83,7 +83,10 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
   * `sudo pip install -U scikit-learn `   # Requires numpy and scipy
   * `sudo pip install nose`
   * `sudo pip install markupsafe`
-  * `sudo pip install h5py
+  * `sudo pip install h5py`
+  * `sudo pip install nltk`
+  * Matplotlib better to install using APT, lot of system lib dependency
+    * `sudo apt-get install -y matplotlib`
 
 ## Python3 and Ipython (Jupyter)
   * `sudo apt-get install python3-pip`  # to install jupyter for python3, it needs pip3 and does not work using pip
@@ -115,21 +118,32 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
 
   Although not required, I find it useful to rather install both the version of CuDNN (2 and 3). Put the libs of v2 in CUDA 6.5 or CUDA 7.0 (for Tensorflow), and v3 in CUDA 7.5.
 
-# Install OpenCV
+# Image processing and Computer Vision
+---
+
+## Install OpenCV
 
 This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caffe, I did not have to tweak the settings, and pretty much their provided instructions worked.
 
- * sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip
+ * `sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip`
 
  * Download OpenCV from http://opencv.org/downloads.html and unpack. Enter the unpacked directory. Execute:
 
- * mkdir build && cd build/ # If you have Oh-my-zsh then just `take build`
+ * `mkdir build && cd build/ ` # If you have Oh-my-zsh then just `take build`
 
- * cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..
+ * `cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..`
 
- * make -j12 # j 12 makes 12 parallel processes using all the cores to speed up the process, in a single core, the build might take couple of hours.
+ * `make -j12 # j 12 makes 12 parallel processes using all the cores to speed up the process, in a single core, the build might take couple of hours.`
 
- * sudo checkinstall # to create the deb package, and install it.
+ * `sudo checkinstall # to create the deb package, and install it.`
+
+# FFMPEG
+ 
+ * `sudo apt-get install -y ffmpeg`
+
+# ImageMagick
+ 
+ * `sudo apt-get install -y imagemagick`
 
 
 # Install GPU Libraries
@@ -148,6 +162,22 @@ This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caff
 
 ## Lasagne
   * `sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip`  # Preferred way to install Lasagne !
+
+## Torch
+  * `curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash`
+  * `git clone https://github.com/torch/distro.git ~/torch --recursive`
+  * `cd ~/torch; ./install.sh`
+  
+  Aditionally to load caffe models in torch,
+  * `luarocks install loadcaffe`
+
+## Caffe
+  * `sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler`
+  * `sudo apt-get install --no-install-recommends libboost-all-dev`
+  * `sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev`
+  * `for req in $(cat python/requirements.txt); do pip install $req; done`
+
+
 
 ## To be updated with instructions for Caffe & Nervana
 

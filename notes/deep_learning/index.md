@@ -41,6 +41,8 @@ dsq_thread_id:
   * <https://cs231n.github.io/>
   * <http://videolectures.net/deeplearning2015_montreal/>
   * <https://www.udacity.com/course/deep-learning--ud730>
+  * <https://developer.nvidia.com/deep-learning-courses>
+  * List with links <https://docs.google.com/spreadsheets/d/1NSbURoynPVnOvSCtmaIX6zV8wl6n3ybacnNGMyb-v-0/edit#gid=0>
 
 ### Deep Learning frameworks
   * Comparision of frameworks <https://github.com/zer0n/deepframeworks/>

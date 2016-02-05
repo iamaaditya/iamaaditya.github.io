@@ -29,14 +29,15 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Research
  * [Computer Vision / Deep Learning]( {{site.baseurl}}/notes/research/ ) - Notes related to my current work, papers I am reading, and some random scribble
+     * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/) 
+     * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/)
  * [GPU Hardware & Infrastructure]( {{site.baseurl}}/notes/hardware/ ) - Notes related to GPU cluster, my experiences with building one, and latest in the field
 
-# Courses
-## Computer Science
+# Computer Science
   * [Data Structures and Algorithms]( {{ site.baseurl }}/notes/algorithms/ ) - Collection of references, tutorials, and links. I use this to refer to my students from CS 180. 
   * [Programming]( {{ site.baseurl }}/notes/programming/ ) - Collection of programming related references, articles, and competitions and learning resources
 
-## Mathematics
+# Mathematics
   * [Probability And Statistics]( {{ site.baseurl }}/notes/probability_statistics/ ) - Collection of great articles, tutorials and very useful links about Proability and Statistics
 
 # Blogroll
