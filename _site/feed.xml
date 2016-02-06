@@ -101,17 +101,31 @@ UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults
 &lt;li&gt;&lt;code&gt;python get-pip.py&lt;/code&gt;   # install pip&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install python-dev&lt;/code&gt;   # pythonLibs &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install numpy&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo pip install cython git+https://github.com/scipy/scipy&lt;/code&gt;   # Installs Cython and Scipy both (Cython is requirement for scipy)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo pip install -U scikit-learn&lt;/code&gt;   # Requires numpy and scipy&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install nose&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install markupsafe&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install h5py&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install nltk&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Matplotlib better to install using APT, lot of system lib dependency
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install -y matplotlib&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Highend computing&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install numpy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install markupsafe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install h5py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install nltk&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pip install nose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install leveldb # for efficient use with Caffe, and probably other libs
+
+&lt;ul&gt;
+&lt;li&gt;git clone git@github.com:google/leveldb.git&lt;/li&gt;
+&lt;li&gt;make&lt;/li&gt;
+&lt;li&gt;sudo mv out-shared/libleveldb.* /usr/local/lib/ &lt;/li&gt;
+&lt;li&gt;sudo cp -R include/leveldb /usr/local/include&lt;/li&gt;
+&lt;li&gt;sudo ldconfig&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -230,6 +244,11 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 
 &lt;h2&gt;Caffe&lt;/h2&gt;
 
+&lt;p&gt;Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
+ not link them. However, caffe will refuse to compile with gcc 5, with error from following file
+ &lt;code&gt;/usr/local/cuda/include/host_config.h&lt;/code&gt;
+ Just comment out the line 115, which checks the version of GCC &lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install --no-install-recommends libboost-all-dev&lt;/code&gt;&lt;/li&gt;
@@ -237,7 +256,33 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 &lt;li&gt;&lt;code&gt;for req in $(cat python/requirements.txt); do pip install $req; done&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;To be updated with instructions for Caffe &amp;amp; Nervana&lt;/h2&gt;
+&lt;p&gt;Possible errors
+  * Linking Error in Leveldb e.g
+                Linking CXX executable caffe
+                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to &lt;code&gt;leveldb::Status::ToString[abi:cxx11]() const&amp;#39;
+                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to&lt;/code&gt;leveldb::DB::Open(leveldb::Options const&amp;amp;, std::_&lt;em&gt;cxx11::basic&lt;/em&gt;string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &amp;gt; const&amp;amp;, leveldb::DB*&lt;em&gt;)&amp;#39;
+                collect2: error: ld returned 1 exit status
+                tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target &amp;#39;tools/caffe&amp;#39; failed
+                make[2]: *&lt;/em&gt;* [tools/caffe] Error 1&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Solution, recompile Leveldb with GCC 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Linking Error in Protobuf e.g
+            Linking CXX executable caffe
+            CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function &lt;code&gt;std::string* google::MakeCheckOpString&amp;lt;cudaError, cudaError&amp;gt;(cudaError const&amp;amp;, cudaError const&amp;amp;, char const*)&amp;#39;:
+            caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()&amp;#39;
+            CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function&lt;/code&gt;std::string* google::MakeCheckOpString&lt;unsigned long, int&gt;(unsigned long const&amp;amp;, int const&amp;amp;, char const&lt;em&gt;)&amp;#39;:
+            caffe.cpp:(.text.&lt;em&gt;ZN6google17MakeCheckOpStringImiEEPSsRKT&lt;/em&gt;RKT0&lt;em&gt;PKc[&lt;/em&gt;ZN6google17MakeCheckOpStringImiEEPSsRKT&lt;em&gt;RKT0&lt;/em&gt;PKc]+0x43): undefined reference to &lt;code&gt;google::base::CheckOpMessageBuilder::NewString()&amp;#39;
+            CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function&lt;/code&gt;main&amp;#39;:
+            caffe.cpp:(.text.startup+0x3e): undefined reference to &lt;code&gt;google::SetVersionString(std::string const&amp;amp;)&amp;#39;
+            caffe.cpp:(.text.startup+0x6e): undefined reference to&lt;/code&gt;google::SetUsageMessage(std::string const&amp;amp;)&amp;#39;
+            ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(int, std::string const&amp;amp;, google::protobuf::io::CodedOutputStream&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;Solution, change your current compiler to gcc
+Use &lt;code&gt;gcc --version&lt;/code&gt; to make sure the correct version, and &lt;code&gt;which gcc&lt;/code&gt; to check the softlinks to actual gcc&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;To be updated with instructions for Nervana&lt;/h2&gt;
 
 &lt;h1&gt;Optional&lt;/h1&gt;
 

@@ -78,15 +78,23 @@ NOTE 4: **Anaconda** : Why not Anaconda ? I have done some previous installation
   * `python get-pip.py `   # install pip
   * `sudo apt-get install python-dev `   # pythonLibs 
   * `sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran`
-  * `sudo pip install numpy`
   * `sudo pip install cython git+https://github.com/scipy/scipy `   # Installs Cython and Scipy both (Cython is requirement for scipy)
   * `sudo pip install -U scikit-learn `   # Requires numpy and scipy
-  * `sudo pip install nose`
+  * Matplotlib better to install using APT, lot of system lib dependency
+    * `sudo apt-get install -y matplotlib`
+
+## Highend computing
+  * `sudo pip install numpy`
   * `sudo pip install markupsafe`
   * `sudo pip install h5py`
   * `sudo pip install nltk`
-  * Matplotlib better to install using APT, lot of system lib dependency
-    * `sudo apt-get install -y matplotlib`
+  * `sudo pip install nose`
+  * Install leveldb # for efficient use with Caffe, and probably other libs
+    * git clone git@github.com:google/leveldb.git
+    * make
+    * sudo mv out-shared/libleveldb.* /usr/local/lib/ 
+    * sudo cp -R include/leveldb /usr/local/include
+    * sudo ldconfig
 
 ## Python3 and Ipython (Jupyter)
   * `sudo apt-get install python3-pip`  # to install jupyter for python3, it needs pip3 and does not work using pip
@@ -172,14 +180,44 @@ This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caff
   * `luarocks install loadcaffe`
 
 ## Caffe
+ Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
+ not link them. However, caffe will refuse to compile with gcc 5, with error from following file
+ `/usr/local/cuda/include/host_config.h`
+ Just comment out the line 115, which checks the version of GCC 
+
   * `sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler`
   * `sudo apt-get install --no-install-recommends libboost-all-dev`
   * `sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev`
   * `for req in $(cat python/requirements.txt); do pip install $req; done`
 
+Possible errors
+  * Linking Error in Leveldb e.g
+                Linking CXX executable caffe
+                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::Status::ToString[abi:cxx11]() const'
+                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::DB::Open(leveldb::Options const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::DB**)'
+                collect2: error: ld returned 1 exit status
+                tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target 'tools/caffe' failed
+                make[2]: *** [tools/caffe] Error 1
+
+    Solution, recompile Leveldb with GCC 5
+
+  * Linking Error in Protobuf e.g
+                Linking CXX executable caffe
+                CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString<cudaError, cudaError>(cudaError const&, cudaError const&, char const*)':
+                caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()'
+                CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString<unsigned long, int>(unsigned long const&, int const&, char const*)':
+                caffe.cpp:(.text._ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc]+0x43): undefined reference to `google::base::CheckOpMessageBuilder::NewString()'
+                CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `main':
+                caffe.cpp:(.text.startup+0x3e): undefined reference to `google::SetVersionString(std::string const&)'
+                caffe.cpp:(.text.startup+0x6e): undefined reference to `google::SetUsageMessage(std::string const&)'
+                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(int, std::string const&, google::protobuf::io::CodedOutputStream*)
+
+    Solution, change your current compiler to gcc
+    Use `gcc --version` to make sure the correct version, and `which gcc` to check the softlinks to actual gcc
 
 
-## To be updated with instructions for Caffe & Nervana
+
+## To be updated with instructions for Nervana
 
 # Optional
 ---
