@@ -6,8 +6,9 @@ dsq_thread_id:
   - 
 ---
 ## Sub-pages
- * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/) 
- * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/)
+ * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/ ) 
+ * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
+ * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ )
 
 ## Burning thoughts 
  * Distributed representation (of features)

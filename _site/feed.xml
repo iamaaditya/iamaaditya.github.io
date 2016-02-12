@@ -244,10 +244,16 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 
 &lt;h2&gt;Caffe&lt;/h2&gt;
 
-&lt;p&gt;Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
- not link them. However, caffe will refuse to compile with gcc 5, with error from following file
- &lt;code&gt;/usr/local/cuda/include/host_config.h&lt;/code&gt;
- Just comment out the line 115, which checks the version of GCC &lt;/p&gt;
+&lt;h3&gt;Note&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
+not link them. However, caffe will refuse to compile with gcc 5, with error from following file
+&lt;code&gt;/usr/local/cuda/include/host_config.h&lt;/code&gt; Just comment out the line 115, which checks the version of GCC &lt;/li&gt;
+&lt;li&gt;Use the CMake instead of default make (checkout &lt;a href=&quot;https://github.com/BVLC/caffe/pull/1667&quot;&gt;https://github.com/BVLC/caffe/pull/1667&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Requirements&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler&lt;/code&gt;&lt;/li&gt;
@@ -256,30 +262,42 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 &lt;li&gt;&lt;code&gt;for req in $(cat python/requirements.txt); do pip install $req; done&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Possible errors
-  * Linking Error in Leveldb e.g
-                Linking CXX executable caffe
-                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to &lt;code&gt;leveldb::Status::ToString[abi:cxx11]() const&amp;#39;
-                ../lib/libcaffe.so.1.0.0-rc3: undefined reference to&lt;/code&gt;leveldb::DB::Open(leveldb::Options const&amp;amp;, std::_&lt;em&gt;cxx11::basic&lt;/em&gt;string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &amp;gt; const&amp;amp;, leveldb::DB*&lt;em&gt;)&amp;#39;
-                collect2: error: ld returned 1 exit status
-                tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target &amp;#39;tools/caffe&amp;#39; failed
-                make[2]: *&lt;/em&gt;* [tools/caffe] Error 1&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Solution, recompile Leveldb with GCC 5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Linking Error in Protobuf e.g
-            Linking CXX executable caffe
-            CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function &lt;code&gt;std::string* google::MakeCheckOpString&amp;lt;cudaError, cudaError&amp;gt;(cudaError const&amp;amp;, cudaError const&amp;amp;, char const*)&amp;#39;:
-            caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()&amp;#39;
-            CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function&lt;/code&gt;std::string* google::MakeCheckOpString&lt;unsigned long, int&gt;(unsigned long const&amp;amp;, int const&amp;amp;, char const&lt;em&gt;)&amp;#39;:
-            caffe.cpp:(.text.&lt;em&gt;ZN6google17MakeCheckOpStringImiEEPSsRKT&lt;/em&gt;RKT0&lt;em&gt;PKc[&lt;/em&gt;ZN6google17MakeCheckOpStringImiEEPSsRKT&lt;em&gt;RKT0&lt;/em&gt;PKc]+0x43): undefined reference to &lt;code&gt;google::base::CheckOpMessageBuilder::NewString()&amp;#39;
-            CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function&lt;/code&gt;main&amp;#39;:
-            caffe.cpp:(.text.startup+0x3e): undefined reference to &lt;code&gt;google::SetVersionString(std::string const&amp;amp;)&amp;#39;
-            caffe.cpp:(.text.startup+0x6e): undefined reference to&lt;/code&gt;google::SetUsageMessage(std::string const&amp;amp;)&amp;#39;
-            ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(int, std::string const&amp;amp;, google::protobuf::io::CodedOutputStream&lt;/em&gt;)&lt;/p&gt;
+&lt;h3&gt;Issues&lt;/h3&gt;
 
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Linking Error in Leveldb e.g&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;        Linking CXX executable caffe
+        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::Status::ToString[abi:cxx11]() const&amp;#39;
+        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::DB::Open(leveldb::Options const&amp;amp;, std::__cxx11::basic_string&amp;lt;char, std::char_traits&amp;lt;char&amp;gt;, std::allocator&amp;lt;char&amp;gt; &amp;gt; const&amp;amp;, leveldb::DB**)&amp;#39;
+        collect2: error: ld returned 1 exit status
+        tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target &amp;#39;tools/caffe&amp;#39; failed
+        make[2]: *** [tools/caffe] Error 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Solution, recompile Leveldb with GCC 5&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Linking Error in Protobuf e.g&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;        Linking CXX executable caffe
+        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString&amp;lt;cudaError, cudaError&amp;gt;(cudaError const&amp;amp;, cudaError const&amp;amp;, char const*)&amp;#39;:
+        caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()&amp;#39;
+        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString&amp;lt;unsigned long, int&amp;gt;(unsigned long const&amp;amp;, int const&amp;amp;, char const*)&amp;#39;:
+        caffe.cpp:(.text._ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc]+0x43): undefined reference to `google::base::CheckOpMessageBuilder::NewString()&amp;#39;
+        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `main&amp;#39;:
+        caffe.cpp:(.text.startup+0x3e): undefined reference to `google::SetVersionString(std::string const&amp;amp;)&amp;#39;
+        caffe.cpp:(.text.startup+0x6e): undefined reference to `google::SetUsageMessage(std::string const&amp;amp;)&amp;#39;
+        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(int, std::string const&amp;amp;, google::protobuf::io::CodedOutputStream*)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Solution, change your current compiler to gcc
 Use &lt;code&gt;gcc --version&lt;/code&gt; to make sure the correct version, and &lt;code&gt;which gcc&lt;/code&gt; to check the softlinks to actual gcc&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Relevant issue to checkout &lt;a href=&quot;https://github.com/BVLC/caffe/issues/2690&quot;&gt;https://github.com/BVLC/caffe/issues/2690&lt;/a&gt; and &lt;a href=&quot;https://github.com/BVLC/caffe/issues/3046&quot;&gt;https://github.com/BVLC/caffe/issues/3046&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Instllation&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mkdir build&lt;/li&gt;
+&lt;li&gt;cd build&lt;/li&gt;
+&lt;li&gt;cmake ..&lt;/li&gt;
+&lt;li&gt;make all&lt;/li&gt;
+&lt;li&gt;make runtest&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;To be updated with instructions for Nervana&lt;/h2&gt;

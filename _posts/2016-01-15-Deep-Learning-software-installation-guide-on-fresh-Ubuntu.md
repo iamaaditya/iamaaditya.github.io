@@ -180,18 +180,25 @@ This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caff
   * `luarocks install loadcaffe`
 
 ## Caffe
- Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
+
+### Note
+ * Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
  not link them. However, caffe will refuse to compile with gcc 5, with error from following file
- `/usr/local/cuda/include/host_config.h`
- Just comment out the line 115, which checks the version of GCC 
+ `/usr/local/cuda/include/host_config.h` Just comment out the line 115, which checks the version of GCC 
+ * Use the CMake instead of default make (checkout <https://github.com/BVLC/caffe/pull/1667> )
+
+### Requirements
 
   * `sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler`
   * `sudo apt-get install --no-install-recommends libboost-all-dev`
   * `sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev`
   * `for req in $(cat python/requirements.txt); do pip install $req; done`
 
-Possible errors
+
+### Issues
+
   * Linking Error in Leveldb e.g
+
                 Linking CXX executable caffe
                 ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::Status::ToString[abi:cxx11]() const'
                 ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::DB::Open(leveldb::Options const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::DB**)'
@@ -199,9 +206,11 @@ Possible errors
                 tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target 'tools/caffe' failed
                 make[2]: *** [tools/caffe] Error 1
 
+
     Solution, recompile Leveldb with GCC 5
 
   * Linking Error in Protobuf e.g
+
                 Linking CXX executable caffe
                 CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString<cudaError, cudaError>(cudaError const&, cudaError const&, char const*)':
                 caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()'
@@ -214,6 +223,16 @@ Possible errors
 
     Solution, change your current compiler to gcc
     Use `gcc --version` to make sure the correct version, and `which gcc` to check the softlinks to actual gcc
+
+  * Relevant issue to checkout <https://github.com/BVLC/caffe/issues/2690> and <https://github.com/BVLC/caffe/issues/3046>
+
+### Instllation
+
+  * mkdir build
+  * cd build
+  * cmake ..
+  * make all
+  * make runtest
 
 
 
