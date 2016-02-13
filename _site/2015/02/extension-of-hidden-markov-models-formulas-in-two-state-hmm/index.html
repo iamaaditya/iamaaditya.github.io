@@ -11,8 +11,10 @@
 
     
     <meta name="description" content="Extending the hidden markov models, where the current state is affected by past two states. This can be useful in simulation of games or in less sophisticated pricing models (more accurate would be an exponential decay of all past terms).
+
 " />
     <meta property="og:description" content="Extending the hidden markov models, where the current state is affected by past two states. This can be useful in simulation of games or in less sophisticated pricing models (more accurate would be an exponential decay of all past terms).
+
 " />
     
     <meta name="author" content="Aaditya Prakash (Adi)" />
@@ -59,12 +61,12 @@
   <div class="entry">
     <p>Extending the hidden markov models, where the current state is affected by past two states. This can be useful in simulation of games or in less sophisticated pricing models (more accurate would be an exponential decay of all past terms).</p>
 
-<h2>Notations</h2>
+<h2 id="notations">Notations</h2>
 
-<p>I have kept the notations close to as provided in Chapter 6 of &#8220;Speech and Language Processing&#8221;, Second Edition by Martin and Jurafsky.</p>
+<p>I have kept the notations close to as provided in Chapter 6 of “Speech and Language Processing”, Second Edition by Martin and Jurafsky.</p>
 
-<p>\(\lambda\) Common term for all HMM parameters. All the probabilties<br>
-will be conditioned to this term i.e \(P(&#8230;&#8230;|\lambda)\)</p>
+<p>\(\lambda\) Common term for all HMM parameters. All the probabilties<br />
+will be conditioned to this term i.e \(P(……|\lambda)\)</p>
 
 <p>\(T\) denotes the total number of time steps</p>
 
@@ -74,74 +76,74 @@ will be conditioned to this term i.e \(P(&#8230;&#8230;|\lambda)\)</p>
 
 <p>\(q_{t}\) denotes the hidden variale (state) at time step t</p>
 
-<h2>Formulas</h2>
+<h2 id="formulas">Formulas</h2>
 
-<h3>Distribution of \(\alpha_{t}(i,j)\)</h3>
+<h3 id="distribution-of-alphatij">Distribution of \(\alpha_{t}(i,j)\)</h3>
 
 <p>\(\alpha_{t}(i,j)\) denotes the joint probability distribution of all observed variables until time \(t\) and current and the last states.</p>
 
-<p>\[<br>
-\alpha_{t}(i,j)=P(o_{1},o_{2},\dots,o_{t},q_{t-1}=i,q_{t}=j|\lambda)<br>
+<p>\[<br />
+\alpha_{t}(i,j)=P(o_{1},o_{2},\dots,o_{t},q_{t-1}=i,q_{t}=j|\lambda)<br />
 \]</p>
 
 <p>Where \(\lambda\) is the given HMM parameters.</p>
 
-<h3>Base case of \(\alpha_{t}(i,j)\)</h3>
+<h3 id="base-case-of-alphatij">Base case of \(\alpha_{t}(i,j)\)</h3>
 
 <p>Consider the following notation:</p>
 
-<p>\[<br>
-a_{ij}=P(q_{t}=j|q_{t-1}=i)<br>
+<p>\[<br />
+a_{ij}=P(q_{t}=j|q_{t-1}=i)<br />
 \]</p>
 
-<p>\[<br>
-a_{ijk}=P(q_{t+1}=k|q_{t}=j,q_{t-1}=i)<br>
+<p>\[<br />
+a_{ijk}=P(q_{t+1}=k|q_{t}=j,q_{t-1}=i)<br />
 \]</p>
 
-<p>then base cases are &#8211;</p>
+<p>then base cases are –</p>
 
-<p>\[<br>
-\alpha_{1}(i=0,j)=a_{i=0,j}b_{j}(o_{1})<br>
+<p>\[<br />
+\alpha_{1}(i=0,j)=a_{i=0,j}b_{j}(o_{1})<br />
 \]</p>
 
-<p>\[<br>
-\alpha_{2}(i,j)=\alpha_{1}(0,j)a_{ij}b_{j}(o_{2})<br>
+<p>\[<br />
+\alpha_{2}(i,j)=\alpha_{1}(0,j)a_{ij}b_{j}(o_{2})<br />
 \]</p>
 
-<p>It should be noted that if the second state (\(q_{2}\() is also allowed to be entry point, then it needs an additional base case of &#8212;</p>
+<p>It should be noted that if the second state (\(q_{2}\() is also allowed to be entry point, then it needs an additional base case of —</p>
 
-<p>\[<br>
-\alpha_{2}(i=0,j)=\sum_{i=1}^{N}\alpha_{1}(i=0,j)a_{ij}b_{j}(o_{2})<br>
+<p>\[<br />
+\alpha_{2}(i=0,j)=\sum_{i=1}^{N}\alpha_{1}(i=0,j)a_{ij}b_{j}(o_{2})<br />
 \]</p>
 
-<h3>Inductive step</h3>
+<h3 id="inductive-step">Inductive step</h3>
 
-<p>\[<br>
-\alpha_{t}(j,k)=\sum_{i=1}^{N}\alpha_{t-1}(i,j)\times a_{ijk}\times b_{k}(o_{t})\text{ where, }3\leq t\leq T<br>
+<p>\[<br />
+\alpha_{t}(j,k)=\sum_{i=1}^{N}\alpha_{t-1}(i,j)\times a_{ijk}\times b_{k}(o_{t})\text{ where, }3\leq t\leq T<br />
 \]</p>
 
-<h3>Termination step</h3>
+<h3 id="termination-step">Termination step</h3>
 
-<p>\[<br>
-P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{jF}\times a_{ijF}<br>
+<p>\[<br />
+P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{jF}\times a_{ijF}<br />
 \]</p>
 
-<h2>Estimated Expected Transitions</h2>
+<h2 id="estimated-expected-transitions">Estimated Expected Transitions</h2>
 
-<h3>\(\xi_{t}\)</h3>
+<h3 id="xit">\(\xi_{t}\)</h3>
 
 <p>\(\xi_{t}\) = Probability of being in state k at t+1, j at t and i at t-1</p>
 
-<p>\[<br>
-\xi_{t}=P(q_{t+1}=k,q_{t}=j,q_{t-1}=i|o_{1},\dots o_{T})=\frac{\alpha_{t}(i,j)\times\beta_{t+1}(j,k)\times a_{ijk}b_{k}(o_{t+1})}{\alpha(q_{f})}<br>
+<p>\[<br />
+\xi_{t}=P(q_{t+1}=k,q_{t}=j,q_{t-1}=i|o_{1},\dots o_{T})=\frac{\alpha_{t}(i,j)\times\beta_{t+1}(j,k)\times a_{ijk}b_{k}(o_{t+1})}{\alpha(q_{f})}<br />
 \]</p>
 
-<h3>\(\gamma_{t}\)</h3>
+<h3 id="gammat">\(\gamma_{t}\)</h3>
 
-<p>\(\gamma_{t}\) = Probability of being in state i at &#8216;t&#8217;, given all the obervations</p>
+<p>\(\gamma_{t}\) = Probability of being in state i at ‘t’, given all the obervations</p>
 
-<p>\[<br>
-\gamma_{t}=P(q_{t}=i|o_{1},\dots,o_{T})=\frac{\sum_{j}^{N}\alpha(j,i),\beta(j,i)}{\alpha(q_{f})}<br>
+<p>\[<br />
+\gamma_{t}=P(q_{t}=i|o_{1},\dots,o_{T})=\frac{\sum_{j}^{N}\alpha(j,i),\beta(j,i)}{\alpha(q_{f})}<br />
 \]</p>
 
 <p>where \(\alpha(q_{f})=P(o_{1},\dots,o_{T})\) (joint probability of all observed variables)</p>
@@ -186,7 +188,7 @@ P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{j
 
 <a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
 
-<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
 
 <a href="/feed.xml"><i class="svg-icon rss"></i></a>
 <a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>

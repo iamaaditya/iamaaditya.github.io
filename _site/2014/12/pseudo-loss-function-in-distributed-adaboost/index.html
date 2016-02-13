@@ -10,9 +10,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="$$L_{Hedge(\beta)}$$
+    <meta name="description" content="
+
 " />
-    <meta property="og:description" content="$$L_{Hedge(\beta)}$$
+    <meta property="og:description" content="
+
 " />
     
     <meta name="author" content="Aaditya Prakash (Adi)" />
@@ -57,123 +59,130 @@
   <h1>Pseudo loss function in distributed Adaboost</h1>
 
   <div class="entry">
-    <h1>$$L_{Hedge(\beta)}$$</h1>
+    <h1 id="lhedgebeta"><script type="math/tex">L_{Hedge(\beta)}</script></h1>
 
-<p>This is the sketch of proof of correctness of <img src='http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='L_{Hedge(\beta)} ' title='L_{Hedge(\beta)} ' class='latex' />, pseudo loss function, in the case of distributed boosting algorithm. It has been known that boosting of functions with each applicator with more than 0.5 accuracy is sufficient to guarantee lowest minimum accuracy in iterative pooling. A similar sketch is presented for the distributed case where the score from each stage is not shared across all the computing nodes. While this guarantees the correctness, it does not guarantee the convergence, which is still a highly sought after problem in distributed algorithm.</p>
+<p>This is the sketch of proof of correctness of <img src="http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="L_{Hedge(\beta)} " title="L_{Hedge(\beta)} " class="latex" />, pseudo loss function, in the case of distributed boosting algorithm. It has been known that boosting of functions with each applicator with more than 0.5 accuracy is sufficient to guarantee lowest minimum accuracy in iterative pooling. A similar sketch is presented for the distributed case where the score from each stage is not shared across all the computing nodes. While this guarantees the correctness, it does not guarantee the convergence, which is still a highly sought after problem in distributed algorithm.</p>
 
-<p>For people uninitiated in the problem, it is highly advised to <a href="http://www-users.cs.umn.edu/%7Ealeks/papers/kdd_01.pdf">read this paper</a> or for much simpler and faster read, <a href="http://www-users.cs.umn.edu/%7Ebanerjee/Teaching/Spring06/talks/Paper02Tim1.ppt">these slides</a>.</p>
+<p>For people uninitiated in the problem, it is highly advised to <a href="http://www-users.cs.umn.edu/~aleks/papers/kdd_01.pdf">read this paper</a> or for much simpler and faster read, <a href="http://www-users.cs.umn.edu/~banerjee/Teaching/Spring06/talks/Paper02Tim1.ppt">these slides</a>.</p>
 
-<h2>Notations</h2>
+<h2 id="notations">Notations</h2>
 
-<p><img src='http://s0.wp.com/latex.php?latex=w+%3D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='w = ' title='w = ' class='latex' /> weights Vector</p>
+<p><img src="http://s0.wp.com/latex.php?latex=w+%3D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="w = " title="w = " class="latex" /> weights Vector</p>
 
-<p><img src='http://s0.wp.com/latex.php?latex=T+%3D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='T = ' title='T = ' class='latex' /> Number of iterations</p>
+<p><img src="http://s0.wp.com/latex.php?latex=T+%3D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="T = " title="T = " class="latex" /> Number of iterations</p>
 
-<p><img src='http://s0.wp.com/latex.php?latex=%5Cbeta&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\beta' title='\beta' class='latex' /> = Parameter <img src='http://s0.wp.com/latex.php?latex=%5Cepsilon%5B0%2C1%5D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\epsilon[0,1] ' title='\epsilon[0,1] ' class='latex' />  </p>
+<p><img src="http://s0.wp.com/latex.php?latex=%5Cbeta&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\beta" title="\beta" class="latex" /> = Parameter <img src="http://s0.wp.com/latex.php?latex=%5Cepsilon%5B0%2C1%5D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\epsilon[0,1] " title="\epsilon[0,1] " class="latex" /></p>
 
-<p><img src='http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\ell^{t} ' title='\ell^{t} ' class='latex' />= Loss Vector for the <img src='http://s0.wp.com/latex.php?latex=t+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='t ' title='t ' class='latex' /> iteration (trials)</p>
+<p><img src="http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\ell^{t} " title="\ell^{t} " class="latex" />= Loss Vector for the <img src="http://s0.wp.com/latex.php?latex=t+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="t " title="t " class="latex" /> iteration (trials)</p>
 
 <p>N = Total Number of weak learners</p>
 
-<p><img src='http://s0.wp.com/latex.php?latex=%7BL_i%3D+%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='{L_i= } ' title='{L_i= } ' class='latex' />Strategy i&#8217;s cumulative loss = <img src='http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cell_%7Bi%7D%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\sum_{t=1}^{T}\ell_{i}^{t} ' title='\sum_{t=1}^{T}\ell_{i}^{t} ' class='latex' />  </p>
+<p><img src="http://s0.wp.com/latex.php?latex=%7BL_i%3D+%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="{L_i= } " title="{L_i= } " class="latex" />Strategy i’s cumulative loss = <img src="http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cell_%7Bi%7D%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\sum_{t=1}^{T}\ell_{i}^{t} " title="\sum_{t=1}^{T}\ell_{i}^{t} " class="latex" /></p>
 
-<p><img src='http://s0.wp.com/latex.php?latex=L_%7BA%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='L_{A} ' title='L_{A} ' class='latex' />= Algorithm A&#8217;s total cumulative loss = <img src='http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} ' title='\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} ' class='latex' /></p>
+<p><img src="http://s0.wp.com/latex.php?latex=L_%7BA%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="L_{A} " title="L_{A} " class="latex" />= Algorithm A’s total cumulative loss = <img src="http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} " title="\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} " class="latex" /></p>
 
-<p>&nbsp;</p>
+<p> </p>
 
-<h2>Algorithm</h2>
+<h2 id="algorithm">Algorithm</h2>
 
 <p>Consider the following Algorithm</p>
 
-<p>Hedge(<img src='http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\beta ' title='\beta ' class='latex' />) :</p>
+<p>Hedge(<img src="http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\beta " title="\beta " class="latex" />) :</p>
 
-<p>Do for t = 1, 2, &#8230;, <em>T</em></p>
-
-<ol>
-<li>Choose Allocation</li>
-</ol>
-
-<p>\[<br>
-\mathbf{p}^{t}=\frac{\mathbf{w}^{t}}{\sum_{i-1}^{N}w_{i}^{t}}<br>
-\]</p>
+<p>Do for t = 1, 2, …, <em>T</em></p>
 
 <ol>
-<li><p>Receive loss vector <img src='http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D%5Cepsilon%5B0%2C1%5D%5E%7BN%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\ell^{t}\epsilon[0,1]^{N} ' title='\ell^{t}\epsilon[0,1]^{N} ' class='latex' /> from environment</p></li>
-<li><p>Suffer loss <img src='http://s0.wp.com/latex.php?latex=%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\mathbf{p}^{t}.\ell^{t} ' title='\mathbf{p}^{t}.\ell^{t} ' class='latex' /></p></li>
-<li><p>Set the new weights</p></li>
+  <li>Choose Allocation</li>
 </ol>
 
-<p>\[<br>
-w_{i}^{t+1}=w_{i}^{t}\beta^{\ell_{i}^{t}}<br>
+<p>\[<br />
+\mathbf{p}^{t}=\frac{\mathbf{w}^{t}}{\sum_{i-1}^{N}w_{i}^{t}}<br />
 \]</p>
 
-<h2>To Prove</h2>
+<ol>
+  <li>
+    <p>Receive loss vector <img src="http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D%5Cepsilon%5B0%2C1%5D%5E%7BN%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\ell^{t}\epsilon[0,1]^{N} " title="\ell^{t}\epsilon[0,1]^{N} " class="latex" /> from environment</p>
+  </li>
+  <li>
+    <p>Suffer loss <img src="http://s0.wp.com/latex.php?latex=%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\mathbf{p}^{t}.\ell^{t} " title="\mathbf{p}^{t}.\ell^{t} " class="latex" /></p>
+  </li>
+  <li>
+    <p>Set the new weights</p>
+  </li>
+</ol>
 
-<p>\[<br>
-ln(\sum_{i=1}^{N}w_{i}^{T+1})\leq-(1-\beta)L_{Hedge(\beta)}<br>
+<p>\[<br />
+w_{i}^{t+1}=w_{i}^{t}\beta^{\ell_{i}^{t}}<br />
 \]</p>
 
-<h2>Proof</h2>
+<h2 id="to-prove">To Prove</h2>
 
-<p>From the Hedge(<img src='http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\beta ' title='\beta ' class='latex' />) function, we know that</p>
-
-<p>\[<br>
-\sum_{i=1}^{N}w_{i}^{t+1}=\sum_{i=1}^{N}w_{i}^{t}\beta^{\ell_{i}^{t}}<br>
+<p>\[<br />
+ln(\sum_{i=1}^{N}w_{i}^{T+1})\leq-(1-\beta)L_{Hedge(\beta)}<br />
 \]</p>
 
-<p>For <img src='http://s0.wp.com/latex.php?latex=%5Calpha%5Cgeq0+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\alpha\geq0 ' title='\alpha\geq0 ' class='latex' /> and <img src='http://s0.wp.com/latex.php?latex=r%5Cepsilon%5B0%2C1%5D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='r\epsilon[0,1] ' title='r\epsilon[0,1] ' class='latex' />, by convexity we know that<br>
-<img src='http://s0.wp.com/latex.php?latex=%5Calpha%5E%7Br%7D%5Cleq1-%281-%5Calpha%29r&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\alpha^{r}\leq1-(1-\alpha)r' title='\alpha^{r}\leq1-(1-\alpha)r' class='latex' />, therefore above eqn can be rewritten<br>
+<h2 id="proof">Proof</h2>
+
+<p>From the Hedge(<img src="http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\beta " title="\beta " class="latex" />) function, we know that</p>
+
+<p>\[<br />
+\sum_{i=1}^{N}w_{i}^{t+1}=\sum_{i=1}^{N}w_{i}^{t}\beta^{\ell_{i}^{t}}<br />
+\]</p>
+
+<p>For <img src="http://s0.wp.com/latex.php?latex=%5Calpha%5Cgeq0+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\alpha\geq0 " title="\alpha\geq0 " class="latex" /> and <img src="http://s0.wp.com/latex.php?latex=r%5Cepsilon%5B0%2C1%5D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="r\epsilon[0,1] " title="r\epsilon[0,1] " class="latex" />, by convexity we know that<br />
+<img src="http://s0.wp.com/latex.php?latex=%5Calpha%5E%7Br%7D%5Cleq1-%281-%5Calpha%29r&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\alpha^{r}\leq1-(1-\alpha)r" title="\alpha^{r}\leq1-(1-\alpha)r" class="latex" />, therefore above eqn can be rewritten<br />
 as,</p>
 
-<p>\[<br>
-\sum_{i=1}^{N}w_{i}^{t+1}\leq\sum_{i=1}^{N}w_{i}^{t}(1-(1-\beta)\ell_{i}^{t})<br>
+<p>\[<br />
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\sum_{i=1}^{N}w_{i}^{t}(1-(1-\beta)\ell_{i}^{t})<br />
 \]</p>
 
-<p>\[<br>
-\sum_{i=1}^{N}w_{i}^{t+1}\leq\left(\sum_{i=1}^{N}w_{i}^{t}\right)(1-(1-\beta)\mathbf{p}^{t}.\ell_{i}^{t})<br>
+<p>\[<br />
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\left(\sum_{i=1}^{N}w_{i}^{t}\right)(1-(1-\beta)\mathbf{p}^{t}.\ell_{i}^{t})<br />
 \]</p>
 
-<p>For all the trials <img src='http://s0.wp.com/latex.php?latex=t%3D1%2C%5Cldots%2CT+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='t=1,\ldots,T ' title='t=1,\ldots,T ' class='latex' /></p>
+<p>For all the trials <img src="http://s0.wp.com/latex.php?latex=t%3D1%2C%5Cldots%2CT+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="t=1,\ldots,T " title="t=1,\ldots,T " class="latex" /></p>
 
-<p>\[<br>
-\sum_{i=1}^{N}w_{i}^{t+1}\leq\prod_{t=1}^{T}(1-(1-\beta)\mathbf{p}^{t}.\ell^{t}<br>
+<p>\[<br />
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\prod_{t=1}^{T}(1-(1-\beta)\mathbf{p}^{t}.\ell^{t}<br />
 \]</p>
 
-<p>(since <img src='http://s0.wp.com/latex.php?latex=1%2Bx%5Cleq+e%5E%7Bx%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='1+x\leq e^{x} ' title='1+x\leq e^{x} ' class='latex' /> )</p>
+<p>(since <img src="http://s0.wp.com/latex.php?latex=1%2Bx%5Cleq+e%5E%7Bx%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="1+x\leq e^{x} " title="1+x\leq e^{x} " class="latex" /> )</p>
 
-<p>\[<br>
-\sum_{i=1}^{N}w_{i}^{t+1}\leq exp\left(-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\right)<br>
+<p>\[<br />
+\sum_{i=1}^{N}w_{i}^{t+1}\leq exp\left(-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\right)<br />
 \]</p>
 
 <p>Taking log on both sides</p>
 
-<p>\[<br>
-ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)\leq-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}<br>
+<p>\[<br />
+ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)\leq-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}<br />
 \]</p>
 
 <p>Taking negative sign and switching the equality</p>
 
-<p>\[<br>
-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)<br>
+<p>\[<br />
+(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)<br />
 \]</p>
 
-<p>\[<br>
-\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}<br>
+<p>\[<br />
+\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}<br />
 \]</p>
 
-<p>Now from the definition of <img src='http://s0.wp.com/latex.php?latex=L_%7BA%7D+%3D+%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} ' title='L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} ' class='latex' />,<br>
-since the algorithm here is Hedge(<img src='http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\beta ' title='\beta ' class='latex' />), where <img src='http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\beta ' title='\beta ' class='latex' />is the<br>
-parameter, <img src='http://s0.wp.com/latex.php?latex=L_%7BA%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='L_{A} ' title='L_{A} ' class='latex' />, is called as <img src='http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='L_{Hedge(\beta)} ' title='L_{Hedge(\beta)} ' class='latex' /></p>
+<p>Now from the definition of <img src="http://s0.wp.com/latex.php?latex=L_%7BA%7D+%3D+%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} " title="L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} " class="latex" />,<br />
+since the algorithm here is Hedge(<img src="http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\beta " title="\beta " class="latex" />), where <img src="http://s0.wp.com/latex.php?latex=%5Cbeta+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\beta " title="\beta " class="latex" />is the<br />
+parameter, <img src="http://s0.wp.com/latex.php?latex=L_%7BA%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="L_{A} " title="L_{A} " class="latex" />, is called as <img src="http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="L_{Hedge(\beta)} " title="L_{Hedge(\beta)} " class="latex" /></p>
 
 <p>therefore,</p>
 
-<p>\[<br>
-L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}<br>
+<p>\[<br />
+L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}<br />
 \]</p>
 
 <p style="text-align: right;">
   <span style="text-decoration: underline;">QED</span>
 </p>
+
 
   </div>
 
@@ -211,7 +220,7 @@ L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}<b
 
 <a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
 
-<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
 
 <a href="/feed.xml"><i class="svg-icon rss"></i></a>
 <a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>

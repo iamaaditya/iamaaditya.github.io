@@ -6,7 +6,7 @@ dsq_thread_id:
   - 
 ---
 
-| Boston, MA |     Email: aprakash[at]brandeis.edu |     [Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt) |     B$ 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv |
+Email: aprakash[at]brandeis.edu - [Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt) - Bitcoin$ 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv 
 
 * * *
 
@@ -42,5 +42,5 @@ I am a PhD Student at Brandeis University. My research focus is in application o
 
 * * *
 
-| [Quora](http://www.quora.com/Aaditya-Prakash) | [Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya) | [Google+](https://plus.google.com/u/0/100303074762902184969?rel=author) | [Twitter](http://twitter.com/aaditya_prakash) | [Linkedin](https://in.linkedin.com/in/aaditya-prakash-68453338) | [Academia.edu](http://infosys.academia.edu/aadityaprakash) | [SlideShare](http://www.slideshare.net/aadityaprakash/) | [GitHub](https://github.com/iamaaditya) |
+[Quora](http://www.quora.com/Aaditya-Prakash) - [Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya) - [Google+](https://plus.google.com/u/0/100303074762902184969?rel=author) - [Twitter](http://twitter.com/aaditya_prakash) - [Linkedin](https://in.linkedin.com/in/aaditya-prakash-68453338) - [Academia.edu](http://infosys.academia.edu/aadityaprakash) - [SlideShare](http://www.slideshare.net/aadityaprakash/) - [GitHub](https://github.com/iamaaditya)
 

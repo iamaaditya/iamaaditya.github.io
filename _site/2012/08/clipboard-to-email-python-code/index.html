@@ -11,8 +11,10 @@
 
     
     <meta name="description" content="Why
+
 " />
     <meta property="og:description" content="Why
+
 " />
     
     <meta name="author" content="Aaditya Prakash (Adi)" />
@@ -57,25 +59,25 @@
   <h1>Clipboard to Email &#8211; Python Code</h1>
 
   <div class="entry">
-    <h2>Why</h2>
+    <h2 id="why">Why</h2>
 
 <p>Very often I have to send lot of stuff (links, texts, comments, notes) to a particular Email Address. Initially I started using www.emailtheweb.com , it has a nice bookmark button (when you press the same, the webpage in the background is emailed). This was not the swiftest method, since it had multiple clicks, few pages to visit, accept button and unfortunately too long pre-processing time.</p>
 
-<p>Then I started using <a title="Evernote - Taking notes" href="http://evernote.com/" target="_blank">Evernote</a>. It is perfect, works like a charm, has an android app, chrome extension, standalone windows program, but unfortunately this one didn&#8217;t suit my exact need. My need was to have them in my email. You may ask, whats the difference, website repository is same as email, but not for me (since my workplace has strict policies of blocking note taking sites (<em>don&#8217;t ask</em>)).</p>
+<p>Then I started using <a title="Evernote - Taking notes" href="http://evernote.com/" target="_blank">Evernote</a>. It is perfect, works like a charm, has an android app, chrome extension, standalone windows program, but unfortunately this one didn’t suit my exact need. My need was to have them in my email. You may ask, whats the difference, website repository is same as email, but not for me (since my workplace has strict policies of blocking note taking sites (<em>don’t ask</em>)).</p>
 
-<h2>Use</h2>
+<h2 id="use">Use</h2>
 
 <p>So, I built a small tool, a python code which automatically sends the content of clipboard into the email address you specify. Ofcourse it works by using one of your email as the host, but even if you use the same email as To/From, it still works.</p>
 
 <p>Parts of the code is due to help from <a href="http://vreugdenhilresearch.nl/">http://vreugdenhilresearch.nl/</a> and http://segfault.in</p>
 
-<p>In minimal you only have to change line number <span style="text-decoration: underline;"><strong>59-60</strong></span> From-To Email address and <span style="text-decoration: underline;"><strong>66</strong></span> for password, i.e if you have a gmail account &#8211; From address only (To address need not be gmail). If you decide to use other email hosts, kindly update the line number <span style="text-decoration: underline;"><em>63</em></span> too (Google to find out the SMTP address and port for your email.</p>
+<p>In minimal you only have to change line number <span style="text-decoration: underline;"><strong>59-60</strong></span> From-To Email address and <span style="text-decoration: underline;"><strong>66</strong></span> for password, i.e if you have a gmail account – From address only (To address need not be gmail). If you decide to use other email hosts, kindly update the line number <span style="text-decoration: underline;"><em>63</em></span> too (Google to find out the SMTP address and port for your email.</p>
 
-<p>To use this, I copy the content (Ctrl+C), and press the shortcut (place the code in desktop, Right click-&gt;key in the keyboard shortcut (Ctrl+Alt+<some_character>).</p>
+<p>To use this, I copy the content (Ctrl+C), and press the shortcut (place the code in desktop, Right click-&gt;key in the keyboard shortcut (Ctrl+Alt+<some_character>).</some_character></p>
 
 <p>*Note you will need Python installed for this to work. (Works with both Python 2x and 3x versions)</p>
 
-<h2>Code</h2>
+<h2 id="code">Code</h2>
 
 <div class="wp_syntax">
   <table>
@@ -217,10 +219,10 @@ clp <span style="color: #66cc66;">=</span> Get<span style="color: black;">&#40;<
 msg <span style="color: #66cc66;">=</span> MIMEText<span style="color: black;">&#40;</span><span style="color: #008000;">str</span><span style="color: black;">&#40;</span>clp<span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>
 msg<span style="color: black;">&#91;</span><span style="color: #483d8b;">'Subject'</span><span style="color: black;">&#93;</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'put the subject you require, I keep it fix to some obsure word'</span>
 <span style="color: #808080; font-style: italic;">#idea behind using obsure code is to help me arrange emails</span>
-<span style="color: #808080; font-style: italic;">#you could also use sys.argv for subject but I want to keep the process minimal & quick</span>
+<span style="color: #808080; font-style: italic;">#you could also use sys.argv for subject but I want to keep the process minimal &amp; quick</span>
 &nbsp;
-msg<span style="color: black;">&#91;</span><span style="color: #483d8b;">'From'</span><span style="color: black;">&#93;</span>  <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"YourEmailAddress"</span>
-msg<span style="color: black;">&#91;</span><span style="color: #483d8b;">'To'</span><span style="color: black;">&#93;</span>    <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"RecipientAddress"</span>
+msg<span style="color: black;">&#91;</span><span style="color: #483d8b;">'From'</span><span style="color: black;">&#93;</span>	<span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"YourEmailAddress"</span>
+msg<span style="color: black;">&#91;</span><span style="color: #483d8b;">'To'</span><span style="color: black;">&#93;</span> 	<span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"RecipientAddress"</span>
 &nbsp;
 s <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">smtplib</span>.<span style="color: black;">SMTP</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'smtp.gmail.com'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">587</span><span style="color: black;">&#41;</span> 
 <span style="color: #808080; font-style: italic;"># these values are for gmail, you may want to change it if others</span>
@@ -278,7 +280,7 @@ s.<span style="color: black;">quit</span><span style="color: black;">&#40;</span
 
 <a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
 
-<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
 
 <a href="/feed.xml"><i class="svg-icon rss"></i></a>
 <a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>

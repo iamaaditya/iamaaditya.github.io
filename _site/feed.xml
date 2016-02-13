@@ -21,331 +21,328 @@ The actual list of parts I bought can be found &lt;a href=&quot;https://pcpartpi
 
 &lt;p&gt;NOTE 4: &lt;strong&gt;Anaconda&lt;/strong&gt; : Why not Anaconda ? I have done some previous installations with Anaconda, but it becomes messy with smaller libs, and also compiling OpenCV. More importantly, I do not need all the utils of Anaconda, and on this machine I would like to minimize the libs installed.&lt;/p&gt;
 
-&lt;h1&gt;Upgrade the Ubuntu&lt;/h1&gt;
-
-&lt;hr&gt;
-
+&lt;h1 id=&quot;upgrade-the-ubuntu&quot;&gt;Upgrade the Ubuntu&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;p&gt;Always, upgrade the ubuntu for security and sanity purposes !&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;  # Fetches the list of available updates&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get upgrade&lt;/code&gt;   # Strictly upgrades the current packages&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get dist-upgrade&lt;/code&gt;   # Installs updates (new ones)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get update        &lt;/code&gt;  # Fetches the list of available updates&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get upgrade       &lt;/code&gt;   # Strictly upgrades the current packages&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get dist-upgrade  &lt;/code&gt;   # Installs updates (new ones)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;RAID 1&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;Partition and mount the harddrives&lt;/h2&gt;
-
-&lt;p&gt;Since my configuration has two HDD of 3 TB, I have configured them as RAID 1, this provides data redundancy. You do not want to lose weeks worth of training due to HDD crash ! If you do not want RAID 1, then skip this step.&lt;/p&gt;
+&lt;h1 id=&quot;raid-1&quot;&gt;RAID 1&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;## Partition and mount the harddrives
+  Since my configuration has two HDD of 3 TB, I have configured them as RAID 1, this provides data redundancy. You do not want to lose weeks worth of training due to HDD crash ! If you do not want RAID 1, then skip this step.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y mdadm&lt;/code&gt;   # Install mdadm, tool to manage RAID 1&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo mdadm --assemble --scan&lt;/code&gt;   # check for existing raids ## found existing !! If not prepare, refer tutorial here &lt;a href=&quot;http://askubuntu.com/questions/526747/setting-up-raid-1-on-14-04-with-an-existing-drive&quot;&gt;http://askubuntu.com/questions/526747/setting-up-raid-1-on-14-04-with-an-existing-drive&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y mdadm   &lt;/code&gt;   # Install mdadm, tool to manage RAID 1&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo mdadm --assemble --scan    &lt;/code&gt;   # check for existing raids ## found existing !! If not prepare, refer tutorial here &lt;a href=&quot;http://askubuntu.com/questions/526747/setting-up-raid-1-on-14-04-with-an-existing-drive&quot;&gt;http://askubuntu.com/questions/526747/setting-up-raid-1-on-14-04-with-an-existing-drive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Mounting&lt;/h2&gt;
-
+&lt;h2 id=&quot;mounting&quot;&gt;Mounting&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;df -aTh&lt;/code&gt;   # shows list of all mounts&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo mount /dev/md0 /media/hdd/&lt;/code&gt;   # (Manual) mount existing &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;blkid&lt;/code&gt;   # shows uuid for drives to add to fstab
-Add the following line to /etc/fstab
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df -aTh                         &lt;/code&gt;   # shows list of all mounts&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo mount /dev/md0 /media/hdd/ &lt;/code&gt;   # (Manual) mount existing&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;blkid                           &lt;/code&gt;   # shows uuid for drives to add to fstab
+  Add the following line to /etc/fstab
 # the RAID 1 mount of two hdd
 UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults    0    1&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo mount -a&lt;/code&gt;   # (Permanent) mount using fstab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo mount -a                   &lt;/code&gt;   # (Permanent) mount using fstab&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;Install Essentials, Extras, Git, Zsh&lt;/h1&gt;
-
-&lt;hr&gt;
-
+&lt;h1 id=&quot;install-essentials-extras-git-zsh&quot;&gt;Install Essentials, Extras, Git, Zsh&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y build-essential&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y ubuntu-restricted-extras&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y vim&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y git&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y git-core&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;`sudo apt-get install -y checkinstall # allows for easy install/uninstall of packages from source&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y zsh&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y tmux&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y CMake&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y libopenblas-dev&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;`sudo apt-get install -y libhdf5-dev&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y gcc-4.8&lt;/code&gt;   # because CUDA (7.0 &amp;amp; 7.5) works will less than 4.9.0
-
-&lt;ul&gt;
-&lt;li&gt;make soft link for gcc in /usr/bin&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y g++-4.8&lt;/code&gt;   # because CUDA (7.0 &amp;amp; 7.5) works will less than 4.9.0
-
-&lt;ul&gt;
-&lt;li&gt;make soft link for g++ in /usr/bin&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y apache2&lt;/code&gt;
-
-&lt;ul&gt;
-&lt;li&gt;sudo /etc/init.d/apache2 start `   # start the Apache Server&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y build-essential&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y ubuntu-restricted-extras&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y vim&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y git-core&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;`sudo apt-get install -y checkinstall # allows for easy install/uninstall of packages from source&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y zsh&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y tmux&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y CMake&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y libopenblas-dev&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;`sudo apt-get install -y libhdf5-dev&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y gcc-4.8 &lt;/code&gt;   # because CUDA (7.0 &amp;amp; 7.5) works will less than 4.9.0
+    &lt;ul&gt;
+      &lt;li&gt;make soft link for gcc in /usr/bin&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y g++-4.8 &lt;/code&gt;   # because CUDA (7.0 &amp;amp; 7.5) works will less than 4.9.0
+    &lt;ul&gt;
+      &lt;li&gt;make soft link for g++ in /usr/bin&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y apache2&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;sudo /etc/init.d/apache2 start `   # start the Apache Server&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;Python&lt;/h1&gt;
+&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
+&lt;hr /&gt;
 
-&lt;hr&gt;
-
-&lt;h2&gt;Python and Libs&lt;/h2&gt;
-
+&lt;h2 id=&quot;python-and-libs&quot;&gt;Python and Libs&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;python get-pip.py&lt;/code&gt;   # install pip&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install python-dev&lt;/code&gt;   # pythonLibs &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install cython git+https://github.com/scipy/scipy&lt;/code&gt;   # Installs Cython and Scipy both (Cython is requirement for scipy)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install -U scikit-learn&lt;/code&gt;   # Requires numpy and scipy&lt;/li&gt;
-&lt;li&gt;Matplotlib better to install using APT, lot of system lib dependency
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y matplotlib&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python get-pip.py &lt;/code&gt;   # install pip&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install python-dev &lt;/code&gt;   # pythonLibs&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install cython git+https://github.com/scipy/scipy &lt;/code&gt;   # Installs Cython and Scipy both (Cython is requirement for scipy)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install -U scikit-learn &lt;/code&gt;   # Requires numpy and scipy&lt;/li&gt;
+  &lt;li&gt;Matplotlib better to install using APT, lot of system lib dependency
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y matplotlib&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Highend computing&lt;/h2&gt;
-
+&lt;h2 id=&quot;highend-computing&quot;&gt;Highend computing&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install numpy&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install markupsafe&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install h5py&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install nltk&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install nose&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Install leveldb # for efficient use with Caffe, and probably other libs
-
-&lt;ul&gt;
-&lt;li&gt;git clone git@github.com:google/leveldb.git&lt;/li&gt;
-&lt;li&gt;make&lt;/li&gt;
-&lt;li&gt;sudo mv out-shared/libleveldb.* /usr/local/lib/ &lt;/li&gt;
-&lt;li&gt;sudo cp -R include/leveldb /usr/local/include&lt;/li&gt;
-&lt;li&gt;sudo ldconfig&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install numpy&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install markupsafe&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install h5py&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install nltk&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install nose&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Install leveldb # for efficient use with Caffe, and probably other libs
+    &lt;ul&gt;
+      &lt;li&gt;git clone git@github.com:google/leveldb.git&lt;/li&gt;
+      &lt;li&gt;make&lt;/li&gt;
+      &lt;li&gt;sudo mv out-shared/libleveldb.* /usr/local/lib/&lt;/li&gt;
+      &lt;li&gt;sudo cp -R include/leveldb /usr/local/include&lt;/li&gt;
+      &lt;li&gt;sudo ldconfig&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Python3 and Ipython (Jupyter)&lt;/h2&gt;
-
+&lt;h2 id=&quot;python3-and-ipython-jupyter&quot;&gt;Python3 and Ipython (Jupyter)&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install python3-pip&lt;/code&gt;  # to install jupyter for python3, it needs pip3 and does not work using pip&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install jupyter&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo pip3 install jupyter&lt;/code&gt;   # I don&amp;#39;t know why it requires sepearate installation, especially when not done using Anaconda !&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install python3-pip&lt;/code&gt;  # to install jupyter for python3, it needs pip3 and does not work using pip&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install jupyter&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip3 install jupyter &lt;/code&gt;   # I don’t know why it requires sepearate installation, especially when not done using Anaconda !&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;NVIDIA&lt;/h1&gt;
+&lt;h1 id=&quot;nvidia&quot;&gt;NVIDIA&lt;/h1&gt;
+&lt;hr /&gt;
 
-&lt;hr&gt;
-
-&lt;h2&gt;Install NVIDIA Drivers&lt;/h2&gt;
-
+&lt;h2 id=&quot;install-nvidia-drivers&quot;&gt;Install NVIDIA Drivers&lt;/h2&gt;
 &lt;p&gt;I would highly advice against installation using apt-get as it always installs one version older, and with NVIDIA every generation of driver brings performance boosts.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo service lightdm stop&lt;/code&gt;   # stop the X server before running the installation
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service lightdm stop       &lt;/code&gt;   # stop the X server before running the installation
 NOTE! Could not sign kernels, make a note of this. It might lead to problems with some libraries later on&lt;/li&gt;
-&lt;li&gt;Download AMD 64 bit Linux drivers from NVIDIA website (manual download and transfer and execute the provided script or binary)&lt;/li&gt;
+  &lt;li&gt;Download AMD 64 bit Linux drivers from NVIDIA website (manual download and transfer and execute the provided script or binary)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Install CUDA&lt;/h2&gt;
-
+&lt;h2 id=&quot;install-cuda&quot;&gt;Install CUDA&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo ./cuda_7.0.28_linux.run --override&lt;/code&gt;   # for cuda 7.0&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo ln -s /usr/bin/g++-4.8 /usr/local/cuda/bin/g++&lt;/code&gt;   # this might be omitted if a symbolic link has been made from /usr/bin/g++ like mentioned above&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo ln -s /usr/bin/gcc-4.8 /usr/local/cuda/bin/gcc&lt;/code&gt;   # this might be omitted if a symbolic link has been made from /usr/bin/gcc like mentioned above&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ./cuda_7.0.28_linux.run --override  &lt;/code&gt;   # for cuda 7.0&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ln -s /usr/bin/g++-4.8 /usr/local/cuda/bin/g++ &lt;/code&gt;   # this might be omitted if a symbolic link has been made from /usr/bin/g++ like mentioned above&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ln -s /usr/bin/gcc-4.8 /usr/local/cuda/bin/gcc &lt;/code&gt;   # this might be omitted if a symbolic link has been made from /usr/bin/gcc like mentioned above&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Install CuDNN&lt;/h2&gt;
-
-&lt;p&gt;CuDNN improves the performance of deep learning libraries. Unfornately, not all of them work with latest version. Google&amp;#39;s Tensorflow requires v2, Theano &amp;amp; Caffe works with v3, whereas latest version is 4.
+&lt;h2 id=&quot;install-cudnn&quot;&gt;Install CuDNN&lt;/h2&gt;
+&lt;p&gt;CuDNN improves the performance of deep learning libraries. Unfornately, not all of them work with latest version. Google’s Tensorflow requires v2, Theano &amp;amp; Caffe works with v3, whereas latest version is 4.
   To get the library you will have to register at &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;NVIDIA CuDNN&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Download the archive folder&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd &amp;lt;extracted_directory&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;export LD_LIBRARY_PATH=&lt;/code&gt;pwd&lt;code&gt;:$LD_LIBRARY_PATH&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Download the archive folder&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd &amp;lt;extracted_directory&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export LD_LIBRARY_PATH=&lt;/code&gt;pwd&lt;code class=&quot;highlighter-rouge&quot;&gt;:$LD_LIBRARY_PATH&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Although not required, I find it useful to rather install both the version of CuDNN (2 and 3). Put the libs of v2 in CUDA 6.5 or CUDA 7.0 (for Tensorflow), and v3 in CUDA 7.5.&lt;/p&gt;
 
-&lt;h1&gt;Image processing and Computer Vision&lt;/h1&gt;
+&lt;h1 id=&quot;image-processing-and-computer-vision&quot;&gt;Image processing and Computer Vision&lt;/h1&gt;
+&lt;hr /&gt;
 
-&lt;hr&gt;
-
-&lt;h2&gt;Install OpenCV&lt;/h2&gt;
+&lt;h2 id=&quot;install-opencv&quot;&gt;Install OpenCV&lt;/h2&gt;
 
 &lt;p&gt;This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caffe, I did not have to tweak the settings, and pretty much their provided instructions worked.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Download OpenCV from http://opencv.org/downloads.html and unpack. Enter the unpacked directory. Execute:&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;mkdir build &amp;amp;&amp;amp; cd build/&lt;/code&gt; # If you have Oh-my-zsh then just &lt;code&gt;take build&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;make -j12 # j 12 makes 12 parallel processes using all the cores to speed up the process, in a single core, the build might take couple of hours.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;sudo checkinstall # to create the deb package, and install it.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download OpenCV from http://opencv.org/downloads.html and unpack. Enter the unpacked directory. Execute:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir build &amp;amp;&amp;amp; cd build/ &lt;/code&gt; # If you have Oh-my-zsh then just &lt;code class=&quot;highlighter-rouge&quot;&gt;take build&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;make -j12 # j 12 makes 12 parallel processes using all the cores to speed up the process, in a single core, the build might take couple of hours.&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo checkinstall # to create the deb package, and install it.&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;FFMPEG&lt;/h1&gt;
+&lt;h1 id=&quot;ffmpeg&quot;&gt;FFMPEG&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y ffmpeg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y ffmpeg&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;ImageMagick&lt;/h1&gt;
+&lt;h1 id=&quot;imagemagick&quot;&gt;ImageMagick&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y imagemagick&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y imagemagick&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;Install GPU Libraries&lt;/h1&gt;
+&lt;h1 id=&quot;install-gpu-libraries&quot;&gt;Install GPU Libraries&lt;/h1&gt;
+&lt;hr /&gt;
 
-&lt;hr&gt;
-
-&lt;h2&gt;Theano&lt;/h2&gt;
-
+&lt;h2 id=&quot;theano&quot;&gt;Theano&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install Theano&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install -y python-pycuda&lt;/code&gt;   # also installs the dependencies, but it is best to have own installation of nvidia-cuda, to make sure the version is proper and to maintain multiple version installation&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install Theano&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install -y python-pycuda &lt;/code&gt;   # also installs the dependencies, but it is best to have own installation of nvidia-cuda, to make sure the version is proper and to maintain multiple version installation&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Tensorflow&lt;/h2&gt;
-
+&lt;h2 id=&quot;tensorflow&quot;&gt;Tensorflow&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl&lt;/code&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl&lt;/code&gt;
 &amp;gt;  Tensorflow (as of Jan 15, 2016), works on Cuda 7.0 and CuDNN v2 ), thus change /usr/local/cuda softlink&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Keras&lt;/h2&gt;
-
+&lt;h2 id=&quot;keras&quot;&gt;Keras&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install keras&lt;/code&gt;  # Could it get any easier !! Thanks people developer of Keras !&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install keras&lt;/code&gt;  # Could it get any easier !! Thanks people developer of Keras !&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Lasagne&lt;/h2&gt;
-
+&lt;h2 id=&quot;lasagne&quot;&gt;Lasagne&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip&lt;/code&gt;  # Preferred way to install Lasagne !&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip&lt;/code&gt;  # Preferred way to install Lasagne !&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Torch&lt;/h2&gt;
-
+&lt;h2 id=&quot;torch&quot;&gt;Torch&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone https://github.com/torch/distro.git ~/torch --recursive&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd ~/torch; ./install.sh&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/torch/distro.git ~/torch --recursive&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/torch; ./install.sh&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Aditionally to load caffe models in torch,
-  * &lt;code&gt;luarocks install loadcaffe&lt;/code&gt;&lt;/p&gt;
+  * &lt;code class=&quot;highlighter-rouge&quot;&gt;luarocks install loadcaffe&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2&gt;Caffe&lt;/h2&gt;
+&lt;h2 id=&quot;caffe&quot;&gt;Caffe&lt;/h2&gt;
 
-&lt;h3&gt;Note&lt;/h3&gt;
-
+&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
-not link them. However, caffe will refuse to compile with gcc 5, with error from following file
-&lt;code&gt;/usr/local/cuda/include/host_config.h&lt;/code&gt; Just comment out the line 115, which checks the version of GCC &lt;/li&gt;
-&lt;li&gt;Use the CMake instead of default make (checkout &lt;a href=&quot;https://github.com/BVLC/caffe/pull/1667&quot;&gt;https://github.com/BVLC/caffe/pull/1667&lt;/a&gt; )&lt;/li&gt;
+  &lt;li&gt;Switch back to GCC 5 and G++ 5, because the prebuilt libraries of Ubuntu 15.10 are built on gcc 5, and thus compiling caffe in 4.8 will
+ not link them. However, caffe will refuse to compile with gcc 5, with error from following file
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/cuda/include/host_config.h&lt;/code&gt; Just comment out the line 115, which checks the version of GCC&lt;/li&gt;
+  &lt;li&gt;Use the CMake instead of default make (checkout &lt;a href=&quot;https://github.com/BVLC/caffe/pull/1667&quot;&gt;https://github.com/BVLC/caffe/pull/1667&lt;/a&gt; )&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Requirements&lt;/h3&gt;
+&lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install --no-install-recommends libboost-all-dev&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;for req in $(cat python/requirements.txt); do pip install $req; done&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install --no-install-recommends libboost-all-dev&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for req in $(cat python/requirements.txt); do pip install $req; done&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Issues&lt;/h3&gt;
+&lt;h3 id=&quot;issues&quot;&gt;Issues&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Linking Error in Leveldb e.g&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;        Linking CXX executable caffe
-        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::Status::ToString[abi:cxx11]() const&amp;#39;
-        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::DB::Open(leveldb::Options const&amp;amp;, std::__cxx11::basic_string&amp;lt;char, std::char_traits&amp;lt;char&amp;gt;, std::allocator&amp;lt;char&amp;gt; &amp;gt; const&amp;amp;, leveldb::DB**)&amp;#39;
+  &lt;li&gt;
+    &lt;p&gt;Linking Error in Leveldb e.g&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        Linking CXX executable caffe
+        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::Status::ToString[abi:cxx11]() const&#39;
+        ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `leveldb::DB::Open(leveldb::Options const&amp;amp;, std::__cxx11::basic_string&amp;lt;char, std::char_traits&amp;lt;char&amp;gt;, std::allocator&amp;lt;char&amp;gt; &amp;gt; const&amp;amp;, leveldb::DB**)&#39;
         collect2: error: ld returned 1 exit status
-        tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target &amp;#39;tools/caffe&amp;#39; failed
+        tools/CMakeFiles/caffe.bin.dir/build.make:122: recipe for target &#39;tools/caffe&#39; failed
         make[2]: *** [tools/caffe] Error 1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Solution, recompile Leveldb with GCC 5&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Linking Error in Protobuf e.g&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;        Linking CXX executable caffe
-        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString&amp;lt;cudaError, cudaError&amp;gt;(cudaError const&amp;amp;, cudaError const&amp;amp;, char const*)&amp;#39;:
-        caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()&amp;#39;
-        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString&amp;lt;unsigned long, int&amp;gt;(unsigned long const&amp;amp;, int const&amp;amp;, char const*)&amp;#39;:
-        caffe.cpp:(.text._ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc]+0x43): undefined reference to `google::base::CheckOpMessageBuilder::NewString()&amp;#39;
-        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `main&amp;#39;:
-        caffe.cpp:(.text.startup+0x3e): undefined reference to `google::SetVersionString(std::string const&amp;amp;)&amp;#39;
-        caffe.cpp:(.text.startup+0x6e): undefined reference to `google::SetUsageMessage(std::string const&amp;amp;)&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Solution, recompile Leveldb with GCC 5&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Linking Error in Protobuf e.g&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        Linking CXX executable caffe
+        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString&amp;lt;cudaError, cudaError&amp;gt;(cudaError const&amp;amp;, cudaError const&amp;amp;, char const*)&#39;:
+        caffe.cpp:(.text._ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringI9cudaErrorS1_EEPSsRKT_RKT0_PKc]+0x43): undefined reference to google::base::CheckOpMessageBuilder::NewString()&#39;
+        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `std::string* google::MakeCheckOpString&amp;lt;unsigned long, int&amp;gt;(unsigned long const&amp;amp;, int const&amp;amp;, char const*)&#39;:
+        caffe.cpp:(.text._ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc[_ZN6google17MakeCheckOpStringImiEEPSsRKT_RKT0_PKc]+0x43): undefined reference to `google::base::CheckOpMessageBuilder::NewString()&#39;
+        CMakeFiles/caffe.bin.dir/caffe.cpp.o: In function `main&#39;:
+        caffe.cpp:(.text.startup+0x3e): undefined reference to `google::SetVersionString(std::string const&amp;amp;)&#39;
+        caffe.cpp:(.text.startup+0x6e): undefined reference to `google::SetUsageMessage(std::string const&amp;amp;)&#39;
         ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(int, std::string const&amp;amp;, google::protobuf::io::CodedOutputStream*)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Solution, change your current compiler to gcc
-Use &lt;code&gt;gcc --version&lt;/code&gt; to make sure the correct version, and &lt;code&gt;which gcc&lt;/code&gt; to check the softlinks to actual gcc&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Relevant issue to checkout &lt;a href=&quot;https://github.com/BVLC/caffe/issues/2690&quot;&gt;https://github.com/BVLC/caffe/issues/2690&lt;/a&gt; and &lt;a href=&quot;https://github.com/BVLC/caffe/issues/3046&quot;&gt;https://github.com/BVLC/caffe/issues/3046&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Solution, change your current compiler to gcc
+Use &lt;code class=&quot;highlighter-rouge&quot;&gt;gcc --version&lt;/code&gt; to make sure the correct version, and &lt;code class=&quot;highlighter-rouge&quot;&gt;which gcc&lt;/code&gt; to check the softlinks to actual gcc&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Relevant issue to checkout &lt;a href=&quot;https://github.com/BVLC/caffe/issues/2690&quot;&gt;https://github.com/BVLC/caffe/issues/2690&lt;/a&gt; and &lt;a href=&quot;https://github.com/BVLC/caffe/issues/3046&quot;&gt;https://github.com/BVLC/caffe/issues/3046&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Instllation&lt;/h3&gt;
+&lt;h3 id=&quot;instllation&quot;&gt;Instllation&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;mkdir build&lt;/li&gt;
-&lt;li&gt;cd build&lt;/li&gt;
-&lt;li&gt;cmake ..&lt;/li&gt;
-&lt;li&gt;make all&lt;/li&gt;
-&lt;li&gt;make runtest&lt;/li&gt;
+  &lt;li&gt;mkdir build&lt;/li&gt;
+  &lt;li&gt;cd build&lt;/li&gt;
+  &lt;li&gt;cmake ..&lt;/li&gt;
+  &lt;li&gt;make all&lt;/li&gt;
+  &lt;li&gt;make runtest&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;To be updated with instructions for Nervana&lt;/h2&gt;
+&lt;h2 id=&quot;to-be-updated-with-instructions-for-nervana&quot;&gt;To be updated with instructions for Nervana&lt;/h2&gt;
 
-&lt;h1&gt;Optional&lt;/h1&gt;
+&lt;h1 id=&quot;optional&quot;&gt;Optional&lt;/h1&gt;
+&lt;hr /&gt;
 
-&lt;hr&gt;
-
-&lt;h2&gt;Remove unnecessary Ubuntu folders&lt;/h2&gt;
-
+&lt;h2 id=&quot;remove-unnecessary-ubuntu-folders&quot;&gt;Remove unnecessary Ubuntu folders&lt;/h2&gt;
 &lt;p&gt;When working with only terminal via ssh, you do not need some of these folders //&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Desktop&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Public&lt;/code&gt; # Is not persistent, after restart Ubuntu recreates this directory&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Pictures&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Music&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Videos&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Downloads&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Templates&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/Documents&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rm -rf ~/examples.desktop&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Desktop&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Public &lt;/code&gt; # Is not persistent, after restart Ubuntu recreates this directory&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Pictures&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Music&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Videos&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Downloads&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Templates&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/Documents&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/examples.desktop&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Customization&lt;/h2&gt;
-
+&lt;h2 id=&quot;customization&quot;&gt;Customization&lt;/h2&gt;
 &lt;p&gt;These are my personal customization which I do on every machine I use. You may find them useful. They increase visual appeal and efficiency of working on Linux Machine.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;chsh -s which zsh&lt;/code&gt;              # Change the shell to ZSH (which zsh should be inside backticks, but Github Markdown messes up the formatting)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo reboot now&lt;/code&gt;   # Requires restart&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone git@github.com:iamaaditya/dotfiles.git&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;~/dotfiles/install.sh&lt;/code&gt;   # Run the commands to make the shortcuts&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim&lt;/code&gt;   # Install bundle
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chsh -s which zsh&lt;/code&gt;              # Change the shell to ZSH (which zsh should be inside backticks, but Github Markdown messes up the formatting)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo reboot now                 &lt;/code&gt;   # Requires restart&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone git@github.com:iamaaditya/dotfiles.git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~/dotfiles/install.sh           &lt;/code&gt;   # Run the commands to make the shortcuts&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim &lt;/code&gt;   # Install bundle
 ### Solarized Color for vim&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd ~/.vim/colors/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;wget https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim&lt;/code&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/.vim/colors/ &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim&lt;/code&gt;
 ### Powerline &amp;amp; associated fonts&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pip install powerline-status&lt;/code&gt;   # Powerline &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mkdir -p ~/.fonts/ &amp;amp;&amp;amp; mv PowerlineSymbols.otf ~/.fonts/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fc-cache -vf ~/.fonts&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mkdir -p ~/.config/fontconfig/conf.d/ &amp;amp;&amp;amp; mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/&lt;/code&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install powerline-status    &lt;/code&gt;   # Powerline&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir -p ~/.fonts/ &amp;amp;&amp;amp; mv PowerlineSymbols.otf ~/.fonts/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fc-cache -vf ~/.fonts&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir -p ~/.config/fontconfig/conf.d/ &amp;amp;&amp;amp; mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/&lt;/code&gt;
 Note - if some aspects of powerline does not show up, check &lt;a href=&quot;http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin&quot;&gt;http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If you are curious on what this customization looks like, take a look at this screenshot. Here it shows Tmux session with multiple windows, and a multiple panes in the same window. Switching windows and panes in Tmux is very easy. Copy information across windows, sessions and servers is really at the tip of the finger. Also Solarized colors make it tolerable to use the screen for hours.
-  &lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Screenshot.png&quot; alt=&quot;screenshot&quot;&gt;&lt;/p&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Screenshot.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Jan 2016 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2016/01/Deep-Learning-software-installation-guide-on-fresh-Ubuntu/</link>
@@ -356,12 +353,12 @@ Note - if some aspects of powerline does not show up, check &lt;a href=&quot;htt
         <title>Extension of Hidden Markov Models &amp;#8211; Formulas in two state HMM</title>
         <description>&lt;p&gt;Extending the hidden markov models, where the current state is affected by past two states. This can be useful in simulation of games or in less sophisticated pricing models (more accurate would be an exponential decay of all past terms).&lt;/p&gt;
 
-&lt;h2&gt;Notations&lt;/h2&gt;
+&lt;h2 id=&quot;notations&quot;&gt;Notations&lt;/h2&gt;
 
-&lt;p&gt;I have kept the notations close to as provided in Chapter 6 of &amp;#8220;Speech and Language Processing&amp;#8221;, Second Edition by Martin and Jurafsky.&lt;/p&gt;
+&lt;p&gt;I have kept the notations close to as provided in Chapter 6 of “Speech and Language Processing”, Second Edition by Martin and Jurafsky.&lt;/p&gt;
 
-&lt;p&gt;\(\lambda\) Common term for all HMM parameters. All the probabilties&lt;br&gt;
-will be conditioned to this term i.e \(P(&amp;#8230;&amp;#8230;|\lambda)\)&lt;/p&gt;
+&lt;p&gt;\(\lambda\) Common term for all HMM parameters. All the probabilties&lt;br /&gt;
+will be conditioned to this term i.e \(P(……|\lambda)\)&lt;/p&gt;
 
 &lt;p&gt;\(T\) denotes the total number of time steps&lt;/p&gt;
 
@@ -371,74 +368,74 @@ will be conditioned to this term i.e \(P(&amp;#8230;&amp;#8230;|\lambda)\)&lt;/p
 
 &lt;p&gt;\(q_{t}\) denotes the hidden variale (state) at time step t&lt;/p&gt;
 
-&lt;h2&gt;Formulas&lt;/h2&gt;
+&lt;h2 id=&quot;formulas&quot;&gt;Formulas&lt;/h2&gt;
 
-&lt;h3&gt;Distribution of \(\alpha_{t}(i,j)\)&lt;/h3&gt;
+&lt;h3 id=&quot;distribution-of-alphatij&quot;&gt;Distribution of \(\alpha_{t}(i,j)\)&lt;/h3&gt;
 
 &lt;p&gt;\(\alpha_{t}(i,j)\) denotes the joint probability distribution of all observed variables until time \(t\) and current and the last states.&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\alpha_{t}(i,j)=P(o_{1},o_{2},\dots,o_{t},q_{t-1}=i,q_{t}=j|\lambda)&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\alpha_{t}(i,j)=P(o_{1},o_{2},\dots,o_{t},q_{t-1}=i,q_{t}=j|\lambda)&lt;br /&gt;
 \]&lt;/p&gt;
 
 &lt;p&gt;Where \(\lambda\) is the given HMM parameters.&lt;/p&gt;
 
-&lt;h3&gt;Base case of \(\alpha_{t}(i,j)\)&lt;/h3&gt;
+&lt;h3 id=&quot;base-case-of-alphatij&quot;&gt;Base case of \(\alpha_{t}(i,j)\)&lt;/h3&gt;
 
 &lt;p&gt;Consider the following notation:&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-a_{ij}=P(q_{t}=j|q_{t-1}=i)&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+a_{ij}=P(q_{t}=j|q_{t-1}=i)&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-a_{ijk}=P(q_{t+1}=k|q_{t}=j,q_{t-1}=i)&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+a_{ijk}=P(q_{t+1}=k|q_{t}=j,q_{t-1}=i)&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;then base cases are &amp;#8211;&lt;/p&gt;
+&lt;p&gt;then base cases are –&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\alpha_{1}(i=0,j)=a_{i=0,j}b_{j}(o_{1})&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\alpha_{1}(i=0,j)=a_{i=0,j}b_{j}(o_{1})&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\alpha_{2}(i,j)=\alpha_{1}(0,j)a_{ij}b_{j}(o_{2})&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\alpha_{2}(i,j)=\alpha_{1}(0,j)a_{ij}b_{j}(o_{2})&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;It should be noted that if the second state (\(q_{2}\() is also allowed to be entry point, then it needs an additional base case of &amp;#8212;&lt;/p&gt;
+&lt;p&gt;It should be noted that if the second state (\(q_{2}\() is also allowed to be entry point, then it needs an additional base case of —&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\alpha_{2}(i=0,j)=\sum_{i=1}^{N}\alpha_{1}(i=0,j)a_{ij}b_{j}(o_{2})&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\alpha_{2}(i=0,j)=\sum_{i=1}^{N}\alpha_{1}(i=0,j)a_{ij}b_{j}(o_{2})&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;h3&gt;Inductive step&lt;/h3&gt;
+&lt;h3 id=&quot;inductive-step&quot;&gt;Inductive step&lt;/h3&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\alpha_{t}(j,k)=\sum_{i=1}^{N}\alpha_{t-1}(i,j)\times a_{ijk}\times b_{k}(o_{t})\text{ where, }3\leq t\leq T&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\alpha_{t}(j,k)=\sum_{i=1}^{N}\alpha_{t-1}(i,j)\times a_{ijk}\times b_{k}(o_{t})\text{ where, }3\leq t\leq T&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;h3&gt;Termination step&lt;/h3&gt;
+&lt;h3 id=&quot;termination-step&quot;&gt;Termination step&lt;/h3&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{jF}\times a_{ijF}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{jF}\times a_{ijF}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;h2&gt;Estimated Expected Transitions&lt;/h2&gt;
+&lt;h2 id=&quot;estimated-expected-transitions&quot;&gt;Estimated Expected Transitions&lt;/h2&gt;
 
-&lt;h3&gt;\(\xi_{t}\)&lt;/h3&gt;
+&lt;h3 id=&quot;xit&quot;&gt;\(\xi_{t}\)&lt;/h3&gt;
 
 &lt;p&gt;\(\xi_{t}\) = Probability of being in state k at t+1, j at t and i at t-1&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\xi_{t}=P(q_{t+1}=k,q_{t}=j,q_{t-1}=i|o_{1},\dots o_{T})=\frac{\alpha_{t}(i,j)\times\beta_{t+1}(j,k)\times a_{ijk}b_{k}(o_{t+1})}{\alpha(q_{f})}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\xi_{t}=P(q_{t+1}=k,q_{t}=j,q_{t-1}=i|o_{1},\dots o_{T})=\frac{\alpha_{t}(i,j)\times\beta_{t+1}(j,k)\times a_{ijk}b_{k}(o_{t+1})}{\alpha(q_{f})}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;h3&gt;\(\gamma_{t}\)&lt;/h3&gt;
+&lt;h3 id=&quot;gammat&quot;&gt;\(\gamma_{t}\)&lt;/h3&gt;
 
-&lt;p&gt;\(\gamma_{t}\) = Probability of being in state i at &amp;#8216;t&amp;#8217;, given all the obervations&lt;/p&gt;
+&lt;p&gt;\(\gamma_{t}\) = Probability of being in state i at ‘t’, given all the obervations&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\gamma_{t}=P(q_{t}=i|o_{1},\dots,o_{T})=\frac{\sum_{j}^{N}\alpha(j,i),\beta(j,i)}{\alpha(q_{f})}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\gamma_{t}=P(q_{t}=i|o_{1},\dots,o_{T})=\frac{\sum_{j}^{N}\alpha(j,i),\beta(j,i)}{\alpha(q_{f})}&lt;br /&gt;
 \]&lt;/p&gt;
 
 &lt;p&gt;where \(\alpha(q_{f})=P(o_{1},\dots,o_{T})\) (joint probability of all observed variables)&lt;/p&gt;
@@ -454,123 +451,130 @@ P(O|\lambda)=\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{T}(i,j)\times a_{iF}\times a_{j
     
       <item>
         <title>Pseudo loss function in distributed Adaboost</title>
-        <description>&lt;h1&gt;$$L_{Hedge(\beta)}$$&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;lhedgebeta&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;L_{Hedge(\beta)}&lt;/script&gt;&lt;/h1&gt;
 
-&lt;p&gt;This is the sketch of proof of correctness of &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{Hedge(\beta)} &#39; title=&#39;L_{Hedge(\beta)} &#39; class=&#39;latex&#39; /&gt;, pseudo loss function, in the case of distributed boosting algorithm. It has been known that boosting of functions with each applicator with more than 0.5 accuracy is sufficient to guarantee lowest minimum accuracy in iterative pooling. A similar sketch is presented for the distributed case where the score from each stage is not shared across all the computing nodes. While this guarantees the correctness, it does not guarantee the convergence, which is still a highly sought after problem in distributed algorithm.&lt;/p&gt;
+&lt;p&gt;This is the sketch of proof of correctness of &lt;img src=&quot;http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;L_{Hedge(\beta)} &quot; title=&quot;L_{Hedge(\beta)} &quot; class=&quot;latex&quot; /&gt;, pseudo loss function, in the case of distributed boosting algorithm. It has been known that boosting of functions with each applicator with more than 0.5 accuracy is sufficient to guarantee lowest minimum accuracy in iterative pooling. A similar sketch is presented for the distributed case where the score from each stage is not shared across all the computing nodes. While this guarantees the correctness, it does not guarantee the convergence, which is still a highly sought after problem in distributed algorithm.&lt;/p&gt;
 
-&lt;p&gt;For people uninitiated in the problem, it is highly advised to &lt;a href=&quot;http://www-users.cs.umn.edu/%7Ealeks/papers/kdd_01.pdf&quot;&gt;read this paper&lt;/a&gt; or for much simpler and faster read, &lt;a href=&quot;http://www-users.cs.umn.edu/%7Ebanerjee/Teaching/Spring06/talks/Paper02Tim1.ppt&quot;&gt;these slides&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For people uninitiated in the problem, it is highly advised to &lt;a href=&quot;http://www-users.cs.umn.edu/~aleks/papers/kdd_01.pdf&quot;&gt;read this paper&lt;/a&gt; or for much simpler and faster read, &lt;a href=&quot;http://www-users.cs.umn.edu/~banerjee/Teaching/Spring06/talks/Paper02Tim1.ppt&quot;&gt;these slides&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Notations&lt;/h2&gt;
+&lt;h2 id=&quot;notations&quot;&gt;Notations&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=w+%3D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w = &#39; title=&#39;w = &#39; class=&#39;latex&#39; /&gt; weights Vector&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=w+%3D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w = &quot; title=&quot;w = &quot; class=&quot;latex&quot; /&gt; weights Vector&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=T+%3D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;T = &#39; title=&#39;T = &#39; class=&#39;latex&#39; /&gt; Number of iterations&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=T+%3D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;T = &quot; title=&quot;T = &quot; class=&quot;latex&quot; /&gt; Number of iterations&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta&#39; title=&#39;\beta&#39; class=&#39;latex&#39; /&gt; = Parameter &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cepsilon%5B0%2C1%5D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\epsilon[0,1] &#39; title=&#39;\epsilon[0,1] &#39; class=&#39;latex&#39; /&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cbeta&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\beta&quot; title=&quot;\beta&quot; class=&quot;latex&quot; /&gt; = Parameter &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cepsilon%5B0%2C1%5D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\epsilon[0,1] &quot; title=&quot;\epsilon[0,1] &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\ell^{t} &#39; title=&#39;\ell^{t} &#39; class=&#39;latex&#39; /&gt;= Loss Vector for the &lt;img src=&#39;http://s0.wp.com/latex.php?latex=t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;t &#39; title=&#39;t &#39; class=&#39;latex&#39; /&gt; iteration (trials)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\ell^{t} &quot; title=&quot;\ell^{t} &quot; class=&quot;latex&quot; /&gt;= Loss Vector for the &lt;img src=&quot;http://s0.wp.com/latex.php?latex=t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;t &quot; title=&quot;t &quot; class=&quot;latex&quot; /&gt; iteration (trials)&lt;/p&gt;
 
 &lt;p&gt;N = Total Number of weak learners&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7BL_i%3D+%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{L_i= } &#39; title=&#39;{L_i= } &#39; class=&#39;latex&#39; /&gt;Strategy i&amp;#8217;s cumulative loss = &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cell_%7Bi%7D%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\sum_{t=1}^{T}\ell_{i}^{t} &#39; title=&#39;\sum_{t=1}^{T}\ell_{i}^{t} &#39; class=&#39;latex&#39; /&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7BL_i%3D+%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{L_i= } &quot; title=&quot;{L_i= } &quot; class=&quot;latex&quot; /&gt;Strategy i’s cumulative loss = &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cell_%7Bi%7D%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\sum_{t=1}^{T}\ell_{i}^{t} &quot; title=&quot;\sum_{t=1}^{T}\ell_{i}^{t} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BA%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{A} &#39; title=&#39;L_{A} &#39; class=&#39;latex&#39; /&gt;= Algorithm A&amp;#8217;s total cumulative loss = &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; title=&#39;\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=L_%7BA%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;L_{A} &quot; title=&quot;L_{A} &quot; class=&quot;latex&quot; /&gt;= Algorithm A’s total cumulative loss = &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &quot; title=&quot;\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
 
-&lt;h2&gt;Algorithm&lt;/h2&gt;
+&lt;h2 id=&quot;algorithm&quot;&gt;Algorithm&lt;/h2&gt;
 
 &lt;p&gt;Consider the following Algorithm&lt;/p&gt;
 
-&lt;p&gt;Hedge(&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;) :&lt;/p&gt;
+&lt;p&gt;Hedge(&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\beta &quot; title=&quot;\beta &quot; class=&quot;latex&quot; /&gt;) :&lt;/p&gt;
 
-&lt;p&gt;Do for t = 1, 2, &amp;#8230;, &lt;em&gt;T&lt;/em&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Choose Allocation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;\[&lt;br&gt;
-\mathbf{p}^{t}=\frac{\mathbf{w}^{t}}{\sum_{i-1}^{N}w_{i}^{t}}&lt;br&gt;
-\]&lt;/p&gt;
+&lt;p&gt;Do for t = 1, 2, …, &lt;em&gt;T&lt;/em&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Receive loss vector &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D%5Cepsilon%5B0%2C1%5D%5E%7BN%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\ell^{t}\epsilon[0,1]^{N} &#39; title=&#39;\ell^{t}\epsilon[0,1]^{N} &#39; class=&#39;latex&#39; /&gt; from environment&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Suffer loss &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\mathbf{p}^{t}.\ell^{t} &#39; title=&#39;\mathbf{p}^{t}.\ell^{t} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Set the new weights&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;Choose Allocation&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-w_{i}^{t+1}=w_{i}^{t}\beta^{\ell_{i}^{t}}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\mathbf{p}^{t}=\frac{\mathbf{w}^{t}}{\sum_{i-1}^{N}w_{i}^{t}}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;h2&gt;To Prove&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Receive loss vector &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cell%5E%7Bt%7D%5Cepsilon%5B0%2C1%5D%5E%7BN%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\ell^{t}\epsilon[0,1]^{N} &quot; title=&quot;\ell^{t}\epsilon[0,1]^{N} &quot; class=&quot;latex&quot; /&gt; from environment&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Suffer loss &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\mathbf{p}^{t}.\ell^{t} &quot; title=&quot;\mathbf{p}^{t}.\ell^{t} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Set the new weights&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-ln(\sum_{i=1}^{N}w_{i}^{T+1})\leq-(1-\beta)L_{Hedge(\beta)}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+w_{i}^{t+1}=w_{i}^{t}\beta^{\ell_{i}^{t}}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;h2&gt;Proof&lt;/h2&gt;
+&lt;h2 id=&quot;to-prove&quot;&gt;To Prove&lt;/h2&gt;
 
-&lt;p&gt;From the Hedge(&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;) function, we know that&lt;/p&gt;
-
-&lt;p&gt;\[&lt;br&gt;
-\sum_{i=1}^{N}w_{i}^{t+1}=\sum_{i=1}^{N}w_{i}^{t}\beta^{\ell_{i}^{t}}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+ln(\sum_{i=1}^{N}w_{i}^{T+1})\leq-(1-\beta)L_{Hedge(\beta)}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;For &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Calpha%5Cgeq0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\alpha\geq0 &#39; title=&#39;\alpha\geq0 &#39; class=&#39;latex&#39; /&gt; and &lt;img src=&#39;http://s0.wp.com/latex.php?latex=r%5Cepsilon%5B0%2C1%5D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;r\epsilon[0,1] &#39; title=&#39;r\epsilon[0,1] &#39; class=&#39;latex&#39; /&gt;, by convexity we know that&lt;br&gt;
-&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Calpha%5E%7Br%7D%5Cleq1-%281-%5Calpha%29r&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\alpha^{r}\leq1-(1-\alpha)r&#39; title=&#39;\alpha^{r}\leq1-(1-\alpha)r&#39; class=&#39;latex&#39; /&gt;, therefore above eqn can be rewritten&lt;br&gt;
+&lt;h2 id=&quot;proof&quot;&gt;Proof&lt;/h2&gt;
+
+&lt;p&gt;From the Hedge(&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\beta &quot; title=&quot;\beta &quot; class=&quot;latex&quot; /&gt;) function, we know that&lt;/p&gt;
+
+&lt;p&gt;\[&lt;br /&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}=\sum_{i=1}^{N}w_{i}^{t}\beta^{\ell_{i}^{t}}&lt;br /&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;For &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Calpha%5Cgeq0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\alpha\geq0 &quot; title=&quot;\alpha\geq0 &quot; class=&quot;latex&quot; /&gt; and &lt;img src=&quot;http://s0.wp.com/latex.php?latex=r%5Cepsilon%5B0%2C1%5D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;r\epsilon[0,1] &quot; title=&quot;r\epsilon[0,1] &quot; class=&quot;latex&quot; /&gt;, by convexity we know that&lt;br /&gt;
+&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Calpha%5E%7Br%7D%5Cleq1-%281-%5Calpha%29r&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\alpha^{r}\leq1-(1-\alpha)r&quot; title=&quot;\alpha^{r}\leq1-(1-\alpha)r&quot; class=&quot;latex&quot; /&gt;, therefore above eqn can be rewritten&lt;br /&gt;
 as,&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\sum_{i=1}^{N}w_{i}^{t+1}\leq\sum_{i=1}^{N}w_{i}^{t}(1-(1-\beta)\ell_{i}^{t})&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\sum_{i=1}^{N}w_{i}^{t}(1-(1-\beta)\ell_{i}^{t})&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\sum_{i=1}^{N}w_{i}^{t+1}\leq\left(\sum_{i=1}^{N}w_{i}^{t}\right)(1-(1-\beta)\mathbf{p}^{t}.\ell_{i}^{t})&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\left(\sum_{i=1}^{N}w_{i}^{t}\right)(1-(1-\beta)\mathbf{p}^{t}.\ell_{i}^{t})&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;For all the trials &lt;img src=&#39;http://s0.wp.com/latex.php?latex=t%3D1%2C%5Cldots%2CT+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;t=1,\ldots,T &#39; title=&#39;t=1,\ldots,T &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;For all the trials &lt;img src=&quot;http://s0.wp.com/latex.php?latex=t%3D1%2C%5Cldots%2CT+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;t=1,\ldots,T &quot; title=&quot;t=1,\ldots,T &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\sum_{i=1}^{N}w_{i}^{t+1}\leq\prod_{t=1}^{T}(1-(1-\beta)\mathbf{p}^{t}.\ell^{t}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq\prod_{t=1}^{T}(1-(1-\beta)\mathbf{p}^{t}.\ell^{t}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;(since &lt;img src=&#39;http://s0.wp.com/latex.php?latex=1%2Bx%5Cleq+e%5E%7Bx%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;1+x\leq e^{x} &#39; title=&#39;1+x\leq e^{x} &#39; class=&#39;latex&#39; /&gt; )&lt;/p&gt;
+&lt;p&gt;(since &lt;img src=&quot;http://s0.wp.com/latex.php?latex=1%2Bx%5Cleq+e%5E%7Bx%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;1+x\leq e^{x} &quot; title=&quot;1+x\leq e^{x} &quot; class=&quot;latex&quot; /&gt; )&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\sum_{i=1}^{N}w_{i}^{t+1}\leq exp\left(-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\right)&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\sum_{i=1}^{N}w_{i}^{t+1}\leq exp\left(-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\right)&lt;br /&gt;
 \]&lt;/p&gt;
 
 &lt;p&gt;Taking log on both sides&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)\leq-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)\leq-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}&lt;br /&gt;
 \]&lt;/p&gt;
 
 &lt;p&gt;Taking negative sign and switching the equality&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+(1-\beta)\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+\sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&lt;br /&gt;
 \]&lt;/p&gt;
 
-&lt;p&gt;Now from the definition of &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BA%7D+%3D+%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; title=&#39;L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &#39; class=&#39;latex&#39; /&gt;,&lt;br&gt;
-since the algorithm here is Hedge(&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;), where &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\beta &#39; title=&#39;\beta &#39; class=&#39;latex&#39; /&gt;is the&lt;br&gt;
-parameter, &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BA%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{A} &#39; title=&#39;L_{A} &#39; class=&#39;latex&#39; /&gt;, is called as &lt;img src=&#39;http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;L_{Hedge(\beta)} &#39; title=&#39;L_{Hedge(\beta)} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;Now from the definition of &lt;img src=&quot;http://s0.wp.com/latex.php?latex=L_%7BA%7D+%3D+%5Csum_%7Bt%3D1%7D%5E%7BT%7D%5Cmathbf%7Bp%7D%5E%7Bt%7D.%5Cell%5E%7Bt%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &quot; title=&quot;L_{A} = \sum_{t=1}^{T}\mathbf{p}^{t}.\ell^{t} &quot; class=&quot;latex&quot; /&gt;,&lt;br /&gt;
+since the algorithm here is Hedge(&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\beta &quot; title=&quot;\beta &quot; class=&quot;latex&quot; /&gt;), where &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cbeta+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\beta &quot; title=&quot;\beta &quot; class=&quot;latex&quot; /&gt;is the&lt;br /&gt;
+parameter, &lt;img src=&quot;http://s0.wp.com/latex.php?latex=L_%7BA%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;L_{A} &quot; title=&quot;L_{A} &quot; class=&quot;latex&quot; /&gt;, is called as &lt;img src=&quot;http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;L_{Hedge(\beta)} &quot; title=&quot;L_{Hedge(\beta)} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;therefore,&lt;/p&gt;
 
-&lt;p&gt;\[&lt;br&gt;
-L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&lt;br&gt;
+&lt;p&gt;\[&lt;br /&gt;
+L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&lt;br /&gt;
 \]&lt;/p&gt;
 
 &lt;p style=&quot;text-align: right;&quot;&gt;
   &lt;span style=&quot;text-decoration: underline;&quot;&gt;QED&lt;/span&gt;
 &lt;/p&gt;
+
 </description>
         <pubDate>Wed, 10 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2014/12/pseudo-loss-function-in-distributed-adaboost/</link>
@@ -579,11 +583,11 @@ L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&l
     
       <item>
         <title>Dokuwiki for Personal Notebook and Note taking</title>
-        <description>&lt;p&gt;As a researcher, you soon start wondering if you had centralized all your notes, possibly digitized them, life would be much better. Recently when I had to make a tough choice of leaving all my notes from years when I am about to shift country &lt;em&gt;(due to limited air travel baggage)&lt;/em&gt;, I wish I had them on computer. Since I will be making more notes in the future, at least a lesson is learnt. &lt;/p&gt;
+        <description>&lt;p&gt;As a researcher, you soon start wondering if you had centralized all your notes, possibly digitized them, life would be much better. Recently when I had to make a tough choice of leaving all my notes from years when I am about to shift country &lt;em&gt;(due to limited air travel baggage)&lt;/em&gt;, I wish I had them on computer. Since I will be making more notes in the future, at least a lesson is learnt.&lt;/p&gt;
 
-&lt;p&gt;For this reason, I started experimenting with different available tools. I tried Evernote, Catch.com, Microsoft Onenote and various personal wikis. Initially, I liked MS Onenote. Since it has several useful tools and very easy to use &amp;#8216;capturing methods&amp;#8217;. Later, I realized having it online would be more beneficial as I will be able to access it from anywhere and perhaps share it with friends/colleague if needed.&lt;/p&gt;
+&lt;p&gt;For this reason, I started experimenting with different available tools. I tried Evernote, Catch.com, Microsoft Onenote and various personal wikis. Initially, I liked MS Onenote. Since it has several useful tools and very easy to use ‘capturing methods’. Later, I realized having it online would be more beneficial as I will be able to access it from anywhere and perhaps share it with friends/colleague if needed.&lt;/p&gt;
 
-&lt;p&gt;Then I started experimenting with several &amp;#8216;wiki&amp;#8217; sites. I tried &amp;#8216;&lt;a href=&quot;http://tiddlywiki.com/&quot; target=&quot;_blank&quot;&gt;tiddlywiki&lt;/a&gt;&amp;#8216; &amp;#8211; works great, very fluid, no installation, single file. But the idea that all the notes are in single file made me uncomfortable. I realized very soon these notes will be running thousands of pages and all of them in a single file will cause it to load very slowly. Also to have it online, I will have to give higher privileges to the file &lt;em&gt;(so that it can modify the source itself)&lt;/em&gt;, which I didn&amp;#8217;t like. &amp;#8216;Mediawiki&amp;#8217; (from Wikipedia.org) looked little overkill.&lt;/p&gt;
+&lt;p&gt;Then I started experimenting with several ‘wiki’ sites. I tried ‘&lt;a href=&quot;http://tiddlywiki.com/&quot; target=&quot;_blank&quot;&gt;tiddlywiki&lt;/a&gt;‘ – works great, very fluid, no installation, single file. But the idea that all the notes are in single file made me uncomfortable. I realized very soon these notes will be running thousands of pages and all of them in a single file will cause it to load very slowly. Also to have it online, I will have to give higher privileges to the file &lt;em&gt;(so that it can modify the source itself)&lt;/em&gt;, which I didn’t like. ‘Mediawiki’ (from Wikipedia.org) looked little overkill.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Comparision of various personal wiki services/softwares&lt;/strong&gt; is given &lt;a href=&quot;http://www.wikimatrix.org/compare/DokuWiki+MediaWiki+bLADE-Wiki+6of5-Wiki&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/Comparison_of_wiki_software&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
@@ -604,12 +608,12 @@ L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&l
         <title>Solutions to Hamilton-Jacobi-Bellman under uncertainity</title>
         <description>&lt;p&gt;After doing some reading on decision under un-certainity, I get the feeling that this I will be looking more into this. More so because I have the feeling like there is more to this field, lot of unknowns yet(which is still partly due to my lack of profound knowledge in the field). I feel this field is yet to mature.&lt;/p&gt;
 
-&lt;p&gt;Solution to Hamilton-Jacobi-Bellman (great story on how the -Bellman part was added to the equation) has been worked by several researchers, but I am looking into the prospect of applying the same under &amp;#8216;uncertainity&amp;#8217;.&lt;/p&gt;
+&lt;p&gt;Solution to Hamilton-Jacobi-Bellman (great story on how the -Bellman part was added to the equation) has been worked by several researchers, but I am looking into the prospect of applying the same under ‘uncertainity’.&lt;/p&gt;
 
-&lt;p&gt;The problem:&lt;br&gt;
+&lt;p&gt;The problem:&lt;br /&gt;
 \[   V(x(0), 0) = \min_u  \int_0^T C[x(t),u(t)]\,dt + D[x(T)] \]&lt;/p&gt;
 
-&lt;p&gt;The Solution:&lt;br&gt;
+&lt;p&gt;The Solution:&lt;br /&gt;
 \[  \dot{V}(x,t) + \min_u ( \nabla V(x,t) \cdot F(x, u) + C(x,u) ) = 0 \]&lt;/p&gt;
 
 &lt;p&gt;usual constraints and conditions apply, full description at &lt;a title=&quot;Hamilton-Jacobi-Equation&quot; href=&quot;http://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi%E2%80%93Bellman_equation&quot; target=&quot;_blank&quot;&gt;this wiki page&lt;/a&gt;&lt;/p&gt;
@@ -618,7 +622,7 @@ L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&l
 
 &lt;p&gt;I want to come back to this topic and work more, in the meantime, I am making note of some of the papers and materials I referred and will be doing so again in the near future.&lt;/p&gt;
 
-&lt;h3&gt;Light introduction and derivation of Hamilton-Jacobi-Bellman&lt;/h3&gt;
+&lt;h3 id=&quot;light-introduction-and-derivation-of-hamilton-jacobi-bellman&quot;&gt;Light introduction and derivation of Hamilton-Jacobi-Bellman&lt;/h3&gt;
 
 &lt;p&gt;Ian Mitchell&lt;/p&gt;
 
@@ -626,47 +630,47 @@ L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&l
 
 &lt;p&gt;&lt;em&gt;general read&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3&gt;Stochastic Perron&amp;#8217;s method for Hamilton-Jacobi-Bellman equations&lt;/h3&gt;
+&lt;h3 id=&quot;stochastic-perron8217s-method-for-hamilton-jacobi-bellman-equations&quot;&gt;Stochastic Perron’s method for Hamilton-Jacobi-Bellman equations&lt;/h3&gt;
 
 &lt;p&gt;Bayraktar et al&lt;/p&gt;
 
 &lt;p&gt;http://arxiv.org/abs/1212.2170&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;new approach *&lt;/li&gt;
+  &lt;li&gt;new approach *&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Hamilton-Jacobi-Bellman Equations &amp;#8211; Analysis and Numerical Analysis&lt;/h3&gt;
+&lt;h3 id=&quot;hamilton-jacobi-bellman-equations-8211-analysis-and-numerical-analysis&quot;&gt;Hamilton-Jacobi-Bellman Equations – Analysis and Numerical Analysis&lt;/h3&gt;
 
 &lt;p&gt;Iain Smears&lt;/p&gt;
 
 &lt;p&gt;http://www.maths.dur.ac.uk/Ug/projects/highlights/PR4/Smears_HJB_report.pdf&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Complete Thesis *&lt;/li&gt;
+  &lt;li&gt;Complete Thesis *&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Stochastic Approaches To Uncertainity Quantification In CFD Simulations&lt;/h3&gt;
+&lt;h3 id=&quot;stochastic-approaches-to-uncertainity-quantification-in-cfd-simulations&quot;&gt;Stochastic Approaches To Uncertainity Quantification In CFD Simulations&lt;/h3&gt;
 
 &lt;p&gt;Mathelin et al&lt;/p&gt;
 
 &lt;p&gt;http://perso.limsi.fr/Individu/mathelin/research/NumUNC_MHZ.pdf&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Inspiration from CFD *&lt;/li&gt;
+  &lt;li&gt;Inspiration from CFD *&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Solution of Hamilton Jacobi Bellman Equations&lt;/h3&gt;
+&lt;h3 id=&quot;solution-of-hamilton-jacobi-bellman-equations&quot;&gt;Solution of Hamilton Jacobi Bellman Equations&lt;/h3&gt;
 
 &lt;p&gt;Navasca et al&lt;/p&gt;
 
 &lt;p&gt;http://people.clarkson.edu/~cnavasca/KN1.pdf&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;using Pontryagin maximum principle *&lt;/li&gt;
+  &lt;li&gt;using Pontryagin maximum principle *&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Potential use of Ito lemma&lt;/h3&gt;
+&lt;h3 id=&quot;potential-use-of-ito-lemma&quot;&gt;Potential use of Ito lemma&lt;/h3&gt;
 
 &lt;p&gt;See &lt;a title=&quot;Ito&#39;s Lemma&quot; href=&quot;http://en.wikipedia.org/wiki/It%C5%8D_calculus#It.C5.8D.27s_lemma&quot; target=&quot;_blank&quot;&gt;this equation&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -679,34 +683,37 @@ L_{Hedge(\beta)}\leq\frac{ln\left(\sum_{i=1}^{N}w_{i}^{t+1}\right)}{(1-\beta)}&l
         <title>Moments and transition probability of Trinomial Tree</title>
         <description>&lt;p&gt;I just switched from using WP-Latex to MathJax since Chrome is soon going to have built-in support for MathJax and it is easier to recover the tex codes for the reader.&lt;/p&gt;
 
-&lt;p&gt;To test out the functionality, I wanted to write down some equations befitting to the occasion. I scraped through my notes to see if there was anything interesting and worth posting. I stumbled upon &lt;a href=&quot;http://en.wikipedia.org/wiki/Trinomial_tree&quot; title=&quot;Trinomial Tree Wiki&quot; target=&quot;_blank&quot;&gt;Trinomial Tree&lt;/a&gt; ( \ddagger ). Now it is not that common and haven&amp;#8217;t seen much usage of Trinomial Tree outside finance (One of the ways for Options Pricing), nonetheless I thought it would be interesting to refresh these formulas, you never know when you might need them again.&lt;/p&gt;
+&lt;p&gt;To test out the functionality, I wanted to write down some equations befitting to the occasion. I scraped through my notes to see if there was anything interesting and worth posting. I stumbled upon &lt;a href=&quot;http://en.wikipedia.org/wiki/Trinomial_tree&quot; title=&quot;Trinomial Tree Wiki&quot; target=&quot;_blank&quot;&gt;Trinomial Tree&lt;/a&gt; ( \ddagger ). Now it is not that common and haven’t seen much usage of Trinomial Tree outside finance (One of the ways for Options Pricing), nonetheless I thought it would be interesting to refresh these formulas, you never know when you might need them again.&lt;/p&gt;
 
-&lt;p&gt;Trinomial Tree, a special case of binomial tree where instead of two we have three branches, lets call them Up ( u ) , Middle ( m ) and Down (d ) . Transition of each step could then be defined as &amp;#8212;  &lt;/p&gt;
+&lt;p&gt;Trinomial Tree, a special case of binomial tree where instead of two we have three branches, lets call them Up ( u ) , Middle ( m ) and Down (d ) . Transition of each step could then be defined as —&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;\( S(t + \Delta t) = S(t) \times u \) with probability  \( p_u \) &lt;/p&gt;
+&lt;p&gt;  \( S(t + \Delta t) = S(t) \times u \) with probability  \( p_u \)&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;\( S(t + \Delta t) = S(t) \times 1 \) with probability  \( 1 - p_u - p_d \)&lt;/p&gt;
+&lt;p&gt;  \( S(t + \Delta t) = S(t) \times 1 \) with probability  \( 1 - p_u - p_d \)&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;\( S(t + \Delta t) = S(t) \times d \) with probability  \( p_d \)&lt;/p&gt;
+&lt;p&gt;  \( S(t + \Delta t) = S(t) \times d \) with probability  \( p_d \)&lt;/p&gt;
 
-&lt;p&gt;For simplicity sake let&amp;#8217;s consider that transition magnitude is same on each side, i.e&lt;br&gt;
-$$ u = e^{\sigma \sqrt{2 \Delta t} } \, , \,\, d = e^{-\sigma \sqrt{2 \Delta t }} \, , \,\, m=1 $$&lt;/p&gt;
+&lt;p&gt;For simplicity sake let’s consider that transition magnitude is same on each side, i.e&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;u = e^{\sigma \sqrt{2 \Delta t} } \, , \,\, d = e^{-\sigma \sqrt{2 \Delta t }} \, , \,\, m=1&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;then the &lt;strong&gt;transition probability&lt;/strong&gt; is given by&lt;br&gt;
-$$ p_u = \left ( \frac{e^\frac{r \Delta t}{2} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}}{e^{\sigma\sqrt{\frac{r \Delta t}{2}}} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}} \right ) ^2 $$&lt;/p&gt;
+&lt;p&gt;then the &lt;strong&gt;transition probability&lt;/strong&gt; is given by&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+p_u = \left ( \frac{e^\frac{r \Delta t}{2} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}}{e^{\sigma\sqrt{\frac{r \Delta t}{2}}} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}} \right ) ^2 %]]&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;$$ p_u = \left ( \frac{ e^{\sigma\sqrt{\frac{r \Delta t}{2}}} + e^\frac{r \Delta t}{2} }{e^{\sigma\sqrt{\frac{r \Delta t}{2}}} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}} \right ) ^2 $$&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+p_u = \left ( \frac{ e^{\sigma\sqrt{\frac{r \Delta t}{2}}} + e^\frac{r \Delta t}{2} }{e^{\sigma\sqrt{\frac{r \Delta t}{2}}} &amp;#8211; e^{-\sigma\sqrt{\frac{r \Delta t}{2}}}} \right ) ^2 %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;$$ p_m = 1 &amp;#8211; p_u &amp;#8211; p_d $$&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+p\_m = 1 &amp;#8211; p\_u &amp;#8211; p_d %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;from above equations we can derive the *&lt;em&gt;moments *&lt;/em&gt;as given below,&lt;br&gt;
-$$ \mathbb{E}[S(t_{i+1})|S(t_i)] = e^{r \Delta t}S(t_i) $$&lt;/p&gt;
+&lt;p&gt;from above equations we can derive the **moments **as given below,&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathbb{E}[S(t\_{i+1})|S(t\_i)] = e^{r \Delta t}S(t_i)&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;$$ \mathbb{V}ar[S(t_{i+1})|S(t_i)] = \Delta t S(t_i)^2 \sigma ^2 + \mathcal{O}(\Delta t^\frac{3}{2}) $$&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{V}ar[S(t\_{i+1})|S(t\_i)] = \Delta t S(t_i)^2 \sigma ^2 + \mathcal{O}(\Delta t^\frac{3}{2})&lt;/script&gt;
 
 &lt;p&gt;\( \ddagger \) &lt;a href=&quot;http://en.wikipedia.org/wiki/Phelim_Boyle&quot; title=&quot;Phelim Boyle&quot; target=&quot;_blank&quot;&gt;Phelim Boyle&lt;/a&gt; in 1986.&lt;/p&gt;
 
-&lt;p&gt;An excellent&lt;a href=&quot;http://www41.homepage.villanova.edu/klaus.volpert/teaching/financial_math/Fall10/Presentations/Trinomial.pptx&quot; title=&quot;Background on Trinomial Tree&quot; target=&quot;_blank&quot;&gt; 23 slide &lt;/a&gt;background on Trinomial including other forms besides Boyle&amp;#8217;s.&lt;/p&gt;
+&lt;p&gt;An excellent&lt;a href=&quot;http://www41.homepage.villanova.edu/klaus.volpert/teaching/financial_math/Fall10/Presentations/Trinomial.pptx&quot; title=&quot;Background on Trinomial Tree&quot; target=&quot;_blank&quot;&gt; 23 slide &lt;/a&gt;background on Trinomial including other forms besides Boyle’s.&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Jan 2013 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2013/01/moments-and-transition-probability-of-trinomial-tree/</link>
@@ -715,11 +722,11 @@ $$ \mathbb{E}[S(t_{i+1})|S(t_i)] = e^{r \Delta t}S(t_i) $$&lt;/p&gt;
     
       <item>
         <title>Pascal&amp;#8217;s Triangle in Standard ML</title>
-        <description>&lt;p&gt;It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to &amp;#8216;no-state&amp;#8217; concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.&lt;/p&gt;
+        <description>&lt;p&gt;It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to ‘no-state’ concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.&lt;/p&gt;
 
 &lt;p&gt;For a nice 73 slide introduction on SML &lt;a href=&quot;http://courses.cs.vt.edu/~cs3304/Spring02/lectures/lect04.pdf&quot; title=&quot;Introduction to SML&quot; target=&quot;_blank&quot;&gt;see this&lt;/a&gt;. One of power of SML lies in doing proofs. For those who are already intiated with SML, you might want to look &lt;a href=&quot;https://github.com/agentcoops/SML-Proof-Manipulation&quot; title=&quot;SML Proof Manipulation&quot; target=&quot;_blank&quot;&gt;SML Proof Manipulation&lt;/a&gt;. If you want to learn how to start writing proofs in SML then here is a nice tutorial on the same &lt;a href=&quot;http://www.cs.bham.ac.uk/research/projects/poplog/paradigms_lectures/Theorem.html&quot; title=&quot;Proofs in SML&quot;&gt;Implementing Constructive Proof Rules for SML in MetaSML&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;I like to write Pascal&amp;#8217;s triangle as my generic hello world program. Given below is my attempt at pascal&amp;#8217;s triangle, a beautiful binomial expansion tree. Though I will confess that this is not the most elegant solution to Pascal&amp;#8217;s triangle but I have considered readibility over conciseness.&lt;/p&gt;
+&lt;p&gt;I like to write Pascal’s triangle as my generic hello world program. Given below is my attempt at pascal’s triangle, a beautiful binomial expansion tree. Though I will confess that this is not the most elegant solution to Pascal’s triangle but I have considered readibility over conciseness.&lt;/p&gt;
 
 &lt;div class=&quot;wp_syntax&quot;&gt;
   &lt;table&gt;
@@ -758,7 +765,8 @@ fun pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/s
   &lt;/table&gt;
 &lt;/div&gt;
 
-&lt;p&gt;*Note while the &amp;#8220;choose&amp;#8221; function could have been written as nested function inside &amp;#8220;pascal_triangle&amp;#8221; (like the &amp;#8220;count&amp;#8221; function), for the reasons of simplicity and comprehension I have put is as separate code. Same goes for the parenthesis around attributes, which are not required by the compiler.&lt;/p&gt;
+&lt;p&gt;*Note while the “choose” function could have been written as nested function inside “pascal_triangle” (like the “count” function), for the reasons of simplicity and comprehension I have put is as separate code. Same goes for the parenthesis around attributes, which are not required by the compiler.&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 26 Jan 2013 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</link>
@@ -767,7 +775,7 @@ fun pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/s
     
       <item>
         <title>Monte Carlo Simulation in R</title>
-        <description>&lt;p&gt;While the last post dealt with Bootstrap Sampling, no sampling discussion can be complete without discussion &amp;#8216;Monte Carlo&amp;#8217; simulation. Readers please note, I will *&lt;em&gt;not *&lt;/em&gt;discuss &amp;#8220;MCMC (Markov Chain Monte Carlo)&amp;#8221; &lt;em&gt;(perhaps in the future)&lt;/em&gt;. MCMC primarily deals with distribution of equilibrium of the given Markov Chain.&lt;/p&gt;
+        <description>&lt;p&gt;While the last post dealt with Bootstrap Sampling, no sampling discussion can be complete without discussion ‘Monte Carlo’ simulation. Readers please note, I will &lt;em&gt;*not **discuss “MCMC (Markov Chain Monte Carlo)” *(perhaps in the future)&lt;/em&gt;. MCMC primarily deals with distribution of equilibrium of the given Markov Chain.&lt;/p&gt;
 
 &lt;p&gt;Monte Carlo simulation is much used &lt;em&gt;(perhaps overused)&lt;/em&gt; sampling for all physical simulation techniques. While the algorithm for generating Monte Carlo samples is very simple, its usage is widespread. Particularly in Computational Physics for modeling behavior of sub-atomic particles, in Robotics for generating possible states where the actual game state could be exponentially large and in bioinformatics for probabilistic graphical models and last but not least Monte Carlo Integration.&lt;/p&gt;
 
@@ -775,11 +783,11 @@ fun pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/s
 
 &lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
 
-&lt;h3&gt;Output&lt;/h3&gt;
+&lt;h3 id=&quot;output&quot;&gt;Output&lt;/h3&gt;
 
 &lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Monte Carlo in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/Monte_Carlo_Simulation_in_R.png&quot; alt=&quot;Monte Carlo in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
 
-&lt;h3&gt;Code&lt;/h3&gt;
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
 
 &lt;div class=&quot;wp_syntax&quot;&gt;
   &lt;table&gt;
@@ -887,7 +895,7 @@ outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span 
     
       <item>
         <title>Bootstrap sampling in R</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29&quot; title=&quot;Bootstrap Sampling&quot; target=&quot;_blank&quot;&gt;Bootstrapping &lt;/a&gt;is a very useful sampling method. While it&amp;#8217;s robustness is not that simlar to MCMC or Metropolis-Hastings or Landau. Bootstrapping draws from provided distribution with replacement. &lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29&quot; title=&quot;Bootstrap Sampling&quot; target=&quot;_blank&quot;&gt;Bootstrapping &lt;/a&gt;is a very useful sampling method. While it’s robustness is not that simlar to MCMC or Metropolis-Hastings or Landau. Bootstrapping draws from provided distribution with replacement.&lt;/p&gt;
 
 &lt;p&gt;While there are lot of fancy and featured enabled simulation and sampling softwares, nothing is better than writing codes from groudup. While the sampling code given below is not much featured enabled but anyone with some background can easily add the features as they require. The bootstrapping could be used in several scenarios specially when dealing with very large simulation scenario where it becomes infeasible to use deterministic rules to obtain the observables. More importantly while coding for AI where the sample state grows exponentially, simple sampling techniques like Bootstrapping comes into handy.&lt;/p&gt;
 
@@ -895,11 +903,11 @@ outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span 
 
 &lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
 
-&lt;h3&gt;Output&lt;/h3&gt;
+&lt;h3 id=&quot;output&quot;&gt;Output&lt;/h3&gt;
 
 &lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Bootstrap in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/BootStrap_Sampling_in_R.png&quot; alt=&quot;bootstrap in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
 
-&lt;h3&gt;Code&lt;/h3&gt;
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
 
 &lt;div class=&quot;wp_syntax&quot;&gt;
   &lt;table&gt;
@@ -1017,51 +1025,52 @@ outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span 
     
       <item>
         <title>Notes on Discrete Painlevé Equations</title>
-        <description>&lt;p&gt;Painlevé equations are used to solve non-linear second order differential equation. For more on Painleve&amp;#8217;s work &lt;a title=&quot;Painlevé&#39;s Works&quot; href=&quot;http://www.math.h.kyoto-u.ac.jp/~takasaki/soliton-lab/chron/painleve.html&quot; target=&quot;_blank&quot;&gt;see this&lt;/a&gt; and for short refresher on Painlevé equations, &lt;a title=&quot;Painlevé&#39;s Equations&quot; href=&quot;http://www.encyclopediaofmath.org/index.php/Painlev%C3%A9_equation&quot; target=&quot;_blank&quot;&gt;Encylopedia of Mathmematics&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Painlevé equations are used to solve non-linear second order differential equation. For more on Painleve’s work &lt;a title=&quot;Painlevé&#39;s Works&quot; href=&quot;http://www.math.h.kyoto-u.ac.jp/~takasaki/soliton-lab/chron/painleve.html&quot; target=&quot;_blank&quot;&gt;see this&lt;/a&gt; and for short refresher on Painlevé equations, &lt;a title=&quot;Painlevé&#39;s Equations&quot; href=&quot;http://www.encyclopediaofmath.org/index.php/Painlev%C3%A9_equation&quot; target=&quot;_blank&quot;&gt;Encylopedia of Mathmematics&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;This note concerns more on the Discrete derivatives of Painlevé&amp;#8217;s Equations.&lt;/p&gt;
+&lt;p&gt;This note concerns more on the Discrete derivatives of Painlevé’s Equations.&lt;/p&gt;
 
-&lt;p&gt;Integratibility is not a well defined term. Poincaré&amp;#8217;s definition of Integrabiliy is &amp;#8211; to integrate a DE is to find for the general solution, a finite expression, in a finite number of funtions. i.e Solution should be a single value.&lt;/p&gt;
+&lt;p&gt;Integratibility is not a well defined term. Poincaré’s definition of Integrabiliy is – to integrate a DE is to find for the general solution, a finite expression, in a finite number of funtions. i.e Solution should be a single value.&lt;/p&gt;
 
-&lt;p&gt;Soliton Systems for e.g are single valued :&lt;br&gt;
-&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%5Cforall+x+%28+x+%5Cepsilon+Domain%29+%5CRightarrow+1+%5Crightarrow+1+%2C+1+%5Crightarrow+M+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &#39; title=&#39;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;Soliton Systems for e.g are single valued :&lt;br /&gt;
+&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cforall+x+%28+x+%5Cepsilon+Domain%29+%5CRightarrow+1+%5Crightarrow+1+%2C+1+%5Crightarrow+M+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &quot; title=&quot;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Multi valued functions of a complex variable have branch points, i.e critical points. While implies critical singularities of a linear ODE are fixed&lt;/p&gt;
 
-&lt;p&gt;We can derive new functions from Non-linear equations :&lt;br&gt;
-&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bw%7D%27%3D%5Cfrac%7Bw-w%5E%7B3%7D%7D%7Bz%28z%2B1%29%7D+%2C+w%280%29+%3D+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &#39; title=&#39;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
-&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&#39;http://s0.wp.com/latex.php?latex=w%28z%29+%3D+c+%5Csqrt%7B%5Cfrac%7B1%2Bz%7D%7B1%2Bc%5E%7B2%7Dz%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &#39; title=&#39;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
-Singular at &lt;img src=&#39;http://s0.wp.com/latex.php?latex=z+%3D+-1+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;z = -1 &#39; title=&#39;z = -1 &#39; class=&#39;latex&#39; /&gt; is said to be fixed.&lt;/p&gt;
+&lt;p&gt;We can derive new functions from Non-linear equations :&lt;br /&gt;
+&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bw%7D%27%3D%5Cfrac%7Bw-w%5E%7B3%7D%7D%7Bz%28z%2B1%29%7D+%2C+w%280%29+%3D+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &quot; title=&quot;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
+&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&quot;http://s0.wp.com/latex.php?latex=w%28z%29+%3D+c+%5Csqrt%7B%5Cfrac%7B1%2Bz%7D%7B1%2Bc%5E%7B2%7Dz%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &quot; title=&quot;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
+Singular at &lt;img src=&quot;http://s0.wp.com/latex.php?latex=z+%3D+-1+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;z = -1 &quot; title=&quot;z = -1 &quot; class=&quot;latex&quot; /&gt; is said to be fixed.&lt;/p&gt;
 
-&lt;p&gt;e.g&lt;br&gt;
-1. &lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%2B+w%5E%7B2%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{w}&amp;#039; + w^{2} = 0 &#39; title=&#39;{w}&amp;#039; + w^{2} = 0 &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
-&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&#39;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B-1%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w = (z-z_{0})^{-1} &#39; title=&#39;w = (z-z_{0})^{-1} &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
-2. &lt;img src=&#39;http://s0.wp.com/latex.php?latex=2%7Bw%7D%27%2Bw%5E%7B3%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;2{w}&amp;#039;+w^{3} = 0 &#39; title=&#39;2{w}&amp;#039;+w^{3} = 0 &#39; class=&#39;latex&#39; /&gt;&lt;br&gt;
-&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&#39;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B%5Cfrac%7B-1%7D%7B2%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;w = (z-z_{0})^{\frac{-1}{2}} &#39; title=&#39;w = (z-z_{0})^{\frac{-1}{2}} &#39; class=&#39;latex&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;e.g&lt;br /&gt;
+1. &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%2B+w%5E%7B2%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{w}&amp;#039; + w^{2} = 0 &quot; title=&quot;{w}&amp;#039; + w^{2} = 0 &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
+&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&quot;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B-1%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w = (z-z_{0})^{-1} &quot; title=&quot;w = (z-z_{0})^{-1} &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
+2. &lt;img src=&quot;http://s0.wp.com/latex.php?latex=2%7Bw%7D%27%2Bw%5E%7B3%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;2{w}&amp;#039;+w^{3} = 0 &quot; title=&quot;2{w}&amp;#039;+w^{3} = 0 &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
+&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&quot;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B%5Cfrac%7B-1%7D%7B2%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w = (z-z_{0})^{\frac{-1}{2}} &quot; title=&quot;w = (z-z_{0})^{\frac{-1}{2}} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Singularities of a nonlinear systems generally do not show Painlevé Property*&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;**Painlevé Property&lt;/em&gt;*&lt;br&gt;
-An ODE is said to possess the Painlevé property if all its solution are single valued. Beauty of having this property is it allows the transformation of Painlevé Equations into Riccati Equations, which could be solved using known techniques.&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;*Painlevé Property&lt;/strong&gt;&lt;br /&gt;
+An ODE is said to possess the Painlevé property if all its solution are single valued. Beauty of having this property is it allows the transformation of Painlevé Equations into Riccati Equations, which could be solved using known techniques.&lt;br /&gt;
 Riccati Equations are fo the form :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%3D+aw%5E%7B2%7D+%2B+bw+%2B+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{w}&amp;#039; = aw^{2} + bw + c &#39; title=&#39;{w}&amp;#039; = aw^{2} + bw + c &#39; class=&#39;latex&#39; /&gt; &amp;#8212; (I)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%3D+aw%5E%7B2%7D+%2B+bw+%2B+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{w}&amp;#039; = aw^{2} + bw + c &quot; title=&quot;{w}&amp;#039; = aw^{2} + bw + c &quot; class=&quot;latex&quot; /&gt; — (I)&lt;/p&gt;
 
 &lt;p&gt;Painlevé Classified Equatios into 6 types (Transcedants). They were mostly forgotten but their revival was necessitated after soliton systems.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/painleve-equations.png&quot;&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;painlevé equations&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/painleve-equations-300x147.png&quot; alt=&quot;painlevé equations&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
 
-&lt;p&gt;Dicrete Painlevé was discovered mostly due to efforts on Quantum Gravity. See &lt;a title=&quot;Discrete Painleve in Quantum Gravity&quot; href=&quot;http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&amp;id=pdf_1&amp;handle=euclid.cmp/1104248588&quot; target=&quot;_blank&quot;&gt;Discrete Painlevé equations and their appearance in quantum gravity by AS Fokas et al.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dicrete Painlevé was discovered mostly due to efforts on Quantum Gravity. See &lt;a title=&quot;Discrete Painleve in Quantum Gravity&quot; href=&quot;http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&amp;amp;id=pdf_1&amp;amp;handle=euclid.cmp/1104248588&quot; target=&quot;_blank&quot;&gt;Discrete Painlevé equations and their appearance in quantum gravity by AS Fokas et al.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;On discretisation, Riccati Equation given above at  (I) becomes&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;http://s0.wp.com/latex.php?latex=%7Bx%7D%27+%3D+%28x_%7Bn%2B1%7D+-+x_%7Bn%7D%29+%5CDelta+t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&#39; alt=&#39;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &#39; title=&#39;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &#39; class=&#39;latex&#39; /&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bx%7D%27+%3D+%28x_%7Bn%2B1%7D+-+x_%7Bn%7D%29+%5CDelta+t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &quot; title=&quot;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A caveat though, Non-linear discretisation is not unique and may result in incorrect functions. Discretisation should be fo rational form and have homographic mapping. There are more than 20 discrete Painlevé Equations.&lt;/p&gt;
 
 &lt;p&gt;Solutions to Discrete Painlevé Equations can be found &lt;a title=&quot;Solutions to Discrete Painleve Equations&quot; href=&quot;http://www.sciencedirect.com/science/article/pii/S0898122101001808&quot; target=&quot;_blank&quot;&gt;on this paper by A.Ramani et al&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 10 Nov 2012 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2012/11/notes-on-discrete-painleve-equations/</link>

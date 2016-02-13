@@ -11,8 +11,10 @@
 
     
     <meta name="description" content="This is the notes from the lecture I attended by Dr Falko Dressler, Professor of Computer Science at University of Innsbruck.
+
 " />
     <meta property="og:description" content="This is the notes from the lecture I attended by Dr Falko Dressler, Professor of Computer Science at University of Innsbruck.
+
 " />
     
     <meta name="author" content="Aaditya Prakash (Adi)" />
@@ -61,147 +63,161 @@
 
 <p>It may perhaps be little incoherent and is meant more to be notes to future self rather than an interesting read. Nonetheless if AI and Intelligent Traffic Systems interests you do read.</p>
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 
 <ul>
-<li>People Should follow Traffic Lights before making intelligent Traffic Lights</li>
-<li>Focus &#8211; Intervehicular Communication</li>
-<li>DSRC/WAVE</li>
-<li>Traffic Information System (TIS)</li>
-<li>Centralized vs Distributed</li>
-<li>P2P vs Beaconing</li>
+  <li>People Should follow Traffic Lights before making intelligent Traffic Lights</li>
+  <li>Focus – Intervehicular Communication</li>
+  <li>DSRC/WAVE</li>
+  <li>Traffic Information System (TIS)</li>
+  <li>Centralized vs Distributed</li>
+  <li>P2P vs Beaconing</li>
 </ul>
 
-<h2>Infrastructure Assisted Data Exchange</h2>
+<h2 id="infrastructure-assisted-data-exchange">Infrastructure Assisted Data Exchange</h2>
 
 <ul>
-<li>Adhoc &#8211; Multihop Broadcasting</li>
-<li>Short Range radio broadcast</li>
-<li>Traffic Message Channel</li>
-<li>Stationary Sensor</li>
-<li>Traffic Channel</li>
-<li><p>Floating Car Data (FCD) (&#8220;aktiv CoCar&#8221;)</p></li>
-<li><p>Geocast Manager</p></li>
-<li><p>CoCar aggressor</p></li>
-<li><p>Centralized TIS + Adhoc Routing</p></li>
+  <li>Adhoc – Multihop Broadcasting</li>
+  <li>Short Range radio broadcast</li>
+  <li>Traffic Message Channel</li>
+  <li>Stationary Sensor</li>
+  <li>Traffic Channel</li>
+  <li>
+    <p>Floating Car Data (FCD) (“aktiv CoCar”)</p>
+  </li>
+  <li>Geocast Manager</li>
+  <li>CoCar aggressor</li>
+  <li>Centralized TIS + Adhoc Routing</li>
 </ul>
 
-<h2>Communication</h2>
+<h2 id="communication">Communication</h2>
 
 <ul>
-<li><h3>WAVE</h3></li>
-<li><p>Core System &#8211; IEEE 1609.1</p></li>
-<li><p>Security &#8211; IEEE 1609.2</p></li>
-<li><p>Network Services</p></li>
-<li><p>MAC layer with extension IEEE 802.11a</p></li>
-<li><p>Reduced inter symbol interference</p></li>
-<li><p>Access Control and QoS in WAVE</p></li>
-<li><p>Use of EDCA equivalent to IEE 802.11e EDCA (DCF -&gt; EDCA)</p></li>
-<li><p>Dedicated Frequency (reserved/assigned)</p></li>
-<li><p>US -&gt; FCC reserved 7 channels 10 MHz</p></li>
-<li><p>EU -&gt; ETSI reserved 5 channels 10 MHz</p></li>
-<li><p>Japan -&gt; Whitespace but not viable</p></li>
-<li><p>Exclusive V2V and V2I communication</p></li>
-<li><p>Channel Management</p></li>
-<li><p>Slot Management</p></li>
-<li><p>CAM Message (Co-operative Awareness Messages)</p></li>
-<li><p>Periodic Beacons Containing&#8211;</p></li>
-<li><p>Time, Speed, Position, Heading</p></li>
-<li><p>For multiple devices we would need syncrhonisation</p></li>
+  <li>
+    <h3 id="wave">WAVE</h3>
+  </li>
+  <li>Core System – IEEE 1609.1</li>
+  <li>Security – IEEE 1609.2</li>
+  <li>
+    <p>Network Services</p>
+  </li>
+  <li>MAC layer with extension IEEE 802.11a</li>
+  <li>Reduced inter symbol interference</li>
+  <li>Access Control and QoS in WAVE</li>
+  <li>Use of EDCA equivalent to IEE 802.11e EDCA (DCF -&gt; EDCA)</li>
+  <li>Dedicated Frequency (reserved/assigned)</li>
+  <li>US -&gt; FCC reserved 7 channels 10 MHz</li>
+  <li>EU -&gt; ETSI reserved 5 channels 10 MHz</li>
+  <li>
+    <p>Japan -&gt; Whitespace but not viable</p>
+  </li>
+  <li>Exclusive V2V and V2I communication</li>
+  <li>Channel Management</li>
+  <li>Slot Management</li>
+  <li>CAM Message (Co-operative Awareness Messages)</li>
+  <li>Periodic Beacons Containing–</li>
+  <li>
+    <p>Time, Speed, Position, Heading</p>
+  </li>
+  <li>For multiple devices we would need syncrhonisation</li>
 </ul>
 
-<h2>SOTIS Approach</h2>
+<h2 id="sotis-approach">SOTIS Approach</h2>
 
 <ul>
-<li>SOTIS &#8211; Self Organized Traffic Information System</li>
-<li>Fully Distributed Approach</li>
-<li>No communication approach</li>
-<li>No data loss in fragmented</li>
-<li><p>No unique node</p></li>
-<li><p>Shortcoming and Open Issues</p></li>
-<li><p>Infra &#8211; needs high marked penetration</p></li>
-<li><p>Required/tolerable beacon interal highly dependent scenario</p></li>
-<li><p>Design needs dedicated channel capacity</p></li>
-<li><p>Dynamically &#8212;&#8211;</p></li>
-<li><p>incorporate optional infra</p></li>
-<li><p>adapt beacon interval</p></li>
-<li><p>free all channels</p></li>
+  <li>SOTIS – Self Organized Traffic Information System</li>
+  <li>Fully Distributed Approach</li>
+  <li>No communication approach</li>
+  <li>No data loss in fragmented</li>
+  <li>
+    <p>No unique node</p>
+  </li>
+  <li>Shortcoming and Open Issues</li>
+  <li>Infra – needs high marked penetration</li>
+  <li>Required/tolerable beacon interal highly dependent scenario</li>
+  <li>
+    <p>Design needs dedicated channel capacity</p>
+  </li>
+  <li>Dynamically —–</li>
+  <li>incorporate optional infra</li>
+  <li>adapt beacon interval</li>
+  <li>free all channels</li>
 </ul>
 
-<h3>Hybrid using 3G/4G &#8211; Peer TIS</h3>
+<h3 id="hybrid-using-3g4g-8211-peer-tis">Hybrid using 3G/4G – Peer TIS</h3>
 
 <ul>
-<li>DHT &#8211; maintained in all cars</li>
-<li>Communication using 3G/4G network</li>
+  <li>DHT – maintained in all cars</li>
+  <li>Communication using 3G/4G network</li>
 </ul>
 
-<h3>Optimization</h3>
+<h3 id="optimization">Optimization</h3>
 
 <ul>
-<li>Data Caching &#8212; not possible to keep data fresh</li>
-<li>DHT lookup entries &#8212; Yes, long indrections in the DHT can be prevented</li>
+  <li>Data Caching — not possible to keep data fresh</li>
+  <li>DHT lookup entries — Yes, long indrections in the DHT can be prevented</li>
 </ul>
 
-<h3>Fully Distributed &#8211; Adaptive Traffic Beacon (ATB)</h3>
+<h3 id="fully-distributed-8211-adaptive-traffic-beacon-atb">Fully Distributed – Adaptive Traffic Beacon (ATB)</h3>
 
 <ul>
-<li>Beacon interval &#8211; Measure of channel quality and message priorities</li>
-<li>Infrastructure elements : RSU of different capacities</li>
-<li>Light-weight SSU</li>
-<li>Interconnected SSU</li>
+  <li>Beacon interval – Measure of channel quality and message priorities</li>
+  <li>Infrastructure elements : RSU of different capacities</li>
+  <li>Light-weight SSU</li>
+  <li>Interconnected SSU</li>
 </ul>
 
-<h2>Formulas Involved</h2>
+<h2 id="formulas-involved">Formulas Involved</h2>
 
-<h3>Interval parameter &#8211; <img src='http://s0.wp.com/latex.php?latex=I+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='I ' title='I ' class='latex' /></h3>
+<h3 id="interval-parameter-8211-img-srchttps0wpcomlatexphplatexi038bgffffff038fg000000038s0-alti--titlei--classlatex-">Interval parameter – <img src="http://s0.wp.com/latex.php?latex=I+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="I " title="I " class="latex" /></h3>
 
-<p><img src='http://s0.wp.com/latex.php?latex=I%3D%281-w_%7BI%7D%29%2AP%5E%7B2%7D%2B%28w_%7BI%7D%2Ac%5E%7B2%7D%29+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='I=(1-w_{I})*P^{2}+(w_{I}*c^{2}) ' title='I=(1-w_{I})*P^{2}+(w_{I}*c^{2}) ' class='latex' /> </p>
+<p><img src="http://s0.wp.com/latex.php?latex=I%3D%281-w_%7BI%7D%29%2AP%5E%7B2%7D%2B%28w_%7BI%7D%2Ac%5E%7B2%7D%29+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="I=(1-w_{I})*P^{2}+(w_{I}*c^{2}) " title="I=(1-w_{I})*P^{2}+(w_{I}*c^{2}) " class="latex" /></p>
 
 <ul>
-<li>c=channel quality</li>
-<li>P = message prior</li>
-<li><img src='http://s0.wp.com/latex.php?latex=w_%7BI%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='w_{I} ' title='w_{I} ' class='latex' />= interval weighting</li>
+  <li>c=channel quality</li>
+  <li>P = message prior</li>
+  <li><img src="http://s0.wp.com/latex.php?latex=w_%7BI%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="w_{I} " title="w_{I} " class="latex" />= interval weighting</li>
 </ul>
 
-<h3>Beacon Interval &#8211; <img src='http://s0.wp.com/latex.php?latex=%5Ctriangle+I+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\triangle I ' title='\triangle I ' class='latex' /></h3>
+<h3 id="beacon-interval-8211-img-srchttps0wpcomlatexphplatex5ctrianglei038bgffffff038fg000000038s0-alttriangle-i--titletriangle-i--classlatex-">Beacon Interval – <img src="http://s0.wp.com/latex.php?latex=%5Ctriangle+I+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\triangle I " title="\triangle I " class="latex" /></h3>
 
-<p><img src='http://s0.wp.com/latex.php?latex=%5Ctriangle+I%3DI_%7Bmin%7D%2B%28I_%7Bmax%7D-I_%7Bmin%7D%29%2AI+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\triangle I=I_{min}+(I_{max}-I_{min})*I ' title='\triangle I=I_{min}+(I_{max}-I_{min})*I ' class='latex' /> </p>
+<p><img src="http://s0.wp.com/latex.php?latex=%5Ctriangle+I%3DI_%7Bmin%7D%2B%28I_%7Bmax%7D-I_%7Bmin%7D%29%2AI+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\triangle I=I_{min}+(I_{max}-I_{min})*I " title="\triangle I=I_{min}+(I_{max}-I_{min})*I " class="latex" /></p>
 
 <ul>
-<li>I= interval</li>
+  <li>I= interval</li>
 </ul>
 
-<h3>Channel Quality &#8211; <img src='http://s0.wp.com/latex.php?latex=C+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='C ' title='C ' class='latex' /></h3>
+<h3 id="channel-quality-8211-img-srchttps0wpcomlatexphplatexc038bgffffff038fg000000038s0-altc--titlec--classlatex-">Channel Quality – <img src="http://s0.wp.com/latex.php?latex=C+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="C " title="C " class="latex" /></h3>
 
-<p><img src='http://s0.wp.com/latex.php?latex=C%3D%5Cfrac%7BN%2Bw_%7Bc%7D%2A%5Cfrac%7BS%2BK%7D%7B2%7D%7D%7B1%2Bw_%7Bc%7D%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='C=\frac{N+w_{c}*\frac{S+K}{2}}{1+w_{c}} ' title='C=\frac{N+w_{c}*\frac{S+K}{2}}{1+w_{c}} ' class='latex' /> </p>
+<p><img src="http://s0.wp.com/latex.php?latex=C%3D%5Cfrac%7BN%2Bw_%7Bc%7D%2A%5Cfrac%7BS%2BK%7D%7B2%7D%7D%7B1%2Bw_%7Bc%7D%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="C=\frac{N+w_{c}*\frac{S+K}{2}}{1+w_{c}} " title="C=\frac{N+w_{c}*\frac{S+K}{2}}{1+w_{c}} " class="latex" /></p>
 
 <ul>
-<li>N= Neighbour</li>
-<li>K= Observed Collision</li>
-<li>S= Signal to Noise Ratio</li>
+  <li>N= Neighbour</li>
+  <li>K= Observed Collision</li>
+  <li>S= Signal to Noise Ratio</li>
 </ul>
 
-<h3>Message Priority Estimation <img src='http://s0.wp.com/latex.php?latex=P+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='P ' title='P ' class='latex' /></h3>
+<h3 id="message-priority-estimation-img-srchttps0wpcomlatexphplatexp038bgffffff038fg000000038s0-altp--titlep--classlatex-">Message Priority Estimation <img src="http://s0.wp.com/latex.php?latex=P+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="P " title="P " class="latex" /></h3>
 
-<p><img src='http://s0.wp.com/latex.php?latex=P%3DB%2A%5Cfrac%7BA%2BD_%7Be%7D%2BD_%7Br%7D%7D%7B3%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='P=B*\frac{A+D_{e}+D_{r}}{3} ' title='P=B*\frac{A+D_{e}+D_{r}}{3} ' class='latex' /> </p>
+<p><img src="http://s0.wp.com/latex.php?latex=P%3DB%2A%5Cfrac%7BA%2BD_%7Be%7D%2BD_%7Br%7D%7D%7B3%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="P=B*\frac{A+D_{e}+D_{r}}{3} " title="P=B*\frac{A+D_{e}+D_{r}}{3} " class="latex" /></p>
 
 <ul>
-<li>A= Message age</li>
-<li><img src='http://s0.wp.com/latex.php?latex=D_%7Be%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='D_{e} ' title='D_{e} ' class='latex' /> = Distance to event</li>
-<li><img src='http://s0.wp.com/latex.php?latex=D_%7Br%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='D_{r} ' title='D_{r} ' class='latex' /> = Distance to next RSU</li>
-<li>B= Knowledge of local RSU</li>
+  <li>A= Message age</li>
+  <li><img src="http://s0.wp.com/latex.php?latex=D_%7Be%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="D_{e} " title="D_{e} " class="latex" /> = Distance to event</li>
+  <li><img src="http://s0.wp.com/latex.php?latex=D_%7Br%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="D_{r} " title="D_{r} " class="latex" /> = Distance to next RSU</li>
+  <li>B= Knowledge of local RSU</li>
 </ul>
 
-<h3>Criteria</h3>
+<h3 id="criteria">Criteria</h3>
 
 <ul>
-<li>Age of entry <img src='http://s0.wp.com/latex.php?latex=%5CDownarrow+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\Downarrow ' title='\Downarrow ' class='latex' /></li>
-<li>Distance to event <img src='http://s0.wp.com/latex.php?latex=%5CUparrow+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\Uparrow ' title='\Uparrow ' class='latex' /></li>
-<li>Distance to RSU <img src='http://s0.wp.com/latex.php?latex=%5CDownarrow+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\Downarrow ' title='\Downarrow ' class='latex' /></li>
-<li>Beacon interval <img src='http://s0.wp.com/latex.php?latex=%5Cmathcal%7BL%7D+%5Cfrac%7B1%7D%7Blatency%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='\mathcal{L} \frac{1}{latency} ' title='\mathcal{L} \frac{1}{latency} ' class='latex' /></li>
+  <li>Age of entry <img src="http://s0.wp.com/latex.php?latex=%5CDownarrow+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\Downarrow " title="\Downarrow " class="latex" /></li>
+  <li>Distance to event <img src="http://s0.wp.com/latex.php?latex=%5CUparrow+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\Uparrow " title="\Uparrow " class="latex" /></li>
+  <li>Distance to RSU <img src="http://s0.wp.com/latex.php?latex=%5CDownarrow+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\Downarrow " title="\Downarrow " class="latex" /></li>
+  <li>Beacon interval <img src="http://s0.wp.com/latex.php?latex=%5Cmathcal%7BL%7D+%5Cfrac%7B1%7D%7Blatency%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0" alt="\mathcal{L} \frac{1}{latency} " title="\mathcal{L} \frac{1}{latency} " class="latex" /></li>
 </ul>
 
-<p>Let us see how soon we can see such intelligent designed traffic management systems, perhaps <a title="Google's Self Driven Car gets license to operate in Nevada" href="http://www.rediff.com/business/slide-show/slide-show-1-tech-google-self-driven-cars-on-us-roads/20120509.htm" target="_blank">Google&#8217;s Self Driven Car</a> and Dr. Sebastian Thrun&#8217;s dream project all will merge for better safety and efficiency in the road.</p>
+<p>Let us see how soon we can see such intelligent designed traffic management systems, perhaps <a title="Google's Self Driven Car gets license to operate in Nevada" href="http://www.rediff.com/business/slide-show/slide-show-1-tech-google-self-driven-cars-on-us-roads/20120509.htm" target="_blank">Google’s Self Driven Car</a> and Dr. Sebastian Thrun’s dream project all will merge for better safety and efficiency in the road.</p>
 
   </div>
 
@@ -239,7 +255,7 @@
 
 <a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
 
-<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
 
 <a href="/feed.xml"><i class="svg-icon rss"></i></a>
 <a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>

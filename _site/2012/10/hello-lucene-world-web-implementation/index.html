@@ -10,9 +10,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the Lucene&#8217;s homepage :
+    <meta name="description" content="Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the Lucene’s homepage :
+
 " />
-    <meta property="og:description" content="Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the Lucene&#8217;s homepage :
+    <meta property="og:description" content="Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the Lucene’s homepage :
+
 " />
     
     <meta name="author" content="Aaditya Prakash (Adi)" />
@@ -57,33 +59,33 @@
   <h1>Hello &#8216;Lucene&#8217; World &#8211; Web Implementation</h1>
 
   <div class="entry">
-    <p>Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the <a title="Lucene from Apache" href="http://lucene.apache.org/core/" target="_blank">Lucene&#8217;s homepage</a> :</p>
+    <p>Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the <a title="Lucene from Apache" href="http://lucene.apache.org/core/" target="_blank">Lucene’s homepage</a> :</p>
 
 <blockquote>
-<p id="scalable-high-performance-indexing">
+  <p id="scalable-high-performance-indexing">
   <strong>Scalable, High-Performance Indexing</strong>
 </p>
 
-<ul>
-<li>over 95GB/hour on modern hardware</li>
-<li>small RAM requirements &#8212; only 1MB heap</li>
-<li>incremental indexing as fast as batch indexing</li>
-<li>index size roughly 20-30% the size of text indexed</li>
-</ul>
+  <ul>
+    <li>over 95GB/hour on modern hardware</li>
+    <li>small RAM requirements — only 1MB heap</li>
+    <li>incremental indexing as fast as batch indexing</li>
+    <li>index size roughly 20-30% the size of text indexed</li>
+  </ul>
 
-<p id="powerful-accurate-and-efficient-search-algorithms">
+  <p id="powerful-accurate-and-efficient-search-algorithms">
   <strong>Powerful, Accurate and Efficient Search Algorithms</strong>
 </p>
 
-<ul>
-<li>ranked searching &#8212; best results returned first</li>
-<li>many powerful query types: phrase queries, wildcard queries, proximity queries, range queries and more</li>
-<li>fielded searching (e.g., title, author, contents)</li>
-<li>date-range searching</li>
-<li>sorting by any field</li>
-<li>multiple-index searching with merged results</li>
-<li>allows simultaneous update and searching</li>
-</ul>
+  <ul>
+    <li>ranked searching — best results returned first</li>
+    <li>many powerful query types: phrase queries, wildcard queries, proximity queries, range queries and more</li>
+    <li>fielded searching (e.g., title, author, contents)</li>
+    <li>date-range searching</li>
+    <li>sorting by any field</li>
+    <li>multiple-index searching with merged results</li>
+    <li>allows simultaneous update and searching</li>
+  </ul>
 </blockquote>
 
 <div>
@@ -110,7 +112,7 @@
   -This is not intended to be Lucene tutorial or Lucene best practice. This code is minimal required code to have a crude sample web search engine running on Lucene.
 </div>
 
-<h2>Code</h2>
+<h2 id="code">Code</h2>
 
 <div class="wp_syntax">
   <table>
@@ -200,9 +202,9 @@
         <pre class="html4strict" style="font-family:monospace;"><span style="color: #00bbdd;">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"</span>
 <span style="color: #00bbdd;">   "http://www.w3.org/TR/html4/loose.dtd"&gt;</span>
 <span style="color: #009900;">&lt;!</span>
-<span style="color: #009900;">  Project :       Lucened Enabled Simple <span style="color: #000066;">Text</span> Search</span>
-<span style="color: #009900;">  Author  :       Aaditya Prakash</span>
-<span style="color: #009900;">  Date    :       <span style="color: #cc66cc;">25</span>- Sep-<span style="color: #cc66cc;">2012</span> <span style="color: #cc66cc;">16</span>:<span style="color: #cc66cc;">21</span></span>
+<span style="color: #009900;">	Project	:		Lucened Enabled Simple <span style="color: #000066;">Text</span> Search</span>
+<span style="color: #009900;">	Author	:		Aaditya Prakash</span>
+<span style="color: #009900;">	Date	:		<span style="color: #cc66cc;">25</span>- Sep-<span style="color: #cc66cc;">2012</span> <span style="color: #cc66cc;">16</span>:<span style="color: #cc66cc;">21</span></span>
 <span style="color: #009900;">--&gt;</span>
 &nbsp;
 <span style="color: #009900;">&lt;%@ page import<span style="color: #66cc66;">=</span><span style="color: #ff0000;">"SearchWebCall"</span> %&gt;</span>
@@ -210,24 +212,24 @@
 <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">html</span>&gt;</span>
 &nbsp;
 <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">head</span>&gt;</span>
-    <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">title</span>&gt;</span> Lucene Enabled Simple Text Search <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">title</span>&gt;</span>
+	<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">title</span>&gt;</span> Lucene Enabled Simple Text Search <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">title</span>&gt;</span>
 &nbsp;
-    <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">script</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"text/javascript"</span>&gt;</span>
+	<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">script</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"text/javascript"</span>&gt;</span>
 &nbsp;
-    <span style="color: #808080; font-style: italic;">&lt;!-- Validation to prevent some characters, </span>
-<span style="color: #808080; font-style: italic;">  currently Lucene Doesn't parse these characters --&gt;</span>
-            function isSpclChar(){
-                var iChars = "!@#^<span style="color: #ddbb00;">&amp;</span>*()+=-[]\\\';,./{}|~`\":<span style="color: #009900;">&lt;&gt;</span>?";
-                for (var i = 0; i <span style="color: #009900;">&lt; document.lucene.input.<span style="color: #000066;">value</span>.length; i++<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
-<span style="color: #009900;">                  if <span style="color: #66cc66;">&#40;</span>iChars.indexOf<span style="color: #66cc66;">&#40;</span>document.lucene.input.<span style="color: #000066;">value</span>.charAt<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> !<span style="color: #66cc66;">=</span> -<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
-<span style="color: #009900;">                      <span style="color: #66cc66;">//</span>throwback the unallowed character</span>
-<span style="color: #009900;">                      document.lucene.input.<span style="color: #000066;">value</span> <span style="color: #66cc66;">=</span> document.lucene.input.<span style="color: #000066;">value</span>.slice<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;"></span>,-<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;</span>
-<span style="color: #009900;">                      return false;</span>
-<span style="color: #009900;">                  <span style="color: #66cc66;">&#125;</span></span>
-<span style="color: #009900;">              <span style="color: #66cc66;">&#125;</span></span>
-<span style="color: #009900;">          <span style="color: #66cc66;">&#125;</span></span>
+	<span style="color: #808080; font-style: italic;">&lt;!-- Validation to prevent some characters, </span>
+<span style="color: #808080; font-style: italic;">	currently Lucene Doesn't parse these characters --&gt;</span>
+			function isSpclChar(){
+				var iChars = "!@#^<span style="color: #ddbb00;">&amp;</span>*()+=-[]\\\';,./{}|~`\":<span style="color: #009900;">&lt;&gt;</span>?";
+				for (var i = 0; i <span style="color: #009900;">&lt; document.lucene.input.<span style="color: #000066;">value</span>.length; i++<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
+<span style="color: #009900;">					if <span style="color: #66cc66;">&#40;</span>iChars.indexOf<span style="color: #66cc66;">&#40;</span>document.lucene.input.<span style="color: #000066;">value</span>.charAt<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> !<span style="color: #66cc66;">=</span> -<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
+<span style="color: #009900;">						<span style="color: #66cc66;">//</span>throwback the unallowed character</span>
+<span style="color: #009900;">						document.lucene.input.<span style="color: #000066;">value</span> <span style="color: #66cc66;">=</span> document.lucene.input.<span style="color: #000066;">value</span>.slice<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;"></span>,-<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;</span>
+<span style="color: #009900;">						return false;</span>
+<span style="color: #009900;">					<span style="color: #66cc66;">&#125;</span></span>
+<span style="color: #009900;">				<span style="color: #66cc66;">&#125;</span></span>
+<span style="color: #009900;">			<span style="color: #66cc66;">&#125;</span></span>
 &nbsp;
-<span style="color: #009900;">  &lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">script</span>&gt;</span>
+<span style="color: #009900;">	&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">script</span>&gt;</span>
 &nbsp;
 <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">head</span>&gt;</span>
 &nbsp;
@@ -236,40 +238,40 @@
 <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">h1</span>&gt;</span>Lucene Enabled Simple Text Search <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">h1</span>&gt;</span>
 &nbsp;
 <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">form</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"lucene"</span> <span style="color: #000066;">action</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"index.jsp"</span> <span style="color: #000066;">method</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"get"</span>&gt;</span>
-        <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">input</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"input"</span> <span style="color: #000066;">size</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"30"</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"input"</span> <span style="color: #000066;">onkeyup</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"isSpclChar()"</span><span style="color: #66cc66;">/</span>&gt;</span>
-        <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">br</span> <span style="color: #66cc66;">/</span>&gt;</span>
-        <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">input</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"submit"</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"Search"</span> <span style="color: #66cc66;">/</span>&gt;</span>
+		<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">input</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"input"</span> <span style="color: #000066;">size</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"30"</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"input"</span> <span style="color: #000066;">onkeyup</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"isSpclChar()"</span><span style="color: #66cc66;">/</span>&gt;</span>
+		<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">br</span> <span style="color: #66cc66;">/</span>&gt;</span>
+		<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">input</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"submit"</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">"Search"</span> <span style="color: #66cc66;">/</span>&gt;</span>
 <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">form</span>&gt;</span>
 &nbsp;
 <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">br</span> <span style="color: #66cc66;">/</span>&gt;</span>
 &nbsp;
 <span style="color: #009900;">&lt;%</span>
-<span style="color: #009900;">  String searchString<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> new String<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;</span>
-<span style="color: #009900;">  String result<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> new String<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">100</span><span style="color: #66cc66;">&#93;</span>;</span>
-<span style="color: #009900;">  searchString<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;"></span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">"-query"</span>;</span>
-<span style="color: #009900;">  searchString<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> request.getParameter<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"input"</span><span style="color: #66cc66;">&#41;</span>;</span>
+<span style="color: #009900;">	String searchString<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> new String<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;</span>
+<span style="color: #009900;">	String result<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> new String<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">100</span><span style="color: #66cc66;">&#93;</span>;</span>
+<span style="color: #009900;">	searchString<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;"></span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">"-query"</span>;</span>
+<span style="color: #009900;">	searchString<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> <span style="color: #66cc66;">=</span> request.getParameter<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"input"</span><span style="color: #66cc66;">&#41;</span>;</span>
 &nbsp;
-<span style="color: #009900;">  if<span style="color: #66cc66;">&#40;</span>searchString<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> !<span style="color: #66cc66;">=</span> null<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
-<span style="color: #009900;">      <span style="color: #66cc66;">//</span> send the Search term to obtain the result, </span>
-<span style="color: #009900;">      <span style="color: #66cc66;">//</span>all processing happens in the <span style="color: #000066;">class</span> </span>
-<span style="color: #009900;">      <span style="color: #66cc66;">//</span><span style="color: #66cc66;">&#40;</span>keeping jsp <span style="color: #000066;">code</span> to minimum<span style="color: #66cc66;">&#41;</span></span>
-<span style="color: #009900;">      result <span style="color: #66cc66;">=</span> SearchWebCall.filter<span style="color: #66cc66;">&#40;</span>searchString<span style="color: #66cc66;">&#41;</span>;</span>
-<span style="color: #009900;">      int noOfMatch<span style="color: #66cc66;">=</span><span style="color: #cc66cc;"></span>;</span>
+<span style="color: #009900;">	if<span style="color: #66cc66;">&#40;</span>searchString<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> !<span style="color: #66cc66;">=</span> null<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
+<span style="color: #009900;">		<span style="color: #66cc66;">//</span> send the Search term to obtain the result, </span>
+<span style="color: #009900;">		<span style="color: #66cc66;">//</span>all processing happens in the <span style="color: #000066;">class</span> </span>
+<span style="color: #009900;">		<span style="color: #66cc66;">//</span><span style="color: #66cc66;">&#40;</span>keeping jsp <span style="color: #000066;">code</span> to minimum<span style="color: #66cc66;">&#41;</span></span>
+<span style="color: #009900;">		result <span style="color: #66cc66;">=</span> SearchWebCall.filter<span style="color: #66cc66;">&#40;</span>searchString<span style="color: #66cc66;">&#41;</span>;</span>
+<span style="color: #009900;">		int noOfMatch<span style="color: #66cc66;">=</span><span style="color: #cc66cc;"></span>;</span>
 &nbsp;
-<span style="color: #009900;">      out.print<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"Search Result of : &lt;b&gt;</span></span>" + searchString[1] + "<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">b</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">br</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">br</span>&gt;</span>");
-        for(int i=0; i<span style="color: #009900;">&lt; result.length; i++<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span></span>
+<span style="color: #009900;">		out.print<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"Search Result of : &lt;b&gt;</span></span>" + searchString[1] + "<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">b</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">br</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">br</span>&gt;</span>");
+		for(int i=0; i<span style="color: #009900;">&lt; result.length; i++<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span></span>
 &nbsp;
-<span style="color: #009900;">          <span style="color: #66cc66;">//</span>format the results</span>
-<span style="color: #009900;">          if <span style="color: #66cc66;">&#40;</span>result<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> !<span style="color: #66cc66;">=</span> null<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
-<span style="color: #009900;">              out.print<span style="color: #66cc66;">&#40;</span>i+<span style="color: #cc66cc;">1</span> + <span style="color: #ff0000;">". "</span><span style="color: #66cc66;">&#41;</span>;</span>
-<span style="color: #009900;">              <span style="color: #66cc66;">//</span>results are displayed as hyperlinks to faciliate information retrieval</span>
-<span style="color: #009900;">              out.print<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"&lt;a href=\"</span><span style="color: #ff0000;">"+result[i]+"</span>\<span style="color: #ff0000;">"&gt;</span></span>"+result[i]+"<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;</span>");
-                out.print("<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">br</span> <span style="color: #66cc66;">/</span>&gt;</span>");
-                noOfMatch++;
-            }
-        }
-        out.print("<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">h2</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">p</span>&gt;</span> No. of Matches: " + noOfMatch+ " <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">h2</span>&gt;</span>");
-    }
+<span style="color: #009900;">			<span style="color: #66cc66;">//</span>format the results</span>
+<span style="color: #009900;">			if <span style="color: #66cc66;">&#40;</span>result<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> !<span style="color: #66cc66;">=</span> null<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span></span>
+<span style="color: #009900;">				out.print<span style="color: #66cc66;">&#40;</span>i+<span style="color: #cc66cc;">1</span> + <span style="color: #ff0000;">". "</span><span style="color: #66cc66;">&#41;</span>;</span>
+<span style="color: #009900;">				<span style="color: #66cc66;">//</span>results are displayed as hyperlinks to faciliate information retrieval</span>
+<span style="color: #009900;">				out.print<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"&lt;a href=\"</span><span style="color: #ff0000;">"+result[i]+"</span>\<span style="color: #ff0000;">"&gt;</span></span>"+result[i]+"<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;</span>");
+				out.print("<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">br</span> <span style="color: #66cc66;">/</span>&gt;</span>");
+				noOfMatch++;
+			}
+		}
+		out.print("<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">h2</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">p</span>&gt;</span> No. of Matches: " + noOfMatch+ " <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">h2</span>&gt;</span>");
+	}
 //end of JSP
 %&gt;
 <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">body</span>&gt;</span>
@@ -315,7 +317,7 @@
 
 <a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
 
-<a href="https://www.linkedin.com/in/http://in.linkedin.com/pub/aaditya-prakash/38/533/684"><i class="svg-icon linkedin"></i></a>
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
 
 <a href="/feed.xml"><i class="svg-icon rss"></i></a>
 <a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>
