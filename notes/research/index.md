@@ -59,4 +59,23 @@ dsq_thread_id:
 ### Expressing an Image Stream with a Sequence of Natural Sentences <http://www.cs.cmu.edu/~gunhee/publish/nips15_stream2text.pdf>
     **Video summarizing** Novel architecture called a coherent recurrent convolutional network, applying it to creating novel and fluid textual stories from sequences of images.
 
+### Open Areas in Deep Learning (by Yoshua Bengio) 
+   Every researcher has their opinion on this, which is a good thing. Here are some I see:
+  * Unsupervised learning that would really kick ass
+    * generative models that generate crisp images and sounds over a wide set of variations covering natural images and sounds
+    * semi-supervised learning that makes a difference even when the labeled dataset is not tiny
+    * learning a two-way transformation of the data into a space where variables are disentangled (or mostly independent)
+    * bringing (iterative) inference back in deep learning to handle non-factorial posteriors over the latent variables
+  * Introducing more reasoning abilities in our models
+  * Natural language understanding and knowledge representation on a large scale
+  * Models of really long-term dependencies in sequential data and having learners that discover a hierarchical representation at multiple time scales
+  * Understand better (and fix) the optimization issues that sometimes arise (for example in unsupervised learning or recurrent nets with long-term dependencies)
+  * Train models that incorporate planning (playing out what-if scenarios, maybe stochastically via a generative component) as part of the learning procedure (and also to actually take decisions)
+  * Scaling up reinforcement learning to large action spaces
+  * Maximum likelihood has known deficiencies (such as a mismatch between training and test conditions) and we need to go around them (maybe ditching maximum likelihood altogether)
+  * Bridging the gap between deep learning and biology
+  * Ramping up our theoretical understanding of deep learning (optimization issues being one aspect, but expressive / statistical aspects being also in need of more theory)
+  * Building specialized hardware that will allow us not just to build consumer products from models trained offline, but maybe more importantly from a scientific point of view, to train much larger models which capture much more knowledge, so as to open the way towards human-level AI
+  * Many applications which are under-explored, and in particular I would like to see much more work in the area of health (with some specific issues like missing values and being to exploit data from small studies via transfer learning)
+
     

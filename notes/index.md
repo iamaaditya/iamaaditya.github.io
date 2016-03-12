@@ -39,6 +39,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Mathematics
   * [Probability And Statistics]( {{ site.baseurl }}/notes/probability_statistics/ ) - Collection of great articles, tutorials and very useful links about Proability and Statistics
+  * [Others] ( {{{site.baseurl }}/notes/maths/ ) - Tutorials, articles and useful links in other areas of maths.
 
 # Blogroll
   * <http://karpathy.github.io/>

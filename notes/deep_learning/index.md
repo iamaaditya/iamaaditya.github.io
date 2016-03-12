@@ -5,6 +5,10 @@ layout: page
 dsq_thread_id:
   - 
 ---
+What is Deep Learning ?
+
+  " Learning multiple levels of representation to help a learner accomplish a task of interest, with higher levels capturing more abstract concepts through a deeper composition of computations. " - Yoshua Bengio
+
 ### Articles 
 
   * A gentle introduction to auto-encoders <http://nikhilbuduma.com/2015/03/10/the-curse-of-dimensionality>
@@ -21,6 +25,7 @@ dsq_thread_id:
   * A brief history of Neural Nets and Deep Learning, Part 1 <http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/>
   * The Top A.I. Breakthroughs of 2015 <http://futureoflife.org/2015/12/29/the-top-a-i-breakthroughs-of-2015/>
   * How convolutional neural networks see the world <http://blog.keras.io/how-convolutional-neural-networks-see-the-world.html>
+  * Exploring the world on-the-go using Google Cloud Vision and Twilio <http://www.blog.juliaferraioli.com/2016/02/exploring-world-using-vision-twilio.html>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>
