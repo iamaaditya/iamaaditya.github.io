@@ -11,6 +11,7 @@ dsq_thread_id:
  * Great overview of DataStructures, <http://algorithmiccomplexity.com/data-structures/>
  * Also checkout <http://iamaaditya.github.io/notes/programming/>
  * Complete CS guide <http://www.csfieldguide.org.nz/en/about.html>
+ * Ipython Notebook from Introduction to Algorithms, MIT 6.006 <https://github.com/nivwusquorum/6.006-2015-notebooks>
 
 ## Visualization
 

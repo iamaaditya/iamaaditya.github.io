@@ -39,6 +39,7 @@ What is Deep Learning ?
   * Restricted Bolztman machines, very simplified <http://rocknrollnerd.github.io/ml/2015/07/14/memory-is-a-lazy-mistress.html> 
   * General Bolztman machines, very simplified <http://rocknrollnerd.github.io/ml/2015/07/18/general-boltzmann-machines.html>
   * End to End tensorflow examples <https://bcomposes.wordpress.com/2015/11/26/simple-end-to-end-tensorflow-examples/>
+  * Neural Turning Machines in Lasagne <https://medium.com/snips-ai/ntm-lasagne-a-library-for-neural-turing-machines-in-lasagne-2cdce6837315#.slx7a5nex>
 
 ### Courses 
   * <https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/>

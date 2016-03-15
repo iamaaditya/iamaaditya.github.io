@@ -19,4 +19,5 @@ dsq_thread_id:
 
 ## Articles
   * How to C in 2016 <https://matt.sh/howto-c>
+  * How to pass programming interviews <http://blog.triplebyte.com/how-to-pass-a-programming-interview>
 

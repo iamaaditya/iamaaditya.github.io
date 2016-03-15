@@ -21,6 +21,8 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
  * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing )  - October 7, 2015
  * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing )  - September 29, 2015
  * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing )  - September 16, 2015
+ * [Deep Learning and CNN] (https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016
+      (Very basics of Deep learning and CNN, meant as a gentle introduction to the field)
 
 # Learning
   * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ ) - Collection of articles, codes, repos, tutorials, and other links which I have found useful.
@@ -33,13 +35,18 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
      * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/)
  * [GPU Hardware & Infrastructure]( {{site.baseurl}}/notes/hardware/ ) - Notes related to GPU cluster, my experiences with building one, and latest in the field
 
+
 # Computer Science
   * [Data Structures and Algorithms]( {{ site.baseurl }}/notes/algorithms/ ) - Collection of references, tutorials, and links. I use this to refer to my students from CS 180. 
   * [Programming]( {{ site.baseurl }}/notes/programming/ ) - Collection of programming related references, articles, and competitions and learning resources
+  * [Image Processing and Comupter Vision] ( {{ site.baseurl }}/notes/computer_vision ) - Collection of articles, and tutorials which are essentially Image processing or old school computer vision. Deep Learning associated work are available here [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ )  
 
 # Mathematics
   * [Probability And Statistics]( {{ site.baseurl }}/notes/probability_statistics/ ) - Collection of great articles, tutorials and very useful links about Proability and Statistics
-  * [Others] ( {{{site.baseurl }}/notes/maths/ ) - Tutorials, articles and useful links in other areas of maths.
+  * [Others] ( {{site.baseurl }}/notes/maths/ ) - Tutorials, articles and useful links in other areas of maths.
+
+# Current Affairs
+  * [AlphaGo] ({{site.baseurl }}/notes/alphago/ ) - About AlphaGo, how it works, and it's matches against Lee Sedol
 
 # Blogroll
   * <http://karpathy.github.io/>
@@ -71,3 +78,4 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * [Books]( {{site.baseurl}}/notes/books/ ) - List of books I intend to read, reading or just a general recommendation for anyone looking for great book to read.
   * [Climbing]( {{site.baseurl}}/notes/climbing/ ) - Interesting articles about rock climbing, techniques, some cool videos from competitions or outdoor climbing and great climbers to follow on instagram.
   * [Name]( {{site.baseurl}}/notes/name/ ) - The etymology, meaning, and history behind my name - Aaditya (or Aditya or Adi)?
+

@@ -12,7 +12,7 @@ dsq_thread_id:
 
 ## Burning thoughts 
  * Distributed representation (of features)
-   > Can you learn X, Y, and detect X + Y ?
+   > Can you learn X, Y and detect X + Y ?
  * Can you tell the difference between an artificially generated image and a real image ? (Generative image models : <http://arxiv.org/abs/1506.05751> )
  * Saliency map and guided backpropagation <https://github.com/Lasagne/Recipes/blob/master/examples/Saliency%20Maps%20and%20Guided%20Backpropagation.ipynb>
 
@@ -41,6 +41,12 @@ dsq_thread_id:
  * Bayesian Methods for Neural Networks <http://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/slides/bayesian.pdf>
  * Crash course in learning theory <https://blogs.princeton.edu/imabandit/2015/10/13/crash-course-on-learning-theory-part-1/>
 
+## Sources of Paper
+ * Arxiv (Deep) Learning <http://arxiv.org/list/cs.LG/recent>
+ * Arxiv Machine Learning  <http://arxiv.org/list/stat.ML/recent>
+ * Arixv Computer Vision and Pattern Recognition <http://arxiv.org/list/cs.CV/recent>
+ * Subreddit Deep Learning Papers <https://www.reddit.com/r/DeepLearningPapers>
+ * Arxiv Sanity Preserver (by Karpathy) <http://www.arxiv-sanity.com/top>
 
 ## Notes
 
