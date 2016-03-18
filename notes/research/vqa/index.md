@@ -11,13 +11,13 @@ dsq_thread_id:
 
 ## Image Features
 
-### __VGG Net__
+### **VGG Net**
 
     * Overview <http://www.robots.ox.ac.uk/~vgg/research/very_deep/>
     * Paper <http://arxiv.org/pdf/1409.1556.pdf>
 
 
-### __GoogLeNet__
+### **GoogLeNet**
 
     * Overview <http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html>
     * Paper <http://arxiv.org/pdf/1409.4842v1.pdf>
