@@ -68,4 +68,4 @@ dsq_thread_id:
   * Demo (baseline, MIT) <http://visualqa.csail.mit.edu/>
   * CloudCV, Virginia Tech, <http://cloudcv.org/vqa/>
 
-    
+[Philosophy](https://en.wikipedia.org/wiki/Hacker_koan#Uncarved_block)    
