@@ -15,20 +15,20 @@ dsq_thread_id:
 
 ### VGG Net
 
-    * Overview <http://www.robots.ox.ac.uk/~vgg/research/very_deep/>
-    * Paper <http://arxiv.org/pdf/1409.1556.pdf>
+ * Overview <http://www.robots.ox.ac.uk/~vgg/research/very_deep/>
+ * Paper <http://arxiv.org/pdf/1409.1556.pdf>
 
 
 ### GoogLeNet
 
-    * Overview <http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html>
-    * Paper <http://arxiv.org/pdf/1409.4842v1.pdf>
+ * Overview <http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html>
+ * Paper <http://arxiv.org/pdf/1409.4842v1.pdf>
 
 
 ### LSTM
 
-    * Excellent description <http://colah.github.io/posts/2015-08-Understanding-LSTMs/>
-    * Paper <http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf>
+ * Excellent description <http://colah.github.io/posts/2015-08-Understanding-LSTMs/>
+ * Paper <http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf>
 
 ## Language Features
 

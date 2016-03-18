@@ -93,7 +93,7 @@
     <loc>http://iamaaditya.github.io/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/features/</loc>
+    <loc>http://iamaaditya.github.io/notes/climbing/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/machine_learning/</loc>
@@ -114,10 +114,16 @@
     <loc>http://iamaaditya.github.io/notes/papers/</loc>
   </url>
   <url>
+    <loc>http://iamaaditya.github.io/notes/computer_vision/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/features/</loc>
+  </url>
+  <url>
     <loc>http://iamaaditya.github.io/notes/probability_statistics/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/climbing/</loc>
+    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/name/</loc>
@@ -133,6 +139,9 @@
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/research/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/alphago/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/productivity/</loc>
@@ -153,7 +162,7 @@
     <loc>http://iamaaditya.github.io/about/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
+    <loc>http://iamaaditya.github.io/notes/maths/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/temp/</loc>
