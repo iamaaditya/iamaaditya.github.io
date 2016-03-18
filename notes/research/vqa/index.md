@@ -10,13 +10,16 @@ dsq_thread_id:
 
 
 ## Image Features
+
   * __VGG Net__
     * Overview <http://www.robots.ox.ac.uk/~vgg/research/very_deep/>
     * Paper <http://arxiv.org/pdf/1409.1556.pdf>
 
+
   * __GoogLeNet__
     * Overview <http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html>
     * Paper <http://arxiv.org/pdf/1409.4842v1.pdf>
+
 
   * **LSTM**
     * Excellent description <http://colah.github.io/posts/2015-08-Understanding-LSTMs/>
@@ -42,7 +45,19 @@ dsq_thread_id:
     GloVe is an unsupervised learning algorithm for obtaining vector representations for words. Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.
   * Paper: GloVe: Global Vectors for Word Representation <http://nlp.stanford.edu/projects/glove/glove.pdf>
 
+## Datasets
+
+ 1. Visual Question Answering (VQA) dataset[6]: Based on images from the COCO dataset,it currently has 360K questions on 120K images. There are plans of releasing questions on the rest of the COCO images and an additional 50K abstract images. All the questions are human-generated, and were specifically designed to stump a "smart robot".
+
+ 2. Visual Madlibs[11]: It contains fill-in-the-blank type questions along with standard question-answer pairs. It has 360K questions on 10K images from the COCO dataset. A lot of questions require high-level human cognition, such as describing what one feels on seeing an image.
+
+ 3. Toronto COCO-QA Dataset[10]: Automatically generated questions from the captions of the MS COCO dataset. At 115K questions, it is smaller than the VQA dataset. Answers are all one word.
+
+ 4. DAQUAR[5] - DAtaset for QUestion Answering on Real-world images: A much smaller dataset, with about 12K questions. This was one of the earliest datasets on image question and answering.
+
+
 ## Other relevant works
+
 ### Codes
 
   * Baseline only, MIT <https://github.com/metalbubble/VQAbaseline/>
