@@ -6,7 +6,7 @@ dsq_thread_id:
   - 
 ---
 ## Competition Website 
-  * http://visualqa.org/
+  * <http://visualqa.org/>
 
 
 ## Image Features
@@ -47,13 +47,13 @@ dsq_thread_id:
 
 ## Datasets
 
- 1. Visual Question Answering (VQA) dataset[6]: Based on images from the COCO dataset,it currently has 360K questions on 120K images. There are plans of releasing questions on the rest of the COCO images and an additional 50K abstract images. All the questions are human-generated, and were specifically designed to stump a "smart robot".
+ 1. Visual Question Answering (VQA) dataset: Based on images from the COCO dataset,it currently has 360K questions on 120K images. There are plans of releasing questions on the rest of the COCO images and an additional 50K abstract images. All the questions are human-generated, and were specifically designed to stump a "smart robot".
 
- 2. Visual Madlibs[11]: It contains fill-in-the-blank type questions along with standard question-answer pairs. It has 360K questions on 10K images from the COCO dataset. A lot of questions require high-level human cognition, such as describing what one feels on seeing an image.
+ 2. Visual Madlibs: It contains fill-in-the-blank type questions along with standard question-answer pairs. It has 360K questions on 10K images from the COCO dataset. A lot of questions require high-level human cognition, such as describing what one feels on seeing an image.
 
- 3. Toronto COCO-QA Dataset[10]: Automatically generated questions from the captions of the MS COCO dataset. At 115K questions, it is smaller than the VQA dataset. Answers are all one word.
+ 3. Toronto COCO-QA Dataset: Automatically generated questions from the captions of the MS COCO dataset. At 115K questions, it is smaller than the VQA dataset. Answers are all one word.
 
- 4. DAQUAR[5] - DAtaset for QUestion Answering on Real-world images: A much smaller dataset, with about 12K questions. This was one of the earliest datasets on image question and answering.
+ 4. DAQUAR - DAtaset for QUestion Answering on Real-world images: A much smaller dataset, with about 12K questions. This was one of the earliest datasets on image question and answering.
 
 
 ## Other relevant works
