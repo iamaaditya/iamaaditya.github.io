@@ -29,7 +29,7 @@ dsq_thread_id:
 
 ### **Word2Vec**
 
-  * Projet website: https://code.google.com/p/word2vec/
+  * Projet website: <https://code.google.com/p/word2vec/>
   * Description:
     This tool provides an efficient implementation of the continuous bag-of-words and skip-gram architectures for computing vector representations of words. These representations can be subsequently used in many natural language processing applications and for further research.
   * Related Paper:
@@ -40,7 +40,7 @@ dsq_thread_id:
 
 ### **Glove**
  
-  * Project website: http://nlp.stanford.edu/projects/glove/
+  * Project website: <http://nlp.stanford.edu/projects/glove/>
   * Description: 
     GloVe is an unsupervised learning algorithm for obtaining vector representations for words. Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.
   * Paper: GloVe: Global Vectors for Word Representation <http://nlp.stanford.edu/projects/glove/glove.pdf>
