@@ -11,7 +11,7 @@ dsq_thread_id:
 
 ## Image Features
 
-### **VGG Net**
+### VGG Net
 
     * Overview <http://www.robots.ox.ac.uk/~vgg/research/very_deep/>
     * Paper <http://arxiv.org/pdf/1409.1556.pdf>
