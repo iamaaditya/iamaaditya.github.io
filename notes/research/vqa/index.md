@@ -11,17 +11,20 @@ dsq_thread_id:
 
 ## Image Features
 
-  * __VGG Net__
+### __VGG Net__
+
     * Overview <http://www.robots.ox.ac.uk/~vgg/research/very_deep/>
     * Paper <http://arxiv.org/pdf/1409.1556.pdf>
 
 
-  * __GoogLeNet__
+### __GoogLeNet__
+
     * Overview <http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html>
     * Paper <http://arxiv.org/pdf/1409.4842v1.pdf>
 
 
-  * **LSTM**
+### **LSTM**
+
     * Excellent description <http://colah.github.io/posts/2015-08-Understanding-LSTMs/>
     * Paper <http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf>
 
@@ -44,6 +47,12 @@ dsq_thread_id:
   * Description: 
     GloVe is an unsupervised learning algorithm for obtaining vector representations for words. Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.
   * Paper: GloVe: Global Vectors for Word Representation <http://nlp.stanford.edu/projects/glove/glove.pdf>
+
+### **Sense2Vec***
+
+  * Description and nice tutorial <https://spacy.io/blog/sense2vec-with-spacy>
+  * Paper : <http://arxiv.org/pdf/1511.06388v1.pdf>
+
 
 ## Datasets
 
@@ -68,4 +77,6 @@ dsq_thread_id:
   * Demo (baseline, MIT) <http://visualqa.csail.mit.edu/>
   * CloudCV, Virginia Tech, <http://cloudcv.org/vqa/>
 
-[Philosophy](https://en.wikipedia.org/wiki/Hacker_koan#Uncarved_block)    
+
+[Koan on Bias while training Neural Nets](https://en.wikipedia.org/wiki/Hacker_koan#Uncarved_block)    
+
