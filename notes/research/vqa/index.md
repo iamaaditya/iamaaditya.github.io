@@ -69,6 +69,14 @@ dsq_thread_id:
 
 ## Other relevant works
 
+  * Papers
+    * VQA: Visual Question Answering <http://arxiv.org/abs/1505.00468>
+    * Exploring Models and Data for Image Question Answering <http://arxiv.org/abs/1505.02074>
+    * Learning to Answer Questions From Image Using Convolutional Neural Network <http://arxiv.org/abs/1506.00333>
+    * Deep Compositional Question Answering with Neural Module Networks <http://arxiv.org/abs/1511.02799>
+    * Simple Baseline for Visual Question Answering <http://arxiv.org/abs/1512.02167>
+    * Dynamic Memory Networks for Visual and Textual Question Answering <http://arxiv.org/abs/1603.01417>
+
 ### Codes
 
   * Baseline only, MIT <https://github.com/metalbubble/VQAbaseline/>

@@ -6,8 +6,12 @@ dsq_thread_id:
   - 
 ---
 
-## Tutorials 
+## Visualization
+
+ * Visually explained <http://setosa.io/ev/>
  * Visual Introduction to Machine Learning (Decision Trees) <http://www.r2d3.us/visual-intro-to-machine-learning-part-1/>
+
+## Tutorials 
  * Neural Network and Back Propagation (excellent article, with simple derivations) <http://jeremykun.com/2012/12/09/neural-networks-and-backpropagation/>
  * MCMC Sampling, tutorial and code <http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/>
  * Software tutorial, compilation (incl. Pandas) <https://github.com/hangtwenty/dive-into-machine-learning>
