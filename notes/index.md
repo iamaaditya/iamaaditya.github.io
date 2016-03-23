@@ -21,7 +21,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
  * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing )  - October 7, 2015
  * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing )  - September 29, 2015
  * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing )  - September 16, 2015
- * [Deep Learning and CNN] (https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016
+ * [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016
       (Very basics of Deep learning and CNN, meant as a gentle introduction to the field)
 
 # Learning
@@ -43,10 +43,10 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Mathematics
   * [Probability And Statistics]( {{ site.baseurl }}/notes/probability_statistics/ ) - Collection of great articles, tutorials and very useful links about Proability and Statistics
-  * [Others] ( {{site.baseurl }}/notes/maths/ ) - Tutorials, articles and useful links in other areas of maths.
+  * [Others]( {{site.baseurl }}/notes/maths/ ) - Tutorials, articles and useful links in other areas of maths.
 
 # Current Affairs
-  * [AlphaGo] ({{site.baseurl }}/notes/alphago/ ) - About AlphaGo, how it works, and it's matches against Lee Sedol
+  * [AlphaGo]({{site.baseurl }}/notes/alphago/ ) - About AlphaGo, how it works, and it's matches against Lee Sedol
 
 # Blogroll
   * <http://karpathy.github.io/>
@@ -59,19 +59,19 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * <http://inverseprobability.com/blog.html>
 
 # Awesome Lists
-  * Awesome Deep Vision <https://github.com/kjw0612/awesome-deep-vision>
-  * Awesome Deep Learning <https://github.com/ChristosChristofidis/awesome-deep-learning>
-  * Awesome Machine Learning <https://github.com/josephmisiti/awesome-machine-learning>
-  * Awesome Python <https://github.com/vinta/awesome-python>
-  * Awesome Linux <https://github.com/aleksandar-todorovic/awesome-linux>
-  * Awesome list of awesome lists <https://github.com/sindresorhus/awesome>
+  * [Awesome Deep Vision ](<https://github.com/kjw0612/awesome-deep-vision>)
+  * [Awesome Deep Learning ](<https://github.com/ChristosChristofidis/awesome-deep-learning>)
+  * [Awesome Machine Learning ](<https://github.com/josephmisiti/awesome-machine-learning>)
+  * [Awesome Python ](<https://github.com/vinta/awesome-python>)
+  * [Awesome Linux ](<https://github.com/aleksandar-todorovic/awesome-linux>)
+  * [Awesome list of awesome lists ](<https://github.com/sindresorhus/awesome>)
 
 # Cheatsheets
-  * IPython <https://damontallen.github.io/IPython-quick-ref-sheets/>
-  * LaTeX <http://wch.github.io/latexsheet/latexsheet.pdf>
-  * Oh-My-Zsh <https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet>
-  * Linux <https://gist.github.com/KamranMackey/5124174>
-  * Git <http://luisbg.blogalia.com//historias/76017>
+  * [IPython ](<https://damontallen.github.io/IPython-quick-ref-sheets/>)
+  * [LaTeX ](<http://wch.github.io/latexsheet/latexsheet.pdf>)
+  * [Oh-My-Zsh ](<https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet>)
+  * [Linux ](<https://gist.github.com/KamranMackey/5124174>)
+  * [Git ](<http://luisbg.blogalia.com//historias/76017>)
 
 # Misc
   * [Chess]( {{site.baseurl}}/notes/chess/ ) - Chess, a wonderful game. My collection of articles, amusing facts, etc. I also use this link to share the often requested inputs.
