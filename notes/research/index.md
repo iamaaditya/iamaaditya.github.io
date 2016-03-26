@@ -10,7 +10,9 @@ dsq_thread_id:
  * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
  * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ )
 
-## Burning thoughts 
+## Currently thinking about 
+
+ * How to add Network in Network for Visual Question Answering Models
  * Distributed representation (of features)
    > Can you learn X, Y and detect X + Y ?
  * Can you tell the difference between an artificially generated image and a real image ? (Generative image models : <http://arxiv.org/abs/1506.05751> )
@@ -19,7 +21,7 @@ dsq_thread_id:
 ## Papers reading currently
  * How transferable are features in deep neural networks? <http://arxiv.org/abs/1411.1792>
  * On Learning to Think: Algorithmic Information Theory for Novel Combinations of Reinforcement Learning Controllers and Recurrent Neural World Models <http://arxiv.org/abs/1511.09249>
- * GENERATING IMAGES FROM CAPTIONS WITH ATTENTION <http://arxiv.org/pdf/1511.02793v1.pdf>
+ * Generating images from captions with attention <http://arxiv.org/pdf/1511.02793v1.pdf>
  * Neural Program interpreters <http://www-personal.umich.edu/~reedscot/iclr_project.html>
 
 ## Recently read papers
@@ -36,6 +38,7 @@ dsq_thread_id:
 
 ## Libraries currenty of interest
  * <https://github.com/karpathy/neuraltalk2>
+ * <https://github.com/HyeonwooNoh/DPPnet>
 
 ## Articles 
  * Bayesian Methods for Neural Networks <http://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/slides/bayesian.pdf>

@@ -82,7 +82,7 @@ Cross channel information learning (cascaded 1x1 convolution) is biologically in
   * Replace fully connected layers with 1x1 convolutions as Yann LeCun believes they are the same -
 > In Convolutional Nets, there is no such thing as "fully-connected layers". There are only convolution layers with 1x1 convolution kernels and a full connection table.
 -- [Yann LeCun](https://www.facebook.com/yann.lecun/posts/10152820758292143)
-  </br>
+  <br />
 
 *Convolution gif images generated using [this wonderful code](https://github.com/vdumoulin/conv_arithmetic), more images on 1x1 convolutions and 3x3 convolutions can be* [found here](http://gpgpu.cs-i.brandeis.edu/convolution_images/)
 

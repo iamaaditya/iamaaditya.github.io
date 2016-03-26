@@ -56,6 +56,12 @@ dsq_thread_id:
   * Paper : <http://arxiv.org/pdf/1511.06388v1.pdf>
 
 
+### Skip-Thought Vectors
+
+  * Description and intuition about thought-vectors <http://deeplearning4j.org/thoughtvectors>
+  * Paper : <http://arxiv.org/abs/1506.06726>
+  * Code : <https://github.com/ryankiros/skip-thoughts>
+
 ## Datasets
 
  1. Visual Question Answering (VQA) dataset: Based on images from the COCO dataset,it currently has 360K questions on 120K images. There are plans of releasing questions on the rest of the COCO images and an additional 50K abstract images. All the questions are human-generated, and were specifically designed to stump a "smart robot".

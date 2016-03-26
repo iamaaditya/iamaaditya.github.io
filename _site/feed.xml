@@ -78,7 +78,7 @@ But then again, is this is the best way to do dimensionality reduction in the co
   &lt;li&gt;Replace fully connected layers with 1x1 convolutions as Yann LeCun believes they are the same -
 &amp;gt; In Convolutional Nets, there is no such thing as “fully-connected layers”. There are only convolution layers with 1x1 convolution kernels and a full connection table.
 – &lt;a href=&quot;https://www.facebook.com/yann.lecun/posts/10152820758292143&quot;&gt;Yann LeCun&lt;/a&gt;
-  &amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;em&gt;Convolution gif images generated using &lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot;&gt;this wonderful code&lt;/a&gt;, more images on 1x1 convolutions and 3x3 convolutions can be&lt;/em&gt; &lt;a href=&quot;http://gpgpu.cs-i.brandeis.edu/convolution_images/&quot;&gt;found here&lt;/a&gt;&lt;/p&gt;
