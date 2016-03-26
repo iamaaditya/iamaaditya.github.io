@@ -7,6 +7,71 @@
     <atom:link href="http://iamaaditya.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>One by One [ 1 x 1 ] Convolution - counter-intuitively useful</title>
+        <description>&lt;p&gt;Whenever I discuss or show &lt;a href=&quot;http://arxiv.org/pdf/1409.4842v1.pdf&quot;&gt;GoogleNet architecture&lt;/a&gt;, one question always comes up - &lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;“Why 1x1 convolution ? Is it not redundant ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif_/full_padding_no_strides_transposed.gif&quot; alt=&quot;Convolution with Kernel of size 3x3&quot; /&gt;
+&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/full_padding_no_strides_transposed.gif&quot; alt=&quot;Convolution with Kernel of size 1x1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;left : &lt;strong&gt;Convolution with kernel of size 3x3&lt;/strong&gt;               right : &lt;strong&gt;Convolution with kernel of size 1x1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;simple-answer&quot;&gt;Simple Answer&lt;/h2&gt;
+
+&lt;p&gt;Most simplistic explanation would be that 1x1 convolution leads to dimension reductionality. For example, an image of 200 x 200 with 50 features on convolution with 20 filters of 1x1 would result in size of 200 x 200 x 20.
+But then again, is this is the best way to do dimensionality reduction in the convoluational neural network? What about the efficacy vs efficiency?&lt;/p&gt;
+
+&lt;h2 id=&quot;complex-answer&quot;&gt;Complex Answer&lt;/h2&gt;
+
+&lt;h3 id=&quot;feature-transformation&quot;&gt;Feature transformation&lt;/h3&gt;
+&lt;p&gt;Although 1x1 convolution is a ‘feature pooling’ technique, there is more to it than just sum pooling of features across various channels/feature-maps of a given layer. 
+1x1 convolution acts like coordinate-dependent transformation in the filter space[&lt;a href=&quot;https://plus.google.com/118431607943208545663/posts/2y7nmBuh2ar&quot;&gt;1&lt;/a&gt;]. It is important to note here that this transformation is strictly linear, but in most of application of 1x1 convolution, it is succeeded by a non-linear activation layer like ReLU. This transformation is learned through the (stochastic) gradient descent. But an important distinction is that it suffers with less over-fitting due to smaller kernel size (1x1).&lt;/p&gt;
+
+&lt;h3 id=&quot;deeper-network&quot;&gt;Deeper Network&lt;/h3&gt;
+
+&lt;p&gt;One by One convolution was first introduced in this paper titled &lt;a href=&quot;http://arxiv.org/pdf/1312.4400v3.pdf&quot;&gt;Network in Network&lt;/a&gt;. In this paper, the author’s goal was to generate a deeper network without simply stacking more layers. It replaces few filters with a smaller perceptron layer with mixture of 1x1 and 3x3 convolutions. In a way, it can be seen as “going wide” instead of “deep”, but I think it would a gross oversimplication to say it so naively. Combination of 1x1 (x F) convolution is mathematically equivalent to a multi-layer perceptron.[&lt;a href=&quot;https://www.reddit.com/r/MachineLearning/comments/3oln72/1x1_convolutions_why_use_them/cvyxood&quot;&gt;2&lt;/a&gt;].&lt;/p&gt;
+
+&lt;p&gt;In designing such a network, it is important to note that initial convolution kernel should be of size larger than 1x1 to get have a receptive field capable of capturing locally spatial information. According to the NIN paper, 1x1 convolution is equivalent to cross-channel parametric pooling layer. From the paper - “This cascaded cross channel parameteric pooling structure allows complex and learnable interactions of cross channel information”.&lt;/p&gt;
+
+&lt;p&gt;Cross channel information learning (cascaded 1x1 convolution) is important because human visual cortex have receptive fields (kernels) tuned to different orientation. For e.g&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bmia.bmt.tue.nl/education/courses/fev/course/notebooks/RotBundleFiltersListPlot3D.gif&quot; alt=&quot;different orientation tuned receptive field profiles in the human visual cortex&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Different orientation tuned receptive field profiles in the human visual cortex&lt;/strong&gt; &lt;a href=&quot;http://bmia.bmt.tue.nl/education/courses/fev/course/notebooks/Convolution.html&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;more-uses&quot;&gt;More Uses&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1x1 Convolution can be combined with Max pooling&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/numerical_max_pooling.gif&quot; alt=&quot;Pooling with 1x1 convolution&quot; /&gt;
+   &lt;strong&gt;Pooling with 1x1 convolution&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1x1 Convolution with higher strides leads to even more redution in data, while losing very little non-spatially correlated information&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/no_padding_strides.gif&quot; alt=&quot;1x1 convolution with strides&quot; /&gt;
+   &lt;strong&gt;1x1 convolution with strides&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replace fully connected layers with 1x1 convolutions as Yann LeCun believes they are the same -
+&amp;gt; In Convolutional Nets, there is no such thing as “fully-connected layers”. There are only convolution layers with 1x1 convolution kernels and a full connection table.
+– &lt;a href=&quot;https://www.facebook.com/yann.lecun/posts/10152820758292143&quot;&gt;Yann LeCun&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Images generated using &lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot;&gt;this wonderful code&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;More images on 1x1 convolutions and 3x3 convolutions can be [found here](http://gpgpu.cs-i.brandeis.edu/convolution_images/&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 25 Mar 2016 00:00:00 -0400</pubDate>
+        <link>http://iamaaditya.github.io/2016/03/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2016/03/</guid>
+      </item>
+    
+      <item>
         <title>Deep Learning software installation guide on fresh Ubuntu</title>
         <description>&lt;p&gt;Recently I assembled a machine with 4 GPU (Titan X), a clone of &lt;a href=&quot;https://developer.nvidia.com/devbox&quot;&gt;NVIDIA DevBox&lt;/a&gt;. There are few other blog posts which describe the hardware guide, so I will not go into the same detail. Please refer &lt;a href=&quot;https://www.facebook.com/notes/chris-lengerich/build-your-own-nvidia-devbox/10152999419281541&quot;&gt;this&lt;/a&gt;. 
 The actual list of parts I bought can be found &lt;a href=&quot;https://pcpartpicker.com/user/iamaaditya/saved/LPmZxr&quot;&gt; at PCPart Picker&lt;/a&gt;.&lt;/p&gt;
@@ -1021,60 +1086,6 @@ outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span 
         <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2012/11/bootstrap-sampling-in-r/</link>
         <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/bootstrap-sampling-in-r/</guid>
-      </item>
-    
-      <item>
-        <title>Notes on Discrete Painlevé Equations</title>
-        <description>&lt;p&gt;Painlevé equations are used to solve non-linear second order differential equation. For more on Painleve’s work &lt;a title=&quot;Painlevé&#39;s Works&quot; href=&quot;http://www.math.h.kyoto-u.ac.jp/~takasaki/soliton-lab/chron/painleve.html&quot; target=&quot;_blank&quot;&gt;see this&lt;/a&gt; and for short refresher on Painlevé equations, &lt;a title=&quot;Painlevé&#39;s Equations&quot; href=&quot;http://www.encyclopediaofmath.org/index.php/Painlev%C3%A9_equation&quot; target=&quot;_blank&quot;&gt;Encylopedia of Mathmematics&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This note concerns more on the Discrete derivatives of Painlevé’s Equations.&lt;/p&gt;
-
-&lt;p&gt;Integratibility is not a well defined term. Poincaré’s definition of Integrabiliy is – to integrate a DE is to find for the general solution, a finite expression, in a finite number of funtions. i.e Solution should be a single value.&lt;/p&gt;
-
-&lt;p&gt;Soliton Systems for e.g are single valued :&lt;br /&gt;
-&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%5Cforall+x+%28+x+%5Cepsilon+Domain%29+%5CRightarrow+1+%5Crightarrow+1+%2C+1+%5Crightarrow+M+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &quot; title=&quot;\forall x ( x \epsilon Domain) \Rightarrow 1 \rightarrow 1 , 1 \rightarrow M &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Multi valued functions of a complex variable have branch points, i.e critical points. While implies critical singularities of a linear ODE are fixed&lt;/p&gt;
-
-&lt;p&gt;We can derive new functions from Non-linear equations :&lt;br /&gt;
-&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bw%7D%27%3D%5Cfrac%7Bw-w%5E%7B3%7D%7D%7Bz%28z%2B1%29%7D+%2C+w%280%29+%3D+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &quot; title=&quot;{w}&amp;#039;=\frac{w-w^{3}}{z(z+1)} , w(0) = c &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
-&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&quot;http://s0.wp.com/latex.php?latex=w%28z%29+%3D+c+%5Csqrt%7B%5Cfrac%7B1%2Bz%7D%7B1%2Bc%5E%7B2%7Dz%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &quot; title=&quot;w(z) = c \sqrt{\frac{1+z}{1+c^{2}z}} &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
-Singular at &lt;img src=&quot;http://s0.wp.com/latex.php?latex=z+%3D+-1+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;z = -1 &quot; title=&quot;z = -1 &quot; class=&quot;latex&quot; /&gt; is said to be fixed.&lt;/p&gt;
-
-&lt;p&gt;e.g&lt;br /&gt;
-1. &lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%2B+w%5E%7B2%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{w}&amp;#039; + w^{2} = 0 &quot; title=&quot;{w}&amp;#039; + w^{2} = 0 &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
-&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&quot;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B-1%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w = (z-z_{0})^{-1} &quot; title=&quot;w = (z-z_{0})^{-1} &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
-2. &lt;img src=&quot;http://s0.wp.com/latex.php?latex=2%7Bw%7D%27%2Bw%5E%7B3%7D+%3D+0+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;2{w}&amp;#039;+w^{3} = 0 &quot; title=&quot;2{w}&amp;#039;+w^{3} = 0 &quot; class=&quot;latex&quot; /&gt;&lt;br /&gt;
-&lt;strong&gt;solution&lt;/strong&gt;: &lt;img src=&quot;http://s0.wp.com/latex.php?latex=w+%3D+%28z-z_%7B0%7D%29%5E%7B%5Cfrac%7B-1%7D%7B2%7D%7D+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;w = (z-z_{0})^{\frac{-1}{2}} &quot; title=&quot;w = (z-z_{0})^{\frac{-1}{2}} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Singularities of a nonlinear systems generally do not show Painlevé Property*&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;*Painlevé Property&lt;/strong&gt;&lt;br /&gt;
-An ODE is said to possess the Painlevé property if all its solution are single valued. Beauty of having this property is it allows the transformation of Painlevé Equations into Riccati Equations, which could be solved using known techniques.&lt;br /&gt;
-Riccati Equations are fo the form :&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bw%7D%27+%3D+aw%5E%7B2%7D+%2B+bw+%2B+c+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{w}&amp;#039; = aw^{2} + bw + c &quot; title=&quot;{w}&amp;#039; = aw^{2} + bw + c &quot; class=&quot;latex&quot; /&gt; — (I)&lt;/p&gt;
-
-&lt;p&gt;Painlevé Classified Equatios into 6 types (Transcedants). They were mostly forgotten but their revival was necessitated after soliton systems.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/painleve-equations.png&quot;&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;painlevé equations&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/painleve-equations-300x147.png&quot; alt=&quot;painlevé equations&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Dicrete Painlevé was discovered mostly due to efforts on Quantum Gravity. See &lt;a title=&quot;Discrete Painleve in Quantum Gravity&quot; href=&quot;http://projecteuclid.org/DPubS/Repository/1.0/Disseminate?view=body&amp;amp;id=pdf_1&amp;amp;handle=euclid.cmp/1104248588&quot; target=&quot;_blank&quot;&gt;Discrete Painlevé equations and their appearance in quantum gravity by AS Fokas et al.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;On discretisation, Riccati Equation given above at  (I) becomes&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://s0.wp.com/latex.php?latex=%7Bx%7D%27+%3D+%28x_%7Bn%2B1%7D+-+x_%7Bn%7D%29+%5CDelta+t+&amp;#038;bg=ffffff&amp;#038;fg=000000&amp;#038;s=0&quot; alt=&quot;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &quot; title=&quot;{x}&amp;#039; = (x_{n+1} - x_{n}) \Delta t &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A caveat though, Non-linear discretisation is not unique and may result in incorrect functions. Discretisation should be fo rational form and have homographic mapping. There are more than 20 discrete Painlevé Equations.&lt;/p&gt;
-
-&lt;p&gt;Solutions to Discrete Painlevé Equations can be found &lt;a title=&quot;Solutions to Discrete Painleve Equations&quot; href=&quot;http://www.sciencedirect.com/science/article/pii/S0898122101001808&quot; target=&quot;_blank&quot;&gt;on this paper by A.Ramani et al&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 10 Nov 2012 00:00:00 -0500</pubDate>
-        <link>http://iamaaditya.github.io/2012/11/notes-on-discrete-painleve-equations/</link>
-        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/notes-on-discrete-painleve-equations/</guid>
       </item>
     
   </channel>
