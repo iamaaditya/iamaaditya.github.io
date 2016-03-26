@@ -61,14 +61,12 @@ But then again, is this is the best way to do dimensionality reduction in the co
 – &lt;a href=&quot;https://www.facebook.com/yann.lecun/posts/10152820758292143&quot;&gt;Yann LeCun&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;Images generated using &lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot;&gt;this wonderful code&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;*More images on 1x1 convolutions and 3x3 convolutions can be *&lt;a href=&quot;http://gpgpu.cs-i.brandeis.edu/convolution_images/&quot;&gt;found here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Convolution gif images generated using &lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot;&gt;this wonderful code&lt;/a&gt;, more images on 1x1 convolutions and 3x3 convolutions can be&lt;/em&gt; &lt;a href=&quot;http://gpgpu.cs-i.brandeis.edu/convolution_images/&quot;&gt;found here&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 25 Mar 2016 00:00:00 -0400</pubDate>
-        <link>http://iamaaditya.github.io/2016/03/one-by-one-convolution</link>
-        <guid isPermaLink="true">http://iamaaditya.github.io/2016/03/one-by-one-convolution</guid>
+        <link>http://iamaaditya.github.io/2016/03/one-by-one-convolution/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2016/03/one-by-one-convolution/</guid>
       </item>
     
       <item>
