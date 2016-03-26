@@ -15,8 +15,8 @@ tags:
 Whenever I discuss or show [GoogleNet architecture](http://arxiv.org/pdf/1409.4842v1.pdf), one question always comes up - <br /><br />
 **"Why 1x1 convolution ? Is it not redundant ?**
 
-![Convolution with Kernel of size 3x3](http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif_/full_padding_no_strides_transposed.gif)
-![Convolution with Kernel of size 1x1](http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/full_padding_no_strides_transposed.gif)
+![Convolution with Kernel of size 3x3](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif_/full_padding_no_strides_transposed.gif)
+![Convolution with Kernel of size 1x1](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif/full_padding_no_strides_transposed_small.gif)
 
 left : **Convolution with kernel of size 3x3**               right : **Convolution with kernel of size 1x1**
 
@@ -51,12 +51,12 @@ Cross channel information learning (cascaded 1x1 convolution) is important becau
 
   * 1x1 Convolution can be combined with Max pooling
 
-  ![Pooling with 1x1 convolution](http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/numerical_max_pooling.gif)
+  ![Pooling with 1x1 convolution](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif/numerical_max_pooling.gif)
    **Pooling with 1x1 convolution**
 
   * 1x1 Convolution with higher strides leads to even more redution in data, while losing very little non-spatially correlated information
 
-  ![1x1 convolution with strides](http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/no_padding_strides.gif)
+  ![1x1 convolution with strides](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif/no_padding_strides.gif)
    **1x1 convolution with strides**
 
   * Replace fully connected layers with 1x1 convolutions as Yann LeCun believes they are the same -
@@ -65,5 +65,5 @@ Cross channel information learning (cascaded 1x1 convolution) is important becau
 
 *Images generated using [this wonderful code](https://github.com/vdumoulin/conv_arithmetic)*
 
-*More images on 1x1 convolutions and 3x3 convolutions can be [found here](http://gpgpu.cs-i.brandeis.edu/convolution_images/* 
+*More images on 1x1 convolutions and 3x3 convolutions can be *[found here](http://gpgpu.cs-i.brandeis.edu/convolution_images/
 

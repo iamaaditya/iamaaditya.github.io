@@ -11,8 +11,8 @@
         <description>&lt;p&gt;Whenever I discuss or show &lt;a href=&quot;http://arxiv.org/pdf/1409.4842v1.pdf&quot;&gt;GoogleNet architecture&lt;/a&gt;, one question always comes up - &lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;“Why 1x1 convolution ? Is it not redundant ?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif_/full_padding_no_strides_transposed.gif&quot; alt=&quot;Convolution with Kernel of size 3x3&quot; /&gt;
-&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/full_padding_no_strides_transposed.gif&quot; alt=&quot;Convolution with Kernel of size 1x1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif_/full_padding_no_strides_transposed.gif&quot; alt=&quot;Convolution with Kernel of size 3x3&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif/full_padding_no_strides_transposed_small.gif&quot; alt=&quot;Convolution with Kernel of size 1x1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;left : &lt;strong&gt;Convolution with kernel of size 3x3&lt;/strong&gt;               right : &lt;strong&gt;Convolution with kernel of size 1x1&lt;/strong&gt;&lt;/p&gt;
 
@@ -45,14 +45,14 @@ But then again, is this is the best way to do dimensionality reduction in the co
   &lt;li&gt;1x1 Convolution can be combined with Max pooling&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/numerical_max_pooling.gif&quot; alt=&quot;Pooling with 1x1 convolution&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif/numerical_max_pooling.gif&quot; alt=&quot;Pooling with 1x1 convolution&quot; /&gt;
    &lt;strong&gt;Pooling with 1x1 convolution&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;1x1 Convolution with higher strides leads to even more redution in data, while losing very little non-spatially correlated information&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://himal.cs-i.brandeis.edu/ap/conv_arithmetic/gif/no_padding_strides.gif&quot; alt=&quot;1x1 convolution with strides&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/gif/no_padding_strides.gif&quot; alt=&quot;1x1 convolution with strides&quot; /&gt;
    &lt;strong&gt;1x1 convolution with strides&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -63,7 +63,7 @@ But then again, is this is the best way to do dimensionality reduction in the co
 
 &lt;p&gt;&lt;em&gt;Images generated using &lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot;&gt;this wonderful code&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;More images on 1x1 convolutions and 3x3 convolutions can be [found here](http://gpgpu.cs-i.brandeis.edu/convolution_images/&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;*More images on 1x1 convolutions and 3x3 convolutions can be *[found here](http://gpgpu.cs-i.brandeis.edu/convolution_images/&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 25 Mar 2016 00:00:00 -0400</pubDate>
