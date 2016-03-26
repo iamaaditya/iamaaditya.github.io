@@ -2,6 +2,7 @@
 title: One by One [ 1 x 1 ] Convolution - counter-intuitively useful
 author: aaditya prakash
 layout: post
+permalink: /2016/03/one-by-one-convolution/
 categories:
   - computer science
   - math
