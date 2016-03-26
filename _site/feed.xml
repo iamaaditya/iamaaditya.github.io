@@ -48,7 +48,7 @@ But then again, is this is the best way to do dimensionality reduction in the co
 
 &lt;p&gt;It can be seen from the image on the right, that 1x1 convolutions (in yellow), are specially used before 3x3 and 5x5 convolution to reduce the dimensions. It should be noted that a two step convolution operation can always to combined into one, but in this case and in most other deep learning networks, convolutions are followed by non-linear activation and hence convolutions are no longer linear operators and cannot be combined.&lt;/p&gt;
 
-&lt;p&gt;In designing such a network, it is important to note that initial convolution kernel should be of size larger than 1x1 to get have a receptive field capable of capturing locally spatial information. According to the NIN paper, 1x1 convolution is equivalent to cross-channel parametric pooling layer. From the paper - “This cascaded cross channel parameteric pooling structure allows complex and learnable interactions of cross channel information”.&lt;/p&gt;
+&lt;p&gt;In designing such a network, it is important to note that initial convolution kernel should be of size larger than 1x1 to have a receptive field capable of capturing locally spatial information. According to the NIN paper, 1x1 convolution is equivalent to cross-channel parametric pooling layer. From the paper - “This cascaded cross channel parameteric pooling structure allows complex and learnable interactions of cross channel information”.&lt;/p&gt;
 
 &lt;p&gt;Cross channel information learning (cascaded 1x1 convolution) is biologically inspired because human visual cortex have receptive fields (kernels) tuned to different orientation. For e.g&lt;/p&gt;
 
@@ -91,7 +91,65 @@ But then again, is this is the best way to do dimensionality reduction in the co
     
       <item>
         <title>Deep Learning software installation guide on fresh Ubuntu</title>
-        <description>&lt;p&gt;Recently I assembled a machine with 4 GPU (Titan X), a clone of &lt;a href=&quot;https://developer.nvidia.com/devbox&quot;&gt;NVIDIA DevBox&lt;/a&gt;. There are few other blog posts which describe the hardware guide, so I will not go into the same detail. Please refer &lt;a href=&quot;https://www.facebook.com/notes/chris-lengerich/build-your-own-nvidia-devbox/10152999419281541&quot;&gt;this&lt;/a&gt;. 
+        <description>&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Basic
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#upgrade-the-ubuntu&quot;&gt;Upgrade the Ubuntu&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#raid-1&quot;&gt;RAID 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#partition-and-mount-the-harddrives&quot;&gt;Partition and mount the harddrives&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#mounting&quot;&gt;Mounting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-essentials-extras-git-zsh&quot;&gt;Install Essentials, Extras, Git, Zsh&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#python&quot;&gt;Python&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#python-and-libs&quot;&gt;Python and Libs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#highend-computing&quot;&gt;Highend computing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#python3-and-ipython-jupyter&quot;&gt;Python3 and Ipython (Jupyter)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nvidia&quot;&gt;NVIDIA&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-nvidia-drivers&quot;&gt;Install NVIDIA Drivers&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-cuda&quot;&gt;Install CUDA&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-cudnn&quot;&gt;Install CuDNN&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#image-processing-and-computer-vision&quot;&gt;Image processing and Computer Vision&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-opencv&quot;&gt;Install OpenCV&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#ffmpeg&quot;&gt;FFMPEG&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#imagemagick&quot;&gt;ImageMagick&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-gpu-libraries&quot;&gt;Install GPU Libraries&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#theano&quot;&gt;Theano&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tensorflow&quot;&gt;Tensorflow&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#keras&quot;&gt;Keras&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#lasagne&quot;&gt;Lasagne&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#torch&quot;&gt;Torch&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#caffe&quot;&gt;Caffe&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#note&quot;&gt;Note&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#issues&quot;&gt;Issues&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#optional&quot;&gt;Optional&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#remove-unnecessary-ubuntu-folders&quot;&gt;Remove unnecessary Ubuntu folders&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#customization&quot;&gt;Customization&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Recently I assembled a machine with 4 GPU (Titan X), a clone of &lt;a href=&quot;https://developer.nvidia.com/devbox&quot;&gt;NVIDIA DevBox&lt;/a&gt;. There are few other blog posts which describe the hardware guide, so I will not go into the same detail. Please refer &lt;a href=&quot;https://www.facebook.com/notes/chris-lengerich/build-your-own-nvidia-devbox/10152999419281541&quot;&gt;this&lt;/a&gt;. 
 The actual list of parts I bought can be found &lt;a href=&quot;https://pcpartpicker.com/user/iamaaditya/saved/LPmZxr&quot;&gt; at PCPart Picker&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;However this blog post is about the software guide. Although, most of the researchers or grad students like me will have their own custom requirement I thought I should share my software installation guide, for someone who might be new and would benefit from some of these. I have had to do this process couple of times now, and I have learned from my mistakes.&lt;/p&gt;
@@ -349,6 +407,15 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
     &lt;/div&gt;
 
     &lt;p&gt;Solution, recompile Leveldb with GCC 5&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libsnappy-dev&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://leveldb.googlecode.com/files/leveldb-1.9.0.tar.gz\ntar -xzf leveldb-1.9.0.tar.gz\ncd leveldb-1.9.0make&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo mv libleveldb.* /usr/local/lib&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd include&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo cp -R leveldb /usr/local/include&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ldconfiG&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Linking Error in Protobuf e.g&lt;/p&gt;
@@ -365,22 +432,45 @@ NOTE! Could not sign kernels, make a note of this. It might lead to problems wit
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
 
-    &lt;p&gt;Solution, change your current compiler to gcc
+    &lt;p&gt;Solution, change your current compiler to GCC
 Use &lt;code class=&quot;highlighter-rouge&quot;&gt;gcc --version&lt;/code&gt; to make sure the correct version, and &lt;code class=&quot;highlighter-rouge&quot;&gt;which gcc&lt;/code&gt; to check the softlinks to actual gcc&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Relevant issue to checkout &lt;a href=&quot;https://github.com/BVLC/caffe/issues/2690&quot;&gt;https://github.com/BVLC/caffe/issues/2690&lt;/a&gt; and &lt;a href=&quot;https://github.com/BVLC/caffe/issues/3046&quot;&gt;https://github.com/BVLC/caffe/issues/3046&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;Relevant issues to checkout &lt;a href=&quot;https://github.com/BVLC/caffe/issues/2690&quot;&gt;https://github.com/BVLC/caffe/issues/2690&lt;/a&gt; and &lt;a href=&quot;https://github.com/BVLC/caffe/issues/3046&quot;&gt;https://github.com/BVLC/caffe/issues/3046&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In Ubuntu 15.10 when using GCC 5.2, compiling might fail as Protobuf was compiled with wrong flags. Add the following to Makefile
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;CXXFLAGS += -D_GLIBCXX_USE_CXX11_ABI=0&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Issues with Google Lib Protobuf (even after the ABI CXX11 fix)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd /usr/local/lib&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo mkdir libprotobuf_&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mv libprotobuf* libprotobuf_&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get source libprotobuf-dev&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ll&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd protobuf-2.6.1&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./configure&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;make -j12&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo make install&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;instllation&quot;&gt;Instllation&lt;/h3&gt;
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;mkdir build&lt;/li&gt;
   &lt;li&gt;cd build&lt;/li&gt;
-  &lt;li&gt;cmake ..&lt;/li&gt;
+  &lt;li&gt;cmake .. # &lt;em&gt;Make kept giving me issues, but CMake worked.&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;make all&lt;/li&gt;
+  &lt;li&gt;make test&lt;/li&gt;
   &lt;li&gt;make runtest&lt;/li&gt;
+  &lt;li&gt;make pycaffe # &lt;em&gt;To be able to import caffe&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;to-be-updated-with-instructions-for-nervana&quot;&gt;To be updated with instructions for Nervana&lt;/h2&gt;

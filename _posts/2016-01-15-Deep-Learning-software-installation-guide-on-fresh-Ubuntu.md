@@ -12,6 +12,42 @@ tags:
   - Tensorflow
   - deep learning
 ---
+Table of Contents
+=================
+
+* Basic
+	* [Upgrade the Ubuntu](#upgrade-the-ubuntu)
+	* [RAID 1](#raid-1)
+	* [Partition and mount the harddrives](#partition-and-mount-the-harddrives)
+	* [Mounting](#mounting)
+	* [Install Essentials, Extras, Git, Zsh](#install-essentials-extras-git-zsh)
+* [Python](#python)
+	* [Python and Libs](#python-and-libs)
+	* [Highend computing](#highend-computing)
+	* [Python3 and Ipython (Jupyter)](#python3-and-ipython-jupyter)
+* [NVIDIA](#nvidia)
+	* [Install NVIDIA Drivers](#install-nvidia-drivers)
+	* [Install CUDA](#install-cuda)
+	* [Install CuDNN](#install-cudnn)
+* [Image processing and Computer Vision](#image-processing-and-computer-vision)
+	* [Install OpenCV](#install-opencv)
+	* [FFMPEG](#ffmpeg)
+	* [ImageMagick](#imagemagick)
+* [Install GPU Libraries](#install-gpu-libraries)
+	* [Theano](#theano)
+	* [Tensorflow](#tensorflow)
+	* [Keras](#keras)
+	* [Lasagne](#lasagne)
+	* [Torch](#torch)
+	* [Caffe](#caffe)
+	  * [Note](#note)
+	  * [Requirements](#requirements)
+	  * [Issues](#issues)
+	  * [Installation](#installation)
+* [Optional](#optional)
+	* [Remove unnecessary Ubuntu folders](#remove-unnecessary-ubuntu-folders)
+	* [Customization](#customization)
+
 
 Recently I assembled a machine with 4 GPU (Titan X), a clone of [NVIDIA DevBox](https://developer.nvidia.com/devbox). There are few other blog posts which describe the hardware guide, so I will not go into the same detail. Please refer [this](https://www.facebook.com/notes/chris-lengerich/build-your-own-nvidia-devbox/10152999419281541). 
 The actual list of parts I bought can be found [ at PCPart Picker](https://pcpartpicker.com/user/iamaaditya/saved/LPmZxr).
@@ -209,6 +245,13 @@ This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caff
 
     Solution, recompile Leveldb with GCC 5
 
+      * `sudo apt-get install libsnappy-dev`
+      * `wget https://leveldb.googlecode.com/files/leveldb-1.9.0.tar.gz\ntar -xzf leveldb-1.9.0.tar.gz\ncd leveldb-1.9.0make`
+      * `sudo mv libleveldb.* /usr/local/lib`
+      * `cd include`
+      * `sudo cp -R leveldb /usr/local/include`
+      * `sudo ldconfiG`
+
   * Linking Error in Protobuf e.g
 
                 Linking CXX executable caffe
@@ -221,18 +264,40 @@ This is to install OpenCV 3.1 on Ubuntu 15.10. Thanks to the people at BVLC/Caff
                 caffe.cpp:(.text.startup+0x6e): undefined reference to `google::SetUsageMessage(std::string const&)'
                 ../lib/libcaffe.so.1.0.0-rc3: undefined reference to `google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(int, std::string const&, google::protobuf::io::CodedOutputStream*)
 
-    Solution, change your current compiler to gcc
+    Solution, change your current compiler to GCC
     Use `gcc --version` to make sure the correct version, and `which gcc` to check the softlinks to actual gcc
 
-  * Relevant issue to checkout <https://github.com/BVLC/caffe/issues/2690> and <https://github.com/BVLC/caffe/issues/3046>
+  * Relevant issues to checkout <https://github.com/BVLC/caffe/issues/2690> and <https://github.com/BVLC/caffe/issues/3046>
 
-### Instllation
+  * In Ubuntu 15.10 when using GCC 5.2, compiling might fail as Protobuf was compiled with wrong flags. Add the following to Makefile
+  `CXXFLAGS += -D_GLIBCXX_USE_CXX11_ABI=0`
+
+  * Issues with Google Lib Protobuf (even after the ABI CXX11 fix)
+        
+      * `cd /usr/local/lib`
+      * `sudo mkdir libprotobuf_`
+      * `mv libprotobuf* libprotobuf_`
+      * `cd ~`
+      * `apt-get source libprotobuf-dev`
+      * `ll`
+      * `cd protobuf-2.6.1`
+      * `make`
+      * `./configure`
+      * `make -j12`
+      * `sudo make install`
+
+
+
+
+### Installation
 
   * mkdir build
   * cd build
-  * cmake ..
+  * cmake .. # *Make kept giving me issues, but CMake worked.*
   * make all
+  * make test
   * make runtest
+  * make pycaffe # *To be able to import caffe*
 
 
 
