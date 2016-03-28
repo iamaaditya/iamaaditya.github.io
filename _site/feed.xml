@@ -7,6 +7,89 @@
     <atom:link href="http://iamaaditya.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Comparison of Visual Question Answering Models</title>
+        <description>&lt;p&gt;Whenever I discuss or show &lt;a href=&quot;http://arxiv.org/pdf/1409.4842v1.pdf&quot;&gt;GoogleNet architecture&lt;/a&gt;, one question always comes up - &lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;center&gt;&quot;Why 1x1 convolution ? Is it not redundant ?&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed.gif&quot; alt=&quot;Convolution with Kernel of size 3x3&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed_small.gif&quot; alt=&quot;Convolution with Kernel of size 1x1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;left : &lt;strong&gt;Convolution with kernel of size 3x3&lt;/strong&gt;               right : &lt;strong&gt;Convolution with kernel of size 1x1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;simple-answer&quot;&gt;Simple Answer&lt;/h2&gt;
+
+&lt;p&gt;Most simplistic explanation would be that 1x1 convolution leads to dimension reductionality. For example, an image of 200 x 200 with 50 features on convolution with 20 filters of 1x1 would result in size of 200 x 200 x 20.
+But then again, is this is the best way to do dimensionality reduction in the convoluational neural network? What about the efficacy vs efficiency?&lt;/p&gt;
+
+&lt;h2 id=&quot;complex-answer&quot;&gt;Complex Answer&lt;/h2&gt;
+
+&lt;h3 id=&quot;feature-transformation&quot;&gt;Feature transformation&lt;/h3&gt;
+&lt;p&gt;Although 1x1 convolution is a ‘feature pooling’ technique, there is more to it than just sum pooling of features across various channels/feature-maps of a given layer. 
+1x1 convolution acts like coordinate-dependent transformation in the filter space[&lt;a href=&quot;https://plus.google.com/118431607943208545663/posts/2y7nmBuh2ar&quot;&gt;1&lt;/a&gt;]. It is important to note here that this transformation is strictly linear, but in most of application of 1x1 convolution, it is succeeded by a non-linear activation layer like ReLU. This transformation is learned through the (stochastic) gradient descent. But an important distinction is that it suffers with less over-fitting due to smaller kernel size (1x1).&lt;/p&gt;
+
+&lt;h3 id=&quot;deeper-network&quot;&gt;Deeper Network&lt;/h3&gt;
+
+&lt;p&gt;One by One convolution was first introduced in this paper titled &lt;a href=&quot;http://arxiv.org/pdf/1312.4400v3.pdf&quot;&gt;Network in Network&lt;/a&gt;. In this paper, the author’s goal was to generate a deeper network without simply stacking more layers. It replaces few filters with a smaller perceptron layer with mixture of 1x1 and 3x3 convolutions. In a way, it can be seen as “going wide” instead of “deep”, but it should be noted that in machine learning terminology, ‘going wide’ is often meant as adding more data to the training. Combination of 1x1 (x F) convolution is mathematically equivalent to a multi-layer perceptron.[&lt;a href=&quot;https://www.reddit.com/r/MachineLearning/comments/3oln72/1x1_convolutions_why_use_them/cvyxood&quot;&gt;2&lt;/a&gt;].&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Inception Module&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In GoogLeNet architecture, 1x1 convolution is used for two purposes&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To make network deep by adding an “inception module” like Network in Network paper, as described above.&lt;/li&gt;
+  &lt;li&gt;To reduce the dimensions inside this “inception module”.&lt;/li&gt;
+  &lt;li&gt;To add more non-linearity by having ReLU immediately after every 1x1 convolution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is the scresnshot from the paper, which elucidates above points :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/inception_1x1.png&quot; alt=&quot;1x1 convolutions in GoogLeNet&quot; /&gt;
+&lt;strong&gt;&lt;center&gt;1x1 convolutions in GoogLeNet&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It can be seen from the image on the right, that 1x1 convolutions (in yellow), are specially used before 3x3 and 5x5 convolution to reduce the dimensions. It should be noted that a two step convolution operation can always to combined into one, but in this case and in most other deep learning networks, convolutions are followed by non-linear activation and hence convolutions are no longer linear operators and cannot be combined.&lt;/p&gt;
+
+&lt;p&gt;In designing such a network, it is important to note that initial convolution kernel should be of size larger than 1x1 to have a receptive field capable of capturing locally spatial information. According to the NIN paper, 1x1 convolution is equivalent to cross-channel parametric pooling layer. From the paper - “This cascaded cross channel parameteric pooling structure allows complex and learnable interactions of cross channel information”.&lt;/p&gt;
+
+&lt;p&gt;Cross channel information learning (cascaded 1x1 convolution) is biologically inspired because human visual cortex have receptive fields (kernels) tuned to different orientation. For e.g&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/RotBundleFiltersListPlot3D.gif&quot; alt=&quot;different orientation tuned receptive field profiles in the human visual cortex&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Different orientation tuned receptive field profiles in the human visual cortex&lt;/strong&gt; &lt;a href=&quot;http://bmia.bmt.tue.nl/education/courses/fev/course/notebooks/Convolution.html&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;more-uses&quot;&gt;More Uses&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1x1 Convolution can be combined with Max pooling&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/numerical_max_pooling.gif&quot; alt=&quot;Pooling with 1x1 convolution&quot; /&gt;
+   &lt;strong&gt;Pooling with 1x1 convolution&lt;/strong&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1x1 Convolution with higher strides leads to even more redution in data by decreasing resolution, while losing very little non-spatially correlated information.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/no_padding_strides.gif&quot; alt=&quot;1x1 convolution with strides&quot; /&gt;
+   &lt;strong&gt;1x1 convolution with strides&lt;/strong&gt;
+   &lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replace fully connected layers with 1x1 convolutions as Yann LeCun believes they are the same -
+&amp;gt; In Convolutional Nets, there is no such thing as “fully-connected layers”. There are only convolution layers with 1x1 convolution kernels and a full connection table.
+– &lt;a href=&quot;https://www.facebook.com/yann.lecun/posts/10152820758292143&quot;&gt;Yann LeCun&lt;/a&gt;
+  &lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Convolution gif images generated using &lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot;&gt;this wonderful code&lt;/a&gt;, more images on 1x1 convolutions and 3x3 convolutions can be&lt;/em&gt; &lt;a href=&quot;http://gpgpu.cs-i.brandeis.edu/convolution_images/&quot;&gt;found here&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 26 Mar 2016 00:00:00 -0400</pubDate>
+        <link>http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</guid>
+      </item>
+    
+      <item>
         <title>One by One [ 1 x 1 ] Convolution - counter-intuitively useful</title>
         <description>&lt;p&gt;Whenever I discuss or show &lt;a href=&quot;http://arxiv.org/pdf/1409.4842v1.pdf&quot;&gt;GoogleNet architecture&lt;/a&gt;, one question always comes up - &lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;center&gt;&quot;Why 1x1 convolution ? Is it not redundant ?&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -1064,136 +1147,6 @@ outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span 
         <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</link>
         <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</guid>
-      </item>
-    
-      <item>
-        <title>Bootstrap sampling in R</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29&quot; title=&quot;Bootstrap Sampling&quot; target=&quot;_blank&quot;&gt;Bootstrapping &lt;/a&gt;is a very useful sampling method. While it’s robustness is not that simlar to MCMC or Metropolis-Hastings or Landau. Bootstrapping draws from provided distribution with replacement.&lt;/p&gt;
-
-&lt;p&gt;While there are lot of fancy and featured enabled simulation and sampling softwares, nothing is better than writing codes from groudup. While the sampling code given below is not much featured enabled but anyone with some background can easily add the features as they require. The bootstrapping could be used in several scenarios specially when dealing with very large simulation scenario where it becomes infeasible to use deterministic rules to obtain the observables. More importantly while coding for AI where the sample state grows exponentially, simple sampling techniques like Bootstrapping comes into handy.&lt;/p&gt;
-
-&lt;p&gt;This blogpost presents the simple code to achieve Bootstrapping in R, readers not familiar with concepts of Bootstrapping will benefit from this &lt;a href=&quot;http://people.revoledu.com/kardi/tutorial/Bootstrap/examples.htm&quot; title=&quot;Tutorial on Bootstrapping&quot; target=&quot;_blank&quot;&gt;tutorial with examples via MS Excel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
-
-&lt;h3 id=&quot;output&quot;&gt;Output&lt;/h3&gt;
-
-&lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Bootstrap in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/BootStrap_Sampling_in_R.png&quot; alt=&quot;bootstrap in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;div class=&quot;wp_syntax&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td class=&quot;line_numbers&quot;&gt;
-        &lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-&lt;/pre&gt;
-      &lt;/td&gt;
-      
-      &lt;td class=&quot;code&quot;&gt;
-        &lt;pre class=&quot;rsplus&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #228B22;&quot;&gt;#Bootstrap &lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;#aaditya - 26/10/2012&lt;/span&gt;
-&amp;nbsp;
-&lt;span style=&quot;color: #228B22;&quot;&gt;######################################&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;dt&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;read.&lt;span style=&quot;&quot;&gt;csv&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;successRatio.csv&quot;&lt;/span&gt;, stringsAsFactors&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## successRatio.csv is file which contains samples eg. &lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## SampleValue (Probabilty)&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0455&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0042&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0456&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## -0.0035&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## 0.0394&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;## 0.0094&lt;/span&gt;
-&amp;nbsp;
-StartEq &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
-Iterations &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1000&lt;/span&gt;
-NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
-Rf &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;####################################&lt;/span&gt;
-&amp;nbsp;
-eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&amp;nbsp;
-doBSRun &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;function&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
-  eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; StartEq
-  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;i &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;in&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
-    eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;  &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sample&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;dt&lt;/span&gt;$SampleValue,&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
-  &lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
-  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
-&amp;nbsp;
-values &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;replicate&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;Iterations, doBSRun&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&amp;nbsp;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;par&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;xaxs&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;i&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;plot&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, 
-     xlab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Iterations&quot;&lt;/span&gt;, ylab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Growth&quot;&lt;/span&gt;,
-     ylim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;min&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;max&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,
-     xlim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, main&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Bootstrap Sampling&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;matlines&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values,type&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;l&quot;&lt;/span&gt;,lty&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&amp;nbsp;
-sd1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sd&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-mean1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;mean&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;print&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;summary&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-sdString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;SD : &quot;&lt;/span&gt;, sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;sdString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;With 99.73% confidence the final growth will be between&quot;&lt;/span&gt;, 
-                     mean1 &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1, &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot; and &quot;&lt;/span&gt;, mean1 &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; 
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;outputString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;/pre&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Extensive list of Bootstrap functions &lt;em&gt;(SPlus/Unix shell scripts)&lt;/em&gt; can be found at &lt;a href=&quot;http://lib.stat.cmu.edu/S/bootstrap.funs&quot; title=&quot;Functions for BootStrap&quot; target=&quot;_blank&quot;&gt;http://lib.stat.cmu.edu/S/bootstrap.funs&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
-        <link>http://iamaaditya.github.io/2012/11/bootstrap-sampling-in-r/</link>
-        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/bootstrap-sampling-in-r/</guid>
       </item>
     
   </channel>

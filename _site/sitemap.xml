@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</loc>
+    <lastmod>2016-03-26T00:00:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://iamaaditya.github.io/2016/03/one-by-one-convolution/</loc>
     <lastmod>2016-03-25T00:00:00-04:00</lastmod>
   </url>
@@ -97,7 +101,7 @@
     <loc>http://iamaaditya.github.io/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/features/</loc>
+    <loc>http://iamaaditya.github.io/notes/climbing/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/probability_statistics/</loc>
@@ -124,16 +128,19 @@
     <loc>http://iamaaditya.github.io/notes/computer_vision/</loc>
   </url>
   <url>
+    <loc>http://iamaaditya.github.io/notes/features/</loc>
+  </url>
+  <url>
     <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/climbing/</loc>
+    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/visualization/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/maths/</loc>
+    <loc>http://iamaaditya.github.io/notes/linux/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/research/transfer/</loc>
@@ -169,7 +176,7 @@
     <loc>http://iamaaditya.github.io/about/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
+    <loc>http://iamaaditya.github.io/notes/maths/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/temp/</loc>
@@ -236,5 +243,8 @@
     </url>
     <url>
       <loc>http://iamaaditya.github.io/2016/03/one-by-one-convolution/</loc>
+    </url>
+    <url>
+      <loc>http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</loc>
     </url>
 </urlset>

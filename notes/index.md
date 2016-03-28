@@ -39,7 +39,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Computer Science
   * [Data Structures and Algorithms]( {{ site.baseurl }}/notes/algorithms/ ) - Collection of references, tutorials, and links. I use this to refer to my students from CS 180. 
   * [Programming]( {{ site.baseurl }}/notes/programming/ ) - Collection of programming related references, articles, and competitions and learning resources
-  * [Image Processing and Comupter Vision] ( {{ site.baseurl }}/notes/computer_vision ) - Collection of articles, and tutorials which are essentially Image processing or old school computer vision. Deep Learning associated work are available here [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ )  
+  * [Image Processing and Comupter Vision]( {{ site.baseurl }}/notes/computer_vision ) - Collection of articles, and tutorials which are essentially Image processing or old school computer vision. Deep Learning associated work are available here [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ )  
 
 # Mathematics
   * [Probability And Statistics]( {{ site.baseurl }}/notes/probability_statistics/ ) - Collection of great articles, tutorials and very useful links about Proability and Statistics
@@ -75,6 +75,8 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Misc
   * [Chess]( {{site.baseurl}}/notes/chess/ ) - Chess, a wonderful game. My collection of articles, amusing facts, etc. I also use this link to share the often requested inputs.
+  * [Linux Hacks]( {{site.baseurl}}/notes/linux/ ) - My favorite linux hacks, and useful commands for increasing productivity
+  * [Productivity]( {{site.baseurl}}/notes/productivity/ ) - who does not slack ? Collection of some interesting articles which dicuss procrastination, productivity and efficiency in working.
   * [Books]( {{site.baseurl}}/notes/books/ ) - List of books I intend to read, reading or just a general recommendation for anyone looking for great book to read.
   * [Climbing]( {{site.baseurl}}/notes/climbing/ ) - Interesting articles about rock climbing, techniques, some cool videos from competitions or outdoor climbing and great climbers to follow on instagram.
   * [Name]( {{site.baseurl}}/notes/name/ ) - The etymology, meaning, and history behind my name - Aaditya (or Aditya or Adi)?
