@@ -11,20 +11,21 @@ dsq_thread_id:
 
 Following are the links to my notes on current work. They might be benefitial only if you are also a researcher in the same field.
 
- * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ ) - contains basic modules and ideas that I am experimenting with
+ * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ ) - contains basic modules and ideas that I am experimenting with.
 
 
  * __Temporary Results__
 
-    Model_name | Overall Accuracy | Others | Numbers | yes/no
-    ./DPPNET_9/codalab_results                   |57.61 | 42.85 | 36.50 | 80.48
-    ./ensemble_2_Mar_31/codalab_results          |57.61 | 42.85 | 36.50 | 80.48
-    ./ensemble_1/codalab_ensemble_1              |57.15 | 41.85 | 36.34 | 80.57
-    ./LSTM_MLP_RELU/output_codalab_mlp_relu      |49.75 | 33.30 | 29.91 | 74.28
-    ./NEW_LSTM_3/output_codalab.txt              |48.11 | 30.20 | 22.53 | 75.87
-    ./DPPNET_12/codalab_dpp12                    |57.63 | 42.74 | 36.45 | 80.69
-    ./base2/codalab_output.txt                   |55.90 | 42.42 | 35.29 | 77.15
-    ./base1/codalab_results                      |55.65 | 42.55 | 34.97 | 76.47
+    |Model_name | Overall Accuracy |    Others    |    Numbers    | yes/no      |
+    |-----------|:------------------:|:------------:|:--------------:|:--------:|
+    |./dppnet_9                   |57.61 | 42.85 | 36.50 | 80.48|
+    |./ensemble_2_Mar_31          |57.61 | 42.85 | 36.50 | 80.48|
+    |./ensemble_1              |57.15 | 41.85 | 36.34 | 80.57|
+    |./lstm_mlp_relu      |49.75 | 33.30 | 29.91 | 74.28|
+    |./new_lstm_3              |48.11 | 30.20 | 22.53 | 75.87|
+    |./dppnet_12                    |57.63 | 42.74 | 36.45 | 80.69|
+    |./base2                   |55.90 | 42.42 | 35.29 | 77.15|
+    |./base1                      |55.65 | 42.55 | 34.97 | 76.47|
 
 
  * __Comparison of results from different models__
@@ -32,7 +33,7 @@ Following are the links to my notes on current work. They might be benefitial on
     Number of unique answers / total number of models  == total questions with those unique answers / Total questions  % percentage of questions with those number of unique answers
 
     ALL QUESTION <br />
-    ------------ <br />
+    ------------------------ <br />
     1 / 9  ==  18073 / 60864  %  0.297 <br />
     2 / 9  ==  23593 / 60864  %  0.388 <br />
     3 / 9  ==  09611 / 60864  %  0.158 <br />
@@ -44,7 +45,7 @@ Following are the links to my notes on current work. They might be benefitial on
 
 
     Filtered QUESTION <br />
-    ------------ <br />
+    ------------------------ <br />
     1 / 9  ==  06438 / 60864  %  0.106 <br />
     2 / 9  ==  10172 / 60864  %  0.167 <br />
     3 / 9  ==  09136 / 60864  %  0.15 <br />
@@ -54,7 +55,22 @@ Following are the links to my notes on current work. They might be benefitial on
     7 / 9  ==  00054 / 60864  %  0.001 <br />
 
 
-  * [Visual Comprision](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)
+  * [Visual Comparision](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)  <br/>
+    * This a large file ! Load at your risk. 
+    * Images are not loaded but a link is provided.
+
+
+  * Detailed Analysis of the different Visual Question Answering models
+    * Memory
+    * Attention models vs non-attention models
+    * LSTM vs GRU
+    * Episodic memory vs Semantiv memory
+    * No bidirectinal LSTM
+    * Activation functions used
+    * Choice of Activations
+    * Use of Batch Normalization
+    <br />TODO ! - Add Link
+
 
 ## Transfer Learning 
 

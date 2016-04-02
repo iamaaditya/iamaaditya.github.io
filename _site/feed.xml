@@ -8,7 +8,24 @@
     
       <item>
         <title>Comparison of Visual Question Answering Models</title>
-        <description>
+        <description>&lt;p&gt;There has been a resur&lt;/p&gt;
+
+&lt;h1 id=&quot;memory&quot;&gt;Memory&lt;/h1&gt;
+
+&lt;h1 id=&quot;attention-models-vs-non-attention-models&quot;&gt;Attention models vs non-attention models&lt;/h1&gt;
+
+&lt;h1 id=&quot;lstm-vs-gru&quot;&gt;LSTM vs GRU&lt;/h1&gt;
+
+&lt;h1 id=&quot;episodic-memory-vs-semantiv-memory&quot;&gt;Episodic memory vs Semantiv memory&lt;/h1&gt;
+
+&lt;h1 id=&quot;no-bidirectinal-lstm&quot;&gt;No bidirectinal LSTM&lt;/h1&gt;
+
+&lt;h1 id=&quot;activation-functions-used&quot;&gt;Activation functions used&lt;/h1&gt;
+
+&lt;h1 id=&quot;choice-of-activations&quot;&gt;Choice of Activations&lt;/h1&gt;
+
+&lt;h1 id=&quot;use-of-batch-normalization&quot;&gt;Use of Batch Normalization&lt;/h1&gt;
+
 </description>
         <pubDate>Sat, 26 Mar 2016 00:00:00 -0400</pubDate>
         <link>http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</link>
