@@ -40,3 +40,4 @@ dsq_thread_id:
  * Why is Google's Go win such a big deal? <http://www.theverge.com/2016/3/9/11185030/google-deepmind-alphago-go-artificial-intelligence-impact>
  * Facebook Nerd Throws Heavy Shade at Google Over AlphaGo Victories <http://gizmodo.com/facebook-throws-heavy-shade-at-google-over-alphago-vict-1764967592>
  * AlphaGo is awarded 9-dan rank by South Korea's Go Association <http://www.straitstimes.com/asia/east-asia/googles-alphago-gets-divine-go-ranking>
+ * Is AlphaGo Really Such a Big Deal? By Michael Nielsen <https://www.quantamagazine.org/20160329-why-alphago-is-really-such-a-big-deal/>

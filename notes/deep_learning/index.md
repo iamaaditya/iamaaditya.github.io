@@ -26,6 +26,7 @@ What is Deep Learning ?
   * The Top A.I. Breakthroughs of 2015 <http://futureoflife.org/2015/12/29/the-top-a-i-breakthroughs-of-2015/>
   * How convolutional neural networks see the world <http://blog.keras.io/how-convolutional-neural-networks-see-the-world.html>
   * Exploring the world on-the-go using Google Cloud Vision and Twilio <http://www.blog.juliaferraioli.com/2016/02/exploring-world-using-vision-twilio.html>
+  * Attention and Memory in Deep Learning and NLP <http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>
