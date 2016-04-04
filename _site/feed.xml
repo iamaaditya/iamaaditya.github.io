@@ -7,6 +7,470 @@
     <atom:link href="http://iamaaditya.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Visual Question Answering Demo in Python Notebook</title>
+        <description>&lt;p&gt;This is an online demo with explanation and tutorial on Visual Question
+Answering. This is no not a naive or hello-world model, this model returns close
+to state-of-the-art without using any attention models, memory netorks (other
+than LSTM) and fine-tuning, which are essential recipe for current best results.&lt;/p&gt;
+
+&lt;p&gt;I have tried to explain different parts, and their choices. This is meant to be
+an interactive tutorial, feel free to change the model parameters and
+experiment. If you have latest graphics card, execution time should be within a
+minute.&lt;/p&gt;
+
+&lt;p&gt;All the files required to run this ipython notebook can be obtained from
+## &lt;a href=&quot;https://github.com/iamaaditya/VQA_Demo&quot;&gt;https://github.com/iamaaditya/VQA_Demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;load-the-libraries&quot;&gt;Load the libraries&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;what?&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;~~~~~~~~
+Here comes some code.
+~~~~~~~&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=30}&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matplotlib&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;spacy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model_from_json&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras.optimizers&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SGD&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.externals&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;load-the-models-and-weights-files&quot;&gt;Load the models and weights files&lt;/h2&gt;
+&lt;p&gt;This does not load the models yet, but we are providing the files&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=1}
+# File paths for the model, all of these except the CNN Weights are 
+# provided in the repo, See the models/CNN/README.md to download VGG weights
+VQA_model_file_name      = ‘models/VQA/VQA_MODEL.json’
+VQA_weights_file_name   = ‘models/VQA/VQA_MODEL_WEIGHTS.hdf5’
+label_encoder_file_name  = ‘models/VQA/FULL_labelencoder_trainval.pkl’
+CNN_weights_file_name   = ‘models/CNN/vgg16_weights.h5’&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;model-idea&quot;&gt;Model Idea&lt;/h2&gt;
+&lt;p&gt;This uses a classical CNN-LSTM  model like shown below, where Image features and
+language features are computed separetely and combined together and a multi-
+layer perceptron is trained on the combined features.&lt;/p&gt;
+
+&lt;p&gt;Similar models have been presented at following links, this work takes ideas
+from them.
+1. &lt;a href=&quot;https://github.com/abhshkdz/neural-vqa&quot;&gt;https://github.com/abhshkdz/neural-vqa&lt;/a&gt;
+2. &lt;a href=&quot;https://github.com/avisingh599/visual-qa&quot;&gt;https://github.com/avisingh599/visual-qa&lt;/a&gt;
+3. https://github.com/VT-vision-lab/VQA_LSTM_CNN&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/c369855a52126470fe0435552166b84a387 15489/687474703a2f2f692e696d6775722e636f6d2f555841506c71652e706e67&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;image-features&quot;&gt;Image features&lt;/h1&gt;
+
+&lt;h2 id=&quot;pretrained-vgg-net-vgg-16&quot;&gt;Pretrained VGG Net (VGG-16)&lt;/h2&gt;
+
+&lt;p&gt;While VGG Net is not the best CNN model for image features, GoogLeNet (winner
+2014) and ResNet (winner 2015) have superior classification scores, but VGG Net
+is very versatile, simple, relatively small and more importantly portable to
+use.&lt;/p&gt;
+
+&lt;p&gt;For reference here is the VGG 16 performance on ILSVRC-2012
+&lt;img src=&quot;http://www.robots.ox.ac.uk/~vgg/research/very_deep/images/table_ILSVRC .png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;compile-the-model&quot;&gt;Compile the model&lt;/h2&gt;
+
+&lt;p&gt;```{.python .input  n=32}
+def get_image_model(CNN_weights_file_name):
+    ‘’’ Takes the CNN weights file, and returns the VGG model update 
+    with the weights. Requires the file VGG.py inside models/CNN ‘’’
+    from models.CNN.VGG import VGG_16
+    image_model = VGG_16(CNN_weights_file_name)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# this is standard VGG 16 without the last two layers
+sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+# one may experiment with &quot;adam&quot; optimizer, but the loss function for
+# this kind of task is pretty standard
+image_model.compile(optimizer=sgd, loss=&#39;categorical_crossentropy&#39;)
+return image_model ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;plot-the-model&quot;&gt;Plot the Model&lt;/h2&gt;
+
+&lt;p&gt;Keras has a function which allows you to visualize the model in block diagram.
+Let’s do it !&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;keras.utils.visualize_util&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;model_vgg&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get_image_model(CNN_weights_file_name)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;plot(model_vgg,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to_file=&#39;model_vgg.png&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;model_vgg.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;extract-image-features&quot;&gt;Extract Image features&lt;/h2&gt;
+
+&lt;p&gt;Extracting image features involves, taking a raw image, and running it through
+the model, until we reach the last layer. In this case our model is not 100%
+same as VGG Net, because we are not going to use the last two layer of the VGG.
+It is becuase the last layer of VGG Net is a 1000 way soft max and the second
+last layer is the Dropout.&lt;/p&gt;
+
+&lt;p&gt;Thus we are extracting the 4096 Dimension image features from VGG-16&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=7}
+def get_image_features(image_file_name, CNN_weights_file_name):
+    ‘’’ Runs the given image_file to VGG 16 model and returns the 
+    weights (filters) as a 1, 4096 dimension vector ‘’’
+    image_features = np.zeros((1, 4096))
+    # Magic_Number = 4096  &amp;gt; Comes from last layer of VGG Model&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Since VGG was trained as a image of 224x224, every new image
+# is required to go through the same transformation
+im = cv2.resize(cv2.imread(image_file_name), (224, 224))
+im = im.transpose((2,0,1)) # convert the image to RGBA
+
+
+# this axis dimension is required becuase VGG was trained on a dimension
+# of 1, 3, 224, 224 (first axis is for the batch size
+# even though we are using only one image, we have to keep the dimensions consistent
+im = np.expand_dims(im, axis=0) 
+
+image_features[0,:] = get_image_model(CNN_weights_file_name).predict(im)[0]
+return image_features ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;word-embeddings&quot;&gt;Word Embeddings&lt;/h1&gt;
+
+&lt;p&gt;The question has to be converted into some form of word embeddings. Most popular
+is Word2Vec whereas these days state of the art uses &lt;a href=&quot;https://github.com/ryankiros/skip-thoughts&quot;&gt;skip-thought
+vectors&lt;/a&gt; or [postional
+encodings](https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory}.&lt;/p&gt;
+
+&lt;p&gt;We will use Word2Vec from Standford called
+&lt;a href=&quot;http://nlp.stanford.edu/projects/glove/&quot;&gt;Glove&lt;/a&gt;. Glove reduces a given token
+into a 300 dimensional representation.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;def&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get_question_features(question):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;For&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;given&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;unicode&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;string,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;returns&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;timeseris&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(token)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;transformed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;into&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dimension&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;representation&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;calculated&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Glove&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Vector&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;spacy.load(&#39;en&#39;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vectors=&#39;en_glove_cc_&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;m_vectors&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;tokens&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings(question)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question_tensor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;np.zeros((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;len(tokens),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;xrange(len(tokens)):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question_tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;tokens&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.vector&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question_tensor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;try-the-embeddigns&quot;&gt;Try the embeddigns&lt;/h2&gt;
+
+&lt;p&gt;Let’s see the embeddings, and their usage with sample words like this -
+1. Obama
+2. Putin
+3. Banana
+4. Monkey&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;spacy.load(&#39;en&#39;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vectors=&#39;en_glove_cc_&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;m_vectors&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;obama&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings(u&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;obama&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;putin&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings(u&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;putin&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;banana&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings(u&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;banana&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;monkey&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;word_embeddings(u&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;monkey&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;obama.similarity(putin)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.43514112534149385&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;execution_count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;execute_result&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=26&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;obama.similarity(banana)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=26&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.17831375020636123&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;execution_count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;execute_result&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;banana.similarity(monkey)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.45207779162154438&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;execution_count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;execute_result&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As we can see, obama and putin are very similar in representation than obama and
+banana. This shows you there is some semantic knowledge of the tokens embedded
+in the 300 dimensional representation. We can do cool arithematics with these
+word2vec like ‘Queen’ - ‘King’ + ‘Boy’ = ‘Girl’. See &lt;a href=&quot;http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a
+-thousand-vectors/&quot;&gt;this blog
+post&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h2 id=&quot;vqa-model&quot;&gt;VQA Model&lt;/h2&gt;
+
+&lt;p&gt;VQA is a simple model which combines features from Image and Word Embeddings and
+runs a multiple layer&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=36}
+def get_VQA_model(VQA_model_file_name, VQA_weights_file_name):
+    ‘’’ Given the VQA model and its weights, compiles and returns the model ‘’’&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# thanks the keras function for loading a model from JSON, this becomes
+# very easy to understand and work. Alternative would be to load model
+# from binary like cPickle but then model would be obfuscated to users
+vqa_model = model_from_json(open(VQA_model_file_name).read())
+vqa_model.load_weights(VQA_weights_file_name)
+vqa_model.compile(loss=&#39;categorical_crossentropy&#39;, optimizer=&#39;rmsprop&#39;)
+return vqa_model ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;keras.utils.visualize_util&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;model_vqa&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get_VQA_model(VQA_model_file_name,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;VQA_weights_file_name)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;plot(model_vqa,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to_file=&#39;model_vqa.png&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;model_vqa.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As it can be seen above the model also runs a 3 layered LSTM on the word
+embeddings. To get a naive result it is sufficient to feed the word embeddings
+directly to the merge layer, but as mentioned above model is gives close to the
+state-of-the-art results.&lt;/p&gt;
+
+&lt;p&gt;Also, four layers of fully conntected layers might not be required to achieve a
+good enough results. But I settled on this model after some experimentation, and
+their results beat few layers.&lt;/p&gt;
+
+&lt;h2 id=&quot;asketh-away-&quot;&gt;Asketh Away !&lt;/h2&gt;
+
+&lt;p&gt;Let’s give a test image and a question&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=69&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;image_file_name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;test.jpg&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;What vechile is in the picture?&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;center-what-vechile-is-in-the-picture--center&quot;&gt;&lt;center&gt; What vechile is in the picture ? &lt;/center&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;test.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=43&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;image_features&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get_image_features(image_file_name,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;CNN_weights_file_name)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;question_features&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get_question_features(question)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=46}
+y_output = model_vqa.predict([question_features, image_features])&lt;/p&gt;
+
+&lt;h1 id=&quot;this-task-here-is-represented-as-a-classification-into-a-1000-top-answers&quot;&gt;This task here is represented as a classification into a 1000 top answers&lt;/h1&gt;
+&lt;p&gt;# this means some of the answers were not part of trainng and thus would 
+# not show up in the result.
+# These 1000 answers are stored in the sklearn Encoder class
+labelencoder = joblib.load(label_encoder_file_name)
+for label in reversed(np.argsort(y_output)[0,-5:]):
+    print str(round(y_output[0,label]*100,2)).zfill(5), “% “, labelencoder.inverse_transform(label)
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=46&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;78.32 %  train\n01.11 %  truck\n00.98 %  passenger\n00.95 %  fire truck\n00.68 %  bus\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
+&lt;p&gt;I am copying the output of the previous command, so that you can validate if
+your results are same as mine.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;78.32 %  train&lt;/strong&gt; &lt;br /&gt;
+01.11 %  truck &lt;br /&gt;
+00.98 %  passenger &lt;br /&gt;
+00.95 %  fire truck &lt;br /&gt;
+00.68 %  bus &lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;demo-with-image-url&quot;&gt;Demo with image URL&lt;/h1&gt;
+
+&lt;p&gt;Since cv2.imread cannot read an image from URL we will have to change our
+fucntion &lt;code class=&quot;highlighter-rouge&quot;&gt;get_image_features&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=49}
+def get_image_features(image_file_name, CNN_weights_file_name):
+    ‘’’ Runs the given image_file to VGG 16 model and returns the 
+    weights (filters) as a 1, 4096 dimension vector ‘’’
+    image_features = np.zeros((1, 4096))&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from skimage import io
+# if you would rather not install skimage, then use cv2.VideoCapture which surprisingly can read from url
+# see this SO answer http://answers.opencv.org/question/16385/cv2imread-a-url/?answer=16389#post-id-16389
+im = cv2.resize(io.imread(image_file_name), (224, 224))
+im = im.transpose((2,0,1)) # convert the image to RGBA
+
+
+# this axis dimension is required becuase VGG was trained on a dimension
+# of 1, 3, 224, 224 (first axis is for the batch size
+# even though we are using only one image, we have to keep the dimensions consistent
+im = np.expand_dims(im, axis=0) 
+
+image_features[0,:] = get_image_model(CNN_weights_file_name).predict(im)[0]
+return image_features ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=61&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;image_file_name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://www.newarkhistory.com/indparksoccerkids.jpg&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;image_features&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;get_image_features(image_file_name,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;CNN_weights_file_name)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Feel free to change that url to any valid image, it can be any image format.
+Also try to use websites which have higher bandwidth&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.newarkhistory.com/indparksoccerkids.jpg&quot; /&gt;
+# &lt;center&gt; What are they playing? &lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=62}
+question = u”What are they playing?”&lt;/p&gt;
+
+&lt;h1 id=&quot;get-the-question-features&quot;&gt;get the question features&lt;/h1&gt;
+&lt;p&gt;question_features = get_question_features(question)
+```&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=63}
+y_output = model_vqa.predict([question_features, image_features])&lt;/p&gt;
+
+&lt;p&gt;labelencoder = joblib.load(label_encoder_file_name)
+for label in reversed(np.argsort(y_output)[0,-5:]):
+    print str(round(y_output[0,label]*100,2)).zfill(5), “% “, labelencoder.inverse_transform(label)
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=63&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;40.52 %  tennis\n28.45 %  soccer\n17.88 %  baseball\n11.67 %  frisbee\n00.15 %  football\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
+&lt;p&gt;Copying the result to validate your output.&lt;/p&gt;
+
+&lt;p&gt;**40.52 %  tennis **&lt;br /&gt;
+28.45 %  soccer &lt;br /&gt;
+17.88 %  baseball &lt;br /&gt;
+11.67 %  frisbee &lt;br /&gt;
+00.15 %  football &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, it got this wrong, but you can see why it could be harder to
+guess soccer and easier to guess tennis, lack of soccer ball and double lines at
+the edge.&lt;/p&gt;
+
+&lt;p&gt;Let’s ask another question for the same image.&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=67}
+question = u”Are they playing soccer?”&lt;/p&gt;
+
+&lt;h1 id=&quot;get-the-question-features-1&quot;&gt;get the question features&lt;/h1&gt;
+&lt;p&gt;question_features = get_question_features(question)
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.newarkhistory.com/indparksoccerkids.jpg&quot; /&gt;
+# &lt;center&gt; Are they playing soccer? &lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=68}
+y_output = model_vqa.predict([question_features, image_features])&lt;/p&gt;
+
+&lt;p&gt;labelencoder = joblib.load(label_encoder_file_name)
+for label in reversed(np.argsort(y_output)[0,-5:]):
+    print str(round(y_output[0,label]*100,2)).zfill(5), “% “, labelencoder.inverse_transform(label)
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=68&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;93.15 %  yes\n06.42 %  no\n00.02 %  right\n00.01 %  left\n000.0 %  man\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;result-1&quot;&gt;Result&lt;/h2&gt;
+
+&lt;p&gt;**93.15 %  yes **&lt;br /&gt;
+06.42 %  no &lt;br /&gt;
+00.02 %  right &lt;br /&gt;
+00.01 %  left &lt;br /&gt;
+000.0 %  man &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, similar information about a Yes/No question illicits different
+response, or should I say correct response. This is an impertinent problem with
+&lt;code class=&quot;highlighter-rouge&quot;&gt;classification&lt;/code&gt; tasks.&lt;/p&gt;
+
+&lt;p&gt;Feel free to experiment with different types of questions, &lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;,
+&lt;code class=&quot;highlighter-rouge&quot;&gt;location&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;More interesting results are obtained when one takes a different crop of a
+image, instead of just scaling it to 224x224. This is again becuase we extract
+only the top level features of CNN model which was trained to classify one
+object in the image.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 Apr 2016 00:00:00 -0400</pubDate>
+        <link>http://iamaaditya.github.io/2016/03/visual-question-answering-demo-in-python-notebook/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2016/03/visual-question-answering-demo-in-python-notebook/</guid>
+      </item>
+    
+      <item>
         <title>Comparison of Visual Question Answering Models</title>
         <description>&lt;p&gt;There has been a resur&lt;/p&gt;
 
@@ -970,126 +1434,6 @@ fun pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/s
         <pubDate>Sat, 26 Jan 2013 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</link>
         <guid isPermaLink="true">http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</guid>
-      </item>
-    
-      <item>
-        <title>Monte Carlo Simulation in R</title>
-        <description>&lt;p&gt;While the last post dealt with Bootstrap Sampling, no sampling discussion can be complete without discussion ‘Monte Carlo’ simulation. Readers please note, I will &lt;em&gt;*not **discuss “MCMC (Markov Chain Monte Carlo)” *(perhaps in the future)&lt;/em&gt;. MCMC primarily deals with distribution of equilibrium of the given Markov Chain.&lt;/p&gt;
-
-&lt;p&gt;Monte Carlo simulation is much used &lt;em&gt;(perhaps overused)&lt;/em&gt; sampling for all physical simulation techniques. While the algorithm for generating Monte Carlo samples is very simple, its usage is widespread. Particularly in Computational Physics for modeling behavior of sub-atomic particles, in Robotics for generating possible states where the actual game state could be exponentially large and in bioinformatics for probabilistic graphical models and last but not least Monte Carlo Integration.&lt;/p&gt;
-
-&lt;p&gt;Readers not familiar with Monte Carlo may benefit from this &lt;a href=&quot;http://www.cs.otago.ac.nz/cosc453/student_tutorials/monte_carlo.pdf&quot; title=&quot;Tutorial on Monte Carlo&quot; target=&quot;_blank&quot;&gt;tutorial by Jonathan Pengelly&lt;/a&gt;, as this blogpost restricts to presenting the simple code in R to do Monte Carlo simulation. Having a clean and grounds-up code is always beneficial as this helps tweak and reformulate the basics.&lt;/p&gt;
-
-&lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
-
-&lt;h3 id=&quot;output&quot;&gt;Output&lt;/h3&gt;
-
-&lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Monte Carlo in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/Monte_Carlo_Simulation_in_R.png&quot; alt=&quot;Monte Carlo in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;div class=&quot;wp_syntax&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td class=&quot;line_numbers&quot;&gt;
-        &lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-&lt;/pre&gt;
-      &lt;/td&gt;
-      
-      &lt;td class=&quot;code&quot;&gt;
-        &lt;pre class=&quot;rsplus&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #228B22;&quot;&gt;#Monte Carlo simulation &lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;#aaditya - 26/10/2012&lt;/span&gt;
-&amp;nbsp;
-&lt;span style=&quot;color: #228B22;&quot;&gt;######################################&lt;/span&gt;
-StartEq &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
-SuccessPcnt &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;61.54&lt;/span&gt;
-SuccessAvg &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2444.78&lt;/span&gt;
-FailureAvg &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1667.37&lt;/span&gt;
-Iterations &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1000&lt;/span&gt;
-NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
-Rf &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;
-&lt;span style=&quot;color: #228B22;&quot;&gt;#####################################&lt;/span&gt;
-eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&amp;nbsp;
-doMCRun &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;function&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
-  eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; StartEq
-  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;i &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;in&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
-    &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;runif&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;/span&gt;,&lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;&lt;/span&gt; SuccessPcnt&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-      pl&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; SuccessAvg &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
-    &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;else&lt;/span&gt;
-      pl&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;FailureAvg &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
-      eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;  &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; pl
-  &lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
-  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
-&amp;nbsp;
-values &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;replicate&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;Iterations, doMCRun&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&amp;nbsp;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;par&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;xaxs&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;i&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;plot&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, 
-     xlab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Iterations&quot;&lt;/span&gt;, ylab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Growth&quot;&lt;/span&gt;,
-     ylim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;min&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;max&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,
-     xlim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, main&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Monte Carlo Simulation&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;matlines&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values,type&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;l&quot;&lt;/span&gt;,lty&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&amp;nbsp;
-sd1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sd&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-mean1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;mean&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;print&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;summary&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-sdString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;SD : &quot;&lt;/span&gt;, sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;sdString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
-outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;With 99.73% confidence the final growth will be between&quot;&lt;/span&gt;, 
-                     mean1 &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1, &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot; and &quot;&lt;/span&gt;, mean1 &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; 
-&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;outputString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;/pre&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
-        <link>http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</link>
-        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</guid>
       </item>
     
   </channel>

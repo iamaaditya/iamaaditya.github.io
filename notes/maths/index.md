@@ -11,3 +11,4 @@ dsq_thread_id:
 
 ## Tutorials
  * Graph Theory <http://jeremykun.com/2011/06/26/teaching-mathematics-graph-theory/>
+ * Stat <https://github.com/joanbruna/stat212b>

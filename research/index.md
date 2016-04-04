@@ -12,14 +12,17 @@ dsq_thread_id:
 Following are the links to my notes on current work. They might be benefitial only if you are also a researcher in the same field.
 
  * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ ) - contains basic modules and ideas that I am experimenting with.
-
+ * [Python notebook demo and tutorial for VQA]( https://github.com/iamaaditya/VQA_Demo/blob/master/Visual_Question_Answering_Demo_in_python_notebook.ipynb )  - I wrote this tutorial as a gentle introduction to VQA.
+ * [Visual Comparision](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)  <br/>
+   * This a large file ! Load at your risk.  <br />
+   * Images are not loaded but a link is provided. <br />
 
  * __Temporary Results__
 
     |Model_name | Overall Accuracy |    Others    |    Numbers    | yes/no      |
     |-----------|:------------------:|:------------:|:--------------:|:--------:|
     |./dppnet_9                   |57.61 | 42.85 | 36.50 | 80.48|
-    |./ensemble_2_Mar_31          |57.61 | 42.85 | 36.50 | 80.48|
+    |./ensemble_2_Mar_31          |57.20 | 42.01 | 36.84 | 80.40|
     |./ensemble_1              |57.15 | 41.85 | 36.34 | 80.57|
     |./lstm_mlp_relu      |49.75 | 33.30 | 29.91 | 74.28|
     |./new_lstm_3              |48.11 | 30.20 | 22.53 | 75.87|
@@ -55,11 +58,8 @@ Following are the links to my notes on current work. They might be benefitial on
     7 / 9  ==  00054 / 60864  %  0.001 <br />
 
 
-  * [Visual Comparision](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)  <br/>
-    * This a large file ! Load at your risk. 
-    * Images are not loaded but a link is provided.
 
-
+    <br />
   * Detailed Analysis of the different Visual Question Answering models
     * Memory
     * Attention models vs non-attention models
