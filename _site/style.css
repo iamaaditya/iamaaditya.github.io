@@ -60,13 +60,15 @@ table {
 /* BASE RULES */
 /**************/
 html {
-  font-size: 100%;
+  font-size: 18px;
 }
 
 body {
   width: 90%;
   background: #fff;
-  font: 18px/1.4 Helvetica, Arial, sans-serif;
+  font-family: 'Ovo', Arial;
+  font-weight: 400;
+  font-size: 18px;
   color: #333;
 }
 
@@ -78,7 +80,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Ovo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
   font-weight: bold;
   line-height: 1.7;
@@ -113,6 +115,7 @@ h4 {
 
 p {
   margin: 15px 0;
+  font-size: 18px;
 }
 
 a {
@@ -235,7 +238,7 @@ img {
   margin: 0;
   color: #333;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Ovo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -255,7 +258,7 @@ img {
 nav {
   float: right;
   margin-top: 23px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Ovo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
 }
 @media screen and (max-width: 640px) {

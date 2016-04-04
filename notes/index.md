@@ -57,6 +57,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * <http://www.wildml.com/>
   * <https://recommend-papers.org/>
   * <http://inverseprobability.com/blog.html>
+  * <https://svail.github.io/>
 
 # Awesome Lists
   * [Awesome Deep Vision ](<https://github.com/kjw0612/awesome-deep-vision>)
