@@ -440,7 +440,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Word-Embeddings">Word Embeddings<a class="anchor-link" href="#Word-Embeddings">&#182;</a></h1><p>The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses <a href="https://github.com/ryankiros/skip-thoughts">skip-thought vectors</a> or <a href="https://en.wikipedia.org/wiki/Encoding_(memory">postional encodings</a>#Sequence_memory}.</p>
+<h1 id="Word-Embeddings">Word Embeddings<a class="anchor-link" href="#Word-Embeddings">&#182;</a></h1><p>The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses <a href="https://github.com/ryankiros/skip-thoughts">skip-thought vectors</a> or <a href="https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory">postional encodings.</a></p>
 <p>We will use Word2Vec from Standford called <a href="http://nlp.stanford.edu/projects/glove/">Glove</a>. Glove reduces a given token into a 300 dimensional representation.</p>
 
 </div>

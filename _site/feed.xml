@@ -451,7 +451,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Word-Embeddings&quot;&gt;Word Embeddings&lt;a class=&quot;anchor-link&quot; href=&quot;#Word-Embeddings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses &lt;a href=&quot;https://github.com/ryankiros/skip-thoughts&quot;&gt;skip-thought vectors&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Encoding_(memory&quot;&gt;postional encodings&lt;/a&gt;#Sequence_memory}.&lt;/p&gt;
+&lt;h1 id=&quot;Word-Embeddings&quot;&gt;Word Embeddings&lt;a class=&quot;anchor-link&quot; href=&quot;#Word-Embeddings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses &lt;a href=&quot;https://github.com/ryankiros/skip-thoughts&quot;&gt;skip-thought vectors&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory&quot;&gt;postional encodings.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We will use Word2Vec from Standford called &lt;a href=&quot;http://nlp.stanford.edu/projects/glove/&quot;&gt;Glove&lt;/a&gt;. Glove reduces a given token into a 300 dimensional representation.&lt;/p&gt;
 
 &lt;/div&gt;
