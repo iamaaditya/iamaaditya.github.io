@@ -13,7 +13,7 @@ tags:
   - visual question answering
   - deep learning
 ---
-<p>This is an online demo with explanation and tutorial on Visual Question Answering. This is not a naive or hello-world model, this model returns close to state-of-the-art without using any attention models, memory netorks (other than LSTM) and fine-tuning, which are essential recipe for current best results.</p> <br />
+<p>This is an online demo with explanation and tutorial on Visual Question Answering. This is not a naive or hello-world model, this model returns close to state-of-the-art without using any attention models, memory networks (other than LSTM) and fine-tuning, which are essential recipe for current best results.</p> <br />
 <p>I have tried to explain different parts, and reasoning behind their choices. This is meant to be an interactive tutorial, feel free to change the model parameters and experiment. If you have latest graphics card execution time should be within a minute.</p>
 <br />
 <p>All the files required to run this ipython notebook can be obtained from</p>
@@ -34,10 +34,10 @@ Table of Contents
     * [Plot the Model](#Plot-the-Model)
     * [Extract Image features](#Extract-Image-features)
   * [Word Embeddings](#Word-Embeddings)
-    * [Try the embeddigns](#Try-the-embeddigns)
+    * [Try the embeddings](#Try-the-embeddings)
   * [VQA Model](#VQA-Model)
     * [Asketh Away !](#Asketh-Away-!)
-    * [ What vechile is in the picture ? ](#-What-vechile-is-in-the-picture-?-)
+    * [ What vehicle is in the picture ? ](#-What-vehicle-is-in-the-picture-?-)
     * [Results](#Results)
   * [Demo with image URL](#Demo-with-image-URL)
     * [ What are they playing? ](#-What-are-they-playing?-)
@@ -283,7 +283,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-Idea">Model Idea<a class="anchor-link" href="#Model-Idea">&#182;</a></h2><p>This uses a classical CNN-LSTM  model like shown below, where Image features and language features are computed separetely and combined together and a multi-layer perceptron is trained on the combined features.</p>
+<h2 id="Model-Idea">Model Idea<a class="anchor-link" href="#Model-Idea">&#182;</a></h2><p>This uses a classical CNN-LSTM  model like shown below, where Image features and language features are computed separately and combined together and a multi-layer perceptron is trained on the combined features.</p>
 <p>Similar models have been presented at following links, this work takes ideas from them.</p>
 <ol>
 <li><a href="https://github.com/abhshkdz/neural-vqa">https://github.com/abhshkdz/neural-vqa</a></li>
@@ -299,7 +299,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://camo.githubusercontent.com/c369855a52126470fe0435552166b84a38715489/687474703a2f2f692e696d6775722e636f6d2f555841506c71652e706e67"></p>
+<p><img src="http://i.imgur.com/Za5P1ZZ.png"><a href="http://arxiv.org/pdf/1505.00468v4.pdf">Source</a></p>
 
 </div>
 </div>
@@ -398,7 +398,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Extract-Image-features">Extract Image features<a class="anchor-link" href="#Extract-Image-features">&#182;</a></h2><p>Extracting image features involves, taking a raw image, and running it through the model, until we reach the last layer. In this case our model is not 100% same as VGG Net, because we are not going to use the last two layer of the VGG. It is becuase the last layer of VGG Net is a 1000 way soft max and the second last layer is the Dropout.</p>
+<h2 id="Extract-Image-features">Extract Image features<a class="anchor-link" href="#Extract-Image-features">&#182;</a></h2><p>Extracting image features involves, taking a raw image, and running it through the model, until we reach the last layer. In this case our model is not 100% same as VGG Net, because we are not going to use the last two layer of the VGG. It is because the last layer of VGG Net is a 1000 way softmax and the second last layer is the Dropout.</p>
 <p>Thus we are extracting the 4096 Dimension image features from VGG-16</p>
 
 </div>
@@ -421,7 +421,7 @@ div#notebook {
     <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c"># convert the image to RGBA</span>
 
     
-    <span class="c"># this axis dimension is required becuase VGG was trained on a dimension</span>
+    <span class="c"># this axis dimension is required because VGG was trained on a dimension</span>
     <span class="c"># of 1, 3, 224, 224 (first axis is for the batch size</span>
     <span class="c"># even though we are using only one image, we have to keep the dimensions consistent</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
@@ -440,8 +440,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Word-Embeddings">Word Embeddings<a class="anchor-link" href="#Word-Embeddings">&#182;</a></h1><p>The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses <a href="https://github.com/ryankiros/skip-thoughts">skip-thought vectors</a> or <a href="https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory">postional encodings.</a></p>
-<p>We will use Word2Vec from Standford called <a href="http://nlp.stanford.edu/projects/glove/">Glove</a>. Glove reduces a given token into a 300 dimensional representation.</p>
+<h1 id="Word-Embeddings">Word Embeddings<a class="anchor-link" href="#Word-Embeddings">&#182;</a></h1><p>The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses <a href="https://github.com/ryankiros/skip-thoughts">skip-thought vectors</a> or <a href="https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory">positional encodings.</a></p>
+<p>We will use Word2Vec from Stanford called <a href="http://nlp.stanford.edu/projects/glove/">Glove</a>. Glove reduces a given token into a 300 dimensional representation.</p>
 
 </div>
 </div>
@@ -452,7 +452,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">get_question_features</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; For a given question, a unicode string, returns the timeseris vector</span>
+    <span class="sd">&#39;&#39;&#39; For a given question, a unicode string, returns the time series vector</span>
 <span class="sd">    with each word (token) transformed into a 300 dimension representation</span>
 <span class="sd">    calculated using Glove Vector &#39;&#39;&#39;</span>
     <span class="n">word_embeddings</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;en&#39;</span><span class="p">,</span> <span class="n">vectors</span><span class="o">=</span><span class="s">&#39;en_glove_cc_300_1m_vectors&#39;</span><span class="p">)</span>
@@ -473,7 +473,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Try-the-embeddigns">Try the embeddigns<a class="anchor-link" href="#Try-the-embeddigns">&#182;</a></h2><p>Let's see the embeddings, and their usage with sample words like this -</p>
+<h2 id="Try-the-embeddings">Try the embeddings<a class="anchor-link" href="#Try-the-embeddings">&#182;</a></h2><p>Let's see the embeddings, and their usage with sample words like this -</p>
 <ol>
 <li>Obama </li>
 <li>Putin</li>
@@ -605,7 +605,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see, obama and putin are very similar in representation than obama and banana. This shows you there is some semantic knowledge of the tokens embedded in the 300 dimensional representation. We can do cool arithematics with these word2vec like 'Queen' - 'King' + 'Boy' = 'Girl'. See <a href="http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/">this blog post</a> for more details.</p>
+<p>As we can see, obama and putin are very similar in representation than obama and banana. This shows you there is some semantic knowledge of the tokens embedded in the 300 dimensional representation. We can do cool arithmetics with these word2vec like 'Queen' - 'King' + 'Boy' = 'Girl'. See <a href="http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/">this blog post</a> for more details.</p>
 
 </div>
 </div>
@@ -615,7 +615,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="VQA-Model">VQA Model<a class="anchor-link" href="#VQA-Model">&#182;</a></h2><p>VQA is a simple model which combines features from Image and Word Embeddings and runs a multiple layer</p>
+<h2 id="VQA-Model">VQA Model<a class="anchor-link" href="#VQA-Model">&#182;</a></h2><p>VQA is a simple model which combines features from Image and Word Embeddings and runs a multiple layer perceptron.</p>
 
 </div>
 </div>
@@ -673,7 +673,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As it can be seen above the model also runs a 3 layered LSTM on the word embeddings. To get a naive result it is sufficient to feed the word embeddings directly to the merge layer, but as mentioned above the model gives close to the state-of-the-art results.</p>
-<p>Also, four layers of fully conntected layers might not be required to achieve a good enough results. But I settled on this model after some experimentation, and this model's results beat those obtained using only few layers.</p>
+<p>Also, four layers of fully connected layers might not be required to achieve a good enough results. But I settled on this model after some experimentation, and this model's results beat those obtained using only few layers.</p>
 
 </div>
 </div>
@@ -694,7 +694,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">image_file_name</span> <span class="o">=</span> <span class="s">&#39;test.jpg&#39;</span>
-<span class="n">question</span> <span class="o">=</span> <span class="s">u&quot;What vechile is in the picture?&quot;</span>
+<span class="n">question</span> <span class="o">=</span> <span class="s">u&quot;What vehicle is in the picture?&quot;</span>
 </pre></div>
 
 </div>
@@ -707,7 +707,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="-What-vechile-is-in-the-picture-?-"><center> What vechile is in the picture ? </center><a class="anchor-link" href="#-What-vechile-is-in-the-picture-?-">&#182;</a></h1>
+<h1 id="-What-vehicle-is-in-the-picture-?-"><center> What vehicle is in the picture ? </center><a class="anchor-link" href="#-What-vehicle-is-in-the-picture-?-">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -757,7 +757,7 @@ div#notebook {
 <div class=" highlight hl-ipython2"><pre><span class="n">y_output</span> <span class="o">=</span> <span class="n">model_vqa</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">question_features</span><span class="p">,</span> <span class="n">image_features</span><span class="p">])</span>
 
 <span class="c"># This task here is represented as a classification into a 1000 top answers</span>
-<span class="c"># this means some of the answers were not part of trainng and thus would </span>
+<span class="c"># this means some of the answers were not part of training and thus would </span>
 <span class="c"># not show up in the result.</span>
 <span class="c"># These 1000 answers are stored in the sklearn Encoder class</span>
 <span class="n">labelencoder</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">label_encoder_file_name</span><span class="p">)</span>
@@ -817,7 +817,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since cv2.imread cannot read an image from URL we will have to change our fucntion <code>get_image_features</code></p>
+<p>Since cv2.imread cannot read an image from URL we will have to change our function <code>get_image_features</code></p>
 
 </div>
 </div>
@@ -839,7 +839,7 @@ div#notebook {
     <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c"># convert the image to RGBA</span>
 
     
-    <span class="c"># this axis dimension is required becuase VGG was trained on a dimension</span>
+    <span class="c"># this axis dimension is required because VGG was trained on a dimension</span>
     <span class="c"># of 1, 3, 224, 224 (first axis is for the batch size</span>
     <span class="c"># even though we are using only one image, we have to keep the dimensions consistent</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
@@ -1036,9 +1036,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, similar information about a Yes/No question illicits different response, or should I say correct response. This is an impertinent problem with <code>classification</code> tasks.</p>
+<p>As you can see, similar information about a Yes/No question elicits different response, or should I say correct response. This is an impertinent problem with <code>classification</code> tasks.</p>
 <p>Feel free to experiment with different types of questions, <code>count</code>, <code>color</code>, <code>location</code>.</p>
-<p>More interesting results are obtained when one takes a different crop of a image, instead of just scaling it to 224x224. This is again becuase we extract only the top level features of CNN model which was trained to classify one object in the image.</p>
+<p>More interesting results are obtained when one takes a different crop of a image, instead of just scaling it to 224x224. This is again because we extract only the top level features of CNN model which was trained to classify one object in the image.</p>
 
 </div>
 </div>

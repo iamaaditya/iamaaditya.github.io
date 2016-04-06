@@ -8,7 +8,7 @@
     
       <item>
         <title>Visual Question Answering Demo in Python Notebook</title>
-        <description>&lt;p&gt;This is an online demo with explanation and tutorial on Visual Question Answering. This is not a naive or hello-world model, this model returns close to state-of-the-art without using any attention models, memory netorks (other than LSTM) and fine-tuning, which are essential recipe for current best results.&lt;/p&gt;
+        <description>&lt;p&gt;This is an online demo with explanation and tutorial on Visual Question Answering. This is not a naive or hello-world model, this model returns close to state-of-the-art without using any attention models, memory networks (other than LSTM) and fine-tuning, which are essential recipe for current best results.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;I have tried to explain different parts, and reasoning behind their choices. This is meant to be an interactive tutorial, feel free to change the model parameters and experiment. If you have latest graphics card execution time should be within a minute.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -37,13 +37,13 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#Word-Embeddings&quot;&gt;Word Embeddings&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#Try-the-embeddigns&quot;&gt;Try the embeddigns&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#Try-the-embeddings&quot;&gt;Try the embeddings&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#VQA-Model&quot;&gt;VQA Model&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#Asketh-Away-!&quot;&gt;Asketh Away !&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#-What-vechile-is-in-the-picture-?-&quot;&gt; What vechile is in the picture ? &lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#-What-vehicle-is-in-the-picture-?-&quot;&gt; What vehicle is in the picture ? &lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#Results&quot;&gt;Results&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -294,7 +294,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Model-Idea&quot;&gt;Model Idea&lt;a class=&quot;anchor-link&quot; href=&quot;#Model-Idea&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This uses a classical CNN-LSTM  model like shown below, where Image features and language features are computed separetely and combined together and a multi-layer perceptron is trained on the combined features.&lt;/p&gt;
+&lt;h2 id=&quot;Model-Idea&quot;&gt;Model Idea&lt;a class=&quot;anchor-link&quot; href=&quot;#Model-Idea&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This uses a classical CNN-LSTM  model like shown below, where Image features and language features are computed separately and combined together and a multi-layer perceptron is trained on the combined features.&lt;/p&gt;
 &lt;p&gt;Similar models have been presented at following links, this work takes ideas from them.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/abhshkdz/neural-vqa&quot;&gt;https://github.com/abhshkdz/neural-vqa&lt;/a&gt;&lt;/li&gt;
@@ -310,7 +310,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/c369855a52126470fe0435552166b84a38715489/687474703a2f2f692e696d6775722e636f6d2f555841506c71652e706e67&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Za5P1ZZ.png&quot; /&gt;&lt;a href=&quot;http://arxiv.org/pdf/1505.00468v4.pdf&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -409,7 +409,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Extract-Image-features&quot;&gt;Extract Image features&lt;a class=&quot;anchor-link&quot; href=&quot;#Extract-Image-features&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Extracting image features involves, taking a raw image, and running it through the model, until we reach the last layer. In this case our model is not 100% same as VGG Net, because we are not going to use the last two layer of the VGG. It is becuase the last layer of VGG Net is a 1000 way soft max and the second last layer is the Dropout.&lt;/p&gt;
+&lt;h2 id=&quot;Extract-Image-features&quot;&gt;Extract Image features&lt;a class=&quot;anchor-link&quot; href=&quot;#Extract-Image-features&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Extracting image features involves, taking a raw image, and running it through the model, until we reach the last layer. In this case our model is not 100% same as VGG Net, because we are not going to use the last two layer of the VGG. It is because the last layer of VGG Net is a 1000 way softmax and the second last layer is the Dropout.&lt;/p&gt;
 &lt;p&gt;Thus we are extracting the 4096 Dimension image features from VGG-16&lt;/p&gt;
 
 &lt;/div&gt;
@@ -432,7 +432,7 @@ div#notebook {
     &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transpose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# convert the image to RGBA&lt;/span&gt;
 
     
-    &lt;span class=&quot;c&quot;&gt;# this axis dimension is required becuase VGG was trained on a dimension&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# this axis dimension is required because VGG was trained on a dimension&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;# of 1, 3, 224, 224 (first axis is for the batch size&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;# even though we are using only one image, we have to keep the dimensions consistent&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expand_dims&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;im&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
@@ -451,8 +451,8 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Word-Embeddings&quot;&gt;Word Embeddings&lt;a class=&quot;anchor-link&quot; href=&quot;#Word-Embeddings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses &lt;a href=&quot;https://github.com/ryankiros/skip-thoughts&quot;&gt;skip-thought vectors&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory&quot;&gt;postional encodings.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;We will use Word2Vec from Standford called &lt;a href=&quot;http://nlp.stanford.edu/projects/glove/&quot;&gt;Glove&lt;/a&gt;. Glove reduces a given token into a 300 dimensional representation.&lt;/p&gt;
+&lt;h1 id=&quot;Word-Embeddings&quot;&gt;Word Embeddings&lt;a class=&quot;anchor-link&quot; href=&quot;#Word-Embeddings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The question has to be converted into some form of word embeddings. Most popular is Word2Vec whereas these days state of the art uses &lt;a href=&quot;https://github.com/ryankiros/skip-thoughts&quot;&gt;skip-thought vectors&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Encoding_(memory)#Sequence_memory&quot;&gt;positional encodings.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We will use Word2Vec from Stanford called &lt;a href=&quot;http://nlp.stanford.edu/projects/glove/&quot;&gt;Glove&lt;/a&gt;. Glove reduces a given token into a 300 dimensional representation.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -463,7 +463,7 @@ div#notebook {
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
 &lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_question_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39; For a given question, a unicode string, returns the timeseris vector&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39; For a given question, a unicode string, returns the time series vector&lt;/span&gt;
 &lt;span class=&quot;sd&quot;&gt;    with each word (token) transformed into a 300 dimension representation&lt;/span&gt;
 &lt;span class=&quot;sd&quot;&gt;    calculated using Glove Vector &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;word_embeddings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;en&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;en_glove_cc_300_1m_vectors&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -484,7 +484,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Try-the-embeddigns&quot;&gt;Try the embeddigns&lt;a class=&quot;anchor-link&quot; href=&quot;#Try-the-embeddigns&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let&#39;s see the embeddings, and their usage with sample words like this -&lt;/p&gt;
+&lt;h2 id=&quot;Try-the-embeddings&quot;&gt;Try the embeddings&lt;a class=&quot;anchor-link&quot; href=&quot;#Try-the-embeddings&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let&#39;s see the embeddings, and their usage with sample words like this -&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Obama &lt;/li&gt;
 &lt;li&gt;Putin&lt;/li&gt;
@@ -616,7 +616,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;As we can see, obama and putin are very similar in representation than obama and banana. This shows you there is some semantic knowledge of the tokens embedded in the 300 dimensional representation. We can do cool arithematics with these word2vec like &#39;Queen&#39; - &#39;King&#39; + &#39;Boy&#39; = &#39;Girl&#39;. See &lt;a href=&quot;http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/&quot;&gt;this blog post&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;As we can see, obama and putin are very similar in representation than obama and banana. This shows you there is some semantic knowledge of the tokens embedded in the 300 dimensional representation. We can do cool arithmetics with these word2vec like &#39;Queen&#39; - &#39;King&#39; + &#39;Boy&#39; = &#39;Girl&#39;. See &lt;a href=&quot;http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/&quot;&gt;this blog post&lt;/a&gt; for more details.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -626,7 +626,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;VQA-Model&quot;&gt;VQA Model&lt;a class=&quot;anchor-link&quot; href=&quot;#VQA-Model&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;VQA is a simple model which combines features from Image and Word Embeddings and runs a multiple layer&lt;/p&gt;
+&lt;h2 id=&quot;VQA-Model&quot;&gt;VQA Model&lt;a class=&quot;anchor-link&quot; href=&quot;#VQA-Model&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;VQA is a simple model which combines features from Image and Word Embeddings and runs a multiple layer perceptron.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -684,7 +684,7 @@ div#notebook {
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
 &lt;p&gt;As it can be seen above the model also runs a 3 layered LSTM on the word embeddings. To get a naive result it is sufficient to feed the word embeddings directly to the merge layer, but as mentioned above the model gives close to the state-of-the-art results.&lt;/p&gt;
-&lt;p&gt;Also, four layers of fully conntected layers might not be required to achieve a good enough results. But I settled on this model after some experimentation, and this model&#39;s results beat those obtained using only few layers.&lt;/p&gt;
+&lt;p&gt;Also, four layers of fully connected layers might not be required to achieve a good enough results. But I settled on this model after some experimentation, and this model&#39;s results beat those obtained using only few layers.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -705,7 +705,7 @@ div#notebook {
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
 &lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;image_file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;test.jpg&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;question&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u&amp;quot;What vechile is in the picture?&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;question&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u&amp;quot;What vehicle is in the picture?&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -718,7 +718,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;-What-vechile-is-in-the-picture-?-&quot;&gt;&lt;center&gt; What vechile is in the picture ? &lt;/center&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#-What-vechile-is-in-the-picture-?-&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;-What-vehicle-is-in-the-picture-?-&quot;&gt;&lt;center&gt; What vehicle is in the picture ? &lt;/center&gt;&lt;a class=&quot;anchor-link&quot; href=&quot;#-What-vehicle-is-in-the-picture-?-&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -768,7 +768,7 @@ div#notebook {
 &lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;y_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model_vqa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# This task here is represented as a classification into a 1000 top answers&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# this means some of the answers were not part of trainng and thus would &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# this means some of the answers were not part of training and thus would &lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# not show up in the result.&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# These 1000 answers are stored in the sklearn Encoder class&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;labelencoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_encoder_file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -828,7 +828,7 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;Since cv2.imread cannot read an image from URL we will have to change our fucntion &lt;code&gt;get_image_features&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Since cv2.imread cannot read an image from URL we will have to change our function &lt;code&gt;get_image_features&lt;/code&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -850,7 +850,7 @@ div#notebook {
     &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transpose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# convert the image to RGBA&lt;/span&gt;
 
     
-    &lt;span class=&quot;c&quot;&gt;# this axis dimension is required becuase VGG was trained on a dimension&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# this axis dimension is required because VGG was trained on a dimension&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;# of 1, 3, 224, 224 (first axis is for the batch size&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;# even though we are using only one image, we have to keep the dimensions consistent&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expand_dims&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;im&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
@@ -1047,9 +1047,9 @@ div#notebook {
 &lt;/div&gt;
 &lt;div class=&quot;inner_cell&quot;&gt;
 &lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;As you can see, similar information about a Yes/No question illicits different response, or should I say correct response. This is an impertinent problem with &lt;code&gt;classification&lt;/code&gt; tasks.&lt;/p&gt;
+&lt;p&gt;As you can see, similar information about a Yes/No question elicits different response, or should I say correct response. This is an impertinent problem with &lt;code&gt;classification&lt;/code&gt; tasks.&lt;/p&gt;
 &lt;p&gt;Feel free to experiment with different types of questions, &lt;code&gt;count&lt;/code&gt;, &lt;code&gt;color&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;More interesting results are obtained when one takes a different crop of a image, instead of just scaling it to 224x224. This is again becuase we extract only the top level features of CNN model which was trained to classify one object in the image.&lt;/p&gt;
+&lt;p&gt;More interesting results are obtained when one takes a different crop of a image, instead of just scaling it to 224x224. This is again because we extract only the top level features of CNN model which was trained to classify one object in the image.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
