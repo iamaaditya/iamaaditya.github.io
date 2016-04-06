@@ -12,6 +12,9 @@ tags:
   - Tensorflow
   - deep learning
 ---
+
+Guide to building and installing CUDA, CuDNN, OpenCV, FFMPEG, Theano, Tensorflow, Keras, Lasagne, Torch and Caffe. It also includes common issues faced and recommended libraries and versions.
+
 Table of Contents
 =================
 

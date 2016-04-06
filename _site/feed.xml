@@ -1175,7 +1175,9 @@ But then again, is this is the best way to do dimensionality reduction in the co
     
       <item>
         <title>Deep Learning software installation guide on fresh Ubuntu</title>
-        <description>&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h1&gt;
+        <description>&lt;p&gt;Guide to building and installing CUDA, CuDNN, OpenCV, FFMPEG, Theano, Tensorflow, Keras, Lasagne, Torch and Caffe. It also includes common issues faced and recommended libraries and versions.&lt;/p&gt;
+
+&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Basic
