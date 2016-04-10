@@ -19,6 +19,7 @@ dsq_thread_id:
  * Implementing a Neural Network from scratch <http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/>
  * Machine Learning iPython Notebook <https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb>
  * Dive into Machine Learning <https://github.com/hangtwenty/dive-into-machine-learning>
+ * Guide to Ensemble <http://mlwave.com/kaggle-ensembling-guide/>
 
 ## Datasets
  * Publicly available datasets github <http://www.kdnuggets.com/2015/04/awesome-public-datasets-github.html>

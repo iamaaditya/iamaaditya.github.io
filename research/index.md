@@ -21,14 +21,15 @@ Following are the links to my notes on current work. They might be benefitial on
 
     |Model_name | Overall Accuracy |    Others    |    Numbers    | yes/no      |
     |-----------|:------------------:|:------------:|:--------------:|:--------:|
-    |./dppnet_9                   |57.61 | 42.85 | 36.50 | 80.48|
-    |./ensemble_2_Mar_31          |57.20 | 42.01 | 36.84 | 80.40|
-    |./ensemble_1              |57.15 | 41.85 | 36.34 | 80.57|
-    |./lstm_mlp_relu      |49.75 | 33.30 | 29.91 | 74.28|
-    |./new_lstm_3              |48.11 | 30.20 | 22.53 | 75.87|
-    |./dppnet_12                    |57.63 | 42.74 | 36.45 | 80.69|
-    |./base2                   |55.90 | 42.42 | 35.29 | 77.15|
-    |./base1                      |55.65 | 42.55 | 34.97 | 76.47|
+    |___________|_________________|_______________|_______________|_____________|
+    |KOR ## dppnet_12                 |57.63 | 42.74 | 36.45 | 80.69|
+    |KOR ## dppnet_9                  |57.61 | 42.85 | 36.50 | 80.48|
+    |__OUR__ ## model_2               |57.20 | 42.01 | 36.84 | 80.40|
+    |__OUR__ ## model_1               |57.15 | 41.85 | 36.34 | 80.57|
+    |MIT ## base2                     |55.90 | 42.42 | 35.29 | 77.15|
+    |MIT ## base1                     |55.65 | 42.55 | 34.97 | 76.47|
+    |VQA ## lstm_mlp_relu             |49.75 | 33.30 | 29.91 | 74.28|
+    |__OLD__ ## new_lstm_3            |48.11 | 30.20 | 22.53 | 75.87|
 
 
  * __Comparison of results from different models__
@@ -37,25 +38,25 @@ Following are the links to my notes on current work. They might be benefitial on
 
     ALL QUESTION <br />
     ------------------------ <br />
-    1 / 9  ==  18073 / 60864  %  0.297 <br />
-    2 / 9  ==  23593 / 60864  %  0.388 <br />
-    3 / 9  ==  09611 / 60864  %  0.158 <br />
-    4 / 9  ==  06378 / 60864  %  0.105 <br />
-    5 / 9  ==  02557 / 60864  %  0.042 <br />
-    6 / 9  ==  00593 / 60864  %  0.01 <br />
-    7 / 9  ==  00059 / 60864  %  0.001 <br />
+    1/9  ==  18073/60864  %  0.297 <br />
+    2/9  ==  23593/60864  %  0.388 <br />
+    3/9  ==  09611/60864  %  0.158 <br />
+    4/9  ==  06378/60864  %  0.105 <br />
+    5/9  ==  02557/60864  %  0.042 <br />
+    6/9  ==  00593/60864  %  0.01 <br />
+    7/9  ==  00059/60864  %  0.001 <br />
 
 
 
-    Filtered QUESTION <br />
+    Filtered QUESTION (NO Binary decision questions) <br />
     ------------------------ <br />
-    1 / 9  ==  06438 / 60864  %  0.106 <br />
-    2 / 9  ==  10172 / 60864  %  0.167 <br />
-    3 / 9  ==  09136 / 60864  %  0.15 <br />
-    4 / 9  ==  05566 / 60864  %  0.091 <br />
-    5 / 9  ==  02121 / 60864  %  0.035 <br />
-    6 / 9  ==  00500 / 60864  %  0.008 <br />
-    7 / 9  ==  00054 / 60864  %  0.001 <br />
+    1/9  ==  06438/60864  %  0.106 <br />
+    2/9  ==  10172/60864  %  0.167 <br />
+    3/9  ==  09136/60864  %  0.15 <br />
+    4/9  ==  05566/60864  %  0.091 <br />
+    5/9  ==  02121/60864  %  0.035 <br />
+    6/9  ==  00500/60864  %  0.008 <br />
+    7/9  ==  00054/60864  %  0.001 <br />
 
 
 
@@ -64,7 +65,7 @@ Following are the links to my notes on current work. They might be benefitial on
     * Memory
     * Attention models vs non-attention models
     * LSTM vs GRU
-    * Episodic memory vs Semantiv memory
+    * Episodic memory vs Semantic memory
     * No bidirectinal LSTM
     * Activation functions used
     * Choice of Activations

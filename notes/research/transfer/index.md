@@ -14,3 +14,5 @@ dsq_thread_id:
  * Compression Artifacts Reduction by a Deep Convolutional Network <http://www.cv-foundation.org/openaccess/content_iccv_2015/html/Dong_Compression_Artifacts_Reduction_ICCV_2015_paper.html>
  * Local Convolutional Features With Unsupervised Training for Image Retrieval <http://www.cv-foundation.org/openaccess/content_iccv_2015/html/Paulin_Local_Convolutional_Features_ICCV_2015_paper.html>
 
+## General Info
+ * <http://cs231n.github.io/transfer-learning/>

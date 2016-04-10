@@ -58,6 +58,14 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
   * <https://recommend-papers.org/>
   * <http://inverseprobability.com/blog.html>
   * <https://svail.github.io/>
+  * <http://randomekek.github.io/>
+  * <http://blog.kaggle.com/>
+  * <http://www.erogol.com/>
+
+# Blog Aggregators
+ * <http://mlwave.com/>
+ * <http://www.kdnuggets.com/>
+ * 
 
 # Awesome Lists
   * [Awesome Deep Vision ](<https://github.com/kjw0612/awesome-deep-vision>)
