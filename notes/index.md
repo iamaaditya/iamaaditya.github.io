@@ -6,14 +6,10 @@ dsq_thread_id:
   - 
 ---
 
-This page is used to collect notes.
-
-These are meant for quick and dirty collection of notes, ideas and information. I keep them public for my own ease of access; however you are welcome to read/copy the contents (MIT License) . Factual accuracy is not guranteed in these notes.
-However, I would welcome anyone to add or make minor changes to these notes. In that case, just send a pull request at the github repo https://github.com/iamaaditya/iamaaditya.github.io
-If you however prefer to email, then :: aprakash   @     brandeis     .     edu  
+This page is used to collect notes.  I use this to share relevant notes, links and documents with my friends and colleagues. Feel free to browse them. If you landed on this page looking for specific information or link and could not find it then please let me know aprakash   @     brandeis     .     edu  
 
 # Presentations
- These are the google doc links of the presentations I have given in class, or seminars or other invited talks. These were the most requested urls !
+ These are the presentations or class slides for the seminar talks or classroom lectures I have given. These are the most requested urls, and main reason for creation of this page. 
 
  * [General purpose GPU Computing and CUDA]( https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing )  - Nov 30, 2015
  * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing )  - Nov 18, 2015 
@@ -21,7 +17,7 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
  * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing )  - October 7, 2015
  * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing )  - September 29, 2015
  * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing )  - September 16, 2015
- * [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016
+ * [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016 <br />
       (Very basics of Deep learning and CNN, meant as a gentle introduction to the field)
 
 # Learning
@@ -31,8 +27,9 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 
 # Research
  * [Computer Vision / Deep Learning]( {{site.baseurl}}/notes/research/ ) - Notes related to my current work, papers I am reading, and some random scribble
-     * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/) 
-     * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/)
+     * [Visual Question Answering]({{site.baseurl}}/notes/research/vqa/) - Relevant information, temeporary results and other notes regarding my current research in Visual Question Answering.
+     * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/)    - Long term research on doing efficient transfer learning and fine-tuning of image features obtained from deep convolutional network.
+     * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/) - Generic information about Convolutional Neural Network -- not much on this page for now. 
  * [GPU Hardware & Infrastructure]( {{site.baseurl}}/notes/hardware/ ) - Notes related to GPU cluster, my experiences with building one, and latest in the field
 
 
@@ -65,7 +62,6 @@ If you however prefer to email, then :: aprakash   @     brandeis     .     edu
 # Blog Aggregators
  * <http://mlwave.com/>
  * <http://www.kdnuggets.com/>
- * 
 
 # Awesome Lists
   * [Awesome Deep Vision ](<https://github.com/kjw0612/awesome-deep-vision>)

@@ -1,5 +1,5 @@
 ---
-title: Climbing
+title: Linux Hacks
 author: aaditya prakash
 layout: page
 dsq_thread_id:

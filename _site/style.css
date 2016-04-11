@@ -116,6 +116,7 @@ h4 {
 p {
   margin: 15px 0;
   font-size: 18px;
+  line-height: 1.2;
 }
 
 a {
@@ -134,10 +135,12 @@ ul, ol {
 
 ul {
   list-style-type: disc;
+  line-height: 1.2;
 }
 
 ol {
   list-style-type: decimal;
+  line-height: 1.2;
 }
 
 ol ul, ul ol, ul ul, ol ol {
@@ -327,6 +330,7 @@ footer {
   border: 1px solid #ddd;
   -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
   margin: 20px 0 20px 0;
+  white-space: pre-wrap;
 }
 
 code {
@@ -359,7 +363,7 @@ code {
 
 /* Literal */
 .highlight .n {
-  color: #b35900;
+  color: #0d7719;
 }
 
 /* Name */

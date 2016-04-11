@@ -1065,32 +1065,6 @@ div#notebook {
       </item>
     
       <item>
-        <title>Comparison of Visual Question Answering Models</title>
-        <description>&lt;p&gt;There has been a resur&lt;/p&gt;
-
-&lt;h1 id=&quot;memory&quot;&gt;Memory&lt;/h1&gt;
-
-&lt;h1 id=&quot;attention-models-vs-non-attention-models&quot;&gt;Attention models vs non-attention models&lt;/h1&gt;
-
-&lt;h1 id=&quot;lstm-vs-gru&quot;&gt;LSTM vs GRU&lt;/h1&gt;
-
-&lt;h1 id=&quot;episodic-memory-vs-semantiv-memory&quot;&gt;Episodic memory vs Semantiv memory&lt;/h1&gt;
-
-&lt;h1 id=&quot;no-bidirectinal-lstm&quot;&gt;No bidirectinal LSTM&lt;/h1&gt;
-
-&lt;h1 id=&quot;activation-functions-used&quot;&gt;Activation functions used&lt;/h1&gt;
-
-&lt;h1 id=&quot;choice-of-activations&quot;&gt;Choice of Activations&lt;/h1&gt;
-
-&lt;h1 id=&quot;use-of-batch-normalization&quot;&gt;Use of Batch Normalization&lt;/h1&gt;
-
-</description>
-        <pubDate>Sat, 26 Mar 2016 00:00:00 -0400</pubDate>
-        <link>http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</link>
-        <guid isPermaLink="true">http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</guid>
-      </item>
-    
-      <item>
         <title>One by One [ 1 x 1 ] Convolution - counter-intuitively useful</title>
         <description>&lt;p&gt;Whenever I discuss or show &lt;a href=&quot;http://arxiv.org/pdf/1409.4842v1.pdf&quot;&gt;GoogleNet architecture&lt;/a&gt;, one question always comes up - &lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;center&gt;&quot;Why 1x1 convolution ? Is it not redundant ?&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -2030,6 +2004,126 @@ fun pascal_triangle&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/s
         <pubDate>Sat, 26 Jan 2013 00:00:00 -0500</pubDate>
         <link>http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</link>
         <guid isPermaLink="true">http://iamaaditya.github.io/2013/01/pascal-triangle-in-sml/</guid>
+      </item>
+    
+      <item>
+        <title>Monte Carlo Simulation in R</title>
+        <description>&lt;p&gt;While the last post dealt with Bootstrap Sampling, no sampling discussion can be complete without discussion ‘Monte Carlo’ simulation. Readers please note, I will &lt;em&gt;*not **discuss “MCMC (Markov Chain Monte Carlo)” *(perhaps in the future)&lt;/em&gt;. MCMC primarily deals with distribution of equilibrium of the given Markov Chain.&lt;/p&gt;
+
+&lt;p&gt;Monte Carlo simulation is much used &lt;em&gt;(perhaps overused)&lt;/em&gt; sampling for all physical simulation techniques. While the algorithm for generating Monte Carlo samples is very simple, its usage is widespread. Particularly in Computational Physics for modeling behavior of sub-atomic particles, in Robotics for generating possible states where the actual game state could be exponentially large and in bioinformatics for probabilistic graphical models and last but not least Monte Carlo Integration.&lt;/p&gt;
+
+&lt;p&gt;Readers not familiar with Monte Carlo may benefit from this &lt;a href=&quot;http://www.cs.otago.ac.nz/cosc453/student_tutorials/monte_carlo.pdf&quot; title=&quot;Tutorial on Monte Carlo&quot; target=&quot;_blank&quot;&gt;tutorial by Jonathan Pengelly&lt;/a&gt;, as this blogpost restricts to presenting the simple code in R to do Monte Carlo simulation. Having a clean and grounds-up code is always beneficial as this helps tweak and reformulate the basics.&lt;/p&gt;
+
+&lt;p&gt;Following is the output obtained from the code given below:&lt;/p&gt;
+
+&lt;h3 id=&quot;output&quot;&gt;Output&lt;/h3&gt;
+
+&lt;p&gt;&lt;img class=&quot;size-medium wp-image-192 &quot; title=&quot;Monte Carlo in R&quot; src=&quot;http://aaditya.info/blog/wp-content/uploads/2012/11/Monte_Carlo_Simulation_in_R.png&quot; alt=&quot;Monte Carlo in R&quot; width=&quot;NaN&quot; height=&quot;NaN&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;wp_syntax&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line_numbers&quot;&gt;
+        &lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+&lt;/pre&gt;
+      &lt;/td&gt;
+      
+      &lt;td class=&quot;code&quot;&gt;
+        &lt;pre class=&quot;rsplus&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #228B22;&quot;&gt;#Monte Carlo simulation &lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;#aaditya - 26/10/2012&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #228B22;&quot;&gt;######################################&lt;/span&gt;
+StartEq &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
+SuccessPcnt &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;61.54&lt;/span&gt;
+SuccessAvg &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2444.78&lt;/span&gt;
+FailureAvg &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1667.37&lt;/span&gt;
+Iterations &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1000&lt;/span&gt;
+NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;
+Rf &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;
+&lt;span style=&quot;color: #228B22;&quot;&gt;#####################################&lt;/span&gt;
+eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+doMCRun &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;function&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
+  eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; StartEq
+  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;i &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;in&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;runif&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;/span&gt;,&lt;span style=&quot;color: #ff0000;&quot;&gt;100&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;&lt;/span&gt; SuccessPcnt&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+      pl&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; SuccessAvg &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
+    &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;else&lt;/span&gt;
+      pl&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;FailureAvg &lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt; Rf
+      eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;  &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; pl
+  &lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;eq&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #080;&quot;&gt;&amp;#125;&lt;/span&gt;
+&amp;nbsp;
+values &lt;span style=&quot;color: #080;&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;replicate&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;Iterations, doMCRun&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;par&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;xaxs&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;i&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;plot&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;:&lt;/span&gt;NoOfEvents, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;rep&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;NA, NoOfEvents &lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, 
+     xlab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Iterations&quot;&lt;/span&gt;, ylab&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Growth&quot;&lt;/span&gt;,
+     ylim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;min&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;max&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;,
+     xlim&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;,NoOfEvents&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;, main&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;Monte Carlo Simulation&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;matlines&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values,type&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;l&quot;&lt;/span&gt;,lty&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&amp;nbsp;
+sd1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;sd&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+mean1 &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;mean&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;print&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;summary&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;values&lt;span style=&quot;color: #080;&quot;&gt;&amp;#91;&lt;/span&gt;NoOfEvents,&lt;span style=&quot;color: #080;&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+sdString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;SD : &quot;&lt;/span&gt;, sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;sdString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;
+outputString &lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;paste&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;With 99.73% confidence the final growth will be between&quot;&lt;/span&gt;, 
+                     mean1 &lt;span style=&quot;color: #080;&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1, &lt;span style=&quot;color: #ff0000;&quot;&gt;&quot; and &quot;&lt;/span&gt;, mean1 &lt;span style=&quot;color: #080;&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;*&lt;/span&gt;sd1&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt; 
+&lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;write&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#40;&lt;/span&gt;outputString, &lt;span style=&quot;color: #0000FF; font-weight: bold;&quot;&gt;file&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color: #080;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 19 Nov 2012 00:00:00 -0500</pubDate>
+        <link>http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</link>
+        <guid isPermaLink="true">http://iamaaditya.github.io/2012/11/monte-carlo-simulation-in-r/</guid>
       </item>
     
   </channel>
