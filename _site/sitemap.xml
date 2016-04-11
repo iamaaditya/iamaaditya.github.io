@@ -89,9 +89,6 @@
     <lastmod>2012-07-08T00:00:00-04:00</lastmod>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/2016/03/comparison-of-visual-question-answering-models/</loc>
-  </url>
-  <url>
     <loc>http://iamaaditya.github.io/404/</loc>
   </url>
   <url>
@@ -104,7 +101,10 @@
     <loc>http://iamaaditya.github.io/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/climbing/</loc>
+    <loc>http://iamaaditya.github.io/notes/features/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/probability_statistics/</loc>
@@ -116,7 +116,7 @@
     <loc>http://iamaaditya.github.io/notes/algorithms/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/name/</loc>
+    <loc>http://iamaaditya.github.io/notes/visualization/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/misc/</loc>
@@ -131,16 +131,16 @@
     <loc>http://iamaaditya.github.io/notes/computer_vision/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/features/</loc>
+    <loc>http://iamaaditya.github.io/notes/name/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/deep_learning/</loc>
+    <loc>http://iamaaditya.github.io/notes/climbing/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
+    <loc>http://iamaaditya.github.io/notes/chess/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/visualization/</loc>
+    <loc>http://iamaaditya.github.io/notes/maths/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/linux/</loc>
@@ -167,13 +167,10 @@
     <loc>http://iamaaditya.github.io/notes/books/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/chess/</loc>
+    <loc>http://iamaaditya.github.io/research/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/</loc>
-  </url>
-  <url>
-    <loc>http://iamaaditya.github.io/research/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/research/literature/</loc>
@@ -182,7 +179,7 @@
     <loc>http://iamaaditya.github.io/about/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/maths/</loc>
+    <loc>http://iamaaditya.github.io/notes/hardware/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/temp/</loc>
