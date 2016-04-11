@@ -26,7 +26,7 @@ I am a third year PhD Student at Brandeis University. My research focus is in ap
   * We are experimenting with application of Neural Turing Machines. We believe having a persistent memory will lead to sharing of knowledge between images where similar questions were asked. 
   * We are also experimenting to see if having spatial information could be useful in answring questions about location and direction. I am coding adpatation of CRF-RNN to extract spatial knowledge to be merged with image features.
 * Current results are close to the state of the art, and we are in the top-5 in the [VisualQA Competition](http://visualqa.org/challenge.html). More details about results can be [obtained here]({{site.baseurl}}/research/).
-* [__Literature Survey__]({{site.baseurl}}/research/literature/) &nbsp;  &nbsp;  &nbsp;  [__Results Comparison__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html) &nbsp;  &nbsp;  &nbsp;  [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Github Code__](https://github.com/iamaaditya/VQA_Demo)
+* [__Literature Survey__]({{site.baseurl}}/research/literature/) &nbsp;  &nbsp;  &nbsp;  [__Results Comparison__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html) &nbsp;  &nbsp;  &nbsp;  [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Github Code__](https://github.com/iamaaditya/VQA_Demo)
 
 ### - Transfer learning
  
