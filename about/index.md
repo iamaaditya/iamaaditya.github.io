@@ -59,6 +59,15 @@ I am a third year PhD Student at Brandeis University. My research focus is in ap
 * See Publication section for Abstract and PDF of the published work.
 
 
+## Projects
+* * *
+
+* [Detecting fallacy in sentences](https://github.com/gekonwi/brandeis.semantics.final_project) - A computational semantics project in Haskell. Collaborators - [Amin](https://github.com/amsa) & [Shlomo](https://github.com/gekonwi)
+* [Social Travel guide](https://github.com/edenzik/elastiCity). Elastic Search project for travel search guide. Collaborators [Eden](https://github.com/edenzik), [Dimos](https://github.com/dimstamat) & Zhenyu.
+* [Clipboard to Email](https://github.com/iamaaditya/Clipboard_to_Email). Send Code from clipboard to email automatically.
+
+
+
 ## Publications
 * * *
 

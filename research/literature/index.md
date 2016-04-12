@@ -72,7 +72,7 @@ LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
 
  * Some over lap is because they experimented with both the kind of features
  * Some of them experimented with Alexnet, e.g [06ATM], [16CMV], [09AMA] but for all of them it was underforming model
- * No one yet is using ResNet, yet
+ * No one yet is using ResNet, yet.
 
 # Memory
 
