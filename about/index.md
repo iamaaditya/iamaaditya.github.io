@@ -11,7 +11,7 @@ dsq_thread_id:
 
 ### <a name="biography" id="biography"></a>Biography
 
-I am a third year PhD Student at Brandeis University. My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, Nepal. My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
+I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/). My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
 
 
 ## Current Research
@@ -24,7 +24,7 @@ I am a third year PhD Student at Brandeis University. My research focus is in ap
 * __Our approach__: 
   * Use of visual attention model along with end-to-end memory networks which are trained on skip-thought vectors on question tokens, and GoogLeNet dense layer image features. 
   * We are experimenting with application of Neural Turing Machines. We believe having a persistent memory will lead to sharing of knowledge between images where similar questions were asked. 
-  * We are also experimenting to see if having spatial information could be useful in answring questions about location and direction. I am coding adpatation of CRF-RNN to extract spatial knowledge to be merged with image features.
+  * We are also experimenting to see if having spatial information could be useful in answering questions about location and direction. I am coding adaptation of CRF-RNN to extract spatial knowledge to be merged with image features.
 * Current results are close to the state of the art, and we are in the top-5 in the [VisualQA Competition](http://visualqa.org/challenge.html). More details about results can be [obtained here]({{site.baseurl}}/research/).
 * [__Literature Survey__]({{site.baseurl}}/research/literature/) &nbsp;  &nbsp;  &nbsp;  [__Results Comparison__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html) &nbsp;  &nbsp;  &nbsp;  [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Github Code__](https://github.com/iamaaditya/VQA_Demo)
 

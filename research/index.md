@@ -11,11 +11,22 @@ dsq_thread_id:
 
 Following are the links to my notes on current work. They might be benefitial only if you are also a researcher in the same field.
 
- * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ ) - contains basic modules and ideas that I am experimenting with.
- * [Python notebook demo and tutorial for VQA]( https://github.com/iamaaditya/VQA_Demo/blob/master/Visual_Question_Answering_Demo_in_python_notebook.ipynb )  - I wrote this tutorial as a gentle introduction to VQA.
- * [Visual Comparision](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)  <br/>
+ 
+ * __Our Approach__
+   * Use of visual attention model along with end-to-end memory networks which are trained on skip-thought vectors on question tokens, and GoogLeNet dense layer image features. 
+   * We are experimenting with application of Neural Turing Machines. We believe having a persistent memory will lead to sharing of knowledge between images where similar questions were asked. 
+   * We are also experimenting to see if having spatial information could be useful in answering questions about location and direction. I am coding adaptation of CRF-RNN to extract spatial knowledge to be merged with image features.
+ * [__Literature Survey__]({{site.baseurl}}/research/literature/)  - (Almost) exhaustive list of papers tackling the problem and their results and their methodologies, includes survey of techniques and tricks used by various research groups.
+ * [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook)  - A ipython notebook demonstration of a simple but yet effective mode for visual question answering inference.
+ * [__Github Code__](https://github.com/iamaaditya/VQA_Demo) - Code of the aforementioned demo. Also includes standalone code to run inference on a server with pretrained models and weights.
+ * [__Visual Question Answering Notes__]( {{site.baseurl}}/notes/research/vqa/ ) - contains basic modules and ideas that I am experimenting with.
+ * [__Visual Comparision of Results__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)  <br/>
    * This a large file ! Load at your risk.  <br />
    * Images are not loaded but a link is provided. <br />
+
+
+ * Obvious negative corrleation between confidence of Amazon Mechanical Turks and the accuracy of the system
+ ![correct vs incorrect](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/correct_vs_incorrect.png)
 
  * __Temporary Results__
 
@@ -57,7 +68,6 @@ Following are the links to my notes on current work. They might be benefitial on
     5/9  ==  02121/60864  %  0.035 <br />
     6/9  ==  00500/60864  %  0.008 <br />
     7/9  ==  00054/60864  %  0.001 <br />
-
 
 
     <br />

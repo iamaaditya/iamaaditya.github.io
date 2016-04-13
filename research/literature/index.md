@@ -50,7 +50,11 @@ LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
 [12SAN]| 58.7| 79.3| 46.1| 36.6| 58.9
 [15DMN]| 60.3| 80.5| 48.3| 36.8| 60.4
 
+# WordCloud
 
+* To get a quick sense of where most of the models are headed in terms of architecture, it suffices to see the word cloud (after removing stop-words)
+
+![word cloud](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/word_cloud_vqa_relative.png)
 
 # Image Features
 
@@ -76,22 +80,59 @@ LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
 
 # Memory
 
-# Attention models vs non-attention models
+## LSTM vs GRU
 
-# LSTM vs GRU
+ * Only [15DMN] and [07DPP] are using GRU whereas others are using LSTM. 
+ * However, it should be noted that [15DMN] uses bi-directional GRU whereas [07DPP] uses single directional GRU.
+
+## No bidirectinal LSTM
+
+ * While several of them have reported either [02EMD]'s numbers on Bi-directional LSTM (model 2-VIS+BLSTM), no one has used bi-directional LSTM in their main model.
+
+## Attention models vs non-attention models
+
+ * Following papers use Attention Models
+   * [15DMN] - Attention gates using modified GRUs
+   * [04CDQ]
+   * [11AAA] - Spatial attention with two hop model
+   * [05ABC]
+   * [12SAN]
+   * [10V7W]
+ * Following papers do not use any attention models, but believe that using attention would improve their model's performance
+   * [07DPP]
+   * [02EMD]
+   * [06ATM]
+
 
 # Episodic memory vs Semantic memory
 
-
-# No bidirectinal LSTM
+ * [16CMV] claims to have used "declarative memory" which is combination of both semantic and episodic memory.
+ * [15DMN] uses episodic memory modules explicitly. 
+ * For reference: Tulving, Endel. "Episodic and semantic memory 1." Organization of Memory. London: Academic 381.4 (1972).
 
 
 # Activation functions used
-
-
-# Choice of Activations
+ 
+ * Sigmoid
+   * [15DMN]  - Also uses ReLU & TanH
+   * [06ATM]  - Also uses TanH
+ * ReLU
+   * [11AAA]
+   * [03LAQ]
+   * [04DCQ] 
+   * [08WTL]
+ * TanH
+   * [12SAN]
+   * [14ICV]
+   * [10V7W]
+   * [01VQA]
+   * [05ABC]
+   * [16CMV]
 
 
 # Use of Batch Normalization
+
+ * Only [07DPP] and [08WTL] have used batch-normalization for their training, even though most of the other deep learning research fields have extensively used the process.
+ * For reference: Ioffe, Sergey, and Christian Szegedy. "Batch normalization: Accelerating deep network training by reducing internal covariate shift." arXiv preprint arXiv:1502.03167 (2015).
 
 

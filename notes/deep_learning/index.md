@@ -27,6 +27,7 @@ What is Deep Learning ?
   * How convolutional neural networks see the world <http://blog.keras.io/how-convolutional-neural-networks-see-the-world.html>
   * Exploring the world on-the-go using Google Cloud Vision and Twilio <http://www.blog.juliaferraioli.com/2016/02/exploring-world-using-vision-twilio.html>
   * Attention and Memory in Deep Learning and NLP <http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/>
+  * How to Code and Understand DeepMind's Neural Stack Machine <https://iamtrask.github.io/2016/02/25/deepminds-neural-stack-machine/>
 
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>
