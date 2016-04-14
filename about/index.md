@@ -11,7 +11,7 @@ dsq_thread_id:
 
 ### <a name="biography" id="biography"></a>Biography
 
-I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/),Boston. My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
+I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
 
 
 ## Current Research
@@ -32,6 +32,7 @@ I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/)
  
 * We are investigating ideas for improving content based image retrieval through transfer learning. 
 * We are currently exploring ways to retrieve [MIT Places](http://places.csail.mit.edu/) (scene recognition database) using deep residual image models like [ResNet - 2015 ImageNet challenge winner](http://research.microsoft.com/en-us/um/people/kahe/ilsvrc15/ilsvrc2015_deep_residual_learning_kaiminghe.pdf). Our goal is to do ablation study on the 152 layers of ResNet for image retrieval task. 
+* [Literature survey]({{site.baseurl}}/research/vector_quantization/) for compressing deep convolutional neural networks using vector quantization.
 
 ## Past Research
 * * *

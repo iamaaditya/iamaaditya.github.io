@@ -53,8 +53,9 @@ LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
 # WordCloud
 
 * To get a quick sense of where most of the models are headed in terms of architecture, it suffices to see the word cloud (after removing stop-words)
-
-![word cloud](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/word_cloud_vqa_relative.png)
+<center>
+<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/word_cloud_vqa_relative.png" />
+</center>
 
 # Image Features
 
