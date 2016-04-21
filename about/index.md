@@ -28,6 +28,24 @@ I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/)
 * Current results are close to the state of the art, and we are in the top-5 in the [VisualQA Competition](http://visualqa.org/challenge.html). More details about results can be [obtained here]({{site.baseurl}}/research/).
 * [__Literature Survey__]({{site.baseurl}}/research/literature/) &nbsp;  &nbsp;  &nbsp;  [__Results Comparison__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html) &nbsp;  &nbsp;  &nbsp;  [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Github Code__](https://github.com/iamaaditya/VQA_Demo)
 
+**Method** |**All**| **Y/N**| **Other**| **Num**| **Test-Std[All]**
+:------|:------:|:------:|:------:|:------:|:------:|
+~~~~~~~~~~~~~~|~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~
+Image| 28.1| 64.0| 3.8| 0.4| -
+Question| 48.1| 75.7| 27.1| 36.7| -
+Q+I| 52.6| 75.6| 37.4| 33.7| -
+LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
+[[16CMV](<http://arxiv.org/abs/1511.05676>)]| 52.6| 78.3| 35.9| 34.4| -
+[[09AMA](<http://arxiv.org/abs/1511.06973>)]| 55.7| 79.2| 40.1| 36.1| 56.0
+[[13BOW](<http://arxiv.org/abs/1512.02167>)]| 55.7| 76.5| 42.6| 35.0| 55.9
+[[07DPP](<http://arxiv.org/abs/1511.05756>)]| 57.2| 80.7| 41.7| 37.2| 57.4
+[[17LCN](<http://arxiv.org/abs/1601.01705>)]| 57.9| 80.5| 43.1| 37.4| 58.0
+[[11AAA](<http://arxiv.org/abs/1511.05234>)]| 57.9| 80.8| 43.2| 37.3| 58.2
+_OUR-S  | 58.6| 80.3| 44.2| 37.0| -_
+[[12SAN](<http://arxiv.org/abs/1511.02274>)]| 58.7| 79.3| 46.1| 36.6| 58.9
+_OUR-ES | 59.4| 81.5| 45.5| 37.5| -_
+[[15DMN](<http://arxiv.org/abs/1603.01417>)]| 60.3| 80.5| 48.3| 36.8| 60.4
+
 ### - Transfer learning
  
 * We are investigating ideas for improving content based image retrieval through transfer learning. 
