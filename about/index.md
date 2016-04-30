@@ -20,6 +20,8 @@ I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/)
 ### - Visual Question Answering - Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 ![Visual Question Answering]( http://visualqa.org/static/img/teaser_small.jpg )
 
+<p><span class="red"><strong>News:</strong></span> We are now currently on top of the leaderboard for the Visual Question Answering challenge.</p>
+
 * __Problem__: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 * __Our approach__: 
   * Use of visual attention model along with end-to-end memory networks which are trained on skip-thought vectors on question tokens, and GoogLeNet dense layer image features. 
@@ -41,10 +43,9 @@ LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
 [[07DPP](<http://arxiv.org/abs/1511.05756>)]| 57.2| 80.7| 41.7| 37.2| 57.4
 [[17LCN](<http://arxiv.org/abs/1601.01705>)]| 57.9| 80.5| 43.1| 37.4| 58.0
 [[11AAA](<http://arxiv.org/abs/1511.05234>)]| 57.9| 80.8| 43.2| 37.3| 58.2
-_OUR-S  | 58.6| 80.3| 44.2| 37.0| -_
 [[12SAN](<http://arxiv.org/abs/1511.02274>)]| 58.7| 79.3| 46.1| 36.6| 58.9
-_OUR-ES | 59.4| 81.5| 45.5| 37.5| -_
 [[15DMN](<http://arxiv.org/abs/1603.01417>)]| 60.3| 80.5| 48.3| 36.8| 60.4
+OUR| 60.4| 81.5| 47.6| 37.2| 60.7
 
 ### - Transfer learning
  

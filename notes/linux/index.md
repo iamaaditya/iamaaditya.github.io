@@ -66,7 +66,9 @@ But sooner or later, one of your colleage or friend will try the passowrd incorr
 for e.g
 `fail2ban-client set ssh unbanip 123.123.123.123`
 
-Errors:
+<pre>
+    Errors:
+
     Message
         ERROR  NOK: ('ssh-iptables',)
         Sorry but the jail 'ssh-iptables' does not exist
@@ -79,5 +81,12 @@ Errors:
     Solution 
        
         See point 2 above
+</pre>
 
+## Redhat (RHEL) and CentOS
+    Installling a library without sudo
 
+    1. Download the pre-compiled binary ".rpm". [See this](http://rpmfind.net/linux/rpm2html/search.php)
+    2. conver rpm to cpio using
+    `rpm2cpio to-install.rpm | cpio -idv`
+## Rsync [See this](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps)

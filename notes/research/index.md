@@ -6,9 +6,9 @@ dsq_thread_id:
   - 
 ---
 ## Sub-pages
+ * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ )
  * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/ ) 
  * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
- * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ )
 
 ## Currently thinking about 
 
@@ -35,6 +35,8 @@ dsq_thread_id:
  * Object detectors emerge in deep scene cnns <http://arxiv.org/pdf/1412.6856v2.pdf>
  * 21 hottest papers from ICCV 2015 <http://www.computervisionblog.com/2015/12/iccv-2015-twenty-one-hottest-research.html>
  * Memory Networks <http://arxiv.org/abs/1410.3916>
+ * Mechanisms Gating the Flow of Information in the Cortex: What They Might Look Like and What Their Uses may be <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3025648/>
+ * Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex <http://arxiv.org/abs/1604.03640v1>
 
 ## Libraries currenty of interest
  * <https://github.com/karpathy/neuraltalk2>
