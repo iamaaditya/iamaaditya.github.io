@@ -92,9 +92,6 @@
     <loc>http://iamaaditya.github.io/404/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/about/</loc>
-  </url>
-  <url>
     <loc>http://iamaaditya.github.io/notes/misc/gpgpu/</loc>
   </url>
   <url>
@@ -102,6 +99,9 @@
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/computer_vision/</loc>
+  </url>
+  <url>
+    <loc>http://iamaaditya.github.io/notes/chess/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/visualization/</loc>
@@ -122,7 +122,7 @@
     <loc>http://iamaaditya.github.io/notes/algorithms/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/research/</loc>
+    <loc>http://iamaaditya.github.io/research/current/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/misc/</loc>
@@ -134,13 +134,13 @@
     <loc>http://iamaaditya.github.io/notes/papers/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/notes/chess/</loc>
+    <loc>http://iamaaditya.github.io/research/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/features/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/research/current/</loc>
+    <loc>http://iamaaditya.github.io/research/vector_quantization/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/hardware/</loc>
@@ -173,13 +173,10 @@
     <loc>http://iamaaditya.github.io/notes/books/</loc>
   </url>
   <url>
-    <loc>http://iamaaditya.github.io/research/vector_quantization/</loc>
+    <loc>http://iamaaditya.github.io/research/literature/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/notes/</loc>
-  </url>
-  <url>
-    <loc>http://iamaaditya.github.io/research/literature/</loc>
   </url>
   <url>
     <loc>http://iamaaditya.github.io/about/</loc>

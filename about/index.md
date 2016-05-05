@@ -18,9 +18,10 @@ I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/)
 * * *
 
 ### - Visual Question Answering - Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
+<p><font color="red"><strong>News:</strong></font> We are now currently on top of the <a href="http://visualqa.org/roe.html">leaderboard for the Visual Question Answering challenge.</a></p>
+
 ![Visual Question Answering]( http://visualqa.org/static/img/teaser_small.jpg )
 
-<p><span class="red"><strong>News:</strong></span> We are now currently on top of the leaderboard for the Visual Question Answering challenge.</p>
 
 * __Problem__: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 * __Our approach__: 
