@@ -28,6 +28,9 @@ What is Deep Learning ?
   * Exploring the world on-the-go using Google Cloud Vision and Twilio <http://www.blog.juliaferraioli.com/2016/02/exploring-world-using-vision-twilio.html>
   * Attention and Memory in Deep Learning and NLP <http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/>
   * How to Code and Understand DeepMind's Neural Stack Machine <https://iamtrask.github.io/2016/02/25/deepminds-neural-stack-machine/>
+  * NIPS 2015 Deep Learning Symposium Part I  <http://yanran.li/peppypapers/2015/12/11/nips-2015-deep-learning-symposium-part-i.html>
+  * NIPS 2015 Deep Learning Symposium Part II <http://yanran.li/peppypapers/2016/01/09/nips-2015-deep-learning-symposium-part-ii.html>
+  * Must know tips/tricks for training DNN <http://lamda.nju.edu.cn/weixs/project/CNNTricks/CNNTricks.html>
 
 ### Blog posts by deep learning competition winners
 

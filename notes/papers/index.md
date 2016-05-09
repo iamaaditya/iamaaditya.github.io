@@ -6,12 +6,15 @@ dsq_thread_id:
   - 
 ---
 
+## Aggregators
+ * Short Science - (summaries) <http://www.shortscience.org/venue?key=conf/nips>
+ * VK - Deep Learning community (Papers, codes, articles) <https://vk.com/deeplearning>
+ * Arix-Sanity - better arxiv search <http://www.arxiv-sanity.com/>
+ * GitXiv (Arxiv and Git code) <http://gitxiv.com/>
 
 ## CS
 ### What Papers everyone should read
   * <http://cstheory.stackexchange.com/questions/1168/what-papers-should-everyone-read>
-
-
 
 ## Math
 ### A single paper everyone should read
