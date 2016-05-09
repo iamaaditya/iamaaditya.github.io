@@ -18,7 +18,7 @@ I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/)
 * * *
 
 ### - Visual Question Answering - Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
-<p><font color="red"><strong>News:</strong></font> We are now currently on top of the <a href="http://visualqa.org/roe.html">leaderboard for the Visual Question Answering challenge.</a></p>
+<p><font color="red"><strong>News:</strong></font> We are now currently at T̶o̶p̶ second of the <a href="http://visualqa.org/roe.html">leaderboard for the Visual Question Answering challenge.</a></p>
 
 ![Visual Question Answering]( http://visualqa.org/static/img/teaser_small.jpg )
 
