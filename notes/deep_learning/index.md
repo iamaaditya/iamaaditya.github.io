@@ -29,6 +29,12 @@ What is Deep Learning ?
   * Attention and Memory in Deep Learning and NLP <http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/>
   * How to Code and Understand DeepMind's Neural Stack Machine <https://iamtrask.github.io/2016/02/25/deepminds-neural-stack-machine/>
 
+### Blog posts by deep learning competition winners
+
+  * [NOAA Right Whale Recognition, Winner's Interview: 2nd place, Felix Lau](http://felixlaumon.github.io/2015/01/08/kaggle-right-whale.html)
+  * [My solution for the Galaxy Zoo challenge](http://benanne.github.io/2014/04/05/galaxy-zoo.html)
+  * [Learning   Deep    Convolutional   Neural  Networks    for Places2 Scene   Recognition](http://image-net.org/challenges/talks/WM_presentation.pdf)
+
 ### Books 
   * Deep Learning by Yoshua Bengio et al, MIT Press. Free online version <http://www.iro.umontreal.ca/~bengioy/dlbook/>
   * Neural Networks and Deep Learning by Michael Nielsen, Determination Press. Free online version <http://neuralnetworksanddeeplearning.com/>
@@ -52,6 +58,7 @@ What is Deep Learning ?
   * <https://www.udacity.com/course/deep-learning--ud730>
   * <https://developer.nvidia.com/deep-learning-courses>
   * List with links <https://docs.google.com/spreadsheets/d/1NSbURoynPVnOvSCtmaIX6zV8wl6n3ybacnNGMyb-v-0/edit#gid=0>
+  * Deep Learning, University of Montrea - Yoshua Bengio <https://ift6266h16.wordpress.com/>
 
 ### Deep Learning frameworks
   * Comparision of frameworks <https://github.com/zer0n/deepframeworks/>
@@ -73,6 +80,8 @@ What is Deep Learning ?
 
 ### Challenges 
   * THUMOS Challenge Action Recognition in Temporally Untrimmed Videos <http://www.thumos.info/home.html>
+  * Visual Question Answering <http://visualqa.org>
+
 
 ### Software Libraries 
   * <https://github.com/bartvm/blocks> A Theano framework for building and training neural networks 
