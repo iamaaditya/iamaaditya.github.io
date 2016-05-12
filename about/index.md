@@ -92,11 +92,10 @@ OUR| 60.4| 81.5| 47.6| 37.2| 60.7
 ## Publications
 * * *
 
-### In Review
-
-*  Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, CVPR Workshop (VQA). [PDF](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
 ### Published
+
+*   Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, CVPR Workshop (VQA). [PDF](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
 *   Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for better visual interpretation of large unstructured datasets. _Infosys Lab Briefings, Infosys._ Vol 11(1). _Jan 2013_ <br />
     | [[Abstract]](http://aaditya.info/research/abstract_graph.txt) [[Full-pdf]](http://aaditya.info/research/graph.pdf) [[INFY]](http://www.infosys.com/infosys-labs/publications/infosyslabs-briefings/Pages/bigdata-challenges-opportunities.aspx) [[slides]](http://aaditya.info/research/slides_graph.pdf) |
