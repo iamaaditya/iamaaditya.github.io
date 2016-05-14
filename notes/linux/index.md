@@ -89,4 +89,20 @@ for e.g
     1. Download the pre-compiled binary ".rpm". [See this](http://rpmfind.net/linux/rpm2html/search.php)
     2. conver rpm to cpio using
     `rpm2cpio to-install.rpm | cpio -idv`
+
 ## Rsync [See this](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps)
+
+
+## Sort by column in Vim
+
+    First make the columsn (separate them so that you know exactly how many columns and which ones)
+    `:%!column -t`
+
+    Now to sort by second (2)  column, and treat it as number (n) and in reverse (r)
+    `:%!sort -k2nr`
+
+    More examples
+    `:%!sort -k4 -bk3g`
+    Sort by 4th column (k4), followed by 3rd column (k3), ignore blank spaces (b), general numeric sort (g)
+
+[Credit](https://jordanelver.co.uk/blog/2014/03/12/sorting-columnds-of-text-in-vim-using-sort/)
