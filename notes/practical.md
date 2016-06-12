@@ -17,6 +17,7 @@ https://317070.github.io/heart/
   * <https://www.reddit.com/r/MachineLearning/comments/20wh21/how_does_regularization_affect_dropout_while/cg9afo4>
 
   * Imbalanced classes <http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/>
+  * [Scroll for Practical Advice] <http://yyue.blogspot.com/2015/01/a-brief-overview-of-deep-learning.html>
 
 # Autoencoders
   * <http://fastml.com/good-representations-distance-metric-learning-and-supervised-dimensionality-reduction/>
