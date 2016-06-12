@@ -1,5 +1,5 @@
 ---
-title: Research
+title: Visual Question Answering
 author: aaditya prakash
 layout: page
 dsq_thread_id:
@@ -7,24 +7,38 @@ dsq_thread_id:
 ---
 
 
-## Visual Question Answering
 
-Following are the links to my notes on current work. They might be benefitial only if you are also a researcher in the same field.
+## Implicit Attention using modified highway networks
 
-### Implicit Attention using modified highway networks
-
-## Conceptual diagram
+### Conceptual diagram
 
 ![diagram](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/residual_vqa.png)
 
-## Extended Abstract
+### Extended Abstract
 
 [PDF](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
+### Abstract
+
+We propose a version of highway network designed for
+the task of Visual Question Answering. We take inspiration
+from recent success of Residual Layer Network and Highway
+Network in learning deep representation of images and
+fine grained localization of objects. We propose variation
+in gating mechanism to allow incorporation of word embedding
+in the information highway. The gate parameters
+are influenced by the words in the question, which steers the
+network towards localized feature learning. This achieves
+the same effect as soft attention via recurrence but allows
+for faster training using optimized feed-forward techniques.
+We are able to obtain state-of-the-art1
+results on VQA
+dataset for Open Ended and Multiple Choice tasks with current
+model.
+
 ## Best Result
 
-Open Ended
----------
+###Open Ended^
 Overall Accuracy is: 62.73
 
 Per Answer Type Accuracy is the following:
@@ -32,8 +46,8 @@ other : 51.35
 number : 38.07
 yes/no : 82.58
 
-Multiple Choice
----------------
+
+###Multiple Choice
 Overall Accuracy is: 64.81
 
 Per Answer Type Accuracy is the following:
@@ -41,6 +55,8 @@ other : 55.82
 number : 39.14
 yes/no : 82.13
 
+^ Open Ended employed statistical filtering, ie. for every question category (64 category types see VQA Paper by Agrawal et al) answers were choosen to be within 98% of the seen answers from the training set. This increased the accuracy of model by more than a percent.
+For Multiple Choice such filtering was not employed becuase it was expected to choose answers from the given 18 choices.
 
 ## Features
 
@@ -76,7 +92,7 @@ yes/no : 82.13
    * We are also experimenting to see if having spatial information could be useful in answering questions about location and direction. I am coding adaptation of CRF-RNN to extract spatial knowledge to be merged with image features.
  * [__Literature Survey__]({{site.baseurl}}/research/literature/)  - (Almost) exhaustive list of papers tackling the problem and their results and their methodologies, includes survey of techniques and tricks used by various research groups.
  * [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook)  - A ipython notebook demonstration of a simple but yet effective mode for visual question answering inference.
- * [__Github Code__](https://github.com/iamaaditya/VQA_Demo) - Code of the aforementioned demo. Also includes standalone code to run inference on a server with pretrained models and weights.
+ * [__Github Code of simple demo__](https://github.com/iamaaditya/VQA_Demo) - Code of the aforementioned demo. Also includes standalone code to run inference on a server with pretrained models and weights.
  * [__Visual Question Answering Notes__]( {{site.baseurl}}/notes/research/vqa/ ) - contains basic modules and ideas that I am experimenting with.
  * [__Visual Comparision of Results__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html)  <br/>
    * This a large file ! Load at your risk.  <br />
@@ -139,14 +155,5 @@ yes/no : 82.13
     * Choice of Activations
     * Use of Batch Normalization
     <br />TODO ! - Add Link
-
-
-## Transfer Learning 
-
- * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
-
-
-
-
 
 

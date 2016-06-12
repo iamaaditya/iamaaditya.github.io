@@ -9,7 +9,7 @@ dsq_thread_id:
 
 ## Visual Question Answering
 
- * [Visual Question Answering]({{site.baseurl}}/notes/research/vqa/ )
+ * [Visual Question Answering]({{site.baseurl}}/research/vqa/ )
 
 ## Pyramid Vector Quantization with deep nets
 
