@@ -38,7 +38,8 @@ model.
 
 ## Best Result
 
-###Open Ended^
+### Open Ended 
+
 Overall Accuracy is: 62.73
 
 Per Answer Type Accuracy is the following:
@@ -47,7 +48,8 @@ number : 38.07
 yes/no : 82.58
 
 
-###Multiple Choice
+### Multiple Choice
+
 Overall Accuracy is: 64.81
 
 Per Answer Type Accuracy is the following:
@@ -77,6 +79,10 @@ For Multiple Choice such filtering was not employed becuase it was expected to c
  * [ ConceptNet ]( http://conceptnet5.media.mit.edu/ )
  * [ WordNet ](https://wordnet.princeton.edu/)
 
+### Comparison of results from the VQA Challenge
+
+ * Detailed comparison of results will be published here, once VQA has completed evaluation of the challange.
+
 
 ### Relevant Papers
  * Sukhbaatar, Sainbayar, Jason Weston, and Rob Fergus. "End-to-end memory networks." Advances in Neural Information Processing Systems. 2015.
@@ -84,6 +90,7 @@ For Multiple Choice such filtering was not employed becuase it was expected to c
  * Srivastava, Rupesh Kumar, Klaus Greff, and Jürgen Schmidhuber. "Highway networks." arXiv preprint arXiv:1505.00387 (2015).
  * Glorot, Xavier, and Yoshua Bengio. "Understanding the difficulty of training deep feedforward neural networks." International conference on artificial intelligence and statistics. 2010.
  * He, Kaiming, et al. "Deep Residual Learning for Image Recognition." arXiv preprint arXiv:1512.03385 (2015).
+ * For papers related to VQA see [__Literature Survey__]({{site.baseurl}}/research/literature/) 
 
 ### Old apporach using end-to-end attention with skip-thought
  * __Our Approach__
@@ -104,17 +111,22 @@ For Multiple Choice such filtering was not employed becuase it was expected to c
 
  * __Temporary Results__
 
-    |Model_name | Overall Accuracy |    Others    |    Numbers    | yes/no      |
-    |-----------|:------------------:|:------------:|:--------------:|:--------:|
-    |___________|_________________|_______________|_______________|_____________|
-    |KOR ## dppnet_12                 |57.63 | 42.74 | 36.45 | 80.69|
-    |KOR ## dppnet_9                  |57.61 | 42.85 | 36.50 | 80.48|
-    |__OUR__ ## model_2               |57.20 | 42.01 | 36.84 | 80.40|
-    |__OUR__ ## model_1               |57.15 | 41.85 | 36.34 | 80.57|
-    |MIT ## base2                     |55.90 | 42.42 | 35.29 | 77.15|
-    |MIT ## base1                     |55.65 | 42.55 | 34.97 | 76.47|
-    |VQA ## lstm_mlp_relu             |49.75 | 33.30 | 29.91 | 74.28|
-    |__OLD__ ## new_lstm_3            |48.11 | 30.20 | 22.53 | 75.87|
+**Method** |**All**| **Y/N**| **Other**| **Num**| **Test-Std[All]**
+:------|:------:|:------:|:------:|:------:|:------:|
+~~~~~~~~~~~~~~|~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~
+Image| 28.1| 64.0| 3.8| 0.4| -
+Question| 48.1| 75.7| 27.1| 36.7| -
+Q+I| 52.6| 75.6| 37.4| 33.7| -
+LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
+[[16CMV](<http://arxiv.org/abs/1511.05676>)]| 52.6| 78.3| 35.9| 34.4| -
+[[09AMA](<http://arxiv.org/abs/1511.06973>)]| 55.7| 79.2| 40.1| 36.1| 56.0
+[[13BOW](<http://arxiv.org/abs/1512.02167>)]| 55.7| 76.5| 42.6| 35.0| 55.9
+[[07DPP](<http://arxiv.org/abs/1511.05756>)]| 57.2| 80.7| 41.7| 37.2| 57.4
+[[17LCN](<http://arxiv.org/abs/1601.01705>)]| 57.9| 80.5| 43.1| 37.4| 58.0
+[[11AAA](<http://arxiv.org/abs/1511.05234>)]| 57.9| 80.8| 43.2| 37.3| 58.2
+[[12SAN](<http://arxiv.org/abs/1511.02274>)]| 58.7| 79.3| 46.1| 36.6| 58.9
+[[15DMN](<http://arxiv.org/abs/1603.01417>)]| 60.3| 80.5| 48.3| 36.8| 60.4
+OUR| 60.4| 81.5| 47.6| 37.2| 60.7
 
 
  * __Comparison of results from different models__
