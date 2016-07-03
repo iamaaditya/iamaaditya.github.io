@@ -1,9 +1,8 @@
 ---
-title: 
+title: ''
 author: aaditya prakash
 layout: page
-dsq_thread_id:
-  - 
+dsq_thread_id: []
 ---
 [**CV [pdf]**](http://www.cs.brandeis.edu//~aprakash/CV.pdf)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ✉ aprakash[at]brandeis.edu - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv 
 
@@ -11,42 +10,27 @@ dsq_thread_id:
 
 ### <a name="biography" id="biography"></a>Biography
 
-I am a third year PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
+I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. My research focus is in application of [deep learning in problems of computer vision]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
+
+## News
+* <font color="red"><strong>[New]</strong></font>  Won **Honrable Mention Prize** for VQA Challenge [Titan X]
+* <font color="red"><strong>[New]</strong></font>  Accepted to **Deep Learning Summer School** at University of Montrel [25% acceptance rate]
+* Started summer internship at AI Labs at **Philips Research** 
+* Our paper 'Highway Networks for Visual Question Answering' accepted for CVPR VQA workshop.
 
 
 ## Current Research
 * * *
 
-### - Visual Question Answering - Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
-<p><font color="red"><strong>News:</strong></font> We are now currently at T̶o̶p̶ second of the <a href="http://visualqa.org/roe.html">leaderboard for the Visual Question Answering challenge.</a></p>
+### - Visual Question Answering 
 
-![Visual Question Answering]( http://visualqa.org/static/img/teaser_small.jpg )
+<img src="http://visualqa.org/static/img/teaser_small.jpg" height="65%" width="65%" />
 
 
 * __Problem__: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 * __Our approach__: 
-  * Use of visual attention model along with end-to-end memory networks which are trained on skip-thought vectors on question tokens, and GoogLeNet dense layer image features. 
-  * We are experimenting with application of Neural Turing Machines. We believe having a persistent memory will lead to sharing of knowledge between images where similar questions were asked. 
-  * We are also experimenting to see if having spatial information could be useful in answering questions about location and direction. I am coding adaptation of CRF-RNN to extract spatial knowledge to be merged with image features.
-* Current results are close to the state of the art, and we are in the top-5 in the [VisualQA Competition](http://visualqa.org/challenge.html). More details about results can be [obtained here]({{site.baseurl}}/research/).
-* [__Literature Survey__]({{site.baseurl}}/research/literature/) &nbsp;  &nbsp;  &nbsp;  [__Results Comparison__](http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html) &nbsp;  &nbsp;  &nbsp;  [__Visual Question Answering Demo__]({{site.baseurl}}/2016/04/visual_question_answering_demo_notebook) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Github Code__](https://github.com/iamaaditya/VQA_Demo)
-
-**Method** |**All**| **Y/N**| **Other**| **Num**| **Test-Std[All]**
-:------|:------:|:------:|:------:|:------:|:------:|
-~~~~~~~~~~~~~~|~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~
-Image| 28.1| 64.0| 3.8| 0.4| -
-Question| 48.1| 75.7| 27.1| 36.7| -
-Q+I| 52.6| 75.6| 37.4| 33.7| -
-LSTM Q+I| 53.7| 78.9| 36.4| 35.2| 54.1
-[[16CMV](<http://arxiv.org/abs/1511.05676>)]| 52.6| 78.3| 35.9| 34.4| -
-[[09AMA](<http://arxiv.org/abs/1511.06973>)]| 55.7| 79.2| 40.1| 36.1| 56.0
-[[13BOW](<http://arxiv.org/abs/1512.02167>)]| 55.7| 76.5| 42.6| 35.0| 55.9
-[[07DPP](<http://arxiv.org/abs/1511.05756>)]| 57.2| 80.7| 41.7| 37.2| 57.4
-[[17LCN](<http://arxiv.org/abs/1601.01705>)]| 57.9| 80.5| 43.1| 37.4| 58.0
-[[11AAA](<http://arxiv.org/abs/1511.05234>)]| 57.9| 80.8| 43.2| 37.3| 58.2
-[[12SAN](<http://arxiv.org/abs/1511.02274>)]| 58.7| 79.3| 46.1| 36.6| 58.9
-[[15DMN](<http://arxiv.org/abs/1603.01417>)]| 60.3| 80.5| 48.3| 36.8| 60.4
-OUR| 60.4| 81.5| 47.6| 37.2| 60.7
+Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
+* Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 
 ### - Transfer learning
  
@@ -57,15 +41,16 @@ OUR| 60.4| 81.5| 47.6| 37.2| 60.7
 ## Past Research
 * * *
 
-### - Computational Fact Checking [Summer 2014]  - Supervisor - [Prof. Liuba Shrira](http://www.cs.brandeis.edu/~liuba/)
+### - Computational Fact Checking [Summer 2014] 
 
 * We investigated applications of computational fact checking on a database with retrospections.
 * Implemented a fact checking application for database with weekly Music Billboards.
 * [One page summary](https://drive.google.com/open?id=0Bw852LkIy1pXaG1ZN0l2R0M2Zms) &nbsp;&nbsp;&nbsp;&nbsp;-----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Detailed Report](https://drive.google.com/open?id=0Bw852LkIy1pXWEF5Nkt6aUp2UVk)
+* Supervisor - [Prof. Liuba Shrira](http://www.cs.brandeis.edu/~liuba/)
 
 ### - Self Organizing maps for large unstructured data [2013] - [Infosys Labs](http://www.infosysblogs.com/infosys-labs/bloggers.html) 
 <br />
-![SOM visualization](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/som_image.png) 
+<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/som_image.png" height="60%" width="60%" />
 
 
 * Formulated and designed a novel way to visualize self-organizing maps for unstructured big data.<br />
