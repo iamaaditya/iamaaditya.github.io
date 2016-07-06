@@ -11,3 +11,4 @@ draft: true
 * https://github.com/nicolas-ivanov/debug_seq2seq  [same goal as above but using Keras and Seq2Seq]
 * https://github.com/nicolas-ivanov/lasagne_seq2seq
 * https://github.com/hijoe320/seq2seq/blob/master/seq2seq.py [Theano, single file]
+* https://github.com/jiangnanHugo/seq2seq [Theano]
