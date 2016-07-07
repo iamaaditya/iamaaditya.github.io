@@ -2,7 +2,6 @@
 title: Keep_on_top
 date: '2016-07-03 16:38:00'
 layout: page
-draft: true
 ---
 ## Resources to stay update on Deep Learning
 
