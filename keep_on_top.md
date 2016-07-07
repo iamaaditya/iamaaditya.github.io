@@ -4,10 +4,60 @@ date: '2016-07-03 16:38:00'
 layout: page
 draft: true
 ---
-## Papers
+## Resources to stay update on Deep Learning
 
-* Arixv
-* Arxiv-sanity
+### Papers
 
-## News
-* NYU Data Science Newsletter
+* [Arxiv [cs>cs.LG] recent](https://arxiv.org/list/cs.LG/recent) 
+* [Arxiv-sanity](http://www.arxiv-sanity.com/)
+
+### News
+* [NYU Data Science Newsletter](http://cds.nyu.edu/newsletter-3/)
+* [Top AI News ](http://us11.campaign-archive2.com/home/?u=57f6c28a9354055d3398d48e8&id=0aebe4c13c) 
+
+### Blogs
+
+  * <http://karpathy.github.io/>
+  * <http://benanne.github.io/>
+  * <http://iamtrask.github.io/>
+  * <http://rocknrollnerd.github.io/>
+  * <https://chrisjmccormick.wordpress.com/>
+  * <http://www.wildml.com/>
+  * <https://recommend-papers.org/>
+  * <http://inverseprobability.com/blog.html>
+  * <https://svail.github.io/>
+  * <http://randomekek.github.io/>
+  * <http://blog.kaggle.com/>
+  * <http://www.erogol.com/>
+  * <http://hunch.net/>
+
+Blog Aggregators
+ * <http://mlwave.com/>
+ * <http://www.kdnuggets.com/>
+
+
+### Forums [Issues]
+Mostly library & code specific
+
+* [Keras Google groups](https://groups.google.com/forum/?utm_source=digest&utm_medium=email#!forum/keras-users)
+* Tensorflow Google groups
+* Torch Google Groups
+* [ML News Google Groups](https://groups.google.com/forum/?utm_source=digest&utm_medium=email#!forum/ml-news) [Lots of jobs and call for papers]
+* [Caffe Users Google Group](https://groups.google.com/forum/?utm_source=digest&utm_medium=email#!forum/caffe-users)
+* [VK Deep Learning](https://vk.com/deeplearning)
+
+### Realtime [Chat]
+
+* [Keras Slack Group](https://kerasteam.slack.com/) [for access request in Keras google group]
+* [Caffe gitter](https://gitter.im/BVLC/caffe)
+* [Deeplearning4j gitter](https://gitter.im/deeplearning4j/deeplearning4j)
+* [Torch gitter](https://gitter.im/torch/torch7)
+* [Skflow gitter](https://gitter.im/tensorflow/skflow)
+* [MachineLearning group gitter](https://gitter.im/Machine-Learning-Group/chat)
+* [OpenAI gitter](https://gitter.im/openai/deeplearning?source=all-rooms-list)
+
+
+### Generic 
+Generic outlets but very often deep learning posts on top
+* [Hacker News](https://news.ycombinator.com/) [[alternate interface](http://hckrnews.com/)]
+* [Data Tau](http://www.datatau.com/) Like hackernews but for datascience
