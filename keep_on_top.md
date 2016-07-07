@@ -31,16 +31,18 @@ layout: page
   * <http://hunch.net/>
 
 Blog Aggregators
+
  * <http://mlwave.com/>
  * <http://www.kdnuggets.com/>
+ * [Kaggle Winner interviews](http://blog.kaggle.com/category/winners-interviews/)
 
 
 ### Forums [Issues]
 Mostly library & code specific
 
 * [Keras Google groups](https://groups.google.com/forum/?utm_source=digest&utm_medium=email#!forum/keras-users)
-* Tensorflow Google groups
-* Torch Google Groups
+* [Tensorflow Google groups](https://groups.google.com/forum/#!forum/tensorflow)
+* [Torch Google Groups](https://groups.google.com/forum/#!forum/torch7)
 * [ML News Google Groups](https://groups.google.com/forum/?utm_source=digest&utm_medium=email#!forum/ml-news) [Lots of jobs and call for papers]
 * [Caffe Users Google Group](https://groups.google.com/forum/?utm_source=digest&utm_medium=email#!forum/caffe-users)
 * [VK Deep Learning](https://vk.com/deeplearning)
