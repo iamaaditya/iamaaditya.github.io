@@ -2,8 +2,7 @@
 title: Deep Learning
 author: aaditya prakash
 layout: page
-dsq_thread_id:
-  - 
+dsq_thread_id: []
 ---
 What is Deep Learning ?
 
@@ -31,6 +30,7 @@ What is Deep Learning ?
   * NIPS 2015 Deep Learning Symposium Part I  <http://yanran.li/peppypapers/2015/12/11/nips-2015-deep-learning-symposium-part-i.html>
   * NIPS 2015 Deep Learning Symposium Part II <http://yanran.li/peppypapers/2016/01/09/nips-2015-deep-learning-symposium-part-ii.html>
   * Must know tips/tricks for training DNN <http://lamda.nju.edu.cn/weixs/project/CNNTricks/CNNTricks.html>
+  * Should we be rethinking unsupervised learning <https://re-work.co/blog/deep-learning-roland-memisevic-unlabelled-datasets-rethinking-unsupervised-learning#deeplearning>
 
 ### Blog posts by deep learning competition winners
 
@@ -122,4 +122,5 @@ What is Deep Learning ?
   * Skymind
   * HyperVerge
   * Deepomatic
+  * Twenty Billion
   * <http://magizbox.com/index.php/deep-learning-company/>
