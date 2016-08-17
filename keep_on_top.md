@@ -14,11 +14,13 @@ layout: page
 ### Paper aggregators
 * Computational Linguistics Papers https://twitter.com/arxiv_cs_cl & https://twitter.com/arxiv_cscl
 * Computer Vision Papers https://twitter.com/arxiv_cscv
-* Deep Learning (includes NLP, CV, Learning) https://twitter.com/nmfeeds
+* Deep Learning (includes NLP, CV, AI Learning) https://twitter.com/nmfeeds
+
 
 ### News
 * [NYU Data Science Newsletter](http://cds.nyu.edu/newsletter-3/)
 * [Top AI News ](http://us11.campaign-archive2.com/home/?u=57f6c28a9354055d3398d48e8&id=0aebe4c13c) 
+* [Right Relevance](http://www.rightrelevance.com/search/articles?query=deep%20learning)
 
 ### Blogs
 
@@ -36,7 +38,7 @@ layout: page
   * <http://www.erogol.com/>
   * <http://hunch.net/>
 
-Blog Aggregators
+### Blog Aggregators
 
  * <http://mlwave.com/>
  * <http://www.kdnuggets.com/>
