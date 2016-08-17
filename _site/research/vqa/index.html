@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>
+    <link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
+
+    <title>Research – Aaditya Prakash (Adi) – Random Musings of Computer Vision grad student</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Random Musings of Computer Vision grad student">
+    <meta property="og:description" content="Random Musings of Computer Vision grad student" />
+    
+    <meta name="author" content="Aaditya Prakash (Adi)" />
+
+    
+    <meta property="og:title" content="Research" />
+    <meta property="twitter:title" content="Research" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/blog/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Aaditya Prakash (Adi) - Random Musings of Computer Vision grad student" href="/blog/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/blog/" class="site-avatar"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/profile_image.jpg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/blog/">Aaditya Prakash (Adi)</a></h1>
+            <p class="site-description">Random Musings of Computer Vision grad student</p>
+          </div>
+
+          <nav>
+            <a href="/blog/">Blog</a>
+            <a href="/blog/research">Research</a>
+            <a href="/blog/notes">Notes</a>
+            <a href="/blog/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Research</h1>
+
+  <div class="entry">
+    <h2 id="visual-question-answering">Visual Question Answering</h2>
+
+<p>Following are the links to my notes on current work. They might be benefitial only if you are also a researcher in the same field.</p>
+
+<h3 id="implicit-attention-using-modified-highway-networks">Implicit Attention using modified highway networks</h3>
+
+<h2 id="conceptual-diagram">Conceptual diagram</h2>
+
+<p><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/residual_vqa.png" alt="diagram" /></p>
+
+<h2 id="extended-abstract">Extended Abstract</h2>
+
+<p><a href="http://gpgpu.cs-i.brandeis.edu/highway.pdf">PDF</a></p>
+
+<h2 id="best-result">Best Result</h2>
+
+<h2 id="open-ended">Open Ended</h2>
+<p>Overall Accuracy is: 62.73</p>
+
+<p>Per Answer Type Accuracy is the following:
+other : 51.35
+number : 38.07
+yes/no : 82.58</p>
+
+<h2 id="multiple-choice">Multiple Choice</h2>
+<p>Overall Accuracy is: 64.81</p>
+
+<p>Per Answer Type Accuracy is the following:
+other : 55.82
+number : 39.14
+yes/no : 82.13</p>
+
+<h2 id="features">Features</h2>
+
+<h3 id="image">Image</h3>
+
+<ul>
+  <li><a href="https://github.com/facebook/fb.resnet.torch"> ResNet 200 </a></li>
+  <li><a href="https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet"> GoogLeNet </a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/research/very_deep/"> VGGNet </a></li>
+</ul>
+
+<h3 id="words">Words</h3>
+
+<ul>
+  <li><a href="http://nlp.stanford.edu/projects/glove/"> Glove </a></li>
+  <li><a href="https://spacy.io/"> Word2Vec </a></li>
+  <li><a href="https://github.com/LuminosoInsight/conceptnet-numberbatch">ConceptNet Numberbatch</a></li>
+  <li><a href="https://github.com/brmson/dataset-sts">Syntactic Similarity</a></li>
+</ul>
+
+<h3 id="misc">Misc</h3>
+<ul>
+  <li><a href="http://conceptnet5.media.mit.edu/"> ConceptNet </a></li>
+  <li><a href="https://wordnet.princeton.edu/"> WordNet </a></li>
+</ul>
+
+<h3 id="relevant-papers">Relevant Papers</h3>
+<ul>
+  <li>Sukhbaatar, Sainbayar, Jason Weston, and Rob Fergus. “End-to-end memory networks.” Advances in Neural Information Processing Systems. 2015.</li>
+  <li>Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. “Distilling the knowledge in a neural network.” arXiv preprint arXiv:1503.02531 (2015).</li>
+  <li>Srivastava, Rupesh Kumar, Klaus Greff, and Jürgen Schmidhuber. “Highway networks.” arXiv preprint arXiv:1505.00387 (2015).</li>
+  <li>Glorot, Xavier, and Yoshua Bengio. “Understanding the difficulty of training deep feedforward neural networks.” International conference on artificial intelligence and statistics. 2010.</li>
+  <li>He, Kaiming, et al. “Deep Residual Learning for Image Recognition.” arXiv preprint arXiv:1512.03385 (2015).</li>
+</ul>
+
+<h3 id="old-apporach-using-end-to-end-attention-with-skip-thought">Old apporach using end-to-end attention with skip-thought</h3>
+<ul>
+  <li><strong>Our Approach</strong>
+    <ul>
+      <li>Use of visual attention model along with end-to-end memory networks which are trained on skip-thought vectors on question tokens, and GoogLeNet dense layer image features.</li>
+      <li>We are experimenting with application of Neural Turing Machines. We believe having a persistent memory will lead to sharing of knowledge between images where similar questions were asked.</li>
+      <li>We are also experimenting to see if having spatial information could be useful in answering questions about location and direction. I am coding adaptation of CRF-RNN to extract spatial knowledge to be merged with image features.</li>
+    </ul>
+  </li>
+  <li><a href="/blog/research/literature/"><strong>Literature Survey</strong></a>  - (Almost) exhaustive list of papers tackling the problem and their results and their methodologies, includes survey of techniques and tricks used by various research groups.</li>
+  <li><a href="/blog/2016/04/visual_question_answering_demo_notebook"><strong>Visual Question Answering Demo</strong></a>  - A ipython notebook demonstration of a simple but yet effective mode for visual question answering inference.</li>
+  <li><a href="https://github.com/iamaaditya/VQA_Demo"><strong>Github Code</strong></a> - Code of the aforementioned demo. Also includes standalone code to run inference on a server with pretrained models and weights.</li>
+  <li><a href="/blog/notes/research/vqa/"><strong>Visual Question Answering Notes</strong></a> - contains basic modules and ideas that I am experimenting with.</li>
+  <li><a href="http://gpgpu.cs-i.brandeis.edu/shankar/submissions_vqa/project_comparison/comparison_mar31.html"><strong>Visual Comparision of Results</strong></a>  <br />
+    <ul>
+      <li>This a large file ! Load at your risk.  <br /></li>
+      <li>Images are not loaded but a link is provided. <br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>Obvious negative corrleation between confidence of Amazon Mechanical Turks and the accuracy of the system
+ <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/correct_vs_incorrect.png" alt="correct vs incorrect" /></p>
+  </li>
+  <li>
+    <p><strong>Temporary Results</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Model_name</th>
+          <th style="text-align: center">Overall Accuracy</th>
+          <th style="text-align: center">Others</th>
+          <th style="text-align: center">Numbers</th>
+          <th style="text-align: center">yes/no</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>__</strong>_____</td>
+          <td style="text-align: center"><strong>__</strong><strong>__</strong>_____</td>
+          <td style="text-align: center"><strong>__</strong><strong>__</strong>___</td>
+          <td style="text-align: center"><strong>__</strong><strong>__</strong>___</td>
+          <td style="text-align: center"><strong>__</strong><strong>__</strong>_</td>
+        </tr>
+        <tr>
+          <td>KOR ## dppnet_12</td>
+          <td style="text-align: center">57.63</td>
+          <td style="text-align: center">42.74</td>
+          <td style="text-align: center">36.45</td>
+          <td style="text-align: center">80.69</td>
+        </tr>
+        <tr>
+          <td>KOR ## dppnet_9</td>
+          <td style="text-align: center">57.61</td>
+          <td style="text-align: center">42.85</td>
+          <td style="text-align: center">36.50</td>
+          <td style="text-align: center">80.48</td>
+        </tr>
+        <tr>
+          <td><strong>OUR</strong> ## model_2</td>
+          <td style="text-align: center">57.20</td>
+          <td style="text-align: center">42.01</td>
+          <td style="text-align: center">36.84</td>
+          <td style="text-align: center">80.40</td>
+        </tr>
+        <tr>
+          <td><strong>OUR</strong> ## model_1</td>
+          <td style="text-align: center">57.15</td>
+          <td style="text-align: center">41.85</td>
+          <td style="text-align: center">36.34</td>
+          <td style="text-align: center">80.57</td>
+        </tr>
+        <tr>
+          <td>MIT ## base2</td>
+          <td style="text-align: center">55.90</td>
+          <td style="text-align: center">42.42</td>
+          <td style="text-align: center">35.29</td>
+          <td style="text-align: center">77.15</td>
+        </tr>
+        <tr>
+          <td>MIT ## base1</td>
+          <td style="text-align: center">55.65</td>
+          <td style="text-align: center">42.55</td>
+          <td style="text-align: center">34.97</td>
+          <td style="text-align: center">76.47</td>
+        </tr>
+        <tr>
+          <td>VQA ## lstm_mlp_relu</td>
+          <td style="text-align: center">49.75</td>
+          <td style="text-align: center">33.30</td>
+          <td style="text-align: center">29.91</td>
+          <td style="text-align: center">74.28</td>
+        </tr>
+        <tr>
+          <td><strong>OLD</strong> ## new_lstm_3</td>
+          <td style="text-align: center">48.11</td>
+          <td style="text-align: center">30.20</td>
+          <td style="text-align: center">22.53</td>
+          <td style="text-align: center">75.87</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>Comparison of results from different models</strong></p>
+
+    <p>Number of unique answers / total number of models  == total questions with those unique answers / Total questions  % percentage of questions with those number of unique answers</p>
+
+    <p>ALL QUESTION <br />
+ ———————— <br />
+ 1/9  ==  18073/60864  %  0.297 <br />
+ 2/9  ==  23593/60864  %  0.388 <br />
+ 3/9  ==  09611/60864  %  0.158 <br />
+ 4/9  ==  06378/60864  %  0.105 <br />
+ 5/9  ==  02557/60864  %  0.042 <br />
+ 6/9  ==  00593/60864  %  0.01 <br />
+ 7/9  ==  00059/60864  %  0.001 <br /></p>
+
+    <p>Filtered QUESTION (NO Binary decision questions) <br />
+ ———————— <br />
+ 1/9  ==  06438/60864  %  0.106 <br />
+ 2/9  ==  10172/60864  %  0.167 <br />
+ 3/9  ==  09136/60864  %  0.15 <br />
+ 4/9  ==  05566/60864  %  0.091 <br />
+ 5/9  ==  02121/60864  %  0.035 <br />
+ 6/9  ==  00500/60864  %  0.008 <br />
+ 7/9  ==  00054/60864  %  0.001 <br /></p>
+
+    <p><br /></p>
+  </li>
+  <li>Detailed Analysis of the different Visual Question Answering models
+    <ul>
+      <li>Memory</li>
+      <li>Attention models vs non-attention models</li>
+      <li>LSTM vs GRU</li>
+      <li>Episodic memory vs Semantic memory</li>
+      <li>No bidirectinal LSTM</li>
+      <li>Activation functions used</li>
+      <li>Choice of Activations</li>
+      <li>Use of Batch Normalization
+<br />TODO ! - Add Link</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="transfer-learning">Transfer Learning</h2>
+
+<ul>
+  <li><a href="/blog/notes/research/transfer/">Transfer Learning</a></li>
+</ul>
+
+
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:aprakash [at] brandeis . edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
+
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
+
+<a href="/blog/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>
+
+
+<a href="https://plus.google.com//u/0/100303074762902184969?rel=author"><i class="svg-icon googleplus"></i></a>
+          <br />
+          Built using Jekyll. No copyright held. Aaditya Prakash.
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-70371377-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/research/vqa/',
+		  'title': 'Research'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

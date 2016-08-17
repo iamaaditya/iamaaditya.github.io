@@ -1,0 +1,30 @@
+Mutations in HNSC Patients
+
+{{:research:bioninformatics:mutation_classficiation.jpg|}}
+
+Most Mutations
+
+
+Records
+"TCGA-D6-6516-01A-11D-1870-08" 2215 \\
+"TCGA-CV-6961-01A-21D-1912-08" 1380 \\
+"TCGA-CV-7245-01A-11D-2012-08" 1174 \\
+"TCGA-CR-7402-01A-11D-2012-08" 1120 \\
+"TCGA-CN-4723-01A-01D-1434-08" 1071 \\
+"TCGA-HL-7533-01A-11D-2229-08" 943 \\
+
+
+Genes \\
+Unknown     		899 \\
+TTN    			401 \\
+TP53   			323 \\
+ADAM6   		173 \\
+MUC16   		155 \\
+CSMD3    		130 \\
+FAT1   			117 \\
+LRP1B   		115 \\
+SYNE1    		108 \\
+PLEC 			88 \\
+
+Comparison of Mutations in HNSC and other Cancers
+{{:research:bioninformatics:mutations_cancers.png|}}

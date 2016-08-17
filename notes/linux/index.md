@@ -106,3 +106,9 @@ for e.g
     Sort by 4th column (k4), followed by 3rd column (k3), ignore blank spaces (b), general numeric sort (g)
 
 [Credit](https://jordanelver.co.uk/blog/2014/03/12/sorting-columnds-of-text-in-vim-using-sort/)
+
+
+## Delete leading and trailing lines from files
+
+    sed -i 's/^[ \t]*//;s/[ \t]*$//' <filename.txt>
+    * -i option in sed makes the changes inplace to the given file

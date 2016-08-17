@@ -68,5 +68,7 @@ Mostly library & code specific
 
 ### Generic 
 Generic outlets but very often deep learning posts on top
-* [Hacker News](https://news.ycombinator.com/) [[alternate interface](http://hckrnews.com/)]
+
+* [Hacker News](https://news.ycombinator.com/) [[alternate interface](http://hckrnews.com/)] 
+
 * [Data Tau](http://www.datatau.com/) Like hackernews but for datascience

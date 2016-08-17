@@ -1,0 +1,163 @@
+<https://paper.dropbox.com/doc/NIPS-2015-Deep-Learning-Symposium-I9GcRsCAU46bdzfr0mv85>
+NIPS 2015 Deep Learning Symposium
+[https://sites.google.com/site/nips2015deeplearnings/](https://sites.google.com/site/nips2015deeplearnings/)
+ 
+**Rethinking CS publication model**
+
+- More collaboration
+- Faster sharing of information (e.g. Arxiv)
+- Advocated separating evaluation from sharing
+- Proposed experiments to find the right model:
+  - An experiment: [https://recommend-papers.org/](https://recommend-papers.org/)
+
+ 
+**Spatial Transform Networks (Google DeepMind)**
+[http://lear.inrialpes.fr/workshop/allegro2015/slides/zisserman02.pdf](http://lear.inrialpes.fr/workshop/allegro2015/slides/zisserman02.pdf)
+
+- “Differentiable camera”
+- CNN, max pooling limited
+- Conditional spatial warping: transforms data into a normalized space
+- Full backprop on task
+- Drop-in module: deep in the network on CNN feature maps, in parallel
+- Can add spatial transformer to fully-connected network to gain spatial invariance found in CNN
+- Unsupervised co-localization: find common object without supervision
+
+ 
+**Batch Normalization**
+[http://arxiv.org/abs/1502.03167](http://arxiv.org/abs/1502.03167)
+
+- SGD in deep models
+  - Minimizing loss over training data
+  - Follow gradient for mini-batches
+- Better (SotA) / Faster (10x)
+- Motivation: training with sigmoids
+  - Ways to mitigate effect of changing input distributions
+    - Careful init
+    - Small learning rates
+    - Non-saturating non-linearities (ReLU)
+- Covariant Shift: different distributions in training vs. testing
+- Reducing internal covariate shift to speed up training
+  - Normalize each activation
+  - Normalization must participate in gradient optimization
+  - Let's change the model arch, not the optimizer
+- Batch Normalization: normalize using mini-batch statistics
+- Backpropagation with batch norm: fully differentiable
+- Inference with batch norm: replace batch stats with population stats
+- Batch norm in conv layers
+  - Normalize over mini-batch examples and nodes
+  - Normalize before nonlinearity (invariant to the scale of W)
+- Experiments
+  - Reduce internal covariant shift
+  - Faster
+  - State of the art
+  - Higher learning rate
+  - Less dropout required
+
+ 
+**Semi-supervised learning with ladder networks**
+[https://github.com/curiousai/ladder](https://github.com/curiousai/ladder)
+
+- Compatible with feedforward, FCN trained with supervised learning
+- Uses denoising autoencoder with lateral shortcut connections to pass details necessary to do pixel reconstructions.
+  - Lateral connections are unit-wise
+- Trained noise encoder and DAE at the same time.
+- Trained in recurrent ladder to add temporal coherence to video bounding boxing
+
+ 
+**Deeply learned face representation**
+
+- Props of face representation: sparseness, selectiveness & robustness
+- Learning multi-view representations from 2D images
+- Generalize to other factors: lighting, poses, expressions
+- Pruning to encourage sparsity
+
+ 
+**Adaptive, Articulate, and Actionable Deep Learning**
+
+- Adapt to new domains (non-IID)
+  - Domain adaptation to train on source and adapt to target
+    - Minimize discrepancy across domains
+  - Deep Transfer Across Domains (Arxiv)
+- Articulates natural language descriptions
+  - Combining CNN visual model with RNN for sequential output
+  - Compositional
+    - **Neural Module Networks**
+      - Composes a new graph corresponding to the sentence structure
+    - **Spatial Context Recurrent ConvNet** (Natural Language Object Retrieval)
+  - Individuates objects
+- Learns actionable representations that map from pixels to actions
+
+ 
+**Neural Turing Machine**
+
+- Turn nn into differentiable computers
+  - By giving them read-write access to external memory
+- NN separates computation from memory
+- Architecture
+  - Controller is a nn (recurrent or ff)
+  - Read and write "heads" (like a Turing machine)
+- Selective attention: internal (introspective) attention model
+  - Two attention mechanisms
+    - Addressing by content
+      - Addressing by content uses a key vector that's compared to each memory location using a similarity measure (cosine) then normalized with a softmax. Has a sharpness param to finds the memories closest to the key within some threshold.
+    - Addressing by location
+      - Controller outputs a shift kernel which is convolved with a weighting to produce a shifted weighting.
+    - Gives controller different modes of reading and writing memory.
+      - Data structures and algorithms
+        - Content key only—memory is accessed like an associative map
+        - Content and location—key finds array, shift indexes into it
+        - Location only—shift iterates from the last focus
+  - Reading and writing
+    - Once the weightings are defined each read head returns a read vector as input into the controller at the next time step.
+    - Each write head receives an erase vector and an add vector from the controller and resets then writes the memory.
+- "Curriculum learning will become the norm"
+
+ 
+**Character-aware Neural Language Models**
+
+- Language modeling: probability distribution over a sequence of words.
+- Also about representation learning.
+- Count-base language models
+- Neural Language Models
+  - Rather than one hot, uses word embedding
+  - RNN LM
+  - Morphological segmenter to handle misspellings or similarly spelled words
+    - Recursive nn over morpheme embeddings
+  - This work inspired by morphological segmenters
+    - No explicit morphology, use characters directly
+    - Uses CNN to look at each word, goes through highway network then LSTM/RNN instead of embeddings typically used.
+- Trained with stochastic truncated backprop with decreasing learning rate
+
+ 
+**Deep Reinforcement Learning for Robotics**
+
+- Challenges
+  - Stability: Trust Region Policy Optimization
+  - Credit assignment
+  - Exploration: exploration bonuses (Thomson Sampling)
+    - Representation learning may not be the bottleneck in complex tasks
+- Frontiers
+  - Shared and transfer learning
+  - Exploration
+  - Memory
+  - Estimation
+  - Action hierarchies
+- Q&A
+  - How much delay can you deal with for reward?
+    - Equation describes
+    - Considering up-weighting earlier rewards because they're less noisy since the actions rewards are stochastic.
+
+ 
+**Battery died / no notes :( **
+ 
+**A neural algorithm of artistic style**
+
+- Mostly demos but he did discuss the architecture a little.
+
+ 
+**Deep Generative Image Models Using A Laplacian Pyramid Of Adversarial Networks**
+
+- This was very impressive and it will be interesting to see the techniques applied from Alex's GAN work to the pyramid work (addressed in future work).
+- I'm curious how well these would do with depth or binocular information.
+
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>
+    <link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
+
+    <title>Visual Question Answering – Aaditya Prakash (Adi) – Random Musings of Computer Vision grad student</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Random Musings of Computer Vision grad student">
+    <meta property="og:description" content="Random Musings of Computer Vision grad student" />
+    
+    <meta name="author" content="Aaditya Prakash (Adi)" />
+
+    
+    <meta property="og:title" content="Visual Question Answering" />
+    <meta property="twitter:title" content="Visual Question Answering" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/blog/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Aaditya Prakash (Adi) - Random Musings of Computer Vision grad student" href="/blog/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/blog/" class="site-avatar"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/profile_image.jpg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/blog/">Aaditya Prakash (Adi)</a></h1>
+            <p class="site-description">Random Musings of Computer Vision grad student</p>
+          </div>
+
+          <nav>
+            <a href="/blog/">Blog</a>
+            <a href="/blog/research">Research</a>
+            <a href="/blog/notes">Notes</a>
+            <a href="/blog/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Visual Question Answering</h1>
+
+  <div class="entry">
+    <h2 id="competition-website">Competition Website</h2>
+
+<ul>
+  <li><a href="http://visualqa.org/">http://visualqa.org/</a></li>
+  <li><a href="http://mscoco.org/">http://mscoco.org/</a></li>
+</ul>
+
+<h2 id="image-features">Image Features</h2>
+
+<h3 id="vgg-net">VGG Net</h3>
+
+<ul>
+  <li>Overview <a href="http://www.robots.ox.ac.uk/~vgg/research/very_deep/">http://www.robots.ox.ac.uk/~vgg/research/very_deep/</a></li>
+  <li>Paper <a href="http://arxiv.org/pdf/1409.1556.pdf">http://arxiv.org/pdf/1409.1556.pdf</a></li>
+</ul>
+
+<h3 id="googlenet">GoogLeNet</h3>
+
+<ul>
+  <li>Overview <a href="http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html">http://googleresearch.blogspot.com/2014/09/building-deeper-understanding-of-images.html</a></li>
+  <li>Paper <a href="http://arxiv.org/pdf/1409.4842v1.pdf">http://arxiv.org/pdf/1409.4842v1.pdf</a></li>
+</ul>
+
+<h3 id="lstm">LSTM</h3>
+
+<ul>
+  <li>Excellent description <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></li>
+  <li>Paper <a href="http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf">http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf</a></li>
+</ul>
+
+<h2 id="language-features">Language Features</h2>
+
+<h3 id="word2vec">Word2Vec</h3>
+
+<ul>
+  <li>Projet website: <a href="https://code.google.com/p/word2vec/">https://code.google.com/p/word2vec/</a></li>
+  <li>Description:
+This tool provides an efficient implementation of the continuous bag-of-words and skip-gram architectures for computing vector representations of words. These representations can be subsequently used in many natural language processing applications and for further research.</li>
+  <li>Related Paper:
+[1] Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. Efficient Estimation of Word Representations in Vector Space. In Proceedings of Workshop at ICLR, 2013.
+[2] Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, and Jeffrey Dean. Distributed Representations of Words and Phrases and their Compositionality. In Proceedings of NIPS, 2013.
+[3] Tomas Mikolov, Wen-tau Yih, and Geoffrey Zweig. Linguistic Regularities in Continuous Space Word Representations. In Proceedings of NAACL HLT, 2013.</li>
+  <li>Nice tutorial on Word2Vec <a href="http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors">http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors</a></li>
+</ul>
+
+<h3 id="glove">Glove</h3>
+
+<ul>
+  <li>Project website: <a href="http://nlp.stanford.edu/projects/glove/">http://nlp.stanford.edu/projects/glove/</a></li>
+  <li>Description: 
+GloVe is an unsupervised learning algorithm for obtaining vector representations for words. Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.</li>
+  <li>Paper: GloVe: Global Vectors for Word Representation <a href="http://nlp.stanford.edu/projects/glove/glove.pdf">http://nlp.stanford.edu/projects/glove/glove.pdf</a></li>
+</ul>
+
+<h3 id="sense2vec">Sense2Vec</h3>
+
+<ul>
+  <li>Description and nice tutorial <a href="https://spacy.io/blog/sense2vec-with-spacy">https://spacy.io/blog/sense2vec-with-spacy</a></li>
+  <li>Paper : <a href="http://arxiv.org/pdf/1511.06388v1.pdf">http://arxiv.org/pdf/1511.06388v1.pdf</a></li>
+</ul>
+
+<h3 id="skip-thought-vectors">Skip-Thought Vectors</h3>
+
+<ul>
+  <li>Description and intuition about thought-vectors <a href="http://deeplearning4j.org/thoughtvectors">http://deeplearning4j.org/thoughtvectors</a></li>
+  <li>Paper : <a href="http://arxiv.org/abs/1506.06726">http://arxiv.org/abs/1506.06726</a></li>
+  <li>Code : <a href="https://github.com/ryankiros/skip-thoughts">https://github.com/ryankiros/skip-thoughts</a></li>
+</ul>
+
+<h2 id="datasets">Datasets</h2>
+
+<ol>
+  <li>
+    <p>Visual Question Answering (VQA) dataset: Based on images from the COCO dataset,it currently has 360K questions on 120K images. There are plans of releasing questions on the rest of the COCO images and an additional 50K abstract images. All the questions are human-generated, and were specifically designed to stump a “smart robot”.</p>
+  </li>
+  <li>
+    <p>Visual Madlibs: It contains fill-in-the-blank type questions along with standard question-answer pairs. It has 360K questions on 10K images from the COCO dataset. A lot of questions require high-level human cognition, such as describing what one feels on seeing an image.</p>
+  </li>
+  <li>
+    <p>Toronto COCO-QA Dataset: Automatically generated questions from the captions of the MS COCO dataset. At 115K questions, it is smaller than the VQA dataset. Answers are all one word.</p>
+  </li>
+  <li>
+    <p>DAQUAR - DAtaset for QUestion Answering on Real-world images: A much smaller dataset, with about 12K questions. This was one of the earliest datasets on image question and answering.</p>
+  </li>
+</ol>
+
+<h2 id="other-relevant-works">Other relevant works</h2>
+
+<h3 id="summer-2015">Summer, 2015</h3>
+
+<ul>
+  <li>VQA: Visual Question Answering <br /><a href="http://arxiv.org/abs/1505.00468">http://arxiv.org/abs/1505.00468</a></li>
+  <li>Exploring Models and Data for Image Question Answering <br /><a href="http://arxiv.org/abs/1505.02074">http://arxiv.org/abs/1505.02074</a></li>
+  <li>Learning to Answer Questions From Image Using Convolutional Neural Network <br /><a href="http://arxiv.org/abs/1506.00333">http://arxiv.org/abs/1506.00333</a></li>
+</ul>
+
+<h3 id="november-2015-after-deadline-of-cvpr">November, 2015 (after deadline of CVPR)</h3>
+
+<ul>
+  <li>Deep Compositional Question Answering with Neural Module Networks <br /><a href="http://arxiv.org/abs/1511.02799">http://arxiv.org/abs/1511.02799</a></li>
+  <li>An attention basedconvolutional neural network for visual question answering <br /><a href="http://arxiv.org/abs/1511.05960">http://arxiv.org/abs/1511.05960</a></li>
+  <li>Are you talking to a machine? datasetand methods for multilingual image question answering <br /><a href="http://arxiv.org/abs/1505.05612">http://arxiv.org/abs/1505.05612</a></li>
+  <li>Image question answering using convolutional neural networkwith dynamic parameter prediction <br /><a href="http://arxiv.org/abs/1511.05756">http://arxiv.org/abs/1511.05756</a></li>
+  <li>Where to look: Focus regions for visual question answering <br /><a href="http://arxiv.org/abs/1511.07394">http://arxiv.org/abs/1511.07394</a></li>
+  <li>Ask me anything: Free-form visual question answering based on knowledge from external sources <br /><a href="http://arxiv.org/abs/1511.06973">http://arxiv.org/abs/1511.06973</a></li>
+  <li>Exploring question-guided spatial attention forvisual question answering <br /><a href="http://arxiv.org/abs/1511.05234">http://arxiv.org/abs/1511.05234</a></li>
+  <li>Stacked attention networks for image questionanswering <br /><a href="http://arxiv.org/abs/1511.02274">http://arxiv.org/abs/1511.02274</a></li>
+  <li>Simple Baseline for Visual Question Answering <br /><a href="http://arxiv.org/abs/1512.02167">http://arxiv.org/abs/1512.02167</a></li>
+</ul>
+
+<h3 id="section">2016</h3>
+<ul>
+  <li>Dynamic Memory Networks for Visual and Textual Question Answering <br /><a href="http://arxiv.org/abs/1603.01417">http://arxiv.org/abs/1603.01417</a></li>
+</ul>
+
+<h3 id="codes">Codes</h3>
+
+<ul>
+  <li>Baseline only, MIT <a href="https://github.com/metalbubble/VQAbaseline/">https://github.com/metalbubble/VQAbaseline/</a></li>
+  <li>VQA - VT vision, Virginia Tech <a href="https://github.com/VT-vision-lab/VQA_LSTM_CNN">https://github.com/VT-vision-lab/VQA_LSTM_CNN</a></li>
+</ul>
+
+<h3 id="demo">Demo</h3>
+
+<ul>
+  <li>Demo (baseline, MIT) <a href="http://visualqa.csail.mit.edu/">http://visualqa.csail.mit.edu/</a></li>
+  <li>CloudCV, Virginia Tech, <a href="http://cloudcv.org/vqa/">http://cloudcv.org/vqa/</a></li>
+</ul>
+
+<p><a href="https://en.wikipedia.org/wiki/Hacker_koan#Uncarved_block">Koan on Bias while training Neural Nets</a></p>
+
+
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:aprakash [at] brandeis . edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
+
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
+
+<a href="/blog/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>
+
+
+<a href="https://plus.google.com//u/0/100303074762902184969?rel=author"><i class="svg-icon googleplus"></i></a>
+          <br />
+          Built using Jekyll. No copyright held. Aaditya Prakash.
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-70371377-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/notes/research/vqa/',
+		  'title': 'Visual Question Answering'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

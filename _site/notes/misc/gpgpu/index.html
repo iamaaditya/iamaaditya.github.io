@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>
+    <link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
+
+    <title>GPGPU Installations – Aaditya Prakash (Adi) – Random Musings of Computer Vision grad student</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Random Musings of Computer Vision grad student">
+    <meta property="og:description" content="Random Musings of Computer Vision grad student" />
+    
+    <meta name="author" content="Aaditya Prakash (Adi)" />
+
+    
+    <meta property="og:title" content="GPGPU Installations" />
+    <meta property="twitter:title" content="GPGPU Installations" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/blog/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Aaditya Prakash (Adi) - Random Musings of Computer Vision grad student" href="/blog/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/blog/" class="site-avatar"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/profile_image.jpg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/blog/">Aaditya Prakash (Adi)</a></h1>
+            <p class="site-description">Random Musings of Computer Vision grad student</p>
+          </div>
+
+          <nav>
+            <a href="/blog/">Blog</a>
+            <a href="/blog/research">Research</a>
+            <a href="/blog/notes">Notes</a>
+            <a href="/blog/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>GPGPU Installations</h1>
+
+  <div class="entry">
+    <p>!TODO add the header info</p>
+
+<h1 id="upgrade-the-ubuntu">Upgrade the Ubuntu</h1>
+<p>These are the google doc links of the presentations I have given in class, or seminars or other invited talks. These were the most requested urls !</p>
+
+<ul>
+  <li>sudo apt-get update        # Fetches the list of available updates</li>
+  <li>sudo apt-get upgrade       # Strictly upgrades the current packages</li>
+  <li>sudo apt-get dist-upgrade  # Installs updates (new ones)</li>
+</ul>
+
+<h1 id="partition-and-mount-the-harddrives">Partition and mount the harddrives</h1>
+
+<ul>
+  <li>sudo apt-get install -y mdadm   # Install mdadm</li>
+  <li>sudo mdadm –assemble –scan    # check for existing raids ## found existing !! If not prepeare, refer tutorial here http://askubuntu.com/questions/526747/setting-up-raid-1-on-14-04-with-an-existing-drive</li>
+</ul>
+
+<h2 id="mounting">Mounting</h2>
+<ul>
+  <li>df -aTh                         # shows list of all mounts
+  ### Manual mount</li>
+  <li>sudo mount /dev/md0 /media/hdd/ # monnt existing 
+  ### Mount permanently</li>
+  <li>blkid                           # shows uuid for drives to add to fstab
+  Add the following line to /etc/fstab
+# the RAID 1 mount of two hdd
+UUID=06ad59d9-3176-4c16-95e9-77356cc572d7       /media/hdd      ext2    defaults    0    1</li>
+  <li>sudo mount -a                   # mount using fstab</li>
+</ul>
+
+<h1 id="install-essentials-extras-git--zsh">Install Essentials, extras Git / Zsh</h1>
+<ul>
+  <li>sudo apt-get install -y build-essential</li>
+  <li>sudo apt-get install -y ubuntu-restricted-extras</li>
+  <li>sudo apt-get install -y vim</li>
+  <li>sudo apt-get install -y git</li>
+  <li>sudo apt-get install -y git-core</li>
+  <li>sudo apt-get install -y zsh</li>
+  <li>sudo apt-get install -y tmux</li>
+  <li>sudo apt-get install -y CMake</li>
+  <li>sudo apt-get install -y libopenblas-dev</li>
+  <li>sudo apt-get install -y gcc-4.8 # because CUDA works will less than 4.9.0
+    <ul>
+      <li>make soft link for gcc in /usr/bin</li>
+    </ul>
+  </li>
+  <li>sudo apt-get install -y g++-4.8 # because CUDA works will less than 4.9.0
+    <ul>
+      <li>make soft link for g++ in /usr/bin</li>
+    </ul>
+  </li>
+  <li>sudo apt-get install -y apache2
+    <ul>
+      <li>sudo /etc/init.d/apache2 start # start the Apache Server</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="python-and-libs">Python and Libs</h1>
+<ul>
+  <li>python get-pip.py # install pip</li>
+  <li>sudo apt-get install python-dev # pythonLibs</li>
+  <li>sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran</li>
+  <li>sudo pip install numpy</li>
+  <li>sudo pip install cython git+https://github.com/scipy/scipy # Installs Cython and Scipy both (Cython is requirement for scipy)</li>
+  <li>sudo pip install -U scikit-learn # Requires numpy and scipy</li>
+  <li>sudo pip install nose</li>
+  <li>sudo pip install markupsafe</li>
+</ul>
+
+<p>## Python3 and Ipython (Jupyter)
+  * sudo apt-get install python3-pip
+  * sudo pip install jupyter
+  * sudo pip3 install jupyter # I don’t know why it requires sepearate installation, especially when not done using Anaconda !</p>
+
+<h1 id="customization">Customization</h1>
+<ul>
+  <li>chsh -s <code class="highlighter-rouge">which zsh</code>             # Change the shell to ZSH</li>
+  <li>sudo reboot now                 # Requires restart</li>
+  <li>git clone git@github.com:iamaaditya/dotfiles.git</li>
+  <li>~/dotfiles/install.sh           # Run the commands to make the shortcuts</li>
+  <li>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim # Install bundle
+  ## Solarized Color for vim
+    <ul>
+      <li>cd ~/.vim/colors/</li>
+      <li>wget https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+  ## Powerline &amp; associated fonts</li>
+    </ul>
+  </li>
+  <li>pip install powerline-status    # Powerline
+    <ul>
+      <li>wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf</li>
+      <li>mkdir -p ~/.fonts/ &amp;&amp; mv PowerlineSymbols.otf ~/.fonts/</li>
+      <li>fc-cache -vf ~/.fonts</li>
+      <li>mkdir -p ~/.config/fontconfig/conf.d/ &amp;&amp; mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+Note - if some aspects of powerline does not show up, check <a href="http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin">http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="install-nvidia-drivers">Install NVIDIA Drivers</h1>
+<ul>
+  <li>
+    <h1 id="download-amd-64-bit-linux-drivers-from-nvidia-website-manual-download-and-transfer">Download AMD 64 bit Linux drivers from NVIDIA website (manual download and transfer)</h1>
+  </li>
+  <li>sudo service lightdm stop       # stop the X server before running the installation
+!! Could not sign kernels, make a note of this. It might lead to problems with some libraries later on</li>
+</ul>
+
+<h1 id="install-cuda">Install CUDA</h1>
+<ul>
+  <li>sudo ./cuda_7.0.28_linux.run –override  # for cuda 7.0</li>
+  <li>sudo ln -s /usr/bin/g++-4.8 /usr/local/cuda/bin/g++</li>
+  <li>sudo ln -s /usr/bin/gcc-4.8 /usr/local/cuda/bin/gcc</li>
+</ul>
+
+<h1 id="install-gpu-libraries">Install GPU Libraries</h1>
+
+<h2 id="theano">Theano</h2>
+<ul>
+  <li>sudo pip install Theano</li>
+  <li>sudo apt-get install -y python-pycuda # also installs the dependencies, but it is best to have own installation of nvidia-cuda, to make sure the version is proper and to maintain multiple version installation</li>
+</ul>
+
+<h2 id="tensorflow">Tensorflow</h2>
+<ul>
+  <li>sudo pip install –upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl
+  Tensorflow (as of Jan 15, 2016), works on Cuda 7.0 and CuDNN v2 ), thus change /usr/local/cuda softlink</li>
+</ul>
+
+<h2 id="keras">Keras</h2>
+<ul>
+  <li>sudo pip install keras</li>
+</ul>
+
+<h2 id="lasagne">Lasagne</h2>
+<ul>
+  <li>sudo pip install https://github.com/Lasagne/Lasagne/archive/master.zip</li>
+</ul>
+
+<h1 id="optional">Optional</h1>
+<p>## Remove unnecessary Ubuntu folders
+ * rm -rf ~/Desktop
+ * rm -rf ~/Public # Is not persistent, after restart Ubuntu recreates this directory
+ * rm -rf ~/Pictures
+ * rm -rf ~/Music
+ * rm -rf ~/Videos
+ * rm -rf ~/Downloads
+ * rm -rf ~/Templates
+ * rm -rf ~/Documents
+ * rm -rf ~/examples.desktop</p>
+
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:aprakash [at] brandeis . edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/iamaaditya"><i class="svg-icon github"></i></a>
+
+<a href="https://www.linkedin.com/in/aaditya-prakash-68453338"><i class="svg-icon linkedin"></i></a>
+
+<a href="/blog/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/aaditya_prakash"><i class="svg-icon twitter"></i></a>
+
+
+<a href="https://plus.google.com//u/0/100303074762902184969?rel=author"><i class="svg-icon googleplus"></i></a>
+          <br />
+          Built using Jekyll. No copyright held. Aaditya Prakash.
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-70371377-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/notes/misc/gpgpu/',
+		  'title': 'GPGPU Installations'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>
