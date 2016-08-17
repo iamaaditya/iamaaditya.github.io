@@ -9,6 +9,12 @@ layout: page
 
 * [Arxiv [cs>cs.LG] recent](https://arxiv.org/list/cs.LG/recent) 
 * [Arxiv-sanity](http://www.arxiv-sanity.com/)
+* [Semantic Scholar - DL](https://www.semanticscholar.org/search?q=Deep%20Learning&sort=year&ae=false)
+
+### Paper aggregators
+* Computational Linguistics Papers https://twitter.com/arxiv_cs_cl & https://twitter.com/arxiv_cscl
+* Computer Vision Papers https://twitter.com/arxiv_cscv
+* Deep Learning (includes NLP, CV, Learning) https://twitter.com/nmfeeds
 
 ### News
 * [NYU Data Science Newsletter](http://cds.nyu.edu/newsletter-3/)
