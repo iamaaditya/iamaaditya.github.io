@@ -19,6 +19,8 @@ This page is used to collect notes.  I use this to share relevant notes, links a
  * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing )  - September 16, 2015
  * [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016 <br />
       (Very basics of Deep learning and CNN, meant as a gentle introduction to the field)
+ * [Neural Networks and Deep Learning](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit?usp=sharing) - May 2, 2016 <br />
+ * [Visual Question Answering](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) - August 12, 2016 <br />
 
 # Learning
   * [Deep Learning]( {{ site.baseurl }}/notes/deep_learning/ ) - Collection of articles, codes, repos, tutorials, and other links which I have found useful.
