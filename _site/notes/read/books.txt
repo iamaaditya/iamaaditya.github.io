@@ -1,4 +1,0 @@
-===CS===
-  - Signal Processing for Communication (Prandoni & Vetterli) [[http://www.sp4comm.org/docs/sp4comm.pdf|.]]  **P(1)** //added: Feb 26, 2013 //
-  - The Princeton Companion to Mathematics (Gowers et al) **P(4)** //added: Feb 20, 2013 //
-  - Algorithms: Dasgupta, Papadimitriou and Vazirani. http://www.cs.berkeley.edu/~vazirani/algorithms/all.pdf
