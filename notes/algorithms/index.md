@@ -36,15 +36,15 @@ dsq_thread_id:
  * [Timsort (real word sorting algorithm)]( <http://corte.si/posts/code/timsort/index.html>)
  * [Similar guide for programming ]( <http://iamaaditya.github.io/notes/programming/>)
 
-[
+
 ## Courses
-    Full university courses with videos and assignments
+Full university courses with videos and assignments
  * [MIT: Advanced Data Structures]( <https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/>)
  * [MIT: Introduction to Algorithms]( <https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/>)
  * [META: List of videos from other courses,]( <http://freevideolectures.com/Subject/Data-Structures>)
 
 
 ## MOOC
-     List of list
+List of list
  * [Data structures]( <https://www.mooc-list.com/tags/data-structures>)
  * [Algorithms]( <https://www.mooc-list.com/tags/algorithms>)
