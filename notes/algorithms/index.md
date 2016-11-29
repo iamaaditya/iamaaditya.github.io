@@ -36,6 +36,7 @@ dsq_thread_id:
 ## 3. Articles 
  * [Timsort (real word sorting algorithm)]( http://corte.si/posts/code/timsort/index.html)
  * [Similar guide for programming ]( http://iamaaditya.github.io/notes/programming/)
+ * [Big-O Complexity Chart](http://bigocheatsheet.com/)
 
 
 ## 4. Courses
