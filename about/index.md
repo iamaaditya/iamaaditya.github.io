@@ -20,7 +20,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 
 
-## Summary
+## Highlights
 
 * <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **image compression using CNN** accepted to Data Compression Conference. [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
@@ -43,6 +43,8 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 * * *
 
 ### - Condensed Memory Networks
+
+<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/cmemnn_for_about.png" height="85%" width="85%"> </center>
 
 * __Problem__: Improve the memory networks for large scale NLP tasks
 
