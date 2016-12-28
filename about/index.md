@@ -44,6 +44,8 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * * *
 
+### Semantic image compression using CNN
+
 <center> <img src="https://raw.githubusercontent.com/iamaaditya/image-compression-cnn/master/girl_msroi.png"> </center>
 
 * __Problem__: Add semantic knowledge to image compression Semantic Image Compression
@@ -60,7 +62,7 @@ For more details :
 ### - Visual Question Answering 
 
 
-<img src="http://visualqa.org/static/img/teaser_small.jpg" height="65%" width="65%" />
+<img src="http://visualqa.org/static/img/teaser_small.jpg" height="85%" width="85%" />
   
 
 
