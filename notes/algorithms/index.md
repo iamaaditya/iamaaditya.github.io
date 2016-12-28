@@ -31,6 +31,7 @@ dsq_thread_id:
 ### 2.2 Other Algorithms
   * [Several algorithms ]( http://visualgo.net/)
   * [Setosa - Explained Visually (mostly machine learning algorithms](http://setosa.io/ev/)
+  * [Various Algorithm visualization using python](https://pyalgoviz.appspot.com/)
 
 
 ## 3. Articles 
