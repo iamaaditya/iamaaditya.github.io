@@ -4,14 +4,14 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;🔑[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
+<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;<img src="http://www.softwarecrew.com/wp-content/uploads/2013/06/CryptSyncLogo200-175.png" height="25px" width="25px" />[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 
 
 * * *
 
 
 
-### <a name="biography" id="biography"></a>Biography
+## <a name="biography" id="biography"></a>Biography
 
 
 
@@ -29,9 +29,9 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * Won **Honrable Mention Prize** for Visual Question Answering Challenge. [[Video]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [[Slides]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [[Poster]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
 
-* Accepted to **Deep Learning Summer School** at University of Montrel. [25% acceptance rate]
+* Accepted to **Deep Learning Summer School** at University of Montreal. [25% acceptance rate]
 
-* Started summer internship at AI Labs at **Philips Research**. 
+* Started summer internship at AI Labs at **Philips Research**, North America.
 
 * Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [[PDF]](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
@@ -39,9 +39,9 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ## Current Research
 
-* * *
 
 ### - Condensed Memory Networks
+-------------------------------
 
 <center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/cmemnn_for_about.png" height="85%" width="85%"> </center>
 
@@ -49,12 +49,13 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * __Our method__: Conndense the memory state of the the highway networks for every HOP.
 
-* [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)
-
 * Blog post describing the project coming soon.
+
+* [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)
 
 
 ### - Semantic image compression using CNN
+-------------------------------
 
 <center> <img src="https://raw.githubusercontent.com/iamaaditya/image-compression-cnn/master/girl_msroi.png" height="85%" width="85%"> </center>
 
@@ -70,23 +71,21 @@ For more details :
 
 
 ### - Visual Question Answering 
-
+-------------------------------
 
 <center> <img src="http://visualqa.org/static/img/teaser_small.jpg" height="90%" width="90%" /> </center>
-  
-
 
 * __Problem__: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 
-* __Our approach__: 
-
-Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
+* __Our approach__: Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
 
 * Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 
 
 
 ### - Transfer learning
+-------------------------------
+
 
 
 * We are investigating ideas for improving content based image retrieval through transfer learning. 
@@ -104,6 +103,7 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 
 ### - Computational Fact Checking [Summer 2014] 
+-------------------------------
 
 
 
@@ -118,6 +118,7 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 
 ### - Self Organizing maps for large unstructured data [2013] - [Infosys Labs](http://www.infosysblogs.com/infosys-labs/bloggers.html) 
+-------------------------------
 
 <br />
 
@@ -138,6 +139,7 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 
 ### - Distributed Simulated Annealing [2012] - [Infosys Labs](http://www.infosysblogs.com/infosys-labs/bloggers.html) 
+-------------------------------
 
 
 
@@ -166,11 +168,13 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 * * *
 
-## In Review
+### In Review
+-------------------------------
 
 
 
 ### Published
+-------------------------------
 
 * Prakash, Aaditya, et al. "Semantic Perceptual Image Compression using Deep Convolution Networks." DCC (2017).
 
@@ -181,7 +185,7 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 * Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, CVPR Workshop (VQA). [PDF](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
 
-### Before grad school
+### Pre-grad school
 
 *   Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for better visual interpretation of large unstructured datasets. _Infosys Lab Briefings, Infosys._ Vol 11(1). _Jan 2013_ <br />
 
@@ -201,9 +205,7 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 * * *
 
-<center>
 [Quora](http://www.quora.com/Aaditya-Prakash) - [Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya) - [Google+](https://plus.google.com/u/0/100303074762902184969?rel=author) - [Twitter](http://twitter.com/aaditya_prakash) - [Linkedin](https://in.linkedin.com/in/aaditya-prakash-68453338) - [Academia.edu](http://infosys.academia.edu/aadityaprakash) - [SlideShare](http://www.slideshare.net/aadityaprakash/) - [GitHub](https://github.com/iamaaditya) - [ResearchGate](https://www.researchgate.net/profile/Aaditya_Prakash3)
-</center>
 
 <details>
   <summary><a>Thank you!</a></summary>
