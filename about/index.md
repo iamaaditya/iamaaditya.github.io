@@ -4,8 +4,7 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-[**CV [pdf]**](http://www.cs.brandeis.edu//~aprakash/CV.pdf)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ✉ aprakash[at]brandeis.edu - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> 19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv 
-
+<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;🔑[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 
 
 * * *
@@ -202,8 +201,9 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 * * *
 
-
-[Quora](http://www.quora.com/Aaditya-Prakash) - [Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya) - [Google+](https://plus.google.com/u/0/100303074762902184969?rel=author) - [Twitter](http://twitter.com/aaditya_prakash) - [Linkedin](https://in.linkedin.com/in/aaditya-prakash-68453338) - [Academia.edu](http://infosys.academia.edu/aadityaprakash) - [SlideShare](http://www.slideshare.net/aadityaprakash/) - [GitHub](https://github.com/iamaaditya)
+<center>
+[Quora](http://www.quora.com/Aaditya-Prakash) - [Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya) - [Google+](https://plus.google.com/u/0/100303074762902184969?rel=author) - [Twitter](http://twitter.com/aaditya_prakash) - [Linkedin](https://in.linkedin.com/in/aaditya-prakash-68453338) - [Academia.edu](http://infosys.academia.edu/aadityaprakash) - [SlideShare](http://www.slideshare.net/aadityaprakash/) - [GitHub](https://github.com/iamaaditya) - [ResearchGate](https://www.researchgate.net/profile/Aaditya_Prakash3)
+</center>
 
 <details>
   <summary><a>Thank you!</a></summary>
