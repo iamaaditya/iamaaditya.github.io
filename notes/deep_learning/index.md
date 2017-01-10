@@ -33,6 +33,7 @@ What is Deep Learning ?
   * Should we be rethinking unsupervised learning <https://re-work.co/blog/deep-learning-roland-memisevic-unlabelled-datasets-rethinking-unsupervised-learning#deeplearning>
   * 26 THINGS I LEARNED IN THE DEEP LEARNING SUMMER SCHOOL http://www.marekrei.com/blog/26-things-i-learned-in-the-deep-learning-summer-school/
   * Debugging Machine learning <http://nlpers.blogspot.com/2016/08/debugging-machine-learning.html>
+  * LSTM Networks for time series prediction <http://www.jakob-aungiers.com/articles/a/LSTM-Neural-Network-for-Time-Series-Prediction>
 
 ### Blog posts by deep learning competition winners
 

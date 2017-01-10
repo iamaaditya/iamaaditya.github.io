@@ -30,6 +30,8 @@ dsq_thread_id:
 
   `ans_to_ix = {v: k for k, v in dataset[u'ix_to_ans'].items()} `
 
+  * Good Numpy Tutorial <http://www.scipy-lectures.org/intro/numpy/numpy.html>
+
 
 
 
