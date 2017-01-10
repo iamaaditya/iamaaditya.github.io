@@ -7,7 +7,7 @@ dsq_thread_id:
 ---
 
 ## Articles
-  * Visualizing Bayes Theorem <https://oscarbonilla.com/2009/05/visualizing-bayes-theorem/>
+ * [Visualizing Bayes Theorem]( <https://oscarbonilla.com/2009/05/visualizing-bayes-theorem/>)
 
 ## Resources
- * 
+ * TODO 
