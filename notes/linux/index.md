@@ -83,6 +83,59 @@ for e.g
         See point 2 above
 </pre>
 
+
+## Different ways to redirect STDOUT and STDERR to screen or file
+
+    CREDIT: http://stackoverflow.com/a/19279694
+
+
+    #!/bin/bash
+
+    STATUSFILE=x.out
+    LOGFILE=x.log
+
+    ### All output to screen
+    ### Do nothing, this is the default
+
+
+    ### All Output to one file, nothing to the screen
+    #exec > ${LOGFILE} 2>&1
+
+
+    ### All output to one file and all output to the screen
+    #exec > >(tee ${LOGFILE}) 2>&1
+
+
+    ### All output to one file, STDOUT to the screen
+    #exec > >(tee -a ${LOGFILE}) 2> >(tee -a ${LOGFILE} >/dev/null)
+
+
+    ### All output to one file, STDERR to the screen
+    ### Note you need both of these lines for this to work
+    #exec 3>&1
+    #exec > >(tee -a ${LOGFILE} >/dev/null) 2> >(tee -a ${LOGFILE} >&3)
+
+
+    ### STDOUT to STATUSFILE, stderr to LOGFILE, nothing to the screen
+    #exec > ${STATUSFILE} 2>${LOGFILE}
+
+
+    ### STDOUT to STATUSFILE, stderr to LOGFILE and all output to the screen
+    #exec > >(tee ${STATUSFILE}) 2> >(tee ${LOGFILE} >&2)
+
+
+    ### STDOUT to STATUSFILE and screen, STDERR to LOGFILE
+    #exec > >(tee ${STATUSFILE}) 2>${LOGFILE}
+
+
+    ### STDOUT to STATUSFILE, STDERR to LOGFILE and screen
+    #exec > ${STATUSFILE} 2> >(tee ${LOGFILE} >&2)
+
+
+    echo "This is a test"
+    ls -l sdgshgswogswghthb_this_file_will_not_exist_so_we_get_output_to_stderr_aronkjegralhfaff
+    ls -l ${0}
+
 ## Redhat (RHEL) and CentOS
     Installling a library without sudo
 
@@ -112,3 +165,15 @@ for e.g
 
     sed -i 's/^[ \t]*//;s/[ \t]*$//' <filename.txt>
     * -i option in sed makes the changes inplace to the given file
+
+## Count a character for every line in a file
+
+    sed 's/,//g' output_reuters_first_layer.txt| awk '{print length }'
+
+## Find list of users who have sudo 
+
+    grep -Po '^sudo.+:\K.*$' /etc/group
+
+## Split file by percentage (line number)
+
+    split -l $[ $(wc -l filename|cut -d" " -f1) * 70 / 100 ] filename 

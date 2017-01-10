@@ -37,6 +37,9 @@ layout: page
   * <http://blog.kaggle.com/>
   * <http://www.erogol.com/>
   * <http://hunch.net/>
+  * <http://nlpers.blogspot.com/>
+  * <http://www.machinedlearnings.com/>
+
 
 ### Blog Aggregators
 

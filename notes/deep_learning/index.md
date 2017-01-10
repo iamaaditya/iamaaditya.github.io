@@ -32,6 +32,7 @@ What is Deep Learning ?
   * Must know tips/tricks for training DNN <http://lamda.nju.edu.cn/weixs/project/CNNTricks/CNNTricks.html>
   * Should we be rethinking unsupervised learning <https://re-work.co/blog/deep-learning-roland-memisevic-unlabelled-datasets-rethinking-unsupervised-learning#deeplearning>
   * 26 THINGS I LEARNED IN THE DEEP LEARNING SUMMER SCHOOL http://www.marekrei.com/blog/26-things-i-learned-in-the-deep-learning-summer-school/
+  * Debugging Machine learning <http://nlpers.blogspot.com/2016/08/debugging-machine-learning.html>
 
 ### Blog posts by deep learning competition winners
 
