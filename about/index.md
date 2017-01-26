@@ -4,14 +4,14 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;<img src="http://www.softwarecrew.com/wp-content/uploads/2013/06/CryptSyncLogo200-175.png" height="25px" width="25px" />[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
+<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;🔑[Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 
 
 * * *
 
 
 
-## <a name="biography" id="biography"></a>Biography
+### <a name="biography" id="biography"></a>Biography
 
 
 
@@ -23,15 +23,15 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **image compression using CNN** accepted to Data Compression Conference. [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **Condensed Memory Networks** accepted to AAAI 2017. [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)
+* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **Condensed Memory Networks** accepted to AAAI 2017. [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]])https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
 * Paper on **Neural Paraphrase Generation** accepted to COLING 2016. [[PDF]](https://arxiv.org/pdf/1610.03098v3.pdf) [[Poster]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
 
-* Won **Honorable Mention Prize** for Visual Question Answering Challenge. [[Video]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [[Slides]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [[Poster]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
+* Won **Honrable Mention Prize** for Visual Question Answering Challenge. [[Video]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [[Slides]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [[Poster]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
 
-* Accepted to **Deep Learning Summer School** at University of Montreal. [25% acceptance rate]
+* Accepted to **Deep Learning Summer School** at University of Montrel. [25% acceptance rate]
 
-* Started summer internship at AI Labs at **Philips Research**, North America.
+* Started summer internship at AI Labs at **Philips Research**. 
 
 * Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [[PDF]](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
@@ -39,23 +39,22 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ## Current Research
 
+* * *
 
 ### - Condensed Memory Networks
--------------------------------
 
 <center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/cmemnn_for_about.png" height="85%" width="85%"> </center>
 
 * __Problem__: Improve the memory networks for large scale NLP tasks
 
-* __Our method__: Condense the memory state of the memory networks for every HOP.
-
-* Blog post describing the project coming soon.
+* __Our method__: Conndense the memory state of the the highway networks for every HOP.
 
 * [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)
 
+* Blog post describing the project coming soon.
+
 
 ### - Semantic image compression using CNN
--------------------------------
 
 <center> <img src="https://raw.githubusercontent.com/iamaaditya/image-compression-cnn/master/girl_msroi.png" height="85%" width="85%"> </center>
 
@@ -71,21 +70,23 @@ For more details :
 
 
 ### - Visual Question Answering 
--------------------------------
+
 
 <center> <img src="http://visualqa.org/static/img/teaser_small.jpg" height="90%" width="90%" /> </center>
+  
+
 
 * __Problem__: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 
-* __Our approach__: Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
+* __Our approach__: 
+
+Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
 
 * Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 
 
 
 ### - Transfer learning
--------------------------------
-
 
 
 * We are investigating ideas for improving content based image retrieval through transfer learning. 
@@ -103,7 +104,6 @@ For more details :
 
 
 ### - Computational Fact Checking [Summer 2014] 
--------------------------------
 
 
 
@@ -118,7 +118,6 @@ For more details :
 
 
 ### - Self Organizing maps for large unstructured data [2013] - [Infosys Labs](http://www.infosysblogs.com/infosys-labs/bloggers.html) 
--------------------------------
 
 <br />
 
@@ -139,7 +138,6 @@ For more details :
 
 
 ### - Distributed Simulated Annealing [2012] - [Infosys Labs](http://www.infosysblogs.com/infosys-labs/bloggers.html) 
--------------------------------
 
 
 
@@ -168,24 +166,22 @@ For more details :
 
 * * *
 
-### In Review
--------------------------------
+## In Review
 
-
+* None
 
 ### Published
--------------------------------
 
-* Prakash, Aaditya, et al. "Semantic Perceptual Image Compression using Deep Convolution Networks." DCC (2017).
+* Prakash, Aaditya, et al. "Semantic Perceptual Image Compression using Deep Convolution Networks." DCC (2017).[[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
-* Prakash, Aaditya, et al. "Condensed Memory Networks for Clinical Diagnostic Inferencing." AAAI (2017).
+* Prakash, Aaditya, et al. "Condensed Memory Networks for Clinical Diagnostic Inferencing." AAAI (2017). [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]])https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
-* Prakash, Aaditya, et al. "Neural Paraphrase Generation with Stacked Residual LSTM Networks." COLING (2016).
+* Prakash, Aaditya, et al. "Neural Paraphrase Generation with Stacked Residual LSTM Networks." COLING (2016). [[PDF]](https://arxiv.org/pdf/1610.03098v3.pdf) [[Poster]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
 
 * Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, CVPR Workshop (VQA). [PDF](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
 
-### Pre-grad school
+### Before grad school
 
 *   Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for better visual interpretation of large unstructured datasets. _Infosys Lab Briefings, Infosys._ Vol 11(1). _Jan 2013_ <br />
 
