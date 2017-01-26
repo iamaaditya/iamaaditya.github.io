@@ -23,7 +23,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **image compression using CNN** accepted to Data Compression Conference. [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **Condensed Memory Networks** accepted to AAAI 2017. [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]])https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
+* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **Condensed Memory Networks** accepted to AAAI 2017. [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
 * Paper on **Neural Paraphrase Generation** accepted to COLING 2016. [[PDF]](https://arxiv.org/pdf/1610.03098v3.pdf) [[Poster]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
 
@@ -174,7 +174,7 @@ Use of Highway networks to attain implicit attention and learn deeper feature re
 
 * Prakash, Aaditya, et al. "Semantic Perceptual Image Compression using Deep Convolution Networks." DCC (2017).[[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
-* Prakash, Aaditya, et al. "Condensed Memory Networks for Clinical Diagnostic Inferencing." AAAI (2017). [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]])https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
+* Prakash, Aaditya, et al. "Condensed Memory Networks for Clinical Diagnostic Inferencing." AAAI (2017). [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
 * Prakash, Aaditya, et al. "Neural Paraphrase Generation with Stacked Residual LSTM Networks." COLING (2016). [[PDF]](https://arxiv.org/pdf/1610.03098v3.pdf) [[Poster]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
 
