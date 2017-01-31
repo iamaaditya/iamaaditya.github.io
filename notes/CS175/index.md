@@ -8,6 +8,7 @@ dsq_thread_id:
 # Class Slides
 
  * Jan 30 - [Neural Networks and Deep Learning](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00)
+ * [Tutorial on Backpropagation](http://www.offconvex.org/2016/12/20/backprop/)
 
 # Deep Learning
 
@@ -25,6 +26,6 @@ dsq_thread_id:
  * [Quoc Le's Video Lectures](http://www.trivedigaurav.com/blog/quoc-les-lectures-on-deep-learning/)
 
 
-## If you have time for none of these, then just
+## If you do not have time for these, then I highly recommend you read these two short PDFs
  * https://cs.stanford.edu/~quocle/tutorial1.pdf
  * https://cs.stanford.edu/~quocle/tutorial2.pdf
