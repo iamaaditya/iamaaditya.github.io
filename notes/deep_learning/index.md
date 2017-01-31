@@ -126,4 +126,8 @@ What is Deep Learning ?
   * HyperVerge
   * Deepomatic
   * Twenty Billion
+  * Bay Labs
+  * DeepVision.io
+  * Cerebras.net
   * <http://magizbox.com/index.php/deep-learning-company/>
+
