@@ -19,13 +19,15 @@ dsq_thread_id:
 ## Textbook
  * [Deep Learning](http://www.deeplearningbook.org/). Very thorough and well written book. Covers almost everything.
  * [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/). Light reading, only 6 chapters, easy to follow.
+ * [Machine Learning](http://alex.smola.org/drafts/thebook.pdf). For better understanding of ML concepts, easy to follow.
 
-## Tutorials
+## Tuhttp://iamaaditya.github.io/notes/CS175/torials
  * [Learn TensorFlow and deep learning, without a Ph.D.](https://cloud.google.com/blog/big-data/2017/01/learn-tensorflow-and-deep-learning-without-a-phd)
  * [Unsupervised Deep Learning](http://deeplearning.stanford.edu/tutorial/)
  * [Quoc Le's Video Lectures](http://www.trivedigaurav.com/blog/quoc-les-lectures-on-deep-learning/)
 
-
 ## If you do not have time for these, then I highly recommend you read these two short PDFs
- * https://cs.stanford.edu/~quocle/tutorial1.pdf
- * https://cs.stanford.edu/~quocle/tutorial2.pdf
+ * [Tutorial 1](https://cs.stanford.edu/~quocle/tutorial1.pdf)
+ * [Tutorial 1](https://cs.stanford.edu/~quocle/tutorial2.pdf)
+
+
