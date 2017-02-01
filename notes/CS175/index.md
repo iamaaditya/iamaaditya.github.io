@@ -21,7 +21,7 @@ dsq_thread_id:
  * [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/). Light reading, only 6 chapters, easy to follow.
  * [Machine Learning](http://alex.smola.org/drafts/thebook.pdf). For better understanding of ML concepts, easy to follow.
 
-## Tuhttp://iamaaditya.github.io/notes/CS175/torials
+## Tutorials
  * [Learn TensorFlow and deep learning, without a Ph.D.](https://cloud.google.com/blog/big-data/2017/01/learn-tensorflow-and-deep-learning-without-a-phd)
  * [Unsupervised Deep Learning](http://deeplearning.stanford.edu/tutorial/)
  * [Quoc Le's Video Lectures](http://www.trivedigaurav.com/blog/quoc-les-lectures-on-deep-learning/)
