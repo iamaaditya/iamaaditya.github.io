@@ -7,17 +7,13 @@ dsq_thread_id: []
 <img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;[<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 
 * * *
-<center>
-Table of Contents &nbsp;&nbsp;&nbsp; [Biography](#biography) &nbsp;&nbsp;&nbsp; [Highlights](#highlights) &nbsp;&nbsp;&nbsp; [Research](#current-research) &nbsp;&nbsp;&nbsp; [Projects](#projects) &nbsp;&nbsp;&nbsp; [Publications](#publications)
-</center>
+
+Table of Contents &nbsp;&nbsp;&nbsp; [Biography](#biography) &nbsp;&nbsp;&nbsp; [Highlights](#highlights) &nbsp;&nbsp;&nbsp; [Research](#current-research) &nbsp;&nbsp;&nbsp; [Projects](#projects) &nbsp;&nbsp;&nbsp; [Publications](#publications) 
 
 
 ## <a name="biography" id="biography"></a>Biography
 
 I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. My research focus is in application of [deep learning in problems of vision and language]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs. 
-
-
-
 
 
 ## Highlights
@@ -56,7 +52,6 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * Blog post describing the project coming soon.
 
-
 * * *
 
 ### - Semantic image compression using CNN
@@ -81,6 +76,8 @@ For more details :
 * __Problem__: Generate paraphrases using a 'neural' model.
 
 * __Our method__: We take inspiration from ResNet and apply the same techniques to LSTM. We believe this helpes to maintain the semantics of the paraphrases.
+
+* Work done during internship at Philips Research.
 
 * Shown below are samples using our method on three different datasets.
 
