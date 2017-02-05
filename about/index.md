@@ -7,8 +7,9 @@ dsq_thread_id: []
 <img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash[at]brandeis.edu &nbsp; [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)&nbsp;&nbsp;&nbsp;[<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv) &nbsp;&nbsp; [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash) &nbsp;&nbsp; [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 
 * * *
-
-Table of Contents &nbsp;&nbsp;&nbsp; [Biography](#biography) &nbsp;&nbsp;&nbsp; [Highlights](#highlights) &nbsp;&nbsp;&nbsp; [Research](#current-research) &nbsp;&nbsp;&nbsp; [Past Research](#past-research) &nbsp;&nbsp;&nbsp; [Projects](#projects) &nbsp;&nbsp;&nbsp; [Publications](#publications)
+<center>
+Table of Contents &nbsp;&nbsp;&nbsp; [Biography](#biography) &nbsp;&nbsp;&nbsp; [Highlights](#highlights) &nbsp;&nbsp;&nbsp; [Research](#current-research) &nbsp;&nbsp;&nbsp; [Projects](#projects) &nbsp;&nbsp;&nbsp; [Publications](#publications)
+</center>
 
 
 ## <a name="biography" id="biography"></a>Biography
@@ -116,7 +117,7 @@ For more details :
 
 
 
-## Past Research
+## Pre-Grad Research
 
 * * *
 
