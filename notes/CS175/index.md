@@ -7,8 +7,9 @@ dsq_thread_id:
 ---
 # Class Slides
 
- * Jan 30 - [Neural Networks and Deep Learning](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-01-30-DeepLearningPart1.pdf)
- * Feb 01 - [Convolutional Neural Networks](https://docs.google.com/presentation/d/1-lByuEiKbR9jP-tNvCHBxFOuCvjORM-idmqFtLTTPJo/edit?usp=sharing) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-02-01-DeepLearningPart2.pdf)
+ * Jan 30 - [Neural Networks and Deep Learning (Google Slides)](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-01-30-DeepLearningPart1.pdf)
+ * Feb 01 - [Convolutional Neural Networks (Google Slides)](https://docs.google.com/presentation/d/1-lByuEiKbR9jP-tNvCHBxFOuCvjORM-idmqFtLTTPJo/edit?usp=sharing) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-02-01-DeepLearningPart2.pdf)
+ * Mar 09 - [Recurrent Neural Networks (Google Slides)](https://docs.google.com/presentation/d/1RUKGd46lHO71emXfFZne0-ZOzYG9AJ2S9Gvps1okrD8/edit#slide=id.p) ----- [PDF](http://gpgpu.cs-i.brandeis.edu/zzz/RNN.pdf)
  
 # Reading Material (Highly recommeded)
  * [Part 1: Nonlinear Classifiers and The Backpropagation Algorithm](https://cs.stanford.edu/~quocle/tutorial1.pdf)
