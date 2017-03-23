@@ -10,6 +10,7 @@ dsq_thread_id:
  * Jan 30 - [Neural Networks and Deep Learning (Google Slides)](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-01-30-DeepLearningPart1.pdf)
  * Feb 01 - [Convolutional Neural Networks (Google Slides)](https://docs.google.com/presentation/d/1-lByuEiKbR9jP-tNvCHBxFOuCvjORM-idmqFtLTTPJo/edit?usp=sharing) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-02-01-DeepLearningPart2.pdf)
  * Mar 09 - [Recurrent Neural Networks (Google Slides)](https://docs.google.com/presentation/d/1RUKGd46lHO71emXfFZne0-ZOzYG9AJ2S9Gvps1okrD8/edit#slide=id.p) ----- [PDF](http://gpgpu.cs-i.brandeis.edu/zzz/RNN.pdf)
+ * Mar 15 - [Object localization and detection (Google Slides)](https://docs.google.com/presentation/d/1CVPO0O2t8k5C31UX2Pg7Y_QMZpQXrWRTftP-pJeGEE0/edit?usp=sharing) ----- [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-03-15-ObjectDetection.pdf)
  
 # Reading Material (Highly recommeded)
  * [Part 1: Nonlinear Classifiers and The Backpropagation Algorithm](https://cs.stanford.edu/~quocle/tutorial1.pdf)
@@ -33,6 +34,7 @@ dsq_thread_id:
  * [Quoc Le's Video Lectures](http://www.trivedigaurav.com/blog/quoc-les-lectures-on-deep-learning/)
  * [Tutorial on Backpropagation](http://www.offconvex.org/2016/12/20/backprop/)
  * [Four lecture series in DL](https://simons.berkeley.edu/talks/tutorial-deep-learning) by  Ruslan Salakhutdinov
+ * [Object localization](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/object_localization_and_detection.html)
 
 
 

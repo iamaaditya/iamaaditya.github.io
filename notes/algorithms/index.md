@@ -54,3 +54,8 @@ List of list
 
  * [Data structures]( https://www.mooc-list.com/tags/data-structures)
  * [Algorithms]( https://www.mooc-list.com/tags/algorithms)
+
+## 6. Cheatsheets
+
+
+ * [Data structures](https://www.clear.rice.edu/comp160/data_cheat.html)

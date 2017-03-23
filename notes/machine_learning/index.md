@@ -20,6 +20,7 @@ dsq_thread_id:
  * Machine Learning iPython Notebook <https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb>
  * Dive into Machine Learning <https://github.com/hangtwenty/dive-into-machine-learning>
  * Guide to Ensemble <http://mlwave.com/kaggle-ensembling-guide/>
+ * Machine Learning Crash Course <https://ml.berkeley.edu/blog/2016/12/24/tutorial-2/>
 
 ## Datasets
  * Publicly available datasets github <http://www.kdnuggets.com/2015/04/awesome-public-datasets-github.html>
@@ -32,3 +33,4 @@ dsq_thread_id:
 ## Blogs
  * Alex Woods <http://alexhwoods.com/>
  * KDnuggets (list of other blogs) <http://www.kdnuggets.com/websites/blogs.html>
+
