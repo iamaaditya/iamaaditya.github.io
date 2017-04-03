@@ -18,7 +18,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ## Highlights
 
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Gave four lecture series on Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks and Object localization/detection. [[Slides]](http://iamaaditya.github.io/notes/CS175/)
+* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Gave five lecture series on Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [[Slides]](http://iamaaditya.github.io/notes/CS175/)
 
 * <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **image compression using CNN** accepted to Data Compression Conference. [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
@@ -63,7 +63,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 * __Our method__: Use CNN to generate a map that covers all the 'semantic objects' and weighs them based on importance. Use variable scaling JPEG to encode the information.
 For more details :
 
-* [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
+* [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf) [[Slides]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/dcc_2017/dcc_slides.pdf)
 
 * Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 

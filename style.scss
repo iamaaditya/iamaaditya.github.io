@@ -291,6 +291,77 @@ footer {
   text-align: center;
 }
 
+.hellostyle{
+    border-bottom: 2px solid black;
+
+}
+
+.table {
+  width: 80%;
+  max-width: 80%;
+  margin-bottom: 1px;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 1px;
+        line-height: 20px;
+        vertical-align: top;
+        border-bottom: 0.5px solid #4CAF50;
+
+      }
+    }
+  }
+  // Bottom align for column headings
+  // > thead > tr > th {
+  //   vertical-align: bottom;
+  //   border-bottom: 2px solid #4CAF50;
+  // }
+  // // Remove top border from thead by default
+  // > caption + thead,
+  // > colgroup + thead,
+  // > thead:first-child {
+  //   > tr:first-child {
+  //     > th,
+  //     > td {
+  //       border-top: 0;
+  //     }
+  //   }
+  // }
+  // // Account for multiple tbody instances
+  // > tbody + tbody {
+  //   border-top: 2px solid #4CAF50;
+  // }
+
+}
+.mbtablestyle {
+        border-collapse: collapse;
+        border-spacing: 1cm 2em;
+        width: 70%;
+
+   >  td {
+    text-align: left;
+    padding: 8px;
+    }
+
+  > tr {
+    height: 1.5em;
+    border-bottom: 2px solid black;
+    }
+
+  > th {
+    text-align: left;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    height: 1.5em;
+   }
+}
+
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";

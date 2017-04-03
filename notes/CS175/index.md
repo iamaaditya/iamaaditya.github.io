@@ -1,16 +1,20 @@
 ---
-title: CS 175 Deep Learning resources
+title: CS 175 Deep Learning Slides
 author: aaditya prakash
 layout: page
 dsq_thread_id:
   - 
 ---
-# Class Slides
 
- * Jan 30 - [Neural Networks and Deep Learning (Google Slides)](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-01-30-DeepLearningPart1.pdf)
- * Feb 01 - [Convolutional Neural Networks (Google Slides)](https://docs.google.com/presentation/d/1-lByuEiKbR9jP-tNvCHBxFOuCvjORM-idmqFtLTTPJo/edit?usp=sharing) ------ [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-02-01-DeepLearningPart2.pdf)
- * Mar 09 - [Recurrent Neural Networks (Google Slides)](https://docs.google.com/presentation/d/1RUKGd46lHO71emXfFZne0-ZOzYG9AJ2S9Gvps1okrD8/edit#slide=id.p) ----- [PDF](http://gpgpu.cs-i.brandeis.edu/zzz/RNN.pdf)
- * Mar 15 - [Object localization and detection (Google Slides)](https://docs.google.com/presentation/d/1CVPO0O2t8k5C31UX2Pg7Y_QMZpQXrWRTftP-pJeGEE0/edit?usp=sharing) ----- [PDF](http://www.cs.brandeis.edu/~storer/cs175/Talks/2017-03-15-ObjectDetection.pdf)
+# Slides for classes taught by Adi
+
+
+| Jan 30 | Neural Networks and Deep Learning |[Google Slides](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/neural_networks_and_deep_learning.pdf)
+| Feb 01 | Convolutional Neural Networks |[Google Slides](https://docs.google.com/presentation/d/1-lByuEiKbR9jP-tNvCHBxFOuCvjORM-idmqFtLTTPJo/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/convolutional_neural_networks.pdf)
+| Mar 09 | Recurrent Neural Networks |[Google Slides](https://docs.google.com/presentation/d/1RUKGd46lHO71emXfFZne0-ZOzYG9AJ2S9Gvps1okrD8/edit#slide=id.p) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/recurrent_neural_networks.pdf)
+| Mar 15 | Object localization and detection |[Google Slides](https://docs.google.com/presentation/d/1CVPO0O2t8k5C31UX2Pg7Y_QMZpQXrWRTftP-pJeGEE0/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/object_localization_and_detection.pdf)
+| Mar 27 | Neural Networks with Memory |[Google Slides](https://docs.google.com/presentation/d/12CwoAX3Zz2ue2A_9pDlVZDnpqw_cHn2a0RVQ6tO2eCM/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/neural_networks_with_memory.pdf)
+{:.table}
  
 # Reading Material (Highly recommeded)
  * [Part 1: Nonlinear Classifiers and The Backpropagation Algorithm](https://cs.stanford.edu/~quocle/tutorial1.pdf)
@@ -35,6 +39,7 @@ dsq_thread_id:
  * [Tutorial on Backpropagation](http://www.offconvex.org/2016/12/20/backprop/)
  * [Four lecture series in DL](https://simons.berkeley.edu/talks/tutorial-deep-learning) by  Ruslan Salakhutdinov
  * [Object localization](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/object_localization_and_detection.html)
+ * [Memory Networks](http://www.thespermwhale.com/jaseweston/icml2016/icml2016-memnn-tutorial.pdf) by Jason Weston
 
 
 
