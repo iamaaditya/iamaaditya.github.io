@@ -31,7 +31,7 @@ What is Deep Learning ?
   * [NIPS 2015 Deep Learning Symposium Part II](http://yanran.li/peppypapers/2016/01/09/nips-2015-deep-learning-symposium-part-ii.html)
   * [Must know tips/tricks for training DNN](http://lamda.nju.edu.cn/weixs/project/CNNTricks/CNNTricks.html)
   * [Should we be rethinking unsupervised learning](https://re-work.co/blog/deep-learning-roland-memisevic-unlabelled-datasets-rethinking-unsupervised-learning#deeplearning)
-  * [26 things i learned in the deep learning summer school]( http://www.marekrei.com/blog/26-things-i-learned-in-the-deep-learning-summer-school/)
+  * [26 things I learned in the deep learning summer school]( http://www.marekrei.com/blog/26-things-i-learned-in-the-deep-learning-summer-school/)
   * [Debugging Machine learning](http://nlpers.blogspot.com/2016/08/debugging-machine-learning.html)
   * [LSTM Networks for time series prediction](http://www.jakob-aungiers.com/articles/a/LSTM-Neural-Network-for-Time-Series-Prediction)
 
@@ -55,6 +55,7 @@ What is Deep Learning ?
   * [End to End tensorflow examples](https://bcomposes.wordpress.com/2015/11/26/simple-end-to-end-tensorflow-examples/)
   * [Neural Turning Machines in Lasagne](https://medium.com/snips-ai/ntm-lasagne-a-library-for-neural-turing-machines-in-lasagne-2cdce6837315#.slx7a5nex)
   * [Reasoning, Attention and Memory NIPS Workshop 2015,](http://www.thespermwhale.com/jaseweston/ram/)
+  * [What is Variational Autoencoder](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/)
 
 ### Courses 
   * <https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/>
