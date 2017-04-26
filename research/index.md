@@ -19,6 +19,10 @@ dsq_thread_id:
 
  * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
 
+## JPEG Quantization
+
+ * [JPEG Quantization]({{site.baseurl}}/notes/research/jpeg_quantization/ )
+
 
 
 
