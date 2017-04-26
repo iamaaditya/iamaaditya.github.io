@@ -13,15 +13,15 @@ dsq_thread_id:
 
 ## Pyramid Vector Quantization with deep nets
 
- * [Pyramid Vector Quantization]({{site.baseurl}}/notes/research/pvq/ )
+ * [Pyramid Vector Quantization]({{site.baseurl}}/research/pvq/ )
 
 ## Transfer Learning 
 
- * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
+ * [Transfer Learning]({{site.baseurl}}/research/transfer/ )
 
 ## JPEG Quantization
 
- * [JPEG Quantization]({{site.baseurl}}/notes/research/jpeg_quantization/ )
+ * [JPEG Quantization]({{site.baseurl}}/research/jpeg_quantization/ )
 
 
 
