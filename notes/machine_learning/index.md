@@ -3,7 +3,8 @@ title: Machine Learning
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+  - null
+published: true
 ---
 
 ## Visualization
@@ -21,6 +22,7 @@ dsq_thread_id:
  * Dive into Machine Learning <https://github.com/hangtwenty/dive-into-machine-learning>
  * Guide to Ensemble <http://mlwave.com/kaggle-ensembling-guide/>
  * Machine Learning Crash Course <https://ml.berkeley.edu/blog/2016/12/24/tutorial-2/>
+ * CS-228 Probabilistic Graphical Models - Notes <https://ermongroup.github.io/cs228-notes/>
 
 ## Datasets
  * Publicly available datasets github <http://www.kdnuggets.com/2015/04/awesome-public-datasets-github.html>
@@ -33,4 +35,3 @@ dsq_thread_id:
 ## Blogs
  * Alex Woods <http://alexhwoods.com/>
  * KDnuggets (list of other blogs) <http://www.kdnuggets.com/websites/blogs.html>
-
