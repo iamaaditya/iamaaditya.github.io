@@ -56,6 +56,7 @@ What is Deep Learning ?
   * [Neural Turning Machines in Lasagne](https://medium.com/snips-ai/ntm-lasagne-a-library-for-neural-turing-machines-in-lasagne-2cdce6837315#.slx7a5nex)
   * [Reasoning, Attention and Memory NIPS Workshop 2015,](http://www.thespermwhale.com/jaseweston/ram/)
   * [What is Variational Autoencoder](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/)
+  * [Convolutional Neural Networks](http://adventuresinmachinelearning.com/convolutional-neural-networks-tutorial-tensorflow/)
 
 ### Courses 
   * <https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/>
