@@ -1,5 +1,5 @@
 ---
-title: CS 175 Deep Learning Slides
+title: CS 175 Deep Learning 
 author: aaditya prakash
 layout: page
 dsq_thread_id:
@@ -15,6 +15,19 @@ dsq_thread_id:
 | Mar 15 | Object localization and detection |[Google Slides](https://docs.google.com/presentation/d/1CVPO0O2t8k5C31UX2Pg7Y_QMZpQXrWRTftP-pJeGEE0/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/object_localization_and_detection.pdf)
 | Mar 27 | Neural Networks with Memory |[Google Slides](https://docs.google.com/presentation/d/12CwoAX3Zz2ue2A_9pDlVZDnpqw_cHn2a0RVQ6tO2eCM/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/neural_networks_with_memory.pdf)
 {:.table}
+
+# Other presentations by Adi on Deep Learning
+
+ * [General purpose GPU Computing and CUDA]( https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing )  - Nov 30, 2015
+ * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing )  - Nov 18, 2015 
+ * [Value of a feature]( https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing ) - October 19, 2015
+ * [Why CNN works]( https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing )  - October 7, 2015
+ * [Deeper inside CNN]( https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing )  - September 29, 2015
+ * [Inside CNN]( https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing )  - September 16, 2015
+ * [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit?usp=sharing ) - February 22, 2016 <br />
+      (Very basics of Deep learning and CNN, meant as a gentle introduction to the field)
+ * [Neural Networks and Deep Learning](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit?usp=sharing) - May 2, 2016 <br />
+ * [Visual Question Answering](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) - August 12, 2016 <br />
  
 # Reading Material (Highly recommeded)
  * [Part 1: Nonlinear Classifiers and The Backpropagation Algorithm](https://cs.stanford.edu/~quocle/tutorial1.pdf)
