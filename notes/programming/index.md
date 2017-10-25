@@ -21,6 +21,7 @@ published: true
 ## Articles
   * [How to C in 2016]( https://matt.sh/howto-c)
   * [How to pass programming interviews]( http://blog.triplebyte.com/how-to-pass-a-programming-interview)
+  * [Things every programmer should know](https://github.com/mr-mig/every-programmer-should-know)
   
 ## Interview Resources
   * [Interview Cake, 44 Questions with detailed answers](https://www.interviewcake.com/all-questions/python)
