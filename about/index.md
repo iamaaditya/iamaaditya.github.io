@@ -24,7 +24,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 * Gave five lecture series on Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [[Slides]](http://iamaaditya.github.io/notes/CS175/)
 
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" /> Paper on **image compression using CNN** accepted to Data Compression Conference. [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
+* Paper on **image compression using CNN** accepted to Data Compression Conference. [[Code]](https://github.com/iamaaditya/image-compression-cnn) [[PDF]](https://arxiv.org/pdf/1612.08712v1.pdf)
 
 * Paper on **Condensed Memory Networks** accepted to AAAI 2017. [[PDF]](https://arxiv.org/pdf/1612.01848v1.pdf) [[Slides]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [[Poster]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
