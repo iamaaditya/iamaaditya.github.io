@@ -4,8 +4,7 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="http://bitcoinsymbol.org/i/old-bitcoin-logo.svg" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
-
+<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 ---
 
 Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#current-research)     [Projects](#projects)     [Publications](#publications)
@@ -87,7 +86,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ### - Visual Question Answering
 
-<center> <img src="http://visualqa.org/static/img/teaser_small.jpg" height="90%" width="90%" /> </center>
+<center> <img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/teaser_small.jpg" height="90%" width="90%" /> </center>
 
 * **Problem**: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 * **Our approach**: Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
