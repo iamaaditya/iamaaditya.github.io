@@ -4,7 +4,7 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-<img src="https://www.shareicon.net/data/128x128/2016/11/22/854973_email_512x512.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
+<img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/small_email.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 ---
 
 Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#current-research)     [Projects](#projects)     [Publications](#publications)
@@ -15,8 +15,8 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ## Highlights
 
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" height="60%"/> Received Roberto Padovani scholarship (Qualcomm), 2017.
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" height="60%" /> Outstanding Teaching Fellow Award, Brandeis 2017.
+* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" height="50%"/> Received Roberto Padovani scholarship (Qualcomm), 2017.
+* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" height="50%" /> Outstanding Teaching Fellow Award, Brandeis 2017.
 * Gave five lecture series on Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [\[Slides\]](http://iamaaditya.github.io/notes/CS175/)
 * Paper on **image compression using CNN** accepted to Data Compression Conference. [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf)
 * Paper on **Condensed Memory Networks** accepted to AAAI 2017. [\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
