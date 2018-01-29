@@ -4,7 +4,7 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-<img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/small_email.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://github.com/favicon.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://upload.wikimedia.org/wikipedia/vi/b/bf/PGP_Icon.png" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://www.twitter.com/favicon.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://www.quora.com/favicon.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
+<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/twitter.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
 ---
 
 Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#current-research)     [Projects](#projects)     [Publications](#publications)
@@ -67,20 +67,20 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ### - Neural Paraphrase generation using Residual Stacked LSTM
 
-<center> <img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/residual_lstm.png" height="45%" width="45%"> </center>
+<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/residual_lstm_small.png" height="65%" width="65%"> </center>
 
 * **Problem**: Generate paraphrases using a 'neural' model.
 * **Our method**: We take inspiration from ResNet and apply the same techniques to LSTM. We believe this helpes to maintain the semantics of the paraphrases.
 * Work done during internship at Philips Research.
 * Shown below are samples using our method on three different datasets.
 
-<center> <img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/paraphrase_samples.png" height="85%" width="85%"> </center>
+<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/paraphrase_samples.png" height="85%" width="85%"> </center>
 
 ---
 
 ### - Visual Question Answering
 
-<center> <img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/teaser_small.jpg" height="90%" width="90%" /> </center>
+<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/teaser_small.jpg" height="90%" width="90%" /> </center>
 
 * **Problem**: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 * **Our approach**: Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
