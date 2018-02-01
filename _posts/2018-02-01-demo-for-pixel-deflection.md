@@ -309,7 +309,7 @@ Thus, when we combine __Pixel Deflection__ and __Wavelet Denoising__, overall ef
 | True class - Badger | 100 | 15 | 92 |
 | Adversary  - Skunk  | 0.0 | 59 | 07 |
 
-(numbers denote confidence in each class) 
+<center> (numbers denote confidence in each class) </center>
 
 
 ## Attacks are non-localized
@@ -412,7 +412,7 @@ def pixel_deflection_with_map(img, rcam_prob, deflections, window):
 Only addition in  ```pixel_deflection_with_map``` are the addition of following two lines:
 
 ```python
-if uniform(0,1) > rcam_prob[x,y]:
+if uniform(0,1) < rcam_prob[x,y]:
     continue
 ```
                 
@@ -496,10 +496,12 @@ There is also a beneefit of about 1.6% of doing YCbCr transformation from RGB be
 Strictly this is a black-box defense as the attack model does not know the defense strategy. Randomness of the strategy makes it harder to implement
 a viable approximation without relying on a specific pattern of pixels. This work is most similar to [this](https://arxiv.org/pdf/1711.00117.pdf) and [this](https://arxiv.org/abs/1711.01991).
 
-For errors and corrections please contact aprakash@brandeis.edu
 
 ## TL;DR
 
 Select a random pixel in the image and replace it with another pixel from local neighbourhood.
 This process changes local pixel arrangement but not global statistics and thus efficiently counteracts the adversarial changes and does not impact clean images.
 This can be improved by selecting more pixels from regions outside of objects and by doing wavelet denoising.  
+
+
+For errors and corrections please contact aprakash@brandeis.edu
