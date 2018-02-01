@@ -1,5 +1,5 @@
 ---
-title: Demo for Pixel Deflection - a simple transformation based defense
+title: Pixel Deflection - a simple transformation based defense
 author: aaditya prakash
 layout: post
 permalink: /2018/02/demo-for-pixel-deflection/
