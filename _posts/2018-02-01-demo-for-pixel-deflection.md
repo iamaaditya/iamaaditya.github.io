@@ -14,12 +14,13 @@ tags:
 
 
 ## Change local pixel arrangement and then denoise using wavelet transform
+Select a random pixel in the image and replace it with another local pixel (we call this Pixel Deflection). 
+This process changes local pixel arrangement but not global statistics and thus efficienty counteracts the adversarial changes but does not impact clean images.
+This can be improved by deflecting more pixels from regions outside of interest and by doing wavelet denoising.
 
-Paper: https://arxiv.org/abs/1801.08926
-
-Code : https://github.com/iamaaditya/pixel-deflection
-
-This Jupyter Notebook: https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb
+Paper: [arXiv](https://arxiv.org/abs/1801.08926)  
+Code : [GitHub](https://github.com/iamaaditya/pixel-deflection)  
+This Jupyter Notebook: [GitHub](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb)   
 
 **What**
 
@@ -40,7 +41,7 @@ This Jupyter Notebook: https://github.com/iamaaditya/pixel-deflection/blob/maste
 ## Table of Contents
 
    * [Pixel Deflection](#pixel-deflection)
-	  * [Let's see the pixels that were deflected.](#lets-see-the-pixels-that-were-deflected)
+      * [Let's see the pixels that were deflected.](#lets-see-the-pixels-that-were-deflected)
       * [Impact on clean image](#impact-on-clean-image)
       * [Impact of increasing number of deflections](#impact-of-increasing-number-of-deflections)
       * [Results so far](#results-so-far)
@@ -51,9 +52,9 @@ This Jupyter Notebook: https://github.com/iamaaditya/pixel-deflection/blob/maste
       * [Pixel Deflection with R-CAM](#pixel-deflection-with-r-cam)
       * [Distribution of Pixel Deflection with RCAM](#distribution-of-pixel-deflection-with-rcam)
       * [Wavelet Denoising after PD with RCAM](#wavelet-denoising-after-pd-with-rcam)
-      * [Results](#results)
+   * [Results](#results)
 
-### Load the requirements
+## Load the requirements
 
 
 ```python
@@ -136,11 +137,12 @@ _ = classify_images([img_clean], true_label, visualize=True)
 ```
 
 
-![png]({{ "/images/pixel_deflection/output_12_0.png"}})
+![png]({{ "/images/pixel_deflection/output_12_0.png"}}){: .center-image}
+
 
 
 Green color bar indicates the 'true' class of the image. 
-Image is correctly classified as **'badger'** with $100\%$ confidence.
+Image is correctly classified as **'badger'** with 100% confidence.
 
 ## Load and classify the adversarial image
 
@@ -151,10 +153,11 @@ _ = classify_images([img_adversary], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_15_0.png"}})
+![png]({{"/images/pixel_deflection/output_15_0.png"}}){: .center-image}
 
 
-The true class **'badger'** is now only $15\%$ and __'skunk'__ is the most likely class with $59\%$ classification.
+
+The true class **'badger'** is now only 15% and __'skunk'__ is the most likely class with 59% classification.
 This adversary was obtained using IGSM attack model. [See this](https://github.com/tensorflow/cleverhans/blob/master/cleverhans/attacks.py#L321) for the attack code.
 
 # Pixel Deflection
@@ -188,10 +191,11 @@ _ = classify_images([img_deflected], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_19_0.png"}})
+![png]({{"/images/pixel_deflection/output_19_0.png"}}){: .center-image}
 
 
-Pixel Deflection is able to retrieve the original class of the image, although the confidence of the true class **badger** has gone down significantly when compared with clean image -  from $99.7\%$ to $52\%$.
+
+Pixel Deflection is able to retrieve the original class of the image, although the confidence of the true class **badger** has gone down significantly when compared with clean image -  from 99.7% to 52%.
 
 ### Let's see the pixels that were deflected.
 
@@ -204,11 +208,12 @@ _=plt.xticks([]), plt.yticks([])
 ```
 
 
-![png]({{"/images/pixel_deflection/output_22_0.png"}})
+![png]({{"/images/pixel_deflection/output_22_0.png"}}){: .center-image}
+
 
 
 Since we are not using any map, probability of selecting any pixel in the image is equally likely.
-If deflecting $200$ pixels can cause such a major change in the class probabilities, **skunk** from $59\%$ from $25\%$ and **badger** from $15\%$ to $54\%$, then it begs the question, how much impact will this transformation (pixel deflection) have on the clean images.
+If deflecting 200 pixels can cause such a major change in the class probabilities, **skunk** from 59% from 25% and **badger** from 15% to 54%, then it begs the question, how much impact will this transformation (pixel deflection) have on the clean images.
 
 
 ## Impact on clean image
@@ -224,10 +229,11 @@ _ = classify_images([img_clean_deflected], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_25_0.png"}})
+![png]({{"/images/pixel_deflection/output_25_0.png"}}){: .center-image}
 
 
-Probability of true class **badger** remains at $100\%$. 
+
+Probability of true class **badger** remains at 100%. 
 Let's investigate the diff with the clean image.
 
 
@@ -238,7 +244,8 @@ _=plt.xticks([]), plt.yticks([])
 ```
 
 
-![png]({{"/images/pixel_deflection/output_27_0.png"}})
+![png]({{"/images/pixel_deflection/output_27_0.png"}}){: .center-image}
+
 
 
 ## Impact of increasing number of deflections
@@ -252,10 +259,11 @@ _ = classify_images([img_deflected_more], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_29_0.png"}})
+![png]({{"/images/pixel_deflection/output_29_0.png"}}){: .center-image}
 
 
-Now the accuracy jumps to $75\%$ but it does not change degrade the accuracy on clean image, as shown below.
+
+Now the accuracy jumps to 75% but it does not change degrade the accuracy on clean image, as shown below.
 
 
 
@@ -266,15 +274,16 @@ _ = classify_images([img_clean_deflected_more], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_31_0.png"}})
+![png]({{"/images/pixel_deflection/output_31_0.png"}}){: .center-image}
+
 
 
 ## Results so far
 
 | Class         | Clean         | Adversary  | Pixel Deflection  |
 | ------------- |:-------------:| -----     :| -----   :|
-| True class - Badger | $100$ | $15$ | $75$
-| Adversary  - Skunk  | $0.0$ | $59$ | $16$
+| True class - Badger | 100 | 15 | 75
+| Adversary  - Skunk  | 0.0 | 59 | 16
 
 <center> (numbers denote confidence in each class) </center>
 
@@ -301,19 +310,20 @@ _ = classify_images([img_deflected_denoised], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_37_0.png"}})
+![png]({{"/images/pixel_deflection/output_37_0.png"}}){: .center-image}
 
 
-As we can see that the confidence on the true class **badger** has gone up from $52\%$ to $92\%$ and the adversary class confidence has gone down from $25\%$ to $7\%$.
+
+As we can see that the confidence on the true class **badger** has gone up from 52 to 92 and the adversary class confidence has gone down from 25 to 7.
 Thus, when we combine __Pixel Deflection__ and __Wavlet Denoising__, overall effect is ----
 
 
-| Class         | Clean         | Adversary  | PD + WD  |
-| ------------- |:-------------:| -----     :| -----   :|
-| True class - Badger | $100$ | $15$ | $92$
-| Adversary  - Skunk  | $0.0$ | $59$ | $7$
+| Class         | Clean         |Adversary| PD + WD  |
+| :------------:|:-------------:|:-----:|:-----:|
+| True class - Badger | 100 | 15 | 92 |
+| Adversary  - Skunk  | 0.0 | 59 | 07 |
 
-<center> (numbers denote confidence in each class) </center>
+(numbers denote confidence in each class) 
 
 
 ## Attacks are non-localized
@@ -321,7 +331,7 @@ Thus, when we combine __Pixel Deflection__ and __Wavlet Denoising__, overall eff
 In our paper we analyzed the location of pixels where the adversary add the perturbation and found out that most attacks are agnostic to the presence of semantic objects. Correlation between pixels of class-object and pixels perturbed by attacks is very low. 
 Here, is the average location of adversarial perturbation for some of the major known attacks.
 
-![distribution_of_attacks](https://i.imgur.com/ydQ0a5e.png)
+![distribution_of_attacks](https://i.imgur.com/ydQ0a5e.png){: .center-image}
 
 The top left image shows the average location of the object (corresponding to the true class of the image). It is no surprise that most objects of interest is in the center of the image. This could just be human bias for taking pictures especially those which are part of ImageNet. 
 
@@ -339,7 +349,7 @@ For more details, we refer the reader to [our paper](https://arxiv.org/abs/1801.
 
 Here, is a visual comparison of CAM and robust version of CAM.
 
-![cam_vs_rcam](https://i.imgur.com/UV6iKT0.png)
+![cam_vs_rcam](https://i.imgur.com/UV6iKT0.png){: .center-image}
 
 
 ## Apply R-CAM
@@ -368,14 +378,9 @@ for ax_ in ax:
 
 ```
 
-    /usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py:6: DeprecationWarning: `imread` is deprecated!
-    `imread` is deprecated in SciPy 1.0.0, and will be removed in 1.2.0.
-    Use ``imageio.imread`` instead.
-      
 
+![png]({{"/images/pixel_deflection/output_44_1.png"}}){: .center-image}
 
-
-![png]({{"/images/pixel_deflection/output_44_1.png"}})
 
 
 Here is the distribution of the RCAM probabilities.
@@ -387,7 +392,8 @@ plt.show()
 ```
 
 
-![png]({{"/images/pixel_deflection/output_46_0.png"}})
+![png]({{"/images/pixel_deflection/output_46_0.png"}}){: .center-image}
+
 
 
 ## Pixel Deflection with R-CAM
@@ -434,10 +440,11 @@ _ = classify_images([img_deflected_rcam], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_50_0.png"}})
+![png]({{"/images/pixel_deflection/output_50_0.png"}}){: .center-image}
 
 
-As we can see performance of Pixel Deflection with RCAM is significantly higher ($82\%$) than Pixel Deflection without RCAM ($52\%$).
+
+As we can see performance of Pixel Deflection with RCAM is significantly higher (82%) than Pixel Deflection without RCAM (52%).
 Since PD with RCAM skips deflections when the randomly selected pixel lies in the hot regions (as show by RCAM above), it needs on average more deflections than standard PD.
 
 ## Distribution of Pixel Deflection with RCAM
@@ -463,7 +470,8 @@ for ax_ in ax:
 ```
 
 
-![png]({{"/images/pixel_deflection/output_53_0.png"}})
+![png]({{"/images/pixel_deflection/output_53_0.png"}}){: .center-image}
+
 
 
 We can see that in the image which goes PD withou RCAM number of pixels deflected in the HOT zone (_red color_) is much less compared to the image that goes PD without RCAM.
@@ -477,18 +485,19 @@ _ = classify_images([img_deflected_rcam_denoised], true_label, visualize=True)
 ```
 
 
-![png]({{"/images/pixel_deflection/output_56_0.png"}})
+![png]({{"/images/pixel_deflection/output_56_0.png"}}){: .center-image}
 
 
-Now the confidence on the true clas **badger** is $97\%$ and on the adversarial class is $2\%$. This is our best result.
 
-## Results
+Now the confidence on the true clas **badger** is 97% and on the adversarial class **skunk** is 2%. This is our best result.
+
+# Results
 
 
-| Class         | Clean         | Adversary  | PD       | PD + WD  | PD + RCAM| PD + RCAM + WD |
-| ------------- |:-------------:| -----     :| -----   :| -----   :| -----   :| -----         :|
-| True class - Badger | $100$ | $15$ | $75$ | $92$ | $82$ | $97$|
-| Adversary  - Skunk  | $0.0$ | **$59$** | $16$ | $07$ | $12$ | $02$|
+| Class         | Clean         | Adversary  | PD       | PD+WD  | PD+RCAM| PD+RCAM+WD |
+|:-------------:|:-------------:|:----------:|:--------:|:--------:|:------:|:------:|
+| True class - Badger | 100 | 15 | 75 | 92 | 82 | 97|
+| Adversary  - Skunk  | 0.0 | 59 | 16 | 07 | 12 | 02|
 
 <center> (numbers denote confidence in each class) </center>
 
@@ -497,4 +506,5 @@ Now the confidence on the true clas **badger** is $97\%$ and on the adversarial 
 For this image, it seems window of 20 might give better results, but for experiments I wanted to keep the same window as reported in our paper.
 
 For errors and corrections please contact aprakash@brandeis.edu
+
 
