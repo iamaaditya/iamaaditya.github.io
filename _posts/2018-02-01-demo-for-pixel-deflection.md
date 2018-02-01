@@ -14,29 +14,17 @@ tags:
 
 
 ## Change local pixel arrangement and then denoise using wavelet transform
-Select a random pixel in the image and replace it with another pixel from local neighbourhood.
-This process changes local pixel arrangement but not global statistics and thus efficiently counteracts the adversarial changes and does not impact clean images.
-This can be improved by selecting more pixels from regions outside of objects and by doing wavelet denoising.
-
-Paper: [arXiv](https://arxiv.org/abs/1801.08926)  
-Code : [GitHub](https://github.com/iamaaditya/pixel-deflection)  
-This Jupyter Notebook: [GitHub](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb)   
-
-**What**
-
-1. Select a random pixel and replace it with another randomly selected pixel from a local neighbourhood; we call this as pixel deflection (PD).
-
-2. Use a class-activation type map (R-CAM) to select the pixel to deflect. Less important the pixel for classification higher the chances that it will get deflected.
-
-3. Do a soft shrinkage over wavelet domain to remove the added noise (WD).
-
-**Why**
-
-1. PD changes local statistics without affecting the global statistics. Adversarial examples rely on specific activations; PD changes that but not enough to change overall image category.
-
-2. Most attacks are agnostic to the presence of semantic objects in the image; by picking more pixels outside the regions-of-interest we increase the likelihood of destroying the adversarial perturbation but not much of the content.
-
-3. Classifiers are trained on images without such (PD) noises. We can smoothen the impact of such noise by denoising, for which we found out that BayesShrink on DWT works best.
+[arXiv](https://arxiv.org/abs/1801.08926) <br /> [Code - GH ](https://github.com/iamaaditya/pixel-deflection) <br />[This Notebook](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb)    
+<br />
+**What**   
+1. Select a random pixel and replace it with another randomly selected pixel from a local neighbourhood; we call this as pixel deflection (PD).  
+2. Use a class-activation type map (R-CAM) to select the pixel to deflect. Less important the pixel for classification higher the chances that it will get deflected.  
+3. Do a soft shrinkage over wavelet domain to remove the added noise (WD).   
+<br />
+**Why**  
+1. PD changes local statistics without affecting the global statistics. Adversarial examples rely on specific activations; PD changes that but not enough to change overall image category.  
+2. Most attacks are agnostic to the presence of semantic objects in the image; by picking more pixels outside the regions-of-interest we increase the likelihood of destroying the adversarial perturbation but not much of the content.  
+3. Classifiers are trained on images without such (PD) noises. We can smoothen the impact of such noise by denoising, for which we found out that BayesShrink on DWT works best.   
 
 ## Table of Contents
 
@@ -65,8 +53,7 @@ from random import randint, uniform
 ```
 
 ### Load the classifier
-Classifier can be easily changed to inception_v3, vgg19, xception, etc see 
-https://github.com/iamaaditya/pixel-deflection/blob/master/main.py#L65
+Classifier can be easily changed to inception_v3, vgg19, xception, etc [see this](https://github.com/iamaaditya/pixel-deflection/blob/master/main.py#L65)
 
 
 
@@ -300,8 +287,7 @@ def denoiser(img):
 ```
 
 Here we show results only wavelet denoising, the best of several methods.   
-To experiment with other forms of denoising see
-https://github.com/iamaaditya/pixel-deflection/blob/master/methods.py#L13
+To experiment with other forms of denoising [see this](https://github.com/iamaaditya/pixel-deflection/blob/master/methods.py#L13)
 
 
 ```python
@@ -512,4 +498,8 @@ a viable approximation without relying on a specific pattern of pixels. This wor
 
 For errors and corrections please contact aprakash@brandeis.edu
 
+## TL;DR
 
+Select a random pixel in the image and replace it with another pixel from local neighbourhood.
+This process changes local pixel arrangement but not global statistics and thus efficiently counteracts the adversarial changes and does not impact clean images.
+This can be improved by selecting more pixels from regions outside of objects and by doing wavelet denoising.  
