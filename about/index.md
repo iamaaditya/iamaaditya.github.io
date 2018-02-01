@@ -41,7 +41,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 * **Problem**: Defend against the adversarial perturbations that change the image classification results
 * **Our method**: Take a region within an image and swap the pixels  _(we call this Pixel Deflection)_. Since the adversary is relying on very specific activations, changing local pixel arrangement is enough to counteract the adversarial changes. Often it requires some form of denoising for which we found that doing soft shrinkage on wavelet transform works best  
 * [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[HTML\]](https://www.arxiv-vanity.com/papers/1801.08926/) [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
-* Blog post describing the project coming soon.
+* Blog post describing the project [Demo for Pixel Deflection](http://iamaaditya.github.io/2018/02/demo-for-pixel-deflection/)
 
 ---
 
