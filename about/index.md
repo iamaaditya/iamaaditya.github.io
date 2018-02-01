@@ -4,10 +4,13 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> Public PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" /> Address](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/twitter.ico" height="20px" width="20px" />@aaditya_prakash](https://twitter.com/aaditya_prakash)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />Quora](https://www.quora.com/profile/Aaditya-Prakash)
+
+
+
+<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/icons8-twitter-26.png"> @aaditya_prakash](https://twitter.com/aaditya_prakash) [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" />](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)     [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />](https://www.quora.com/profile/Aaditya-Prakash)
 ---
 
-Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#current-research)     [Projects](#projects)     [Publications](#publications)
+Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#research)     [Projects](#projects)     [Publications](#publications)
 
 ## <a name="biography" id="biography"></a>Biography
 
@@ -33,11 +36,11 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 ### - Deflecting Adversarial Attacks with Pixel Deflection   
 
 <center> <img src="https://i.imgur.com/BhxmVwx.png" height="85%" width="85%" /> </center>
-<center> <img src="https://github.com/iamaaditya/iamaaditya.github.io/raw/master/images/image_combine.jpg" height="85%" width="85%" /> </center>
+<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/image_combine.jpg" height="85%" width="85%" /> </center>
 
 * **Problem**: Defend against the adversarial perturbations that change the image classification results
 * **Our method**: Take a region within an image and swap the pixels  _(we call this Pixel Deflection)_. Since the adversary is relying on very specific activations, changing local pixel arrangement is enough to counteract the adversarial changes. Often it requires some form of denoising for which we found that doing soft shrinkage on wavelet transform works best  
-* [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[HTML\]](https://www.arxiv-vanity.com/papers/1801.08926/)
+* [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[HTML\]](https://www.arxiv-vanity.com/papers/1801.08926/) [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
 * Blog post describing the project coming soon.
 
 ---
