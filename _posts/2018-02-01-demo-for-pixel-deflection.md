@@ -14,9 +14,9 @@ tags:
 
 
 ## Change local pixel arrangement and then denoise using wavelet transform
-Select a random pixel in the image and replace it with another local pixel (we call this Pixel Deflection). 
-This process changes local pixel arrangement but not global statistics and thus efficienty counteracts the adversarial changes but does not impact clean images.
-This can be improved by deflecting more pixels from regions outside of interest and by doing wavelet denoising.
+Select a random pixel in the image and replace it with another pixel from local neighbourhood.
+This process changes local pixel arrangement but not global statistics and thus efficiently counteracts the adversarial changes and does not impact clean images.
+This can be improved by selecting more pixels from regions outside of objects and by doing wavelet denoising.
 
 Paper: [arXiv](https://arxiv.org/abs/1801.08926)  
 Code : [GitHub](https://github.com/iamaaditya/pixel-deflection)  
@@ -24,7 +24,7 @@ This Jupyter Notebook: [GitHub](https://github.com/iamaaditya/pixel-deflection/b
 
 **What**
 
-1. Select a random pixel and replace it with another randomly selected pixel from a local neighbourhod; we call this as pixel deflection (PD).
+1. Select a random pixel and replace it with another randomly selected pixel from a local neighbourhood; we call this as pixel deflection (PD).
 
 2. Use a class-activation type map (R-CAM) to select the pixel to deflect. Less important the pixel for classification higher the chances that it will get deflected.
 
@@ -32,9 +32,9 @@ This Jupyter Notebook: [GitHub](https://github.com/iamaaditya/pixel-deflection/b
 
 **Why**
 
-1. PD changes local staticstics without affecting the global statistics. Adversarial examples rely on specific activations; PD changes that but not enough to change overall image category.
+1. PD changes local statistics without affecting the global statistics. Adversarial examples rely on specific activations; PD changes that but not enough to change overall image category.
 
-2. Most attacks are agnostic to presence of semantic objects in the image; by picking more pixels outside the regions-of-interest we increase likelihood of destroying the adversarial pertubation but not much of the content.
+2. Most attacks are agnostic to the presence of semantic objects in the image; by picking more pixels outside the regions-of-interest we increase the likelihood of destroying the adversarial perturbation but not much of the content.
 
 3. Classifiers are trained on images without such (PD) noises. We can smoothen the impact of such noise by denoising, for which we found out that BayesShrink on DWT works best.
 
@@ -142,7 +142,7 @@ _ = classify_images([img_clean], true_label, visualize=True)
 
 
 Green color bar indicates the 'true' class of the image. 
-Image is correctly classified as **'badger'** with 100% confidence.
+The image is correctly classified as **'badger'** with 100% confidence.
 
 ## Load and classify the adversarial image
 
@@ -162,7 +162,7 @@ This adversary was obtained using IGSM attack model. [See this](https://github.c
 
 # Pixel Deflection
 
-In our paper we use pixel deflection with a heatmap, but first lets look at pixel deflection without any maps.
+In our paper, we use pixel deflection with a heatmap, but first let's look at pixel deflection without any maps.
 
 
 ```python
@@ -195,7 +195,7 @@ _ = classify_images([img_deflected], true_label, visualize=True)
 
 
 
-Pixel Deflection is able to retrieve the original class of the image, although the confidence of the true class **badger** has gone down significantly when compared with clean image -  from 99.7% to 52%.
+Pixel Deflection is able to retrieve the original class of the image, although the confidence of the true class **badger** has gone down significantly when compared with the clean image -  from 99.7% to 52%.
 
 ### Let's see the pixels that were deflected.
 
@@ -212,14 +212,14 @@ _=plt.xticks([]), plt.yticks([])
 
 
 
-Since we are not using any map, probability of selecting any pixel in the image is equally likely.
+Since we are not using any map, the probability of selecting any pixel in the image is equally likely.
 If deflecting 200 pixels can cause such a major change in the class probabilities, **skunk** from 59% from 25% and **badger** from 15% to 54%, then it begs the question, how much impact will this transformation (pixel deflection) have on the clean images.
 
 
-## Impact on clean image
+## Impact on the clean image
 
-For most transformation based defenses impact on clean image is too severe, which makes them less useful.
-However, impact of Pixel Deflection on clean image is almost negligible.
+For most transformation based defenses impact on the clean image is too severe, which makes them less useful (e.g. JPEG, TVM)
+However, the impact of Pixel Deflection on the clean image is almost negligible.
 
 
 ```python
@@ -233,7 +233,7 @@ _ = classify_images([img_clean_deflected], true_label, visualize=True)
 
 
 
-Probability of true class **badger** remains at 100%. 
+The probability of true class **badger** remains at 100%. 
 Let's investigate the diff with the clean image.
 
 
@@ -249,7 +249,7 @@ _=plt.xticks([]), plt.yticks([])
 
 
 ## Impact of increasing number of deflections
-Increasing the number of deflections significantly increases the accruacy of the recovery of the true class.
+Increasing the number of deflections significantly increases the accuracy of the recovery of the true class.
 
 
 ```python
@@ -263,7 +263,7 @@ _ = classify_images([img_deflected_more], true_label, visualize=True)
 
 
 
-Now the accuracy jumps to 75% but it does not change degrade the accuracy on clean image, as shown below.
+Now the accuracy jumps to 75% but it does not change degrade the accuracy on the clean image, as shown below.
 
 
 
@@ -289,7 +289,7 @@ _ = classify_images([img_clean_deflected_more], true_label, visualize=True)
 
 # Wavelet Denoiser
 
-As we state in our paper, pixel-deflection is a form of artifical noise, and denoising this image will get rid of some of this noise.
+As we state in our paper, pixel-deflection is a form of artificial noise, and denoising this image will get rid of some of this noise.
 Let's see what happens after applying wavelet denoising.
 
 
@@ -315,7 +315,7 @@ _ = classify_images([img_deflected_denoised], true_label, visualize=True)
 
 
 As we can see that the confidence on the true class **badger** has gone up from 52 to 92 and the adversary class confidence has gone down from 25 to 7.
-Thus, when we combine __Pixel Deflection__ and __Wavlet Denoising__, overall effect is ----
+Thus, when we combine __Pixel Deflection__ and __Wavelet Denoising__, overall effect is ----
 
 
 | Class         | Clean         |Adversary| PD + WD  |
@@ -328,22 +328,22 @@ Thus, when we combine __Pixel Deflection__ and __Wavlet Denoising__, overall eff
 
 ## Attacks are non-localized
 
-In our paper we analyzed the location of pixels where the adversary add the perturbation and found out that most attacks are agnostic to the presence of semantic objects. Correlation between pixels of class-object and pixels perturbed by attacks is very low. 
+In our paper, we analyzed the location of pixels where the adversary adds the perturbation and found out that most attacks are agnostic to the presence of semantic objects. Correlation between pixels of class-object and pixels perturbed by attacks is very low. 
 Here, is the average location of adversarial perturbation for some of the major known attacks.
 
 ![distribution_of_attacks](https://i.imgur.com/ydQ0a5e.png){: .center-image}
 
-The top left image shows the average location of the object (corresponding to the true class of the image). It is no surprise that most objects of interest is in the center of the image. This could just be human bias for taking pictures especially those which are part of ImageNet. 
+The top left image shows the average location of the object (corresponding to the true class of the image). It is no surprise that most objects of interest are in the center of the image. This could just be human bias for taking pictures especially those which are part of ImageNet. 
 
-We take advantage of non-localized adversary by deflecting more pixels that are outside the regions of interest for a given image. Since precise boundaries are not needed it is sufficient to obtain a weak localization technique like [Class Activation Map](http://cnnlocalization.csail.mit.edu/). However, we found out that CAM has a inherent weakness when it comes to adversarial images.
+We take advantage of the non-localized adversary by deflecting more pixels that are outside the regions of interest for a given image. Since precise boundaries are not needed it is sufficient to obtain a weak localization technique like [Class Activation Map](http://cnnlocalization.csail.mit.edu/). However, we found out that CAM has an inherent weakness when it comes to adversarial images.
 
 # CAM vs Robust Activation Maps
 
-Class Activation Maps are heatmaps which highlight the areas most discriminative for a given image and a given class. This works well when the image contains the object given as the class but not so much if the given class name has no presence in the image. In a given adversarial image by definition the 'class' of the image is not the same as the true class. Thus, generating CAMs for adversarial images is difficulty. 
+Class Activation Maps are heatmaps which highlight the areas most discriminative for a given image and a given class. This works well when the image contains the object given as the class but not so much if the given class name has no presence in the image. In a given adversarial image by definition, the 'class' of the image is not the same as the true class. Thus, generating CAMs for dversarial images is difficult. 
 
-In order to overcome this, we propose a robust version of CAMs. If we see the Top-5 predictions for the adversarial image ```img_adversary``` other than the 'adversarial class' it is no surprise that most of these classes are closely related to true class even if not the same; *skunk, polecat, weasel* and *mink* are all similar looking animals. This is a a well known side effect of ImageNet because the thousand classes of ImageNet has lot of fine-grained classes of similar objects/species. 
+In order to overcome this, we propose a robust version of CAMs. If we see the Top-5 predictions for the adversarial image ```img_adversary``` other than the 'adversarial class' it is no surprise that most of these classes are closely related to true class even if not the same; *skunk, polecat, weasel*, and *mink* are all similar looking animals. This is a well-known side effect of ImageNet because a thousand classes of ImageNet has a lot of fine-grained classes of similar objects/species. 
 
-Robust Activation Map is geometric mean of CAM obtained using the top-K classes. By taking top-K classes, we average out the impact that a single bad adversarial class may cause to the activation map.
+Robust Activation Map is geometric mean of CAM obtained using the top-K classes. By taking top-K classes, we average out the impact that a single bad adversarial class may have on the activation map.
 
 For more details, we refer the reader to [our paper](https://arxiv.org/abs/1801.08926v1).
 
@@ -444,8 +444,8 @@ _ = classify_images([img_deflected_rcam], true_label, visualize=True)
 
 
 
-As we can see performance of Pixel Deflection with RCAM is significantly higher (82%) than Pixel Deflection without RCAM (52%).
-Since PD with RCAM skips deflections when the randomly selected pixel lies in the hot regions (as show by RCAM above), it needs on average more deflections than standard PD.
+As we can see the performance of Pixel Deflection with RCAM is significantly higher (82%) than Pixel Deflection without RCAM (52%).
+Since PD with RCAM skips deflections when the randomly selected pixel lies in the hot regions (as shown by RCAM above), it needs on average more deflections than standard PD.
 
 ## Distribution of Pixel Deflection with RCAM
 
@@ -474,7 +474,7 @@ for ax_ in ax:
 
 
 
-We can see that in the image which goes PD withou RCAM number of pixels deflected in the HOT zone (_red color_) is much less compared to the image that goes PD without RCAM.
+We can see that in the image which goes PD without RCAM number of pixels deflected in the HOT zone (_red color_) is much less compared to the image that goes PD without RCAM.
 
 ## Wavelet Denoising after PD with RCAM
 
@@ -489,7 +489,7 @@ _ = classify_images([img_deflected_rcam_denoised], true_label, visualize=True)
 
 
 
-Now the confidence on the true clas **badger** is 97% and on the adversarial class **skunk** is 2%. This is our best result.
+Now the confidence of the true class **badger** is 97% and on the adversarial class **skunk** is 2%. This is our best result.
 
 # Results
 
@@ -503,7 +503,12 @@ Now the confidence on the true clas **badger** is 97% and on the adversarial cla
 
 ## Notes
 
-For this image, it seems window of 20 might give better results, but for experiments I wanted to keep the same window as reported in our paper.
+For this image, it seems window of 20 might give better results, but for experiments, I wanted to keep the same window as reported in our paper.
+I have omitted the discussion of soft shrinkage for wavelet transform, which we found works much better than hard shrinkage.
+There is also a beneefit of about 1.6% of doing YCbCr transformation from RGB before doing wavelet transform.
+
+Strictly this is a black-box defense as the attack model does not know the defense strategy. Randomness of the strategy makes it harder to implement
+a viable approximation without relying on a specific pattern of pixels. This work is most similar to [this](https://arxiv.org/pdf/1711.00117.pdf) and [this](https://arxiv.org/abs/1711.01991).
 
 For errors and corrections please contact aprakash@brandeis.edu
 
