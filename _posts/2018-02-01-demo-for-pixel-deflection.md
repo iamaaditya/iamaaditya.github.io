@@ -14,7 +14,7 @@ tags:
 
 
 ## Change local pixel arrangement and then denoise using wavelet transform
-[arXiv](https://arxiv.org/abs/1801.08926) <br /> [Code - GH ](https://github.com/iamaaditya/pixel-deflection) <br />[This Notebook](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb)    
+Paper: [arXiv](https://arxiv.org/abs/1801.08926) &nbsp; &nbsp; &nbsp; &nbsp; Code: [GitHub](https://github.com/iamaaditya/pixel-deflection) &nbsp; &nbsp; &nbsp; &nbsp; Jupyter Notebook: [Source](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb)    
 <br />
 **What**   
 1. Select a random pixel and replace it with another randomly selected pixel from a local neighborhood; we call this as pixel deflection (PD).  
