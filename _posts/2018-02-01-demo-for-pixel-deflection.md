@@ -17,14 +17,18 @@ tags:
 Paper: [arXiv](https://arxiv.org/abs/1801.08926) &nbsp; &nbsp; &nbsp; &nbsp; Code: [GitHub](https://github.com/iamaaditya/pixel-deflection) &nbsp; &nbsp; &nbsp; &nbsp; Jupyter Notebook: [Source](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb)    
 <br />
 **What**   
-1. Select a random pixel and replace it with another randomly selected pixel from a local neighborhood; we call this as pixel deflection (PD).  
-2. Use a class-activation type map (R-CAM) to select the pixel to deflect. The less important the pixel for classification, the higher the chances that it will get deflected.  
-3. Do a soft shrinkage over the wavelet domain to remove the added noise (WD).   
+<ol>
+<li>Select a random pixel and replace it with another randomly selected pixel from a local neighborhood; we call this as pixel deflection (PD).  </li>
+<li>Use a class-activation type map (R-CAM) to select the pixel to deflect. The less important the pixel for classification, the higher the chances that it will get deflected.  </li>
+<li>Do a soft shrinkage over the wavelet domain to remove the added noise (WD).   </li>
+</ol>
 <br />
 **Why**  
-1. PD changes local statistics without affecting the global statistics. Adversarial examples rely on specific activations; PD changes that but not enough to change the overall image category.  
-2. Most attacks are agnostic to the presence of semantic objects in the image; by picking more pixels outside the regions-of-interest we increase the likelihood of destroying the adversarial perturbation but not much of the content.  
-3. Classifiers are trained on images without such (PD) noise. We can smooth the impact of such noise by denoising, for which we found out that BayesShrink on DWT works best.   
+<ol>
+<li>PD changes local statistics without affecting the global statistics. Adversarial examples rely on specific activations; PD changes that but not enough to change the overall image category.  </li>
+<li>Most attacks are agnostic to the presence of semantic objects in the image; by picking more pixels outside the regions-of-interest we increase the likelihood of destroying the adversarial perturbation but not much of the content.  </li>
+<li>Classifiers are trained on images without such (PD) noise. We can smooth the impact of such noise by denoising, for which we found out that BayesShrink on DWT works best.  </li> 
+</ol>
 
 ## Table of Contents
 
