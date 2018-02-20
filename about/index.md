@@ -5,12 +5,13 @@ layout: page
 dsq_thread_id: []
 ---
 
+> [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> <font size="4">aprakash[at]brandeis.edu</font>](mailto:aprakash@brandeis.edu)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/icons8-twitter-26.png" height="20px" width="20px"> @aaditya_prakash](https://twitter.com/aaditya_prakash) [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/google-scholar.png" height="20px" width="20px" /> Scholar](https://scholar.google.co.in/citations?user=P-jHG4cAAAAJ&hl=en)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" />itcoin](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)     [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />uora](https://www.quora.com/profile/Aaditya-Prakash)  [Linked<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/if_linkedin_386655.ico" height="20px" width="20px" />](https://www.linkedin.com/in/aaditya-prakash-68453338/) 
 
-
-<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> aprakash\[at\]brandeis.edu   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/icons8-twitter-26.png"> @aaditya_prakash](https://twitter.com/aaditya_prakash) [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)       [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" />](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)     [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />](https://www.quora.com/profile/Aaditya-Prakash)
 ---
 
 Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#research)     [Projects](#projects)     [Publications](#publications)
+
+---
 
 ## <a name="biography" id="biography"></a>Biography
 
@@ -18,15 +19,23 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ## Highlights
 
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" height="50%"/> Received Roberto Padovani scholarship (Qualcomm), 2017.
-* <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/new.jpg" height="50%" /> Outstanding Teaching Fellow Award, Brandeis 2017.
-* Gave five lecture series on Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [\[Slides\]](http://iamaaditya.github.io/notes/CS175/)
+### 2018
+* Paper on **pixel deflection** accepted to CVPR 2018. [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
+* I will be interning at **Microsoft Research (AI)** during the summer.
+
+### 2017
+* Received **Roberto Padovani Scholarship** (Qualcomm).
+* Interned at **Qualcomm Research** during the summer.
+* Received **Outstanding Teaching Fellow Award**, Brandeis.
+* Gave five **lecture series on Deep Learning**, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [\[Slides\]](http://iamaaditya.github.io/notes/CS175/)
 * Paper on **image compression using CNN** accepted to Data Compression Conference. [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf)
 * Paper on **Condensed Memory Networks** accepted to AAAI 2017. [\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
+
+### 2016
 * Paper on **Neural Paraphrase Generation** accepted to COLING 2016. [\[PDF\]](https://arxiv.org/pdf/1610.03098v3.pdf) [\[Poster\]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
 * Won **Honrable Mention Prize** for Visual Question Answering Challenge. [\[Video\]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [\[Slides\]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [\[Poster\]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
 * Accepted to **Deep Learning Summer School** at University of Montrel. \[25% acceptance rate\]
-* Started summer internship at AI Labs at **Philips Research**.
+* Interned at AI Labs at **Philips Research** during the summer.
 * Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [\[PDF\]](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
 
 ## Research
@@ -134,20 +143,22 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ---
 
+* [Visual Question Answering Demo](https://github.com/iamaaditya/VQA_Demo/blob/master/Visual_Question_Answering_Demo_in_python_notebook.ipynb) - A tutorial on writing code for Visual Question Answering - Jupyter Notebook.
+* [Pixel Deflection](https://github.com/iamaaditya/pixel-deflection/blob/master/demo.ipynb) - A simple technique to overcome adversarial perturbations - Jupyter Notebook.
 * [Detecting fallacy in sentences](https://github.com/gekonwi/brandeis.semantics.final_project) - A computational semantics project in Haskell. Collaborators - [Amin](https://github.com/amsa) & [Shlomo](https://github.com/gekonwi)
 * [Social Travel guide](https://github.com/edenzik/elastiCity). Elastic Search project for travel search guide. Collaborators [Eden](https://github.com/edenzik), [Dimos](https://github.com/dimstamat) & Zhenyu.
 * [Clipboard to Email](https://github.com/iamaaditya/Clipboard_to_Email). Send Code from clipboard to email automatically.
+
 
 ## Publications
 
 ---
 
-### In Review
-
-* Prakash, Aaditya et al. "Deflecting Adversarial Attacks with Pixel Deflection"
-* Garber, Solomon et al. "Static Visual Lecture Summary using Local Intensity Correlation".
-
-### Published
+Prakash, Aaditya, et al. "Deflecting Adversarial Attacks with Pixel Deflection", CVPR (2018). <br />
+<details> <summary><a>Abstract</a></summary>
+CNNs are poised to become integral parts of many critical systems. Despite their robustness to natural variations, image pixel values can be manipulated, via small, carefully crafted, imperceptible perturbations, to cause a model to misclassify images. We present an algorithm to process an image so that classification accuracy is significantly preserved in the presence of such adversarial manipulations. Image classifiers tend to be robust to natural noise, and adversarial attacks tend to be agnostic to object location. These observations motivate our strategy, which leverages model robustness to defend against adversarial perturbations by forcing the image to match natural image statistics. Our algorithm locally corrupts the image by redistributing pixel values via a process we term pixel deflection. A subsequent wavelet-based denoising operation softens this corruption, as well as some of the adversarial changes. We demonstrate experimentally that the combination of these techniques enables the effective recovery of the true class, against a variety of robust attacks. Our results compare favorably with current state-of-the-art defenses, without requiring retraining or modifying the CNN.
+</details>
+[\[PDF\]](https://arxiv.org/pdf/1801.08926) [\[Code\]](https://github.com/iamaaditya/pixel-deflection)
 
 ---
 
@@ -185,21 +196,20 @@ We propose a version of highway network designed for the task of Visual Question
 
 ### Pre grad school
 
-* Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for better visual interpretation of large unstructured datasets. _Infosys Lab Briefings, Infosys._ Vol 11(1). _Jan 2013_ <br />
+Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for better visual interpretation of large unstructured datasets. _Infosys Lab Briefings, Infosys._ Vol 11(1). _Jan 2013_ <br />
 
-  | [\[Abstract\]](http://aaditya.info/research/abstract_graph.txt) [\[Full-pdf\]](http://aaditya.info/research/graph.pdf) [\[INFY\]](http://www.infosys.com/infosys-labs/publications/infosyslabs-briefings/Pages/bigdata-challenges-opportunities.aspx) [\[slides\]](http://aaditya.info/research/slides_graph.pdf) |
-* Prakash, A. (2012). Measures of Fault Tolerance in Distributed Simulated Annealing. _Proceedings of International Conference on Perspective of Computer Confluence with Sciences._ Vol 1 pp 111-114.<br />
+<details> <summary><a>Abstract</a></summary>
+Self-Organizing Maps (SOM) are popular unsupervised artificial neural network used to reduce dimensions and visualize data.  Visual interpretation from Self-Organizing Maps (SOM) has been limited due to grid approach of data representation, which makes inter-scenario analysis impossible. The paper proposes a new way to structure SOM. This model reconstructs SOM to show strength between variables as the threads of a cobweb and illuminate inter- scenario analysis. While Radar Graphs are very crude representation of spider web, this model uses more lively and realistic cobweb representation to take into account the difference in strength and length of threads. This model allows for visualization of highly unstructured dataset with large number of dimensions, common in Bigdata sources.
+</details>
 
-  | [\[Abstract\]](http://aaditya.info/research/abstract_fault.txt) [\[Full-pdf\]](http://aaditya.info/research/fault.pdf) [\[arXiv\]](http://arxiv.org/abs/1212.3295) [\[slides\]](http://aaditya.info/research/slides_fault.pdf) |
-* Prakash, A., & Jha, R. K. (2012). New Interface Protocol to Connect Multiple Bank Networks from a Single Outlet. _International Journal of Computer Applications, NY, USA_ Vol. 55(1) pp 1-9.<br />
+[\[PDF\]](https://arxiv.org/pdf/1301.0289) [\[slides\]](https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/spider_graphs_2013/slides_graph.pdf) 
 
-  | [\[Abstract\]](http://aaditya.info/research/abstract_protocol.txt) [\[Full-pdf\]](http://aaditya.info/research/protocol.pdf) [\[IJCA\]](http://www.ijcaonline.org/archives/volume55/number12/8804-3034) [\[slides\]](http://aaditya.info/research/slides_protocol.pdf) |
+Prakash, A. (2012). Measures of Fault Tolerance in Distributed Simulated Annealing. _Proceedings of International Conference on Perspective of Computer Confluence with Sciences._ Vol 1 pp 111-114.<br />
+
+<details> <summary><a>Abstract</a></summary>
+In this paper, we examine the different measures of Fault Tolerance in a Distributed Simulated Annealing process. Optimization by Simulated Annealing on a distributed system is prone to various sources of failure. We analyse simulated annealing algorithm, its architecture in distributed platform and potential sources of failures. We examine the behaviour of tolerant distributed system for optimization task. We present possible methods to overcome the failures and achieve fault tolerance for the distributed simulated annealing process. We also examine the implementation of Simulated Annealing in MapReduce system and possible ways to prevent failures in reaching the global optima. This paper will be beneficial to those who are interested in implementing a large scale distributed simulated annealing optimization problem of industrial or academic interest. We recommend hybrid tolerance technique to optimize the trade-off between efficiency and availability.
+</details>
+[\[PDF\]](https://arxiv.org/pdf/1212.3295) [\[slides\]](https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/fault_tolerance_2012/slides_fault.pdf)
 
 ---
 
-[Quora](http://www.quora.com/Aaditya-Prakash) - [Wikipedia](http://en.wikipedia.org/wiki/User:Iamaaditya) - [Google+](https://plus.google.com/u/0/100303074762902184969?rel=author) - [Twitter](http://twitter.com/aaditya_prakash) - [Linkedin](https://in.linkedin.com/in/aaditya-prakash-68453338) - [Academia.edu](http://infosys.academia.edu/aadityaprakash) - [SlideShare](http://www.slideshare.net/aadityaprakash/) - [GitHub](https://github.com/iamaaditya) - [ResearchGate](https://www.researchgate.net/profile/Aaditya_Prakash3)
-
-<details>
-<summary><a>Thank you!</a></summary>
-\(づ｡◕‿‿◕｡)づ
-</details>
