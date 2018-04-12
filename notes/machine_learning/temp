@@ -1,0 +1,5 @@
+
+ * [Visually explained ](http://setosa.io/ev/)
+ * [Visually this explained ](http://setosa.io/ev/)
+
+ %s:* \(.*\)<\(.*\)>:* [\1](\2):gc

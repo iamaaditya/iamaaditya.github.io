@@ -11,6 +11,8 @@ This page is used to collect notes.  I use this to share relevant notes, links a
 # Presentations
  These are the presentations or class slides for the seminar talks or classroom lectures I have given. These are the most requested urls, and main reason for creation of this page. 
 
+ * [Building Blocks of Deep Learning](https://docs.google.com/presentation/d/1E-Zon-vjoQm24cWhjpbltHd2XWVb-5RG2mRFySD4Ym0/edit#slide=id.g35f391192_00) - Apr 9, 2018
+ * [Computer Vision with Convolutional Neural Networks](https://docs.google.com/presentation/d/1jE-LVhuyGaq7UPWnhQI41MzvfoJAQ9V0XyP2eX_kw4w/edit#slide=id.p) - Apr 11, 2018
  * [General purpose GPU Computing and CUDA]( https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing )  - Nov 30, 2015
  * [RNN, LSTM, NTM, GRU, RMVA, OMG !!]( https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing )  - Nov 18, 2015 
  * [Value of a feature]( https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing ) - October 19, 2015
