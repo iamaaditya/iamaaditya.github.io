@@ -21,6 +21,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ### 2018
 * Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
+* I will be interning at **Microsoft Research (AI)** during the summer.
 * Paper on protecting jpeg images against **adversarial attacks** accepted to DCC (Oral). [\[PDF\]](https://arxiv.org/pdf/1803.00940.pdf)
 
 ### 2017

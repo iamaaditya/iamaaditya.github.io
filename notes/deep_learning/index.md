@@ -57,6 +57,7 @@ What is Deep Learning ?
   * [Reasoning, Attention and Memory NIPS Workshop 2015,](http://www.thespermwhale.com/jaseweston/ram/)
   * [What is Variational Autoencoder](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/)
   * [Convolutional Neural Networks](http://adventuresinmachinelearning.com/convolutional-neural-networks-tutorial-tensorflow/)
+  * [Introduction to Reinforcement Learning](https://icml.cc/2016/tutorials/deep_rl_tutorial.pdf)
 
 ### Courses 
   * <https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/>
