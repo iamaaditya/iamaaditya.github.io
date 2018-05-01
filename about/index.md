@@ -20,8 +20,10 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 ## Highlights
 
 ### 2018
+* I am currently doing research internship at **Microsoft Research (AI)**.
 * Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
-* I will be interning at **Microsoft Research (AI)** during the summer.
+* I gave an invited talk on Deep Learning at Connecticut College. [\[Slides\]](https://docs.google.com/presentation/d/1ci1qJVz-vJd02wz1IQNhilBemvc876rKIzwGIC9ZkG0)
+* Extended abstract on **pixel deflection** and **robust activation maps** accepted to [CV-COPS 2018](https://vision.soic.indiana.edu/bright-and-dark-workshop-2018/)
 * Paper on protecting jpeg images against **adversarial attacks** accepted to DCC (Oral). [\[PDF\]](https://arxiv.org/pdf/1803.00940.pdf)
 
 ### 2017
