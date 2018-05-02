@@ -18,9 +18,30 @@ Table of Contents     [Biography](#biography)     [Highlights](#highlights
 I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. My research focus is in application of [deep learning in problems of vision and language]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
 
 ## Highlights
+<table style="border-collapse: collapse; border: none;" width="100%" align='left'>
+<tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td></tr>
+<tr>
+<td style="border: none; ">
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Vector.png" height="60px" width="60px" /> 
 
+</td>
+<td style="border: none; "> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> 
+  </td>
+<td style="border: none;"> 
+  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conferences.png" height="60px" width="120px" /> 
+</td>
+</tr> </table>
+
+---
 ### 2018
-* I am currently doing research internship at **Microsoft Research (AI)**.
+* I am currently doing research internship at **Microsoft Research (AI+R)**.
+* I will be attending **Deep/Reinforcement Learning Summer** [School](https://dlrlsummerschool.ca/) at [Vector Institute (CIFAR/MILA)](https://vectorinstitute.ai/)
 * Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
 * I gave an invited talk on Deep Learning at Connecticut College. [\[Slides\]](https://docs.google.com/presentation/d/1ci1qJVz-vJd02wz1IQNhilBemvc876rKIzwGIC9ZkG0)
 * Extended abstract on **pixel deflection** and **robust activation maps** accepted to [CV-COPS 2018](https://vision.soic.indiana.edu/bright-and-dark-workshop-2018/)
