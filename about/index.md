@@ -24,7 +24,6 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 <td style="border: none; ">
   <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> 
   <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Vector.png" height="60px" width="60px" /> 
 
 </td>
 <td style="border: none; "> 
