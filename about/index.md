@@ -19,23 +19,25 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ## Highlights
 <table style="border-collapse: collapse; border: none;" width="100%" align='left'>
-<tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td></tr>
+<tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td></tr>
 <tr>
-<td style="border: none; ">
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> 
+    <td style="border: none; ">
+      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> 
+      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> 
+    </td>
+    <td style="border: none; "> 
+      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> 
+      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> 
+      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> 
+      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> 
+      </td>
+    <td style="white-space:pre; vertical-align: top;"><strong><a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR</a>,&#9;<a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI</a>
 
-</td>
-<td style="border: none; "> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> 
-  </td>
-<td style="border: none;"> 
-  <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conferences.png" height="60px" width="120px" /> 
-</td>
-</tr> </table>
+<a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING</a>, <a href="https://arxiv.org/pdf/1612.08712v1.pdf">DCC</a></strong></td>
+    <td style="white-space:pre; vertical-align: top;"><strong><a href="https://github.com/iamaaditya/pixel-deflection">Pixel Deflection</a>, <a href="https://github.com/iamaaditya/VQA_Demo/">VQA</a>
+
+<a href="https://github.com/iamaaditya/image-compression-cnn">Semantic JPEG</a>, <a href="https://github.com/iamaaditya/neural-paraphrase-generation">Paraphrasing</a></strong></td></tr>
+</table>
 
 ---
 ### 2018
