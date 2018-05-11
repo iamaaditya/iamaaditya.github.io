@@ -38,6 +38,15 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 <a href="https://github.com/iamaaditya/image-compression-cnn">Semantic JPEG</a>, <a href="https://github.com/iamaaditya/neural-paraphrase-generation">Paraphrasing</a></strong></td></tr>
 </table>
+<table width="100%">
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><th><strong>Adversarial Images</strong></th><th><strong>Memory Networks</strong></th><th><strong>Paraphrasing (LSTM)</strong></th><th><strong>VQA</strong></th></tr>
+<tr>
+<td><a href="#"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  style="border:2px groove blue;"/> </a></td>
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" style="border:2px groove blue;" /> </a></td>
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" style="border:2px groove blue;" /> </a></td>
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" style="border:2px groove blue;" /> </a></td>
+</tr></table>
 
 ---
 ### 2018
@@ -54,7 +63,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 * Received **Outstanding Teaching Fellow Award**, Brandeis.
 * Gave five **lecture series on Deep Learning**, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [\[Slides\]](http://iamaaditya.github.io/notes/CS175/)
 * Paper on **image compression using CNN** accepted to Data Compression Conference. [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf)
-* Paper on **Condensed Memory Networks** accepted to AAAI 2017. [\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
+* Paper on **Condensed Memory Networks** accepted to AAAI 2017. [\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
 ### 2016
 * Paper on **Neural Paraphrase Generation** accepted to COLING 2016. [\[PDF\]](https://arxiv.org/pdf/1610.03098v3.pdf) [\[Poster\]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
@@ -97,7 +106,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 * **Problem**: Add semantic knowledge to image compression Semantic Image Compression
 * **Our method**: Use CNN to generate a map that covers all the 'semantic objects' and weighs them based on importance. Use variable scaling JPEG to encode the information.
   For more details :
-* [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf) [\[Slides\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/dcc_2017/dcc_slides.pdf)
+* [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1Yv9U4KMXh-iZ5WB2pgvyrbCKxnxYskR2lWYJ0j0T_JA/edit?usp=sharing)
 * Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/\~storer/)
 
 ---
@@ -199,7 +208,7 @@ Prakash, Aaditya, et al. "Condensed Memory Networks for Clinical Diagnostic Infe
 <details> <summary><a>Abstract</a></summary>
 Diagnosis of a clinical condition is a challenging task, which often requires significant medical investigation. Previous work related to diagnostic inferencing problems mostly consider multivariate observational data (e.g. physiological signals , lab tests etc.). In contrast, we explore the problem using free-text medical notes recorded in an electronic health record (EHR). Complex tasks like these can benefit from structured knowledge bases, but those are not scalable. We instead exploit raw text from Wikipedia as a knowledge source. Memory networks have been demonstrated to be effective in tasks which require comprehension of free-form text. They use the final iteration of the learned representation to predict probable classes. We introduce condensed memory neural networks (C-MemNNs), a novel model with iterative condensation of memory representations that preserves the hierarchy of features in the memory. Experiments on the MIMIC-III dataset show that the proposed model outperforms other variants of memory networks to predict the most probable diagnoses given a complex clinical scenario.
 </details>
-[\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
+[\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
 ---
 
@@ -207,7 +216,7 @@ Prakash, Aaditya, et al. "Neural Paraphrase Generation with Stacked Residual LST
 <details> <summary><a>Abstract</a></summary>
 n this paper, we propose a novel neural approach for paraphrase generation. Conventional paraphrase generation methods either leverage handwritten rules and thesauri-based alignments, or use statistical machine learning principles. To the best of our knowledge, this work is the first to explore deep learning models for paraphrase generation. Our primary contribution is a stacked residual LSTM network, where we add residual connections between LSTM layers. This allows for efficient training of deep LSTMs. We experiment with our model and other state-of-the-art deep learning models on three different datasets: PPDB, WikiAnswers and MSCOCO. Evaluation results demonstrate that our model outperforms sequence to sequence, attention-based and bi-directional LSTM models on BLEU, METEOR, TER and an embedding-based sentence similarity metric.
 </details>
-[\[PDF\]](https://arxiv.org/pdf/1610.03098v3.pdf) [\[Poster\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf)
+[\[PDF\]](https://arxiv.org/pdf/1610.03098v3.pdf) [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf)
 
 ---
 
@@ -215,7 +224,7 @@ Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, C
 <details> <summary><a>Abstract</a></summary>
 We propose a version of highway network designed for the task of Visual Question Answering. We take inspiration from recent success of Residual Layer Network and Highway Network in learning deep representation of images and fine grained localization of objects. We propose variation in gating mechanism to allow incorporation of word embedding in the information highway. The gate parameters are influenced by the words in the question, which steers the network towards localized feature learning. This achieves the same effect as soft attention via recurrence but allows for faster training using optimized feed-forward techniques.  We are able to obtain state-of-the-art1 results on VQA dataset for Open Ended and Multiple Choice tasks with current model.
 </details>
-[\[PDF\]](http://gpgpu.cs-i.brandeis.edu/highway.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing) [\[Poster\]](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf)
+[\[PDF\]](http://gpgpu.cs-i.brandeis.edu/highway.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing) [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf)
 
 ---
 
@@ -227,14 +236,14 @@ Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for bet
 Self-Organizing Maps (SOM) are popular unsupervised artificial neural network used to reduce dimensions and visualize data.  Visual interpretation from Self-Organizing Maps (SOM) has been limited due to grid approach of data representation, which makes inter-scenario analysis impossible. The paper proposes a new way to structure SOM. This model reconstructs SOM to show strength between variables as the threads of a cobweb and illuminate inter- scenario analysis. While Radar Graphs are very crude representation of spider web, this model uses more lively and realistic cobweb representation to take into account the difference in strength and length of threads. This model allows for visualization of highly unstructured dataset with large number of dimensions, common in Bigdata sources.
 </details>
 
-[\[PDF\]](https://arxiv.org/pdf/1301.0289) [\[slides\]](https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/spider_graphs_2013/slides_graph.pdf) 
+[\[PDF\]](https://arxiv.org/pdf/1301.0289) [\[slides\]](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/spider_graphs_2013/slides_graph.pdf) 
 
 Prakash, A. (2012). Measures of Fault Tolerance in Distributed Simulated Annealing. _Proceedings of International Conference on Perspective of Computer Confluence with Sciences._ Vol 1 pp 111-114.<br />
 
 <details> <summary><a>Abstract</a></summary>
 In this paper, we examine the different measures of Fault Tolerance in a Distributed Simulated Annealing process. Optimization by Simulated Annealing on a distributed system is prone to various sources of failure. We analyse simulated annealing algorithm, its architecture in distributed platform and potential sources of failures. We examine the behaviour of tolerant distributed system for optimization task. We present possible methods to overcome the failures and achieve fault tolerance for the distributed simulated annealing process. We also examine the implementation of Simulated Annealing in MapReduce system and possible ways to prevent failures in reaching the global optima. This paper will be beneficial to those who are interested in implementing a large scale distributed simulated annealing optimization problem of industrial or academic interest. We recommend hybrid tolerance technique to optimize the trade-off between efficiency and availability.
 </details>
-[\[PDF\]](https://arxiv.org/pdf/1212.3295) [\[slides\]](https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/fault_tolerance_2012/slides_fault.pdf)
+[\[PDF\]](https://arxiv.org/pdf/1212.3295) [\[slides\]](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/fault_tolerance_2012/slides_fault.pdf)
 
 ---
 
