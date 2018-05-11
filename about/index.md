@@ -113,7 +113,7 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
 
 ### - Neural Paraphrase generation using Residual Stacked LSTM
 
-<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/residual_lstm_small.png" height="65%" width="65%"> </center>
+<center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/residual_lstm_small.png" height="45%" width="45%"> </center>
 
 * **Problem**: Generate paraphrases using a 'neural' model.
 * **Our method**: We take inspiration from ResNet and apply the same techniques to LSTM. We believe this helpes to maintain the semantics of the paraphrases.
