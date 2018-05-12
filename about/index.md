@@ -5,7 +5,7 @@ layout: page
 dsq_thread_id: []
 ---
 
-> [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> <font size="4">aprakash[at]brandeis.edu</font>](mailto:aprakash@brandeis.edu)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/icons8-twitter-26.png" height="20px" width="20px"> @aaditya_prakash](https://twitter.com/aaditya_prakash) [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/google-scholar.png" height="20px" width="20px" /> Scholar](https://scholar.google.co.in/citations?user=P-jHG4cAAAAJ&hl=en)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" />itcoin](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)     [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />uora](https://www.quora.com/profile/Aaditya-Prakash)  [Linked<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/if_linkedin_386655.ico" height="20px" width="20px" />](https://www.linkedin.com/in/aaditya-prakash-68453338/) 
+> [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/small_email.png" height="20px" width="20px" /> <font size="4">aprakash[at]brandeis.edu</font>](mailto:aprakash@brandeis.edu)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="20px" width="20px"> iamaaditya](https://github.com/iamaaditya)    [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/icons8-twitter-26.png" height="20px" width="20px"> @aaditya_prakash](https://twitter.com/aaditya_prakash) [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/pgp.gif" height="20px" width="20px"> PGP](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/pgp_public_aaditya.txt)  [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/google-scholar.png" height="20px" width="20px" /> Scholar](https://scholar.google.co.in/citations?user=P-jHG4cAAAAJ&hl=en)   [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Froyoshark-Enkel-Bitcoin.ico" width="20px" height="20px" />itcoin](https://blockchain.info/address/19a2dDQDh3EDpHs5bhDyHnoGLMTwqjoEVv)     [<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/quora.ico" height="20px" width="20px" />uora](https://www.quora.com/profile/Aaditya-Prakash) [Linked<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/if_linkedin_386655.ico" height="20px" width="20px" />](https://www.linkedin.com/in/aaditya-prakash-68453338/) 
 
 ---
 
@@ -15,11 +15,13 @@ Table of Contents     [Biography](#biography)     [Highlights](#highlights
 
 ## <a name="biography" id="biography"></a>Biography
 
-I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. My research focus is in application of [deep learning in problems of vision and language]({{site.baseurl}}/notes/research/). Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
+I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Boston. My research focus is in application of [**deep learning** in problems of vision and language]({{site.baseurl}}/notes/research/). I have been fortunate enough to intern at **Microsoft** Research (Redmond), **Qualcomm** Research (San Diego) and **Philips** Research (Cambridge) during the grad school summers. Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
 
 ## Highlights
-<table style="border-collapse: collapse; border: none;" width="100%" align='left'>
-<tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td></tr>
+<table style="border-collapse: collapse; border: none; margin: 0px auto;" width="100%" align='left'>
+<tr style="border: none;"> 
+    <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td>
+</tr>
 <tr>
     <td style="border: none; ">
       <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> 
@@ -31,21 +33,28 @@ I am a PhD Student at [Brandeis University](http://www.brandeis.edu/), Boston. M
       <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> 
       <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> 
       </td>
-    <td style="white-space:pre; vertical-align: top;"><strong><a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR</a>,&#9;<a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI</a>
-
-<a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING</a>, <a href="https://arxiv.org/pdf/1612.08712v1.pdf">DCC</a></strong></td>
-    <td style="white-space:pre; vertical-align: top;"><strong><a href="https://github.com/iamaaditya/pixel-deflection">Pixel Deflection</a>, <a href="https://github.com/iamaaditya/VQA_Demo/">VQA</a>
-
-<a href="https://github.com/iamaaditya/image-compression-cnn">Semantic JPEG</a>, <a href="https://github.com/iamaaditya/neural-paraphrase-generation">Paraphrasing</a></strong></td></tr>
+    <td style="vertical-align: top;"><strong>
+        <a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR '16,'18   </a><br/>
+        <a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI '17 </a><br/>
+        <a href="https://arxiv.org/pdf/1612.08712v1.pdf">DCC  '17,'18 </a><br/>
+        <a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING '16</a><br/>
+    </strong></td>
+    <td style="vertical-align: top;"><strong>
+        <a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> Pixel Deflection (14★)</a><br/>
+        <a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> VQA Demo  (157★)</a><br/>
+        <a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> Semantic image compression (92★)</a><br/>
+        <a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> Neural Paraphrasing Generation (78★)</a><br/>
+    </strong></td>
+</tr>
 </table>
 <table width="100%">
 <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr><th><strong>Adversarial Images</strong></th><th><strong>Memory Networks</strong></th><th><strong>Paraphrasing (LSTM)</strong></th><th><strong>VQA</strong></th></tr>
 <tr>
-<td><a href="#"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  style="border:2px groove blue;"/> </a></td>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" style="border:2px groove blue;" /> </a></td>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" style="border:2px groove blue;" /> </a></td>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" style="border:2px groove blue;" /> </a></td>
+<td><a href="#"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  style="border:2px groove black;"/> </a></td>
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
 </tr></table>
 
 ---
