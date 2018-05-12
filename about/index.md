@@ -36,10 +36,10 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
         <a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING '16</a><br/>
     </strong></td>
     <td style="vertical-align: top;"><strong>
-        <a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> Pixel Deflection (14★)</a><br/>
-        <a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> VQA Demo  (157★)</a><br/>
-        <a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> Semantic image compression (92★)</a><br/>
-        <a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.ico" height="15px" width="15px"> Neural Paraphrasing Generation (78★)</a><br/>
+        <a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Pixel Deflection (14★)</a><br/>
+        <a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> VQA Demo  (157★)</a><br/>
+        <a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Semantic image compression (92★)</a><br/>
+        <a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Neural Paraphrasing Generation (78★)</a><br/>
     </strong></td>
 </tr>
 </table>
