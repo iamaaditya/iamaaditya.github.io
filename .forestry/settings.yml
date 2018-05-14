@@ -1,5 +1,5 @@
 ---
-upload_path: "/forestryio/images"
+upload_path: "/images"
 frontmatter_file_url_template: 
 body_file_url_template: 
 new_page_extension: md
