@@ -1,5 +1,6 @@
 ---
 pages:
+- research/model-compression.md
 - _posts/2018-02-01-demo-for-pixel-deflection.md
 hide_body: false
 is_partial: false
