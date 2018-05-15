@@ -4,7 +4,6 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
-
 Table of Contents     [Biography](#biography)     [Highlights](#highlights)     [Research](#research)     [Projects](#projects)     [Publications](#publications)
 
 ---
@@ -14,47 +13,27 @@ Table of Contents     [Biography](#biography)     [Highlights](#highlights
 I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Boston. My research focus is in application of [**deep learning** in problems of vision and language]({{site.baseurl}}/notes/research/). I have been fortunate enough to intern at **Microsoft** Research (Redmond), **Qualcomm** Research (San Diego) and **Philips** Research (Cambridge) during the grad school summers. Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). My [name means "Sun"]({{site.baseurl}}/notes/name/), and it is pronounced as "aaa--Dee--ti--ya". Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), running, [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
 
 ## Highlights
-<table style="border-collapse: collapse; border: none; margin: 0px auto;" width="100%" align='left'>
-<tr style="border: none;"> 
-    <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td>
-</tr>
-<tr>
-    <td style="border: none; ">
-      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> 
-      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> 
-    </td>
-    <td style="border: none; "> 
-      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> 
-      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> 
-      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> 
-      <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> 
-      </td>
-    <td style="vertical-align: top;"><strong>
-        <a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR '16,'18   </a><br/>
-        <a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI '17 </a><br/>
-        <a href="https://arxiv.org/pdf/1612.08712v1.pdf">DCC  '17,'18 </a><br/>
-        <a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING '16</a><br/>
-    </strong></td>
-    <td style="vertical-align: top;"><strong>
-        <a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Pixel Deflection (14★)</a><br/>
-        <a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> VQA Demo  (157★)</a><br/>
-        <a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Semantic image compression (92★)</a><br/>
-        <a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Neural Paraphrasing Generation (78★)</a><br/>
-    </strong></td>
+
+<table style="border-collapse: collapse; border: none; margin: 0px auto;" width="100%" align='left'> <tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td> </tr> <tr> <td style="border: none; "> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> </td> <td style="border: none; "> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> </td> <td style="vertical-align: top;"><strong> <a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR, DCC   </a><br/> <a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI, WWW </a><br/> <a href="https://arxiv.org/pdf/1612.08712v1.pdf">NAACL </a><br/> <a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING</a><br/> </strong></td> <td style="vertical-align: top;"><strong> <a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Pixel Deflection (14★)</a><br/> <a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/m_ster/images/github.png" height="15px" width="15px"> VQA Demo  (157★)</a><br/>
+<a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Semantic image compression (92★)</a><br/>
+<a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Neural Paraphrasing Generation (78★)</a><br/>
+</strong></td>
 </tr>
 </table>
 <table width="100%">
-<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td></tr>
 <tr><th><strong>Adversarial Images</strong></th><th><strong>Memory Networks</strong></th><th><strong>Paraphrasing (LSTM)</strong></th><th><strong>VQA</strong></th></tr>
 <tr>
 <td><a href="#"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  style="border:2px groove black;"/> </a></td>
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
-</tr></table>
+_</tr></table>
 
 ---
+
 ### 2018
+
 * I am currently doing research internship at **Microsoft Research (AI+R)**.
 * I will be attending **Deep/Reinforcement Learning Summer** [School](https://dlrlsummerschool.ca/) at [Vector Institute (CIFAR/MILA)](https://vectorinstitute.ai/)
 * Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
@@ -63,6 +42,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * Paper on protecting jpeg images against **adversarial attacks** accepted to DCC (Oral). [\[PDF\]](https://arxiv.org/pdf/1803.00940.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1sCfezODra1RnJICheDL_PDFKVGXcqUTDeQChaxyvNts)
 
 ### 2017
+
 * Received **Roberto Padovani Scholarship** (Qualcomm).
 * Interned at **Qualcomm Research** during the summer.
 * Received **Outstanding Teaching Fellow Award**, Brandeis.
@@ -71,6 +51,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * Paper on **Condensed Memory Networks** accepted to AAAI 2017. [\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
 ### 2016
+
 * Paper on **Neural Paraphrase Generation** accepted to COLING 2016. [\[PDF\]](https://arxiv.org/pdf/1610.03098v3.pdf) [\[Poster\]](https://www.dropbox.com/s/ju09291jukvtg50/coling_poster.pdf?dl=0)
 * Won **Honrable Mention Prize** for Visual Question Answering Challenge. [\[Video\]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [\[Slides\]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [\[Poster\]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
 * Accepted to **Deep Learning Summer School** at University of Montrel. \[25% acceptance rate\]
@@ -81,13 +62,13 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 
 ---
 
-### - Deflecting Adversarial Attacks with Pixel Deflection   
+### - Deflecting Adversarial Attacks with Pixel Deflection
 
 <center> <img src="https://i.imgur.com/BhxmVwx.png" height="85%" width="85%" /> </center>
 <center> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/image_combine.jpg" height="85%" width="85%" /> </center>
 
 * **Problem**: Defend against the adversarial perturbations that change the image classification results
-* **Our method**: Take a region within an image and swap the pixels  _(we call this Pixel Deflection)_. Since the adversary is relying on very specific activations, changing local pixel arrangement is enough to counteract the adversarial changes. Often it requires some form of denoising for which we found that doing soft shrinkage on wavelet transform works best  
+* **Our method**: Take a region within an image and swap the pixels  _(we call this Pixel Deflection)_. Since the adversary is relying on very specific activations, changing local pixel arrangement is enough to counteract the adversarial changes. Often it requires some form of denoising for which we found that doing soft shrinkage on wavelet transform works best
 * [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[HTML\]](https://www.arxiv-vanity.com/papers/1801.08926/) [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
 * Blog post describing the project [Demo for Pixel Deflection](http://iamaaditya.github.io/2018/02/demo-for-pixel-deflection/)
 
@@ -188,7 +169,6 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * [Social Travel guide](https://github.com/edenzik/elastiCity). Elastic Search project for travel search guide. Collaborators [Eden](https://github.com/edenzik), [Dimos](https://github.com/dimstamat) & Zhenyu.
 * [Clipboard to Email](https://github.com/iamaaditya/Clipboard_to_Email). Send Code from clipboard to email automatically.
 
-
 ## Publications
 
 ---
@@ -241,7 +221,7 @@ Prakash, A. (2013). Reconstructing Self Organizing Maps as Spider Graphs for bet
 Self-Organizing Maps (SOM) are popular unsupervised artificial neural network used to reduce dimensions and visualize data.  Visual interpretation from Self-Organizing Maps (SOM) has been limited due to grid approach of data representation, which makes inter-scenario analysis impossible. The paper proposes a new way to structure SOM. This model reconstructs SOM to show strength between variables as the threads of a cobweb and illuminate inter- scenario analysis. While Radar Graphs are very crude representation of spider web, this model uses more lively and realistic cobweb representation to take into account the difference in strength and length of threads. This model allows for visualization of highly unstructured dataset with large number of dimensions, common in Bigdata sources.
 </details>
 
-[\[PDF\]](https://arxiv.org/pdf/1301.0289) [\[slides\]](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/spider_graphs_2013/slides_graph.pdf) 
+[\[PDF\]](https://arxiv.org/pdf/1301.0289) [\[slides\]](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/spider_graphs_2013/slides_graph.pdf)
 
 Prakash, A. (2012). Measures of Fault Tolerance in Distributed Simulated Annealing. _Proceedings of International Conference on Perspective of Computer Confluence with Sciences._ Vol 1 pp 111-114.<br />
 
@@ -251,4 +231,3 @@ In this paper, we examine the different measures of Fault Tolerance in a Distrib
 [\[PDF\]](https://arxiv.org/pdf/1212.3295) [\[slides\]](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/iamaaditya/research-papers-slides-posters/master/pre-grad/fault_tolerance_2012/slides_fault.pdf)
 
 ---
-
