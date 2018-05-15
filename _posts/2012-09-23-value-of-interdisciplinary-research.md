@@ -9,8 +9,6 @@ tags:
   - Interdisciplinary
   - research
 ---
-&nbsp;
-
 As the knowledge gets more and more advanced we find ourselves segmenting the branches of science into more specialized areas. This has lead to tunnel visioning of higher education. While this is not a bad thing, the consequences of it is when an intricate problem arises whose solution may be interdisciplinary, it remains unsolved or takes too long to be solved &#8211; primarily because specialist&#8217;s gap in knowledge of other areas. I am not trying to discount the profound knowledge of researchers and scientists but that their profundity has great depth but lacks necessary breadth.
 
 While it is neither in the interest of science nor the scientist to restrict his depth of knowledge and concentrate on the breadth. Doing so will prevent us from discovering the hidden truths of universe, and most of the superficial knowledge have been discovered. Our best bet in further breakthrough is to go where no man has gone before. But looking only deep and not across fields may hinder our chances of finding solutions which aren&#8217;t necessarily profound but certainly cuts across disciplines. This presents us the conundrum, a trade-off if you will, depth vs breadth. In that regard I believe our concentration on depth has overshadowed potential areas of interdisciplinary research.
