@@ -2,13 +2,14 @@
 title: Why Simulated Annealing works
 author: aaditya prakash
 layout: post
-permalink: /2012/10/why-simulated-annealing-works/
+permalink: "/2012/10/why-simulated-annealing-works/"
 categories:
-  - computer science
-  - research
+- computer science
+- research
 tags:
-  - research
-  - simulated annealing
+- research
+- simulated annealing
+date: 2012-10-07 00:00:00 +0000
 ---
 Of all optimization methods, **Simulated Annealing** is one of the most fascinating one. If you need a quick refresher in Simulated Annealing then see <a title="Slides on Simulated Annealing" href="http://www.slideshare.net/KirillNetreba/simulated-annealing-5880806" target="_blank">this slide</a>. Is Simulated Annealing better than other techniques in finding the global optima ? Perhaps. I will discuss why I think it is one of the best optimization technique and why so.
 

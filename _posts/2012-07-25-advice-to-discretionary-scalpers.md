@@ -2,11 +2,12 @@
 title: How math can help discretionary traders
 author: aaditya prakash
 layout: post
-permalink: /2012/07/advice-to-discretionary-scalpers/
+permalink: "/2012/07/advice-to-discretionary-scalpers/"
 categories:
-  - math
+- math
 tags:
-  - trading
+- trading
+date: 2012-07-25 00:00:00 +0000
 ---
 ## <span style="text-decoration: underline;">The Basics</span>
 

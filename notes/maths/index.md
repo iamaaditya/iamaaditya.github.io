@@ -3,7 +3,7 @@ title: Mathematics
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Articles

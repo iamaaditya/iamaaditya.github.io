@@ -3,7 +3,7 @@ title: Machine learning for Quantitative Trading
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 

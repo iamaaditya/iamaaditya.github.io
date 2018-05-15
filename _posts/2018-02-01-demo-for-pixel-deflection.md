@@ -2,14 +2,15 @@
 title: Pixel Deflection - a simple transformation based defense
 author: aaditya prakash
 layout: post
-permalink: /2018/02/demo-for-pixel-deflection/
+permalink: "/2018/02/demo-for-pixel-deflection/"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - adversarial images
-  - computer vision
-  - deep learning
+- adversarial images
+- computer vision
+- deep learning
+date: 2018-02-01 00:00:00 +0000
 ---
 
 

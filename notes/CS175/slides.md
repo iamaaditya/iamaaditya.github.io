@@ -3,7 +3,7 @@ title: CS 175 Slides of presentations
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 # Slides for classes taught by Adi

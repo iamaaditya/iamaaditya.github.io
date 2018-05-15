@@ -3,7 +3,7 @@ title: Linux Hacks
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Add time to the command execution

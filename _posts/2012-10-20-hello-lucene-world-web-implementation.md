@@ -1,13 +1,14 @@
 ---
-title: 'Hello &#8216;Lucene&#8217; World &#8211; Web Implementation'
+title: Hello &#8216;Lucene&#8217; World &#8211; Web Implementation
 author: aaditya prakash
 layout: post
-permalink: /2012/10/hello-lucene-world-web-implementation/
+permalink: "/2012/10/hello-lucene-world-web-implementation/"
 categories:
-  - computer science
+- computer science
 tags:
-  - Java
-  - Lucene
+- Java
+- Lucene
+date: 2012-10-20 00:00:00 +0000
 ---
 Lucene is a Java Library by Apache used extensively for making custom search engines and indexing. Here are few of the features of Lucene, straight from the <a title="Lucene from Apache" href="http://lucene.apache.org/core/" target="_blank">Lucene&#8217;s homepage</a> :
 

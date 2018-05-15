@@ -3,7 +3,7 @@ title: GPGPU Installations
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 !TODO add the header info

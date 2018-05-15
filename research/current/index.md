@@ -3,7 +3,7 @@ title: Visual Question Answering Literature Survey
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 

@@ -1,13 +1,14 @@
 ---
-title: 'The Birthday Paradox &#8211; Proof'
+title: The Birthday Paradox &#8211; Proof
 author: aaditya prakash
 layout: post
-permalink: /2012/07/the-birthday-paradox-proof/
+permalink: "/2012/07/the-birthday-paradox-proof/"
 categories:
-  - math
+- math
 tags:
-  - math
-  - probability
+- math
+- probability
+date: 2012-07-21 00:00:00 +0000
 ---
 ### <span style="color: #0000ff;">“In a room of just 23 people there’s a 50% chance of two people having the same birthday.”</span>
 

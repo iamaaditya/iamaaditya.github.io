@@ -3,7 +3,7 @@ title: Algorithms and Data Structures
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## 1. Tutorials 

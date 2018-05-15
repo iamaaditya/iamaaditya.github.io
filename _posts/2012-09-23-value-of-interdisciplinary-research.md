@@ -2,12 +2,13 @@
 title: Value of Interdisciplinary Research
 author: aaditya prakash
 layout: post
-permalink: /2012/09/value-of-interdisciplinary-research/
+permalink: "/2012/09/value-of-interdisciplinary-research/"
 categories:
-  - research
+- research
 tags:
-  - Interdisciplinary
-  - research
+- Interdisciplinary
+- research
+date: 2012-09-23 00:00:00 +0000
 ---
 &nbsp;
 

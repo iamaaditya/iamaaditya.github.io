@@ -3,7 +3,7 @@ title: GPU Hardware and Infrastructure
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## GPGPU at Brandeis

@@ -3,7 +3,7 @@ title: Python Hacks
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Awesome one-liners (or little more)

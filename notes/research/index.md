@@ -3,7 +3,7 @@ title: Research
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 ## Sub-pages
  * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ )

@@ -3,7 +3,7 @@ title: Books
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## “Books serve to show a man that those original thoughts of his aren’t very new after all.” -Abraham Lincoln

@@ -1,6 +1,6 @@
 ---
 title: Awesome Presentations
-date: '2016-08-14 14:10:00'
+date: 2016-08-14 00:00:00 +0000
 layout: page
 ---
 * http://www.iro.umontreal.ca/~memisevr/talks/memisevicHotchips2015.pdf

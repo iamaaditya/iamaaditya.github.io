@@ -1,6 +1,6 @@
 ---
 title: Generative Networks
-date: '2016-07-12 19:27:00'
+date: 2016-07-12 00:00:00 +0000
 layout: page
 ---
 ## Relevant Papers

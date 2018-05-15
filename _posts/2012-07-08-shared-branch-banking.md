@@ -2,11 +2,12 @@
 title: Paradigm towards shared Branch Banking
 author: aaditya prakash
 layout: post
-permalink: /2012/07/shared-branch-banking/
+permalink: "/2012/07/shared-branch-banking/"
 categories:
-  - research
+- research
 tags:
-  - Networking
+- Networking
+date: 2012-07-08 00:00:00 +0000
 ---
 Long time ago when I was in my native town I had to do some banking operations on my account. To my surprise I found that the place didn&#8217;t have a branch of the bank where I had my account.
 

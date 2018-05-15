@@ -3,7 +3,7 @@ title: Name
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Do I prefer Adi or Aaditya ?

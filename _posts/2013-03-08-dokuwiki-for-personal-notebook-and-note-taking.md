@@ -2,11 +2,12 @@
 title: Dokuwiki for Personal Notebook and Note taking
 author: aaditya prakash
 layout: post
-permalink: /2013/03/dokuwiki-for-personal-notebook-and-note-taking/
+permalink: "/2013/03/dokuwiki-for-personal-notebook-and-note-taking/"
 categories:
-  - general
+- general
 tags:
-  - productivity
+- productivity
+date: 2013-03-08 00:00:00 +0000
 ---
 As a researcher, you soon start wondering if you had centralized all your notes, possibly digitized them, life would be much better. Recently when I had to make a tough choice of leaving all my notes from years when I am about to shift country *(due to limited air travel baggage)*, I wish I had them on computer. Since I will be making more notes in the future, at least a lesson is learnt. 
 

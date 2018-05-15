@@ -2,11 +2,12 @@
 title: 'When in Pain: Read'
 author: aaditya prakash
 layout: post
-permalink: /2012/09/when-in-pain-read/
+permalink: "/2012/09/when-in-pain-read/"
 categories:
-  - general
+- general
 tags:
-  - pain
+- pain
+date: 2012-09-13 00:00:00 +0000
 ---
 Human life with all its color and variety has one thing in common, feeling of joy and sadness. No amount of wealth or luck can save you from either. Different people have different means to cope with tumultuous rides of emotion.  While everyone has good handle on joyous days, the gloomy days elapse in a lot of pain.
 

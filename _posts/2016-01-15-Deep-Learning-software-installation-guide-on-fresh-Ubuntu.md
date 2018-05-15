@@ -1,16 +1,17 @@
 ---
-title: Deep Learning software installation guide on fresh Ubuntu 
+title: Deep Learning software installation guide on fresh Ubuntu
 author: aaditya prakash
 layout: post
-permalink: /2016/01/Deep-Learning-software-installation-guide-on-fresh-Ubuntu/
+permalink: "/2016/01/Deep-Learning-software-installation-guide-on-fresh-Ubuntu/"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - Linux
-  - Theano
-  - Tensorflow
-  - deep learning
+- Linux
+- Theano
+- Tensorflow
+- deep learning
+date: 2016-01-15 00:00:00 +0000
 ---
 
 Guide to building and installing CUDA, CuDNN, OpenCV, FFMPEG, Theano, Tensorflow, Keras, Lasagne, Torch and Caffe. It also includes common issues faced and recommended libraries and versions.

@@ -3,7 +3,7 @@ title: New machine instructions for GPU
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Install the drivers
