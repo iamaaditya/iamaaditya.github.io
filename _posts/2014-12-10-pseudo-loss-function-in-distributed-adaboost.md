@@ -10,8 +10,6 @@ tags:
   - algorithms
   - machine learning
 ---
-# $$L_{Hedge(\beta)}$$
-
 This is the sketch of proof of correctness of <img src='http://s0.wp.com/latex.php?latex=L_%7BHedge%28%5Cbeta%29%7D+&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='L_{Hedge(\beta)} ' title='L_{Hedge(\beta)} ' class='latex' />, pseudo loss function, in the case of distributed boosting algorithm. It has been known that boosting of functions with each applicator with more than 0.5 accuracy is sufficient to guarantee lowest minimum accuracy in iterative pooling. A similar sketch is presented for the distributed case where the score from each stage is not shared across all the computing nodes. While this guarantees the correctness, it does not guarantee the convergence, which is still a highly sought after problem in distributed algorithm.
 
 For people uninitiated in the problem, it is highly advised to [read this paper][1] or for much simpler and faster read, [these slides][2].
