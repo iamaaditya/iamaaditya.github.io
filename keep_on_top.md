@@ -1,6 +1,6 @@
 ---
 title: Keep_on_top
-date: '2016-07-03 16:38:00'
+date: 2016-07-03 00:00:00 +0000
 layout: page
 ---
 ## Resources to stay update on Deep Learning
@@ -72,6 +72,7 @@ Mostly library & code specific
 ### Generic 
 Generic outlets but very often deep learning posts on top
 
-* [Hacker News](https://news.ycombinator.com/) [[alternate interface](http://hckrnews.com/)] 
+* [Hacker News](https://news.ycombinator.com/) [[alternate interface](http://hckrnews.com/)]
+ 
 
 * [Data Tau](http://www.datatau.com/) [Like hackernews but for data-science]

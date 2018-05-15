@@ -3,7 +3,7 @@ title: Memory Networks
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Literature

@@ -2,12 +2,13 @@
 title: Solutions to Hamilton-Jacobi-Bellman under uncertainity
 author: aaditya prakash
 layout: post
-permalink: /2013/03/solutions-to-hamilton-jacobi-bellman-under-uncertainity/
+permalink: "/2013/03/solutions-to-hamilton-jacobi-bellman-under-uncertainity/"
 categories:
-  - math
-  - research
+- math
+- research
 tags:
-  - research
+- research
+date: 2013-03-02 00:00:00 +0000
 ---
 After doing some reading on decision under un-certainity, I get the feeling that this I will be looking more into this. More so because I have the feeling like there is more to this field, lot of unknowns yet(which is still partly due to my lack of profound knowledge in the field). I feel this field is yet to mature.
 

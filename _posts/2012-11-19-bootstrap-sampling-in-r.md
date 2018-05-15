@@ -2,13 +2,14 @@
 title: Bootstrap sampling in R
 author: aaditya prakash
 layout: post
-permalink: /2012/11/bootstrap-sampling-in-r/
+permalink: "/2012/11/bootstrap-sampling-in-r/"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - R
-  - statistics
+- R
+- statistics
+date: 2012-11-19 00:00:00 +0000
 ---
 <a href="http://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29" title="Bootstrap Sampling" target="_blank">Bootstrapping </a>is a very useful sampling method. While it&#8217;s robustness is not that simlar to MCMC or Metropolis-Hastings or Landau. Bootstrapping draws from provided distribution with replacement. 
 

@@ -1,13 +1,14 @@
 ---
-title: 'Clipboard to Email &#8211; Python Code'
+title: Clipboard to Email &#8211; Python Code
 author: aaditya prakash
 layout: post
-permalink: /2012/08/clipboard-to-email-python-code/
+permalink: "/2012/08/clipboard-to-email-python-code/"
 categories:
-  - computer science
+- computer science
 tags:
-  - code
-  - python
+- code
+- python
+date: 2012-08-25 00:00:00 +0000
 ---
 ## Why
 

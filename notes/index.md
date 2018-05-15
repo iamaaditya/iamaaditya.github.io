@@ -3,7 +3,7 @@ title: Notes
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 This page is used to collect notes.  I use this to share relevant notes, links and documents with my friends and colleagues. Feel free to browse them. If you landed on this page looking for specific information or link and could not find it then please let me know aprakash   @     brandeis     .     edu  

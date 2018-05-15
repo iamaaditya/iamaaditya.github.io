@@ -1,13 +1,14 @@
 ---
-title: 'Pascal&#8217;s Triangle in Standard ML'
+title: Pascal&#8217;s Triangle in Standard ML
 author: aaditya prakash
 layout: post
-permalink: /2013/01/pascal-triangle-in-sml/
+permalink: "/2013/01/pascal-triangle-in-sml/"
 categories:
-  - computer science
+- computer science
 tags:
-  - programming
-  - SML
+- programming
+- SML
+date: 2013-01-26 00:00:00 +0000
 ---
 It has been a while that I posted something (grad school applications !). For past few weeks I have been learning Standard ML (SML), my first foray into functional programming language. I must say, I was skeptical at first due to &#8216;no-state&#8217; concept but it is turning out to be great experience. Recursion can only be appreciated when you have to write programs without loop. This makes me rethink about learning Scala and Haskell.
 

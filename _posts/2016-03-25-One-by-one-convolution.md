@@ -2,14 +2,15 @@
 title: One by One [ 1 x 1 ] Convolution - counter-intuitively useful
 author: aaditya prakash
 layout: post
-permalink: /2016/03/one-by-one-convolution/
+permalink: "/2016/03/one-by-one-convolution/"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - convolutional neural network
-  - math
-  - deep learning
+- convolutional neural network
+- math
+- deep learning
+date: 2016-03-25 00:00:00 +0000
 ---
 
 Whenever I discuss or show [GoogleNet architecture](http://arxiv.org/pdf/1409.4842v1.pdf), one question always comes up - <br /><br />

@@ -2,12 +2,13 @@
 title: Value of Interdisciplinary Research
 author: aaditya prakash
 layout: post
-permalink: /2012/09/value-of-interdisciplinary-research/
+permalink: "/2012/09/value-of-interdisciplinary-research/"
 categories:
-  - research
+- research
 tags:
-  - Interdisciplinary
-  - research
+- Interdisciplinary
+- research
+date: 2012-09-23 00:00:00 +0000
 ---
 As the knowledge gets more and more advanced we find ourselves segmenting the branches of science into more specialized areas. This has lead to tunnel visioning of higher education. While this is not a bad thing, the consequences of it is when an intricate problem arises whose solution may be interdisciplinary, it remains unsolved or takes too long to be solved &#8211; primarily because specialist&#8217;s gap in knowledge of other areas. I am not trying to discount the profound knowledge of researchers and scientists but that their profundity has great depth but lacks necessary breadth.
 

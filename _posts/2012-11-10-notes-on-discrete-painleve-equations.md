@@ -2,13 +2,14 @@
 title: Notes on Discrete Painlevé Equations
 author: aaditya prakash
 layout: post
-permalink: /2012/11/notes-on-discrete-painleve-equations/
+permalink: "/2012/11/notes-on-discrete-painleve-equations/"
 categories:
-  - math
-  - research
+- math
+- research
 tags:
-  - Nonlinear Systems
-  - Notes
+- Nonlinear Systems
+- Notes
+date: 2012-11-10 00:00:00 +0000
 ---
 Painlevé equations are used to solve non-linear second order differential equation. For more on Painleve&#8217;s work <a title="Painlevé's Works" href="http://www.math.h.kyoto-u.ac.jp/~takasaki/soliton-lab/chron/painleve.html" target="_blank">see this</a> and for short refresher on Painlevé equations, <a title="Painlevé's Equations" href="http://www.encyclopediaofmath.org/index.php/Painlev%C3%A9_equation" target="_blank">Encylopedia of Mathmematics</a>.
 

@@ -1,9 +1,9 @@
 ---
-title: Transfer Learning 
+title: Transfer Learning
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Papers of interest

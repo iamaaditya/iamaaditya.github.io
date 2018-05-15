@@ -2,13 +2,14 @@
 title: Monte Carlo Simulation in R
 author: aaditya prakash
 layout: post
-permalink: /2012/11/monte-carlo-simulation-in-r/
+permalink: "/2012/11/monte-carlo-simulation-in-r/"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - R
-  - statistics
+- R
+- statistics
+date: 2012-11-19 00:00:00 +0000
 ---
 While the last post dealt with Bootstrap Sampling, no sampling discussion can be complete without discussion &#8216;Monte Carlo&#8217; simulation. Readers please note, I will **not **discuss &#8220;MCMC (Markov Chain Monte Carlo)&#8221; *(perhaps in the future)*. MCMC primarily deals with distribution of equilibrium of the given Markov Chain.
 

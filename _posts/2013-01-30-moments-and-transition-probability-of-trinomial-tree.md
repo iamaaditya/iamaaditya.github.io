@@ -2,11 +2,12 @@
 title: Moments and transition probability of Trinomial Tree
 author: aaditya prakash
 layout: post
-permalink: /2013/01/moments-and-transition-probability-of-trinomial-tree/
+permalink: "/2013/01/moments-and-transition-probability-of-trinomial-tree/"
 categories:
-  - math
+- math
 tags:
-  - probability
+- probability
+date: 2013-01-30 00:00:00 +0000
 ---
 I just switched from using WP-Latex to MathJax since Chrome is soon going to have built-in support for MathJax and it is easier to recover the tex codes for the reader.
 

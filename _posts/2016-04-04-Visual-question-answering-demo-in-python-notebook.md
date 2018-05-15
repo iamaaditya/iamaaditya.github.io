@@ -2,16 +2,17 @@
 title: Visual Question Answering Demo in Python Notebook
 author: aaditya prakash
 layout: post
-permalink: /2016/04/visual_question_answering_demo_notebook
+permalink: "/2016/04/visual_question_answering_demo_notebook"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - convolutional neural network
-  - LSTM
-  - word vectors
-  - visual question answering
-  - deep learning
+- convolutional neural network
+- LSTM
+- word vectors
+- visual question answering
+- deep learning
+date: 2016-04-04 00:00:00 +0000
 ---
 <p>This is an online demo with explanation and tutorial on Visual Question Answering. This is not a naive or hello-world model, this model returns close to state-of-the-art without using any attention models, memory networks (other than LSTM) and fine-tuning, which are essential recipe for current best results.</p> <br />
 <p>I have tried to explain different parts, and reasoning behind their choices. This is meant to be an interactive tutorial, feel free to change the model parameters and experiment. If you have latest graphics card execution time should be within a minute.</p>

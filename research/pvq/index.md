@@ -3,7 +3,7 @@ title: Vector Quantization
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 

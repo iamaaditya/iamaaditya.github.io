@@ -1,9 +1,9 @@
 ---
-title: CS 175 Deep Learning 
+title: CS 175 Deep Learning
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 # Slides for classes taught by Adi

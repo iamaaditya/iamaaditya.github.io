@@ -3,7 +3,7 @@ title: Favorite quotes in Computer Science
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## Alan Turing

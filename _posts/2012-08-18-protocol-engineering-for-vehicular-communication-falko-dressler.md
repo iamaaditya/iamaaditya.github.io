@@ -1,14 +1,15 @@
 ---
-title: 'Protocol Engineering for Vehicular Communication &#8211; Falko Dressler'
+title: Protocol Engineering for Vehicular Communication &#8211; Falko Dressler
 author: aaditya prakash
 layout: post
-permalink: /2012/08/protocol-engineering-for-vehicular-communication-falko-dressler/
+permalink: "/2012/08/protocol-engineering-for-vehicular-communication-falko-dressler/"
 categories:
-  - computer science
-  - research
+- computer science
+- research
 tags:
-  - AI
-  - traffic information system
+- AI
+- traffic information system
+date: 2012-08-18 00:00:00 +0000
 ---
 This is the notes from the lecture I attended by <a title="Falko Dressler" href="http://www.ccs-labs.org/~dressler/" target="_blank">Dr Falko Dressler</a>, Professor of Computer Science at University of Innsbruck.
 

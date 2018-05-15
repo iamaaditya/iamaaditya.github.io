@@ -3,7 +3,7 @@ title: Convolution Neural Network
 author: aaditya prakash
 layout: page
 dsq_thread_id:
-  - 
+- 
 ---
 
 ## What do they understand ?

@@ -2,13 +2,14 @@
 title: Qubit operations and Quantum Measurement in Mathematica
 author: aaditya prakash
 layout: post
-permalink: /2012/08/qubit-operations-and-quantum-measurement-in-mathematica/
+permalink: "/2012/08/qubit-operations-and-quantum-measurement-in-mathematica/"
 categories:
-  - computer science
-  - math
+- computer science
+- math
 tags:
-  - mathematica
-  - quantum computing
+- mathematica
+- quantum computing
+date: 2012-08-11 00:00:00 +0000
 ---
 This is a short note on how to get started with Quantum Computing with Mathematica.
 
