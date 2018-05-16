@@ -28,7 +28,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" style="border:2px groove black;" /> </a></td>
-_</tr></table>
+</tr></table>
 
 ---
 
