@@ -120,12 +120,6 @@ _</tr></table>
 
 ---
 
-### - Transfer learning
-
-* We are investigating ideas for improving content based image retrieval through transfer learning.
-* We are currently exploring ways to retrieve [MIT Places](http://places.csail.mit.edu/) (scene recognition database) using deep residual image models like [ResNet - 2015 ImageNet challenge winner](http://research.microsoft.com/en-us/um/people/kahe/ilsvrc15/ilsvrc2015_deep_residual_learning_kaiminghe.pdf). Our goal is to do ablation study on the 152 layers of ResNet for image retrieval task.
-* [Literature survey]({{site.baseurl}}/research/vector_quantization/) for compressing deep convolutional neural networks using vector quantization.
-
 ## Pre-Grad Research
 
 ---
