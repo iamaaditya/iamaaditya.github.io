@@ -6,9 +6,12 @@ dsq_thread_id:
 - 
 ---
 ## Sub-pages
- * [Visual Question Answering]( {{site.baseurl}}/notes/research/vqa/ )
- * [Convolutional Neural Network ]({{site.baseurl}}/notes/research/cnn/ ) 
- * [Transfer Learning]({{site.baseurl}}/notes/research/transfer/ )
+ * [Model Compression](compression)
+ * [Visual Question Answering](vqa)
+ * [Convolutional Neural Network ](cnn) 
+ * [Transfer Learning](transfer)
+ * [Memory](memory)
+ * [Simplification](simplification)
 
 ## Currently thinking about 
 
