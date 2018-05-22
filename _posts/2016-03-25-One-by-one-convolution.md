@@ -16,10 +16,13 @@ date: 2016-03-25 00:00:00 +0000
 Whenever I discuss or show [GoogleNet architecture](http://arxiv.org/pdf/1409.4842v1.pdf), one question always comes up - <br /><br />
 **<center>"Why 1x1 convolution ? Is it not redundant ?</center>**
 
-![Convolution with Kernel of size 3x3](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed.gif)
-![Convolution with Kernel of size 1x1](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed_small.gif)
-
+<center>
+<img align="center" alt="Convolution with Kernel of size 3x3" src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed.gif" />
+<img align="center" alt="Convolution with Kernel of size 1x1" src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed_small.gif" />
+</center>
+<center>
 left : **Convolution with kernel of size 3x3**               right : **Convolution with kernel of size 1x1**
+</center>
 
 
 
@@ -48,7 +51,9 @@ In GoogLeNet architecture, 1x1 convolution is used for two purposes
 
 Here is the scresnshot from the paper, which elucidates above points :
 
-![1x1 convolutions in GoogLeNet](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/inception_1x1.png)
+<center>
+<img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/inception_1x1.png" alt="1x1 convolutions in GoogLeNet" />
+</center>
 **<center>1x1 convolutions in GoogLeNet</center>**
 
 It can be seen from the image on the right, that 1x1 convolutions (in yellow), are specially used before 3x3 and 5x5 convolution to reduce the dimensions. It should be noted that a two step convolution operation can always to combined into one, but in this case and in most other deep learning networks, convolutions are followed by non-linear activation and hence convolutions are no longer linear operators and cannot be combined.
