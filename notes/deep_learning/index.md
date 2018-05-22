@@ -4,9 +4,19 @@ author: aaditya prakash
 layout: page
 dsq_thread_id: []
 ---
+
 What is Deep Learning ?
 
   " Learning multiple levels of representation to help a learner accomplish a task of interest, with higher levels capturing more abstract concepts through a deeper composition of computations. " - Yoshua Bengio
+
+### Subpages
+
+  * [Best Practices](best-practices)
+  * [AI Alignment](alignment)
+  * [Awesome Presentations](awesome-presentations)
+  * [Courses](courses)
+  * [Dialogue](dialogue)
+  * [Generative Networks](generative-networks)
 
 ### Articles 
 
@@ -34,6 +44,7 @@ What is Deep Learning ?
   * [26 things I learned in the deep learning summer school]( http://www.marekrei.com/blog/26-things-i-learned-in-the-deep-learning-summer-school/)
   * [Debugging Machine learning](http://nlpers.blogspot.com/2016/08/debugging-machine-learning.html)
   * [LSTM Networks for time series prediction](http://www.jakob-aungiers.com/articles/a/LSTM-Neural-Network-for-Time-Series-Prediction)
+  * [How to implement YOLO object detector](https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/)
 
 ### Blog posts by deep learning competition winners
 

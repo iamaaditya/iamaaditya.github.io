@@ -11,17 +11,11 @@ dsq_thread_id:
  * VK - Deep Learning community (Papers, codes, articles) <https://vk.com/deeplearning>
  * Arix-Sanity - better arxiv search <http://www.arxiv-sanity.com/>
  * GitXiv (Arxiv and Git code) <http://gitxiv.com/>
-
-## CS
-### What Papers everyone should read
-  * <http://cstheory.stackexchange.com/questions/1168/what-papers-should-everyone-read>
-
-## Math
-### A single paper everyone should read
-  * <http://mathoverflow.net/questions/2144/a-single-paper-everyone-should-read>
-
+ * Arxiv-Vanity - HTML rendeing of Arxiv pages <https://www.arxiv-vanity.com/>
 
 ### General
+  * CS: What Papers everyone should read <http://cstheory.stackexchange.com/questions/1168/what-papers-should-everyone-read>
+  * MATH: A single paper everyone should read <http://mathoverflow.net/questions/2144/a-single-paper-everyone-should-read>
   * How to read a paper - Keshava <http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf>
   * How to write a proof - Leslie Lamport <http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-how-to-write.pdf>
   * How to write papers Oded Goldreich <http://www.wisdom.weizmann.ac.il/~oded/PS/re-writing.pdf>
@@ -94,7 +88,7 @@ dsq_thread_id:
 
   * Breiman, L. 2001. “Statistical Modeling: The Two Cultures (with Comments and a Rejoinder by the Author).” Statistical Science 16:199–231.
 
-###Supervised Learning
+### Supervised Learning
 
   * Regression:	Panik, M. J. 2009. Regression Modeling: Methods, Theory, and Computation with SAS. Boca Raton, FL: CRC Press. (Disclosure: my favorite regression book.)
   * Decision tree:	Breiman, L., Friedman, J., Olshen, R., and Stone, C. 1984. Classification and Regression Trees. Belmont, CA: Wadsworth.
@@ -106,7 +100,7 @@ dsq_thread_id:
   * Neighbors:	Cover, T. and Hart, P. 1967. “Nearest Neighbor Pattern Classification.” IEEE Transactions on Information Theory 13:21–27.
   * Gaussian processes:	Seeger, M. 2004. “Gaussian Processes for Machine Learning.” International Journal of Neural Systems 14:69–106.
   
-###Unsupervised Learning
+### Unsupervised Learning
 
   * A priori rules:	Agrawal, R., Imieliński, T., and Swami, A. 1993. “Mining Association Rules between Sets of Items in Large Databases.” ACM SIGMOD Record 22:207–216.
   * k-means clustering:	Hartigan, J. A. and Wong, M. A. 1979. “Algorithm AS 136: A k-Means Clustering Algorithm.” Journal of the Royal Statistical Society, Series C  28:100–108.
@@ -118,7 +112,7 @@ dsq_thread_id:
   * Sparse PCA:	Zou, H., Hastie, T., and Tibshirani, R. 2006. “Sparse Principal Component Analysis.” Journal of Computational and Graphical Statistics 15:265–286.
   * Singular value decomposition:	Golub, G. H. and Reinsch, C. 1970. “Singular Value Decomposition and Least Squares Solutions.” Numerische Mathematik 14:403–420.
   
-###Semi-Supervised Learning
+### Semi-Supervised Learning
 
   * Denoising autoencoders: Vincent, P., Larochelle, H., Bengio, Y., and Manzagol, P.A. 2008. “Extracting and Composing Robust Features with Denoising Autoencoders.” Proceedings of the 25th International Conference on Machine Learning. New York: ACM.
   * Expectation maximization:	Nigam, K., McCallum, A.K., Thrun, S. and Mitchell, T.  2000. "Text Classification from Labeled and Unlabeled Documents using EM." Machine Learning 39:103-134.
