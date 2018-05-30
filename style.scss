@@ -362,7 +362,27 @@ footer {
 }
 
 
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";
+//@import "highlights";
+
+// additions for hover changes
+.image {
+  opacity: 1;
+  display: block;
+  transition: .7s ease;
+  backface-visibility: hidden;
+  border:2px groove black;
+}
+
+
+
+.containerx:hover .image {
+  opacity: 0.7;
+  border:2px groove red;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
