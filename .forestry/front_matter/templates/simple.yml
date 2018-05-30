@@ -38,6 +38,12 @@ fields:
   hidden: false
   default: ''
 pages:
+- notes/research/vqa.md
+- notes/research/transfer.md
+- notes/research/simplification.md
+- notes/research/memory.md
+- notes/research/compression.md
+- notes/research/cnn.md
 - notes/deep_learning/dialogue.md
 - notes/deep_learning/courses.md
 - notes/deep_learning/best-practices.md
