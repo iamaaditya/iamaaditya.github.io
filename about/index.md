@@ -64,7 +64,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * Won **Honrable Mention Prize** for Visual Question Answering Challenge. [\[Video\]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [\[Slides\]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [\[Poster\]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
 * Accepted to **Deep Learning Summer School** at University of Montrel. \[25% acceptance rate\]
 * Interned at AI Labs at **Philips Research** during the summer.
-* Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/master/cvpr_2016/cvpr_paper.pdf)
+* Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_paper.pdf)
 
 ## Research
 
@@ -182,6 +182,11 @@ CNNs are poised to become integral parts of many critical systems. Despite their
 [\[PDF\]](https://arxiv.org/pdf/1801.08926) [\[Code\]](https://github.com/iamaaditya/pixel-deflection)
 
 ---
+Prakash, Aaditya, et al. "Robust Discriminative Localization Maps", CV-COPS(2018). <br />
+<details> <summary><a>Abstract</a></summary>
+Activation maps obtained from CNN filter responses have been used to visualize and improve the performance of deep learning models. However, as CNNs are susceptible to adversarial attack, so are the activation maps. While recovering the predictions of the classifier is a difficult task and often requires complex transformations, we show that recovering activation maps is trivial and does not require any changes either to the classifier or the input image.</details>
+[\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvcops_2018/robust-discriminative-localization.pdf) [\[Code\]](https://github.com/iamaaditya/robust-activation-maps) 
+---
 
 Prakash, Aaditya, et al. "Protecting JPEG images against adversarial attacks", IEEE DCC (2018). <br />
 <details> <summary><a>Abstract</a></summary>
@@ -218,7 +223,7 @@ Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, C
 <details> <summary><a>Abstract</a></summary>
 We propose a version of highway network designed for the task of Visual Question Answering. We take inspiration from recent success of Residual Layer Network and Highway Network in learning deep representation of images and fine grained localization of objects. We propose variation in gating mechanism to allow incorporation of word embedding in the information highway. The gate parameters are influenced by the words in the question, which steers the network towards localized feature learning. This achieves the same effect as soft attention via recurrence but allows for faster training using optimized feed-forward techniques.  We are able to obtain state-of-the-art1 results on VQA dataset for Open Ended and Multiple Choice tasks with current model.
 </details>
-[\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing) [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf)
+[\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_paper.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing) [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf)
 
 ---
 
