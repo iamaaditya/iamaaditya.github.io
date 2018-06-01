@@ -64,7 +64,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * Won **Honrable Mention Prize** for Visual Question Answering Challenge. [\[Video\]](https://www.youtube.com/watch?v=Fc2v_-VTRSY&index=14&list=PL_bDvITUYucC0r43EXIHkQE_fHVXlmboH) [\[Slides\]](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit?usp=sharing) [\[Poster\]](https://docs.google.com/presentation/d/1S5eVgDddkG4HaMLDBV5KaaDwPO_rDgMyNzOfq4LiJS0/edit?usp=sharing)
 * Accepted to **Deep Learning Summer School** at University of Montrel. \[25% acceptance rate\]
 * Interned at AI Labs at **Philips Research** during the summer.
-* Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [\[PDF\]](http://gpgpu.cs-i.brandeis.edu/highway.pdf)
+* Paper on **'Highway Networks for Visual Question Answering'** accepted for CVPR VQA workshop. [\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/master/cvpr_2016/cvpr_paper.pdf)
 
 ## Research
 
@@ -183,6 +183,13 @@ CNNs are poised to become integral parts of many critical systems. Despite their
 
 ---
 
+Prakash, Aaditya, et al. "Protecting JPEG images against adversarial attacks", IEEE DCC (2018). <br />
+<details> <summary><a>Abstract</a></summary>
+As deep neural networks (DNNs) have been integrated into critical systems, several methods to attack these systems have been developed. These adversarial attacks make imperceptible modifications to an image that fool DNN classifiers. We present an adaptive JPEG encoder which defends against many of these attacks. Experimentally, we show that our method produces images with high visual quality while greatly reducing the potency of state-of-the-art attacks. Our algorithm requires only a modest increase in encoding time, produces a compressed image which can be decompressed by an off-the-shelf JPEG decoder, and classified by an unmodified classifier.
+</details>
+[\[PDF\]](https://arxiv.org/pdf/1803.00940) [\[Code\]](https://github.com/iamaaditya/protecting-jpeg) [\[Slides\]](https://docs.google.com/presentation/d/1sCfezODra1RnJICheDL_PDFKVGXcqUTDeQChaxyvNts)
+---
+
 Prakash, Aaditya, et al. "Semantic Perceptual Image Compression using Deep Convolution Networks." DCC (2017). <br />
 <details> <summary><a>Abstract</a></summary>
 It has long been considered a significant problem to improve the visual quality of lossy image and video compression. Recent advances in computing power together with the availability of large training data sets has increased interest in the application of deep learning cnns to address image recognition and image processing tasks. Here, we present a powerful cnn tailored to the specific task of semantic image understanding to achieve higher visual quality in lossy compression. A modest increase in complexity is incorporated to the encoder which allows a standard, off-the-shelf jpeg decoder to be used. While jpeg encoding may be optimized for generic images, the process is ultimately unaware of the specific content of the image to be compressed. Our technique makes jpeg content-aware by designing and training a model to identify multiple semantic regions in a given image. Unlike object detection techniques, our model does not require labeling of object positions and is able to identify objects in a single pass. We present a new cnn architecture directed specifically to image compression, which generates a map that highlights semantically-salient regions so that they can be encoded at higher quality as compared to background regions. By adding a complete set of features for every class, and then taking a threshold over the sum of all feature activations, we generate a map that highlights semantically-salient regions so that they can be encoded at a better quality compared to background regions. Experiments are presented on the Kodak PhotoCD dataset and the MIT Saliency Benchmark dataset, in which our algorithm achieves higher visual quality for the same compressed size.
@@ -211,7 +218,7 @@ Prakash, A. & Storer, J (2016) Highway Networks for Visual Question Answering, C
 <details> <summary><a>Abstract</a></summary>
 We propose a version of highway network designed for the task of Visual Question Answering. We take inspiration from recent success of Residual Layer Network and Highway Network in learning deep representation of images and fine grained localization of objects. We propose variation in gating mechanism to allow incorporation of word embedding in the information highway. The gate parameters are influenced by the words in the question, which steers the network towards localized feature learning. This achieves the same effect as soft attention via recurrence but allows for faster training using optimized feed-forward techniques.  We are able to obtain state-of-the-art1 results on VQA dataset for Open Ended and Multiple Choice tasks with current model.
 </details>
-[\[PDF\]](http://gpgpu.cs-i.brandeis.edu/highway.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing) [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf)
+[\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing) [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf)
 
 ---
 
