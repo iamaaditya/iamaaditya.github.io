@@ -54,7 +54,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * Received **Roberto Padovani Scholarship** (Qualcomm).
 * Interned at **Qualcomm Research** during the summer.
 * Received **Outstanding Teaching Fellow Award**, Brandeis.
-* Gave five **lecture series on Deep Learning**, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [\[Slides\]](http://iamaaditya.github.io/notes/CS175/)
+* Gave five **lecture series on Deep Learning**, Convolutional Neural Networks, Recurrent Neural Networks, Object localization/detection and Memory Networks. [\[Slides\]](https://iamaaditya.github.io/notes/CS175/)
 * Paper on **image compression using CNN** accepted to Data Compression Conference. [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf)
 * Paper on **Condensed Memory Networks** accepted to AAAI 2017. [\[PDF\]](https://arxiv.org/pdf/1612.01848v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)  [\[Poster\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf)
 
@@ -78,7 +78,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * **Problem**: Defend against the adversarial perturbations that change the image classification results
 * **Our method**: Take a region within an image and swap the pixels  _(we call this Pixel Deflection)_. Since the adversary is relying on very specific activations, changing local pixel arrangement is enough to counteract the adversarial changes. Often it requires some form of denoising for which we found that doing soft shrinkage on wavelet transform works best
 * [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[HTML\]](https://www.arxiv-vanity.com/papers/1801.08926/) [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
-* Blog post describing the project [Demo for Pixel Deflection](http://iamaaditya.github.io/2018/02/demo-for-pixel-deflection/)
+* Blog post describing the project [Demo for Pixel Deflection](https://iamaaditya.github.io/2018/02/demo-for-pixel-deflection/)
 
 ---
 
@@ -101,7 +101,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * **Our method**: Use CNN to generate a map that covers all the 'semantic objects' and weighs them based on importance. Use variable scaling JPEG to encode the information.
   For more details :
 * [\[Code\]](https://github.com/iamaaditya/image-compression-cnn) [\[PDF\]](https://arxiv.org/pdf/1612.08712v1.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1Yv9U4KMXh-iZ5WB2pgvyrbCKxnxYskR2lWYJ0j0T_JA/edit?usp=sharing)
-* Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/\~storer/)
+* Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 
 ---
 
@@ -124,7 +124,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 
 * **Problem**: Given a color image of arbitrary size and question of arbitrary length, come up with the most reasonable answer (ground truth obtained from 10 amazon-turks responses)
 * **Our approach**: Use of Highway networks to attain implicit attention and learn deeper feature representations. [See this]({{site.baseurl}}/research/vqa/)  for more details
-* Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/\~storer/)
+* Supervisor - Prof. [James Storer](http://www.cs.brandeis.edu/~storer/)
 
 ---
 
@@ -137,7 +137,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 * We investigated applications of computational fact checking on a database with retrospections.
 * Implemented a fact checking application for database with weekly Music Billboards.
 * [One page summary](https://drive.google.com/open?id=0Bw852LkIy1pXaG1ZN0l2R0M2Zms)     -----       [Detailed Report](https://drive.google.com/open?id=0Bw852LkIy1pXWEF5Nkt6aUp2UVk)
-* Supervisor - [Prof. Liuba Shrira](http://www.cs.brandeis.edu/\~liuba/)
+* Supervisor - [Prof. Liuba Shrira](http://www.cs.brandeis.edu/~liuba/)
 
 ---
 
@@ -182,10 +182,12 @@ CNNs are poised to become integral parts of many critical systems. Despite their
 [\[PDF\]](https://arxiv.org/pdf/1801.08926) [\[Code\]](https://github.com/iamaaditya/pixel-deflection)
 
 ---
+
 Prakash, Aaditya, et al. "Robust Discriminative Localization Maps", CV-COPS(2018). <br />
 <details> <summary><a>Abstract</a></summary>
 Activation maps obtained from CNN filter responses have been used to visualize and improve the performance of deep learning models. However, as CNNs are susceptible to adversarial attack, so are the activation maps. While recovering the predictions of the classifier is a difficult task and often requires complex transformations, we show that recovering activation maps is trivial and does not require any changes either to the classifier or the input image.</details>
 [\[PDF\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvcops_2018/robust-discriminative-localization.pdf) [\[Code\]](https://github.com/iamaaditya/robust-activation-maps) 
+
 ---
 
 Prakash, Aaditya, et al. "Protecting JPEG images against adversarial attacks", IEEE DCC (2018). <br />
@@ -193,6 +195,7 @@ Prakash, Aaditya, et al. "Protecting JPEG images against adversarial attacks", I
 As deep neural networks (DNNs) have been integrated into critical systems, several methods to attack these systems have been developed. These adversarial attacks make imperceptible modifications to an image that fool DNN classifiers. We present an adaptive JPEG encoder which defends against many of these attacks. Experimentally, we show that our method produces images with high visual quality while greatly reducing the potency of state-of-the-art attacks. Our algorithm requires only a modest increase in encoding time, produces a compressed image which can be decompressed by an off-the-shelf JPEG decoder, and classified by an unmodified classifier.
 </details>
 [\[PDF\]](https://arxiv.org/pdf/1803.00940) [\[Code\]](https://github.com/iamaaditya/protecting-jpeg) [\[Slides\]](https://docs.google.com/presentation/d/1sCfezODra1RnJICheDL_PDFKVGXcqUTDeQChaxyvNts)
+
 ---
 
 Prakash, Aaditya, et al. "Semantic Perceptual Image Compression using Deep Convolution Networks." DCC (2017). <br />

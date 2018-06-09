@@ -103,9 +103,7 @@ This page is used to collect notes.  I use this to share relevant notes, links a
 
   * [writing]({{site.baseurl}}/notes/writing/)
   * [visualization]({{site.baseurl}}/notes/visualization/)
-  * [research_wiki]({{site.baseurl}}/notes/research_wiki/)
   * [research]({{site.baseurl}}/notes/research/)
-  * [read]({{site.baseurl}}/notes/read/)
   * [quotes]({{site.baseurl}}/notes/quotes/)
   * [quantitative_trading]({{site.baseurl}}/notes/quantitative_trading/)
   * [python]({{site.baseurl}}/notes/python/)
@@ -114,7 +112,6 @@ This page is used to collect notes.  I use this to share relevant notes, links a
   * [probability_statistics]({{site.baseurl}}/notes/probability_statistics/)
   * [playground]({{site.baseurl}}/notes/playground/)
   * [papers]({{site.baseurl}}/notes/papers/)
-  * [notes]({{site.baseurl}}/notes/notes/)
   * [nn_hardware]({{site.baseurl}}/notes/nn_hardware/)
   * [new_machine]({{site.baseurl}}/notes/new_machine/)
   * [name]({{site.baseurl}}/notes/name/)
