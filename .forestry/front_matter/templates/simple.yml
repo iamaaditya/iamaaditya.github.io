@@ -38,6 +38,7 @@ fields:
   hidden: false
   default: ''
 pages:
+- _drafts/_pages/research/model-compression.md
 - notes/research/vqa.md
 - notes/research/transfer.md
 - notes/research/simplification.md
@@ -48,5 +49,4 @@ pages:
 - notes/deep_learning/courses.md
 - notes/deep_learning/best-practices.md
 - notes/deep_learning/alignment.md
-- research/model-compression.md
 - _posts/2018-02-01-demo-for-pixel-deflection.md
