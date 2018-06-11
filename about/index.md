@@ -44,7 +44,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 
 * I am currently doing research internship at **Microsoft Research (AI+R)**.
 * I will be attending **Deep/Reinforcement Learning Summer** [School](https://dlrlsummerschool.ca/) at [Vector Institute (CIFAR/MILA)](https://vectorinstitute.ai/)
-* Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
+* Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[4-min Video\]](https://www.youtube.com/watch?v=VgjOXJ9QKWo) [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
 * I gave an invited talk on Deep Learning at Connecticut College. [\[Slides\]](https://docs.google.com/presentation/d/1ci1qJVz-vJd02wz1IQNhilBemvc876rKIzwGIC9ZkG0)
 * Extended abstract on **pixel deflection** and **robust activation maps** accepted to [CV-COPS 2018](https://vision.soic.indiana.edu/bright-and-dark-workshop-2018/)
 * Paper on protecting jpeg images against **adversarial attacks** accepted to DCC (Oral). [\[PDF\]](https://arxiv.org/pdf/1803.00940.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1sCfezODra1RnJICheDL_PDFKVGXcqUTDeQChaxyvNts)
