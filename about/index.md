@@ -24,7 +24,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 <tr><td> </td><td> </td><td> </td><td> </td></tr>
 <tr><th><strong>Adversarial Images</strong></th><th><strong>Memory Networks</strong></th><th><strong>Paraphrasing (LSTM)</strong></th><th><strong>VQA</strong></th></tr>
 <tr>
-<td><a href="#">
+<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2018/Poster_Pixel_Deflection.pdf">
     <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  class="image"/></div>
 </a></td>
 <td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf">
@@ -44,9 +44,9 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 
 * I am currently doing research internship at **Microsoft Research (AI+R)**.
 * I will be attending **Deep/Reinforcement Learning Summer** [School](https://dlrlsummerschool.ca/) at [Vector Institute (CIFAR/MILA)](https://vectorinstitute.ai/)
-* Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[4-min Video\]](https://www.youtube.com/watch?v=VgjOXJ9QKWo) [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
+* Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[4-min Video\]](https://www.youtube.com/watch?v=VgjOXJ9QKWo) [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[POSTER\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2018/Poster_Pixel_Deflection.pdf) [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
 * I gave an invited talk on Deep Learning at Connecticut College. [\[Slides\]](https://docs.google.com/presentation/d/1ci1qJVz-vJd02wz1IQNhilBemvc876rKIzwGIC9ZkG0)
-* Extended abstract on **pixel deflection** and **robust activation maps** accepted to [CV-COPS 2018](https://vision.soic.indiana.edu/bright-and-dark-workshop-2018/)
+* Extended abstract on **pixel deflection** and **robust activation maps** accepted to [CV-COPS 2018](https://vision.soic.indiana.edu/bright-and-dark-workshop-2018/) [\[PDF\]](https://vision.soic.indiana.edu/bright-and-dark-workshop-2018/cvcops_2018_extended_abstracts/robust-discriminative-localization.pdf) [\[POSTER\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvcops_2018/Poster_Robust_CAM.pdf) [\[CODE\]](https://github.com/iamaaditya/robust-activation-maps)
 * Paper on protecting jpeg images against **adversarial attacks** accepted to DCC (Oral). [\[PDF\]](https://arxiv.org/pdf/1803.00940.pdf) [\[Slides\]](https://docs.google.com/presentation/d/1sCfezODra1RnJICheDL_PDFKVGXcqUTDeQChaxyvNts)
 
 ### 2017
