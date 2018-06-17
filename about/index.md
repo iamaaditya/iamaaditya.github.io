@@ -14,29 +14,41 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 
 ## Highlights
 
-<table style="border-collapse: collapse; border: none; margin: 0px auto;" width="100%" align='left'> <tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td> </tr> <tr> <td style="border: none; "> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> </td> <td style="border: none; "> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> </td> <td style="vertical-align: top;"><strong> <a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR, DCC   </a><br/> <a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI, WWW </a><br/> <a href="https://arxiv.org/pdf/1612.08712v1.pdf">NAACL </a><br/> <a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING</a><br/> </strong></td> <td style="vertical-align: top;"><strong> <a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Pixel Deflection (14★)</a><br/> <a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> VQA Demo  (157★)</a><br/>
-<a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Semantic image compression (92★)</a><br/>
-<a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Neural Paraphrasing Generation (78★)</a><br/>
+<table style="border-collapse: collapse; border: none; margin: 0px auto;" width="100%" align='left'> <tr style="border: none;"> <td style="border: none; "><h3>Education</h3></td><td style="border: none; "><h3>Experience</h3></td><td style="border: none; "><h3>Research</h3></td> <td style="border: none; "><h3>Code</h3></td> </tr> <tr> <td style="border: none; "> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Brandeis.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Bharath.png" height="60px" width="60px" /> </td> <td style="border: none; "> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Microsoft.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Qualcomm.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Philips.png" height="60px" width="60px" /> <img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/Infosys.png" height="60px" width="60px" /> </td> <td style="vertical-align: top;"><strong> <a href="https://arxiv.org/pdf/1801.08926.pdf">CVPR, DCC   </a><br/> <a href="https://arxiv.org/pdf/1612.01848v1.pdf">AAAI, WWW </a><br/> <a href="https://arxiv.org/pdf/1612.08712v1.pdf">NAACL </a><br/> <a href="https://arxiv.org/pdf/1610.03098v3.pdf">COLING</a><br/> </strong></td> <td style="vertical-align: top;"><strong> 
+<a href="https://github.com/iamaaditya/pixel-deflection"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Pixel Deflection (16★)</a><br/> 
+<a href="https://github.com/iamaaditya/VQA_Demo/"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> VQA Demo  (159★)</a><br/>
+<a href="https://github.com/iamaaditya/image-compression-cnn"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Semantic image compression (98★)</a><br/>
+<a href="https://github.com/iamaaditya/neural-paraphrase-generation"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/github.png" height="15px" width="15px"> Neural Paraphrasing Generation (83★)</a><br/>
 </strong></td>
 </tr>
 </table>
 <table width="100%">
-<tr><td> </td><td> </td><td> </td><td> </td></tr>
-<tr><th><strong>Adversarial Images</strong></th><th><strong>Memory Networks</strong></th><th><strong>Paraphrasing (LSTM)</strong></th><th><strong>VQA</strong></th></tr>
+<tr><td> </td><td> </td><td> </td></tr>
+<tr><th><strong>Adversarial Images</strong></th><th><strong>Memory Networks</strong></th><th><strong>Semantic Image Compression</strong></th></tr>
 <tr>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2018/Poster_Pixel_Deflection.pdf">
-    <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  class="image"/></div>
-</a></td>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf">
-    <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" class="image" /></div>
-</a></td>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf">
-    <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" class="image" /></div>
-</a></td>
-<td><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf">
-    <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" class="image" /></div>
-</a></td>
-</tr></table>
+    <td style="padding:5px 5px 5px 5px;"><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2018/Poster_Pixel_Deflection.pdf">
+        <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_pd.png" height="200px" width="400px"  class="image"/></div>
+    </a></td>
+    <td style="padding:5px 5px 5px 5px;"><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvcops_2018/Poster_Robust_CAM.pdf">
+        <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_rdm.png" height="200px" width="400px"  class="image"/></div>
+    </a></td>
+    <td style="padding:5px 5px 5px 5px;"><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/dcc_2017/Poster_Semantic_Image_Compression.pdf">
+        <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_image_compression.png" height="200px" width="400px"  class="image"/></div>
+    </a></td>
+</tr>
+<tr><th><strong>Memory Networks</strong></th><th><strong>Paraphrasing (LSTM)</strong></th><th><strong>Visual QA</strong></th></tr>
+<tr>
+    <td style="padding:5px 5px 5px 5px;"><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/aaai_2017/aaai_poster.pdf">
+        <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_aaai.png" height="200px" width="400px" class="image" /></div>
+    </a></td>
+    <td style="padding:5px 5px 5px 5px;"><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/coling_2016/coling_poster.pdf">
+        <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_coling.png" height="200px" width="400px" class="image" /></div>
+    </a></td>
+    <td style="padding:5px 5px 5px 5px;"><a href="https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_poster.pdf">
+        <div class="containerx"><img src="https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/poster_cvpr_vqa.png" height="200px" width="400px" class="image" /></div>
+    </a></td>
+</tr>
+</table>
 
 ---
 
