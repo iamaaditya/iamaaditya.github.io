@@ -7,7 +7,7 @@ dsq_thread_id:
 ---
 
 ## Current Chess Rankings 
-![alt text](http://www.2700chess.com/files/topten.png "Current Chess Rankings")
+![Current Chess Rankings](http://www.2700chess.com/files/topten.png)
 
 ## Useful links
  * Top Chess Engine Championship <http://tcec.chessdom.com/live.php>
