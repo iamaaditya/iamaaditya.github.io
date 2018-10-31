@@ -13,7 +13,8 @@ dsq_thread_id:
 | Lecture 2 | Convolutional Neural Networks |[Google Slides](https://docs.google.com/presentation/d/1-lByuEiKbR9jP-tNvCHBxFOuCvjORM-idmqFtLTTPJo/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/convolutional_neural_networks.pdf)
 | Lecture 3 | Recurrent Neural Networks |[Google Slides](https://docs.google.com/presentation/d/1RUKGd46lHO71emXfFZne0-ZOzYG9AJ2S9Gvps1okrD8/edit#slide=id.p) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/recurrent_neural_networks.pdf)
 | Lecture 4 | Object localization and detection |[Google Slides](https://docs.google.com/presentation/d/1CVPO0O2t8k5C31UX2Pg7Y_QMZpQXrWRTftP-pJeGEE0/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/object_localization_and_detection.pdf)
-| Lecture 5 | Neural Networks with Memory |[Google Slides](https://docs.google.com/presentation/d/12CwoAX3Zz2ue2A_9pDlVZDnpqw_cHn2a0RVQ6tO2eCM/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/neural_networks_with_memory.pdf)
+| Lecture 5 | Generative Adversarial Networks |[Google Slides](https://docs.google.com/presentation/d/1nvFgVXz2iDn88e_2Nt7BP2Wgn8fD8IHbyLEyRGb5mvw) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/Generative_Adversarial_Networks.pdf)
+| Lecture 6 | Neural Networks with Memory |[Google Slides](https://docs.google.com/presentation/d/12CwoAX3Zz2ue2A_9pDlVZDnpqw_cHn2a0RVQ6tO2eCM/edit?usp=sharing) | [PDF](https://github.com/iamaaditya/research-papers-slides-posters/raw/master/talks/neural_networks_with_memory.pdf)
 {:.table}
 
 # Other presentations by Adi on Deep Learning
