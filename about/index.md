@@ -54,7 +54,7 @@ I am a PhD Student at [**Brandeis** University](http://www.brandeis.edu/), Bosto
 
 ### 2018
 
-* Our latest paper, [RePr: Improved Training of Convolutional Filters](https://arxiv.org/pdf/1811.07275.pdf), shows effective way to train Convolutonal Neural Networks.
+* [RePr: Improved Training of Convolutional Filters](https://arxiv.org/pdf/1811.07275.pdf) accepted to CVPR 2019.
 * I am currently doing research internship at **Microsoft Research (AI+R)**.
 * I will be attending **Deep/Reinforcement Learning Summer** [School](https://dlrlsummerschool.ca/) at [Vector Institute (CIFAR/MILA)](https://vectorinstitute.ai/)
 * Paper on **pixel deflection** accepted to CVPR 2018 (Spotlight). [\[4-min Video\]](https://www.youtube.com/watch?v=VgjOXJ9QKWo) [\[PDF\]](https://arxiv.org/pdf/1801.08926.pdf "Deflecting Adversarial Attacks with Pixel Deflection") [\[POSTER\]](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2018/Poster_Pixel_Deflection.pdf) [\[CODE\]](https://github.com/iamaaditya/pixel-deflection)
