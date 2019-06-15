@@ -6,7 +6,7 @@
 name: Aaditya Prakash (Adi)
 
 # Short bio or description (displayed in the header)
-description: Random musings of a deep learning grad student
+description: 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/profile_image.jpg
@@ -19,13 +19,6 @@ avatar: https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master
 footer-links:
   dribbble:
   email: aprakash [at] brandeis . edu
-  github: iamaaditya
-  linkedin: aaditya-prakash-68453338
-  rss: Feed
-  twitter: aaditya_prakash
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  googleplus: /u/0/100303074762902184969?rel=author
-
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
