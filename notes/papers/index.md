@@ -119,3 +119,6 @@ dsq_thread_id:
   * Manifold regularization:	Belkin, M., Niyogi, P., and Sindhwani, V. 2006. “Manifold Regularization: A Geometric Framework for Learning from Labeled and Unlabeled Examples.” The Journal of Machine Learning Research 7:2399-2434.
   * Transductive support vector machines:	Joachims, T. 1999. “Transductive Inference for Text Classification Using Support Vector Machines.” Proceedings of the 16th International Conference on Machine Learning. New York: ACM.
       (source (for ML) : http://qr.ae/LPuHs ) 
+
+### Other applications
+  * Character Recognition (SOTA): [Accurate, Data-Efficient, Unconstrained Text Recognition with Convolutional Neural Networks](https://arxiv.org/pdf/1812.11894.pdf)

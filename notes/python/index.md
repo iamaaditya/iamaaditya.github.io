@@ -32,7 +32,8 @@ dsq_thread_id:
 
   * Good Numpy Tutorial <http://www.scipy-lectures.org/intro/numpy/numpy.html>
 
-
+## Tutorials/Guides
+  * Jupyter Example notebooks: https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks
 
 
 

@@ -6,6 +6,9 @@ dsq_thread_id:
 - 
 ---
 
+## Coding (DS/Algo)
+* [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/introduction)
+
 ## Machine Learning
 * [Cornell ML Course](http://www.cs.cornell.edu/courses/cs4780/2018fa/page18/index.html)
 
