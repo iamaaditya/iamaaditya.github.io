@@ -38,13 +38,14 @@ fields:
   hidden: false
   default: ''
 pages:
+- notes/python/index.md
+- notes/papers/index.md
 - _posts/2018-02-01-demo-for-pixel-deflection.md
 - notes/misc/gpgpu.md
 - notes/chess/index.md
 - notes/writing/list_of_words_to_avoid.md
 - notes/quotes/index.md
 - notes/visualization/index.md
-- notes/papers/index.md
 - notes/machine_learning/index.md
 - notes/computer_vision/index.md
 - notes/programming/index.md
@@ -80,7 +81,6 @@ pages:
 - notes/name/index.md
 - notes/new_machine/index.md
 - notes/algorithms/index.md
-- notes/python/index.md
 - notes/deep_learning/dialogue.md
 - notes/nn_hardware/index.md
 - notes/temp.md
