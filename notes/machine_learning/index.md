@@ -40,3 +40,9 @@ published: true
 ## Blogs
  * [Alex Woods ](http://alexhwoods.com/)
  * [KDnuggets (list of other blogs) ](http://www.kdnuggets.com/websites/blogs.html)
+
+## Areas of ML
+
+### Multiple Instance Learning
+ * [Survey PDF](https://arxiv.org/pdf/1612.03365.pdf), [Survey Slides](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Seminars/Introduction-to-Multiple-Instance-Learning.pdf)
+ * [Attention based MIL](https://arxiv.org/pdf/1802.04712.pdf)
