@@ -46,3 +46,9 @@ published: true
 ### Multiple Instance Learning
  * [Survey PDF](https://arxiv.org/pdf/1612.03365.pdf), [Survey Slides](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Seminars/Introduction-to-Multiple-Instance-Learning.pdf)
  * [Attention based MIL](https://arxiv.org/pdf/1802.04712.pdf)
+
+### Augmentation and Generalization
+ * [On the Generalization Effects of Linear Transformations in Data Augmentation](https://arxiv.org/pdf/2005.00695.pdf)
+ * [When Unseen Domain Generalization is Unnecessary?Rethinking Data Augmentation](https://arxiv.org/pdf/1906.03347.pdf)
+ * [mixup: Beyond Empiricial Risk Minimization](https://arxiv.org/pdf/1710.09412.pdf)
+ * [Vicinal Risk Minimization](https://papers.nips.cc/paper/1876-vicinal-risk-minimization.pdf)
