@@ -209,6 +209,16 @@ I am a machine learning researcher with interests in computer vision and medical
 
 ---
 
+Prakash, Aaditya, et al. "RePr: Improved Training of Convolutional Filter", CVPR (2019). <br />
+<details> <summary><a>Abstract</a></summary>
+A well-trained Convolutional Neural Network can easily be pruned without significant loss of performance. This is because of unnecessary overlap in the features captured by the network's filters. Innovations in network architecture such as skip/dense connections and Inception units have mitigated this problem to some extent, but these improve- ments come with increased computation and memory re- quirements at run-time. We attempt to address this problem from another angle - not by changing the network structure but by altering the training method. We show that by tem- porarily pruning and then restoring a subset of the model's filters, and repeating this process cyclically, overlap in the learned features is reduced, producing improved general- ization. We show that the existing model-pruning criteria are not optimal for selecting filters to prune in this con- text and introduce inter-filter orthogonality as the ranking criteria to determine under-expressive filters. Our method is applicable both to vanilla convolutional networks and more complex modern architectures, and improves the per- formance across a variety of tasks, especially when applied to smaller networks.
+</details>
+[\[PDF\]](https://arxiv.org/pdf/1811.07275) 
+
+---
+
+---
+
 Prakash, Aaditya, et al. "Deflecting Adversarial Attacks with Pixel Deflection", CVPR (2018). <br />
 <details> <summary><a>Abstract</a></summary>
 CNNs are poised to become integral parts of many critical systems. Despite their robustness to natural variations, image pixel values can be manipulated, via small, carefully crafted, imperceptible perturbations, to cause a model to misclassify images. We present an algorithm to process an image so that classification accuracy is significantly preserved in the presence of such adversarial manipulations. Image classifiers tend to be robust to natural noise, and adversarial attacks tend to be agnostic to object location. These observations motivate our strategy, which leverages model robustness to defend against adversarial perturbations by forcing the image to match natural image statistics. Our algorithm locally corrupts the image by redistributing pixel values via a process we term pixel deflection. A subsequent wavelet-based denoising operation softens this corruption, as well as some of the adversarial changes. We demonstrate experimentally that the combination of these techniques enables the effective recovery of the true class, against a variety of robust attacks. Our results compare favorably with current state-of-the-art defenses, without requiring retraining or modifying the CNN.
