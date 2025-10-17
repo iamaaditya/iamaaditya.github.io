@@ -10,7 +10,9 @@ Table of Contents     [Biography](#biography)     [Highlights](#highlights
 
 ## <a name="biography" id="biography"></a>Biography
 
-I am a machine learning researcher with interests in computer vision and medical applications. I work at [**PathAI**](https://www.pathai.com/) where we apply deep learning to process histopathological images. I completed my PhD from [**Brandeis** University](http://www.brandeis.edu/), Boston. I have interned at **Microsoft** Research (Redmond), **Qualcomm** Research (San Diego) and **Philips** Research (Cambridge) during the grad school summers. Before joining grad school I was a Senior Systems Engineer at [Infosys Limited](https://www.infosys.com/). I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), [running](https://runkeeper.com/user/kvpaxos/profile), [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
+I am a Machine Learning (Deep Learning) scientist with interests in applications of computer vision in healthcare and life sciences. I have a Ph.D. in Computer Science from Brandeis University with a specialization in applications of deep learning in vision and language and a Biomedical Engineering degree. I currently work at [**Spring Science**](https://www.springscience.com/) as a Staff Scientist where I build Foundation models for single-cells. Previously, I was at [**PathAI**](https://www.pathai.com/) as a Research Lead building state-of-the-art segmentation for pathology data. In the past, I have worked at Microsoft Research, Qualcomm Research, and Philips Research.
+
+I am from Kathmandu, [**Nepal**](https://media.gadventures.com/media-server/image_library/Nepal-Himalaya-Mountains-Annapurna-Pokhara-Prayer-Flags-IS-027332084-Lg-RGB.jpg). Other than research, I love [rock climbing]({{site.baseurl}}/notes/climbing/), [running](https://runkeeper.com/user/kvpaxos/profile), [playing chess]({{site.baseurl}}/notes/chess/) and listening to classical Indian songs.
 
 ## Highlights
 
