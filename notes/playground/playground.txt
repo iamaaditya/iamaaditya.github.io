@@ -1,1 +1,0 @@
-{{rss>http://xkcd.com/rss.xml 2 author date 1h }}
