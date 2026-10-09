@@ -1,0 +1,145 @@
+# Site configuration — MkDocs + Material for MkDocs
+# Serve locally with:  uv run mkdocs serve
+site_name: Aaditya Prakash (Adi)
+site_url: https://iamaaditya.github.io/
+site_description: >-
+  Personal site of Aaditya (Adi) Prakash — Machine Learning Scientist in drug
+  discovery. Blog, biography, publications and notes.
+site_author: Aaditya Prakash
+
+repo_url: https://github.com/iamaaditya/iamaaditya.github.io
+repo_name: iamaaditya.github.io
+
+docs_dir: docs
+use_directory_urls: true
+
+theme:
+  name: material
+  favicon: assets/favicon.ico
+  icon:
+    logo: material/brain
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+hooks:
+  - hooks/site_hooks.py
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/email.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/google-scholar
+      link: https://scholar.google.com/citations?hl=en&user=P-jHG4cAAAAJ
+      name: Google Scholar
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/aaditya-prakash
+      name: LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/iamaaditya
+      name: GitHub
+
+plugins:
+  - search
+
+nav:
+  - About: about/index.md
+  - Notes:
+      - notes/index.md
+      - AI & Machine Learning:
+          - Deep Learning: notes/deep_learning/index.md
+          - Machine Learning: notes/machine_learning/index.md
+          - Learning: notes/learning/index.md
+          - Papers: notes/papers/index.md
+          - Paper summaries: paper-summaries.md
+          - Keeping up to date: keep_on_top.md
+          - Features: notes/features/index.md
+          - AlphaGo: notes/alphago/index.md
+          - Research notes: notes/research/index.md
+          - NN Hardware: notes/nn_hardware/index.md
+          - GPU Hardware & Infrastructure: notes/hardware/index.md
+          - Medical: notes/medical/index.md
+      - Computer Vision & Imaging:
+          - Computer Vision: notes/computer_vision/index.md
+          - Image Processing: notes/image_processing/index.md
+          - Image Compression: notes/image_compression/index.md
+      - Computer Science:
+          - Algorithms: notes/algorithms/index.md
+          - Programming: notes/programming/index.md
+          - Python: notes/python/index.md
+          - Linux: notes/linux/index.md
+          - Visualization: notes/visualization/index.md
+          - New machine: notes/new_machine/index.md
+          - Misc: notes/misc/index.md
+      - Mathematics:
+          - Maths: notes/maths/index.md
+          - Probability & Statistics: notes/probability_statistics/index.md
+          - Quantitative trading: notes/quantitative_trading/index.md
+          - Prep: notes/prep/index.md
+      - Teaching & Talks:
+          - CS 175 Deep Learning: notes/CS175/index.md
+          - Deep learning coding tutorial: notes/deep_learning_coding_tutorial/index.md
+      - Personal & Miscellaneous:
+          - Books: notes/books/index.md
+          - Reading lists: notes/read/index.md
+          - Chess: notes/chess/index.md
+          - Climbing: notes/climbing/index.md
+          - Quotes: notes/quotes/index.md
+          - Writing: notes/writing/index.md
+          - Productivity: notes/productivity/index.md
+          - My name: notes/name/index.md
+          - Playground: notes/playground/index.md
+          - Startup: notes/startup/index.md
+          - Research wiki: notes/research_wiki/index.md
+          - Older notes: notes/notes/index.md
