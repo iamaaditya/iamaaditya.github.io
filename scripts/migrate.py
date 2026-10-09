@@ -128,6 +128,22 @@ def clean_body(body: str) -> str:
     body = re.sub(r"^\{:\s*\.table\s*\}\s*$", "", body, flags=re.M)
     # collapse 3+ blank lines
     body = re.sub(r"\n{4,}", "\n\n\n", body)
+    # Jupyter HTML-export boilerplate: embedded CSS/JS and document skeleton
+    body = re.sub(r"<style[^>]*>.*?</style>", "", body, flags=re.S)
+    body = re.sub(
+        r'<script[^>]*src="https://(cdnjs\.cloudflare\.com|cdn\.mathjax\.org)[^>]*>'
+        r"</script>",
+        "",
+        body,
+    )
+    body = re.sub(r'<script type="text/x-mathjax-config">.*?</script>', "", body, flags=re.S)
+    body = re.sub(
+        r"^\s*</?(?:html|head|body)>\s*$",
+        "",
+        body,
+        flags=re.M,
+    )
+    body = re.sub(r"^\s*<head>.*$", "", body, flags=re.M)
     return body
 
 

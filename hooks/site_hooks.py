@@ -57,9 +57,11 @@ def _iter_posts(docs_dir: Path) -> list[dict]:
 def _excerpt(body: str, limit: int = 340) -> str:
     """First meaningful paragraph, lightly de-markdowned."""
     body = re.sub(r"```.*?```", " ", body, flags=re.S)
+    body = re.sub(r"<style[^>]*>.*?</style>", " ", body, flags=re.S)
+    body = re.sub(r"<script[^>]*>.*?</script>", " ", body, flags=re.S)
     for block in re.split(r"\n\s*\n", body):
         block = block.strip()
-        if not block or block[0] in "#|<!" or block.startswith("!["):
+        if not block or block[0] in "#|!" or block.startswith("!["):
             continue
         lines = block.splitlines()
         # skip setext headings ("Title\n=====") and pure lists / tables
@@ -71,7 +73,7 @@ def _excerpt(body: str, limit: int = 340) -> str:
             continue
         text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", block)
         text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
-        text = re.sub(r"<[^>]+>", "", text)
+        text = re.sub(r"<[^>]+>", " ", text)
         text = re.sub(r"[`*_]", "", text)
         text = re.sub(r"\s+", " ", text).strip()
         if len(text) < 60:
