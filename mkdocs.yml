@@ -7,24 +7,18 @@ site_description: >-
   discovery. Blog, biography, publications and notes.
 site_author: Aaditya Prakash
 
-repo_url: https://github.com/iamaaditya/iamaaditya.github.io
-repo_name: iamaaditya.github.io
-
 docs_dir: docs
 use_directory_urls: true
 
 theme:
   name: material
+  custom_dir: overrides
+  logo: assets/favicon.ico
   favicon: assets/favicon.ico
-  icon:
-    logo: material/brain
-    repo: fontawesome/brands/github
   font:
     text: Inter
     code: JetBrains Mono
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - navigation.footer
