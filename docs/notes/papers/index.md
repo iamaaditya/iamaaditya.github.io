@@ -54,7 +54,7 @@ title: Great Papers
   * [ Histograms of oriented gradients for human detection](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1467360)
   * [ Mean shift: A robust approach toward feature space analysis](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1000236)
   * [ The Laplacian pyramid as a compact image code](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1095851)
-  * [ Condensation—conditional density propagation for visual tracking](http://www.springerlink.com/index/xl887466h454318k.pdf)
+  * [ Condensation-conditional density propagation for visual tracking](http://www.springerlink.com/index/xl887466h454318k.pdf)
   * [ Good features to track](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=323794)
   * [ A model of saliency-based visual attention for rapid scene analysis](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=730558)
   * [ A performance evaluation of local descriptors](http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IvqCXP4AAAAJ&amp;citation_for_view=IvqCXP4AAAAJ:u5HHmVD_uO8C)
@@ -104,7 +104,7 @@ title: Great Papers
   * Spectral clustering:	Von Luxburg, U. 2007. “A Tutorial on Spectral Clustering.” Statistics and Computing 17:395–416.
   * Kernel density estimation:	Silverman, B. W. 1986. Density Estimation for Statistics and Data Analysis. Vol. 26. Boca Raton, FL: CRC Press.
   * Non-negative matrix factorization:	Lee, D. D. and Seung, H. S. 1999. “Learning the Parts of Objects by Non-negative Matrix Factorization.” Nature 401:788–791.
-  * Kernel PCA:	Schölkopf, B., Smola, A., and Müller, K.-R. 1997. “Kernel Principal Component Analysis.” In Artificial Neural Networks—ICANN'97, 583–588. Berlin: Springer.
+  * Kernel PCA:	Schölkopf, B., Smola, A., and Müller, K.-R. 1997. “Kernel Principal Component Analysis.” In Artificial Neural Networks-ICANN'97, 583–588. Berlin: Springer.
   * Sparse PCA:	Zou, H., Hastie, T., and Tibshirani, R. 2006. “Sparse Principal Component Analysis.” Journal of Computational and Graphical Statistics 15:265–286.
   * Singular value decomposition:	Golub, G. H. and Reinsch, C. 1970. “Singular Value Decomposition and Least Squares Solutions.” Numerische Mathematik 14:403–420.
   

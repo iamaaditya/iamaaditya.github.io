@@ -104,9 +104,9 @@ NIPS 2015 Deep Learning Symposium
       - Controller outputs a shift kernel which is convolved with a weighting to produce a shifted weighting.
     - Gives controller different modes of reading and writing memory.
       - Data structures and algorithms
-        - Content key only—memory is accessed like an associative map
-        - Content and location—key finds array, shift indexes into it
-        - Location only—shift iterates from the last focus
+        - Content key only-memory is accessed like an associative map
+        - Content and location-key finds array, shift indexes into it
+        - Location only-shift iterates from the last focus
   - Reading and writing
     - Once the weightings are defined each read head returns a read vector as input into the controller at the next time step.
     - Each write head receives an erase vector and an add vector from the controller and resets then writes the memory.

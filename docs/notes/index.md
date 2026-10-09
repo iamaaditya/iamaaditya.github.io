@@ -12,19 +12,19 @@ let me know: <a class="email-link" data-user="adi.prakash.ml" data-domain="gmail
 These are the presentations or class slides for the seminar talks or classroom
 lectures I have given. These are the most requested urls, and main reason for creation
 of this page. The full CS 175 lecture series (with PDFs) lives at
-[CS 175 — Deep Learning](/notes/CS175/).
+[CS 175 - Deep Learning](/notes/CS175/).
 
-* [Building Blocks of Deep Learning](https://docs.google.com/presentation/d/1E-Zon-vjoQm24cWhjpbltHd2XWVb-5RG2mRFySD4Ym0/edit#slide=id.g35f391192_00) — Apr 9, 2018
-* [Computer Vision with Convolutional Neural Networks](https://docs.google.com/presentation/d/1jE-LVhuyGaq7UPWnhQI41MzvfoJAQ9V0XyP2eX_kw4w/edit#slide=id.p) — Apr 11, 2018
-* [Neural Networks and Deep Learning](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) — May 2, 2016
-* [Visual Question Answering](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit#slide=id.g35f391192_00) — Aug 12, 2016
-* [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit#slide=id.g35f391192_00) — Feb 22, 2016 (very basics of deep learning and CNN, meant as a gentle introduction to the field)
-* [General purpose GPU Computing and CUDA](https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing) — Nov 30, 2015
-* [RNN, LSTM, NTM, GRU, RMVA, OMG !!](https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing) — Nov 18, 2015
-* [Value of a feature](https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing) — Oct 19, 2015
-* [Why CNN works](https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing) — Oct 7, 2015
-* [Deeper inside CNN](https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing) — Sep 29, 2015
-* [Inside CNN](https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing) — Sep 16, 2015
+* [Building Blocks of Deep Learning](https://docs.google.com/presentation/d/1E-Zon-vjoQm24cWhjpbltHd2XWVb-5RG2mRFySD4Ym0/edit#slide=id.g35f391192_00) - Apr 9, 2018
+* [Computer Vision with Convolutional Neural Networks](https://docs.google.com/presentation/d/1jE-LVhuyGaq7UPWnhQI41MzvfoJAQ9V0XyP2eX_kw4w/edit#slide=id.p) - Apr 11, 2018
+* [Neural Networks and Deep Learning](https://docs.google.com/presentation/d/10lMpUblysM1H7CQQAqHKnOaCza53TApTBuy7DQBpspo/edit#slide=id.g35f391192_00) - May 2, 2016
+* [Visual Question Answering](https://docs.google.com/presentation/d/1EvYlvwXa7mjiQ2YjFmFs9LigOI8XFiYcd4jOqnprZyQ/edit#slide=id.g35f391192_00) - Aug 12, 2016
+* [Deep Learning and CNN](https://docs.google.com/presentation/d/1jT2RXOMu6pq_EaPrlzJH6RVNC-hbq2g7OP1yamcCE1Q/edit#slide=id.g35f391192_00) - Feb 22, 2016 (very basics of deep learning and CNN, meant as a gentle introduction to the field)
+* [General purpose GPU Computing and CUDA](https://docs.google.com/presentation/d/1E2eVPSQ_FDCuyIO1r3zLvGQ_-ykloWaIFGeZP8jD1H8/edit?usp=sharing) - Nov 30, 2015
+* [RNN, LSTM, NTM, GRU, RMVA, OMG !!](https://docs.google.com/presentation/d/1A_jCyXKX7-rJcmL3t56nCn9M6itDZ6nRRutyYFRSoSk/edit?usp=sharing) - Nov 18, 2015
+* [Value of a feature](https://docs.google.com/presentation/d/13iXsfOVph8qGmNkCbio-96N7WCg4xKMmNmlPzUfotB8/edit?usp=sharing) - Oct 19, 2015
+* [Why CNN works](https://docs.google.com/presentation/d/18VOCWQX1Ux5LsK4paQ3kXS8gvJZbMNy8Mq7CbKq1Jv4/edit?usp=sharing) - Oct 7, 2015
+* [Deeper inside CNN](https://docs.google.com/presentation/d/1hjJTTzbRvmpRs2aZSXE5uWmVG2qJJOK9dFRXnajS7hs/edit?usp=sharing) - Sep 29, 2015
+* [Inside CNN](https://docs.google.com/presentation/d/1teHR6qIfd2e08uET1cIbmddH3dKYm1OfnTdJVBkdNps/edit?usp=sharing) - Sep 16, 2015
 
 ## Browse by topic
 
@@ -70,7 +70,7 @@ of this page. The full CS 175 lecture series (with PDFs) lives at
 
     ---
 
-    [CS 175 — Deep Learning](/notes/CS175/) ·
+    [CS 175 - Deep Learning](/notes/CS175/) ·
     [Deep learning coding tutorial](/notes/deep_learning_coding_tutorial/)
 
 -   :material-coffee:{ .lg .middle } __Personal & Misc__
@@ -88,7 +88,7 @@ of this page. The full CS 175 lecture series (with PDFs) lives at
 
 ### Study notes in depth
 
-* [Deep Learning](/notes/deep_learning/) — collection of articles, code, repos,
+* [Deep Learning](/notes/deep_learning/) - collection of articles, code, repos,
   tutorials and other links which I have found useful, with subpages on
   [best practices](/notes/deep_learning/best-practices/),
   [AI alignment](/notes/deep_learning/alignment/),
@@ -97,31 +97,31 @@ of this page. The full CS 175 lecture series (with PDFs) lives at
   [generative networks](/notes/deep_learning/generative-networks/),
   [meta learning](/notes/deep_learning/meta-learning/) and
   [books](/notes/deep_learning/books/).
-* [Machine Learning](/notes/machine_learning/) — similar stuff, but for machine
+* [Machine Learning](/notes/machine_learning/) - similar stuff, but for machine
   learning.
-* [Papers](/notes/papers/) — collection of great papers in computer science in
+* [Papers](/notes/papers/) - collection of great papers in computer science in
   general, and machine learning in specific.
-* [Research](/notes/research/) — notes related to my work and papers I am reading:
+* [Research](/notes/research/) - notes related to my work and papers I am reading:
   [Visual Question Answering](/notes/research/vqa/),
   [Transfer Learning](/notes/research/transfer/),
   [Convolutional Neural Networks](/notes/research/cnn/),
   [compression](/notes/research/compression/),
   [memory networks](/notes/research/memory/) and
   [text simplification](/notes/research/simplification/).
-* [GPU Hardware & Infrastructure](/notes/hardware/) — notes related to GPU clusters,
+* [GPU Hardware & Infrastructure](/notes/hardware/) - notes related to GPU clusters,
   my experiences with building one, and the latest in the field.
-* [Data Structures and Algorithms](/notes/algorithms/) — references, tutorials and
+* [Data Structures and Algorithms](/notes/algorithms/) - references, tutorials and
   links I point my students from CS 180 to.
-* [Programming](/notes/programming/) — programming references, articles, competitions
+* [Programming](/notes/programming/) - programming references, articles, competitions
   and learning resources.
-* [Image Processing and Computer Vision](/notes/computer_vision/) — articles and
+* [Image Processing and Computer Vision](/notes/computer_vision/) - articles and
   tutorials on image processing and old-school computer vision; deep learning work
   lives under [Deep Learning](/notes/deep_learning/).
-* [Probability And Statistics](/notes/probability_statistics/) — great articles,
+* [Probability And Statistics](/notes/probability_statistics/) - great articles,
   tutorials and very useful links.
-* [Others (maths)](/notes/maths/) — tutorials, articles and useful links in other
+* [Others (maths)](/notes/maths/) - tutorials, articles and useful links in other
   areas of maths.
-* [AlphaGo](/notes/alphago/) — about AlphaGo, how it works, and its matches against
+* [AlphaGo](/notes/alphago/) - about AlphaGo, how it works, and its matches against
   Lee Sedol.
 
 ## Around the web

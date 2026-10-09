@@ -1,6 +1,6 @@
 # iamaaditya.github.io
 
-Personal website of **Aaditya (Adi) Prakash** — blog, about/CV and collected notes.
+Personal website of **Aaditya (Adi) Prakash** - blog, about/CV and collected notes.
 
 Built with [MkDocs](https://www.mkdocs.org/) +
 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), managed with
@@ -23,19 +23,19 @@ uv run python scripts/check_links.py   # validate internal links of the built si
 
 ## How the site is put together
 
-* `docs/index.md` — landing page. The blog listing is generated at build time by
+* `docs/index.md` - landing page. The blog listing is generated at build time by
   `hooks/site_hooks.py`, which replaces the `<!-- BLOG_LISTING -->` placeholder with
   one card per page that has `post: true` in its front matter (newest first), and
   also emits `/feed.xml` (RSS).
-* `docs/about/` — biography, experience timeline, publications, patents, teaching.
-* `docs/notes/` — the notes collection; `docs/notes/index.md` is the curated,
+* `docs/about/` - biography, experience timeline, publications, patents, teaching.
+* `docs/notes/` - the notes collection; `docs/notes/index.md` is the curated,
   card-based directory. Sub-pages keep their original content.
-* `docs/stylesheets/extra.css` — theme customization (light/dark, cards, timeline).
-* `docs/javascripts/email.js` — assembles the contact `mailto:` link at render time
+* `docs/stylesheets/extra.css` - theme customization (light/dark, cards, timeline).
+* `docs/javascripts/email.js` - assembles the contact `mailto:` link at render time
   so the address is never present in the served HTML (spam-bot protection).
-* `docs/javascripts/mathjax.js` — MathJax v3 config for `\( \)` / `$$ $$` math.
-* `scripts/migrate.py` — the one-off Jekyll → MkDocs migration (kept for provenance).
-* `legacy/` — mirrored figures from the old aaditya.info site, self-hosted under
+* `docs/javascripts/mathjax.js` - MathJax v3 config for `\( \)` / `$$ $$` math.
+* `scripts/migrate.py` - the one-off Jekyll → MkDocs migration (kept for provenance).
+* `legacy/` - mirrored figures from the old aaditya.info site, self-hosted under
   `/assets/legacy/`.
 
 ## Deployment (GitHub Pages)

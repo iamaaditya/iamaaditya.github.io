@@ -1,9 +1,9 @@
-# Site configuration — MkDocs + Material for MkDocs
+# Site configuration - MkDocs + Material for MkDocs
 # Serve locally with:  uv run mkdocs serve
 site_name: Aaditya Prakash (Adi)
 site_url: https://iamaaditya.github.io/
 site_description: >-
-  Personal site of Aaditya (Adi) Prakash — Machine Learning Scientist in drug
+  Personal site of Aaditya (Adi) Prakash - Machine Learning Scientist in drug
   discovery. Blog, biography, publications and notes.
 site_author: Aaditya Prakash
 

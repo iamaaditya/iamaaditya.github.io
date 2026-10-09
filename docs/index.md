@@ -2,7 +2,7 @@
 title: Aaditya Prakash (Adi)
 ---
 
-Principal Machine Learning Scientist in Drug Discovery at **Genentech** — building
+Principal Machine Learning Scientist in Drug Discovery at **Genentech** - building
 foundation models and single-cell embeddings for high-content imaging and optical
 pooled screens. Previously Spring Science (formerly Spring Discovery), PathAI,
 Microsoft Research, Qualcomm Research and Philips Research. Ph.D. in Computer

@@ -1,4 +1,4 @@
-/* MathJax v3 configuration — works with pymdownx.arithmatex (generic). */
+/* MathJax v3 configuration - works with pymdownx.arithmatex (generic). */
 window.MathJax = {
   tex: {
     inlineMath: [["\\(", "\\)"], ["$", "$"]],

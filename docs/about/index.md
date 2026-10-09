@@ -77,7 +77,7 @@ and listening to classical Indian songs.
 * Investigated new avenues (patient triaging, second-read) for applications of AI in
   digital pathology.
 * Developed state-of-the-art techniques in multiple instance learning for whole
-  slide images — published **Additive MIL** (NeurIPS 2022).
+  slide images - published **Additive MIL** (NeurIPS 2022).
 * Explored solutions for model training under limited labels (self-supervision) and
   label noise.
 * Managed a team of machine learning engineers to enable new ML capabilities at
@@ -106,7 +106,7 @@ and listening to classical Indian songs.
 <p class="timeline-org">Microsoft Research</p>
 <p class="timeline-when">Summer 2018 · Redmond, WA</p>
 
-* Model compression in convolutional neural networks — **RePr** (CVPR 2019, Oral).
+* Model compression in convolutional neural networks - **RePr** (CVPR 2019, Oral).
 * Improved training of compact models (MobileNet, SqueezeNet, ShuffleNet).
 * Developed a new technique for efficient training of neural networks.
 </div>
@@ -154,153 +154,153 @@ Posters and slides: [research-papers-slides-posters](https://github.com/iamaadit
 <div class="pub" markdown="1">
 <p class="pub-title">AI powered quantification of nuclear morphology in cancers enables prediction of genome instability and prognosis</p>
 <span class="pub-venue">npj Precision Oncology 2024</span>
-<p class="pub-authors">J. Abel, S. Jain, D. Rajan, H. Padigela, K. Leidal, A. Prakash, J. Conway, et al. — <em>AI features from pathology whole-slide-images to predict various genomic conditions.</em></p>
+<p class="pub-authors">J. Abel, S. Jain, D. Rajan, H. Padigela, K. Leidal, A. Prakash, J. Conway, et al. - <em>AI features from pathology whole-slide-images to predict various genomic conditions.</em></p>
 <p class="pub-links">[PDF](https://pmc.ncbi.nlm.nih.gov/articles/PMC11187064/) · [PubMed](https://pubmed.ncbi.nlm.nih.gov/38898127/)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">ContriMix: Disentanglement of content & attribute for domain generalization in microscopy images</p>
 <span class="pub-venue">2024</span>
-<p class="pub-authors">T. H. Nguyen, D. Juyal, J. Li, A. Prakash, S. Nofallah, C. Shah, S. C. Gullapally, et al. — <em>Domain generalization by disentangling biology and attributes.</em></p>
+<p class="pub-authors">T. H. Nguyen, D. Juyal, J. Li, A. Prakash, S. Nofallah, C. Shah, S. C. Gullapally, et al. - <em>Domain generalization by disentangling biology and attributes.</em></p>
 <p class="pub-links">[arXiv](https://arxiv.org/abs/2306.04527)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Synthetic DOmain-Targeted Augmentation (S-DOTA) improves model generalization in digital pathology</p>
 <span class="pub-venue">2023</span>
-<p class="pub-authors">S. C. Gullapally, Y. Zhang, N. K. Mittal, D. Kartik, S. Srinivasan, K. Rose, … A. Prakash, et al. — <em>Identifying and improving generalization issues across imaging scanners.</em></p>
+<p class="pub-authors">S. C. Gullapally, Y. Zhang, N. K. Mittal, D. Kartik, S. Srinivasan, K. Rose, … A. Prakash, et al. - <em>Identifying and improving generalization issues across imaging scanners.</em></p>
 <p class="pub-links">[arXiv](https://arxiv.org/abs/2305.02401)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Cell-type-specific nuclear morphology predicts genomic instability and prognosis in multiple cancer types</p>
 <span class="pub-venue">bioRxiv 2023</span>
-<p class="pub-authors">J. Abel, S. Jain, D. Rajan, H. Padigela, K. Leidal, A. Prakash, J. Conway, et al. — <em>Nuclei features that help identify cancer-causing genotypes (BRCA, LUAD and PRAD).</em></p>
+<p class="pub-authors">J. Abel, S. Jain, D. Rajan, H. Padigela, K. Leidal, A. Prakash, J. Conway, et al. - <em>Nuclei features that help identify cancer-causing genotypes (BRCA, LUAD and PRAD).</em></p>
 <p class="pub-links">[PDF](https://www.biorxiv.org/content/10.1101/2023.05.15.539600)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Additive MIL: Intrinsically Interpretable Multiple Instance Learning for Pathology</p>
 <span class="pub-venue">NeurIPS 2022</span>
-<p class="pub-authors">S. A. Javed, D. Juyal, H. Padigela, A. Taylor-Weiner, L. Yu, A. Prakash — <em>MIL method that generates visual attention which is grounded and correlates with segmentation.</em></p>
+<p class="pub-authors">S. A. Javed, D. Juyal, H. Padigela, A. Taylor-Weiner, L. Yu, A. Prakash - <em>MIL method that generates visual attention which is grounded and correlates with segmentation.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/2206.01794) · [arXiv](https://arxiv.org/abs/2206.01794)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">AI-powered segmentation and analysis of nuclei morphology predicts genomic and clinical markers in multiple cancer types</p>
 <span class="pub-venue">AACR 2022</span>
-<p class="pub-authors">J. Abel, S. Jain, D. Rajan, K. Leidal, H. Padigela, A. Prakash, J. Conway, et al. — <em>Nuclei segmentation and morphological features of nuclei are predictive of certain cancers.</em></p>
+<p class="pub-authors">J. Abel, S. Jain, D. Rajan, K. Leidal, H. Padigela, A. Prakash, J. Conway, et al. - <em>Nuclei segmentation and morphological features of nuclei are predictive of certain cancers.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">A deep learning approach to analysis of MRCP images predicts clinical events and progression to cirrhosis in patients with primary sclerosing cholangitis</p>
 <span class="pub-venue">EASL 2021</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>An application of a two-stage ConvNet to predict cirrhosis using MRI images.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>An application of a two-stage ConvNet to predict cirrhosis using MRI images.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Human-interpretable image features derived from densely mapped cancer pathology slides predict diverse molecular phenotypes</p>
 <span class="pub-venue">Nature Comm. 2021</span>
-<p class="pub-authors">— <em>Application of ConvNets to find features that are interpretable and predict molecular signal on WSI.</em></p>
+<p class="pub-authors">- <em>Application of ConvNets to find features that are interpretable and predict molecular signal on WSI.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Artificial intelligence analysis of advanced breast cancer patients from a phase I trial of trastuzumab deruxtecan (T-DxD): HER2 and histopathology features as predictors of clinical benefit</p>
 <span class="pub-venue">ESMO 2020</span>
-<p class="pub-authors">— <em>An application of ConvNet and extracted features to predict drug response.</em></p>
+<p class="pub-authors">- <em>An application of ConvNet and extracted features to predict drug response.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">RePr: Improved Training of Convolutional Filters (Oral)</p>
 <span class="pub-venue">CVPR 2019</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>Improved performance of vanilla CNNs without using residual or dense connections.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>Improved performance of vanilla CNNs without using residual or dense connections.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/1811.07275) · [Code](https://github.com/iamaaditya/repr-ortho)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Compact Representations of Dynamic Video Background Using Motion Sprites</p>
 <span class="pub-venue">IEEE DCC 2019</span>
-<p class="pub-authors">— <em>Technique to store video background motions as a time-invariant representation of the optical flow.</em></p>
+<p class="pub-authors">- <em>Technique to store video background motions as a time-invariant representation of the optical flow.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Deflecting Adversarial Attacks with Pixel Deflection (Spotlight)</p>
 <span class="pub-venue">CVPR 2018</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>Image transformation based defense to adversarial attacks; recovers 98% of fooled images.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>Image transformation based defense to adversarial attacks; recovers 98% of fooled images.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/1801.08926) · [Code](https://github.com/iamaaditya/pixel-deflection) · [Video](https://www.youtube.com/watch?v=VgjOXJ9QKWo)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Robust Discriminative Localization Maps</p>
 <span class="pub-venue">CV-COPS 2018</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>Securing class activation maps against attacks by using the geometric mean over all classes.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>Securing class activation maps against attacks by using the geometric mean over all classes.</em></p>
 <p class="pub-links">[Code](https://github.com/iamaaditya/robust-activation-maps)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Protecting JPEG Images Against Adversarial Attacks (Oral)</p>
 <span class="pub-venue">IEEE DCC 2018</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>Improves the ability of JPEG to defend against attacks; recovery improved from 27% to 82%.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>Improves the ability of JPEG to defend against attacks; recovery improved from 27% to 82%.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/1803.00940) · [Code](https://github.com/iamaaditya/protecting-jpeg)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">DR-BiLSTM: Dependent Reading Bidirectional LSTM for NLI</p>
 <span class="pub-venue">NAACL 2018</span>
-<p class="pub-authors">— <em>Dependent reading using hierarchical soft attention; achieves SOTA on Stanford NLI.</em></p>
+<p class="pub-authors">- <em>Dependent reading using hierarchical soft attention; achieves SOTA on Stanford NLI.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Visual Lecture Summary using Intensity Correlation Coefficient</p>
 <span class="pub-venue">IMVIP 2017</span>
-<p class="pub-authors">— <em>Technique to remove the instructor and generate slides from white/chalk board videos.</em></p>
+<p class="pub-authors">- <em>Technique to remove the instructor and generate slides from white/chalk board videos.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Condensed Memory Networks for Clinical Diagnostic Inferencing</p>
 <span class="pub-venue">AAAI 2017</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, S. S. Al Hasan, O. Farri, K. M. Y. Lee, V. Datla, A. Qadir, J. Liu — <em>Classifying the diagnosis of a given medical note; SOTA results.</em></p>
+<p class="pub-authors">A. Prakash, S. S. Al Hasan, O. Farri, K. M. Y. Lee, V. Datla, A. Qadir, J. Liu - <em>Classifying the diagnosis of a given medical note; SOTA results.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/1612.01848v1.pdf) · [Slides](https://docs.google.com/presentation/d/1NSGEBYJmYEa5zsPJBocYcyRVZLKG0y274Wib_BlRX-U/edit?usp=sharing)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Semantic Perceptual Image Compression using Deep CNNs (Oral)</p>
 <span class="pub-venue">IEEE DCC 2017</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>Using custom designed CNNs to add differential quantization to achieve semantic JPEG.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>Using custom designed CNNs to add differential quantization to achieve semantic JPEG.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/1612.08712v1.pdf) · [Code](https://github.com/iamaaditya/image-compression-cnn)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Adverse Drug Event Detection in Tweets with Semi-Supervised CNNs</p>
 <span class="pub-venue">WWW 2017</span>
-<p class="pub-authors">— <em>Use of unlabeled data to improve performance of detecting ADE in tweets; SOTA results on PSB 2016.</em></p>
+<p class="pub-authors">- <em>Use of unlabeled data to improve performance of detecting ADE in tweets; SOTA results on PSB 2016.</em></p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Neural Paraphrase Generation with Stacked Residual LSTM Networks</p>
 <span class="pub-venue">COLING 2016</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, et al. — <em>First deep learning based paraphrasing model; use of skip connections on LSTM.</em></p>
+<p class="pub-authors">A. Prakash, et al. - <em>First deep learning based paraphrasing model; use of skip connections on LSTM.</em></p>
 <p class="pub-links">[PDF](https://arxiv.org/pdf/1610.03098v3.pdf) · [Code](https://github.com/iamaaditya/neural-paraphrase-generation)</p>
 </div>
 
 <div class="pub" markdown="1">
 <p class="pub-title">Highway Networks for Visual Question Answering (honorable award)</p>
 <span class="pub-venue">CVPR (VQA) 2016</span> <span class="pub-venue">first author</span>
-<p class="pub-authors">A. Prakash, J. Storer — <em>VQA model with implicit attention; top-4 in VQA Challenge 1.0.</em></p>
+<p class="pub-authors">A. Prakash, J. Storer - <em>VQA model with implicit attention; top-4 in VQA Challenge 1.0.</em></p>
 <p class="pub-links">[PDF](https://docs.google.com/viewer?url=https://github.com/iamaaditya/research-papers-slides-posters/raw/master/cvpr_2016/cvpr_paper.pdf) · [Slides](https://docs.google.com/presentation/d/1nrc-kOmDn1Msp41q8gwiiDFrXa0uKoBatlk1plmo8GM/edit?usp=sharing)</p>
 </div>
 
 ### Patents
 
-* **US 12,204,854** — System for multi-perspective discourse within a dialog (2025)
-* **US 12,183,105** — Method to improve instance selection in bootstrapping framework
+* **US 12,204,854** - System for multi-perspective discourse within a dialog (2025)
+* **US 12,183,105** - Method to improve instance selection in bootstrapping framework
   for concept extraction from text documents (2024)
-* **US 11,868,720** — System for multi-perspective discourse within a dialog (2024)
-* **US App. 18/660,563** — Additive multiple instance learning (2024)
-* **US 11,621,075** — Systems, methods, and apparatus for diagnostic inferencing with a
+* **US 11,868,720** - System for multi-perspective discourse within a dialog (2024)
+* **US App. 18/660,563** - Additive multiple instance learning (2024)
+* **US 11,621,075** - Systems, methods, and apparatus for diagnostic inferencing with a
   multimodal deep memory network (2023)
-* **US 11,544,529** — Semi-supervised classification with stacked autoencoder (2023)
-* **US App. 18/130,517** — Condensed memory networks (2023)
+* **US 11,544,529** - Semi-supervised classification with stacked autoencoder (2023)
+* **US App. 18/130,517** - Condensed memory networks (2023)
 
 ## Research highlights
 
@@ -342,9 +342,9 @@ Posters and slides: [research-papers-slides-posters](https://github.com/iamaadit
 
 ## Computing skills
 
-* **Languages** — Python, C, C++, CUDA
-* **Deep Learning** — PyTorch, TensorFlow, Keras, HuggingFace, DINOv2, SAMv2
-* **Research tools** — SciPy, NumPy, OpenCV, Git, Bash, LaTeX
+* **Languages** - Python, C, C++, CUDA
+* **Deep Learning** - PyTorch, TensorFlow, Keras, HuggingFace, DINOv2, SAMv2
+* **Research tools** - SciPy, NumPy, OpenCV, Git, Bash, LaTeX
 
 ## Education & honors
 
@@ -393,10 +393,10 @@ Posters and slides: [research-papers-slides-posters](https://github.com/iamaadit
 
 ## Teaching & talks
 
-* **CS 175 — Deep Learning** lecture series (Brandeis): neural networks, CNNs, RNNs,
-  object localization/detection, memory networks — [slides & PDFs](/notes/CS175/).
+* **CS 175 - Deep Learning** lecture series (Brandeis): neural networks, CNNs, RNNs,
+  object localization/detection, memory networks - [slides & PDFs](/notes/CS175/).
 * Seminar talks and class slides on deep learning, computer vision and GPGPU
-  computing — [presentations index](/notes/#talks-presentations).
+  computing - [presentations index](/notes/#talks-presentations).
 * Invited talk on Deep Learning at Connecticut College (2018)
   [[Slides]](https://docs.google.com/presentation/d/1ci1qJVz-vJd02wz1IQNhilBemvc876rKIzwGIC9ZkG0).
 * Posters and slides for all publications live in the
@@ -405,31 +405,31 @@ Posters and slides: [research-papers-slides-posters](https://github.com/iamaadit
 
 ## Projects & code
 
-Open source code and demos — full list on [GitHub](https://github.com/iamaaditya):
+Open source code and demos - full list on [GitHub](https://github.com/iamaaditya):
 
 * [Semantic image compression](https://github.com/iamaaditya/image-compression-cnn)
-  (338★) — content-aware JPEG using CNN saliency maps.
-* [VQA Demo](https://github.com/iamaaditya/VQA_Demo/) (248★) — visual question
+  (338★) - content-aware JPEG using CNN saliency maps.
+* [VQA Demo](https://github.com/iamaaditya/VQA_Demo/) (248★) - visual question
   answering tutorial notebook ([blog post](/2016/04/visual_question_answering_demo_notebook/)).
 * [Neural paraphrase generation](https://github.com/iamaaditya/neural-paraphrase-generation)
-  (174★) — stacked residual LSTM sequence-to-sequence models.
-* [Pixel Deflection](https://github.com/iamaaditya/pixel-deflection) (72★) —
+  (174★) - stacked residual LSTM sequence-to-sequence models.
+* [Pixel Deflection](https://github.com/iamaaditya/pixel-deflection) (72★) -
   adversarial defense via a simple image transformation
   ([demo notebook](/2018/02/demo-for-pixel-deflection/)).
-* [VQA Keras](https://github.com/iamaaditya/VQA_Keras) (21★) — modular and simple
+* [VQA Keras](https://github.com/iamaaditya/VQA_Keras) (21★) - modular and simple
   approach to visual question answering in Keras.
-* [RePr-ortho](https://github.com/iamaaditya/repr-ortho) — RePr training and
+* [RePr-ortho](https://github.com/iamaaditya/repr-ortho) - RePr training and
   inter-filter orthogonality ranking (CVPR 2019).
-* [Robust activation maps](https://github.com/iamaaditya/robust-activation-maps) —
+* [Robust activation maps](https://github.com/iamaaditya/robust-activation-maps) -
   robust discriminative localization (CV-COPS 2018).
-* [Thesis](https://github.com/iamaaditya/Thesis) — *Robust and Efficient Techniques
+* [Thesis](https://github.com/iamaaditya/Thesis) - *Robust and Efficient Techniques
   in Deep Learning*, Brandeis University.
-* [research-papers-slides-posters](https://github.com/iamaaditya/research-papers-slides-posters) —
+* [research-papers-slides-posters](https://github.com/iamaaditya/research-papers-slides-posters) -
   papers, slides and posters from all of the above.
-* [Detecting fallacy in sentences](https://github.com/gekonwi/brandeis.semantics.final_project) —
+* [Detecting fallacy in sentences](https://github.com/gekonwi/brandeis.semantics.final_project) -
   computational semantics project in Haskell, with [Amin](https://github.com/amsa) &
   [Shlomo](https://github.com/gekonwi).
-* [Social travel guide](https://github.com/edenzik/elastiCity) — ElasticSearch-based
+* [Social travel guide](https://github.com/edenzik/elastiCity) - ElasticSearch-based
   travel search guide, with [Eden](https://github.com/edenzik), [Dimos](https://github.com/dimstamat) & Zhenyu.
-* [Clipboard to Email](https://github.com/iamaaditya/Clipboard_to_Email) — send code
+* [Clipboard to Email](https://github.com/iamaaditya/Clipboard_to_Email) - send code
   from clipboard to email automatically ([blog post](/2012/08/clipboard-to-email-python-code/)).

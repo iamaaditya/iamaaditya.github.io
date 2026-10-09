@@ -1,7 +1,7 @@
 [project]
 name = "iamaaditya-github-io"
 version = "2.0.0"
-description = "Personal website of Aaditya (Adi) Prakash — blog, about, and notes. Built with MkDocs Material."
+description = "Personal website of Aaditya (Adi) Prakash - blog, about, and notes. Built with MkDocs Material."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
