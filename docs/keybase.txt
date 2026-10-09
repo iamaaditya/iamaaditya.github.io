@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/iamaaditya
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://iamaaditya.github.io
+  * I am iamaaditya (https://keybase.io/iamaaditya) on keybase.
+  * I have a public key with fingerprint 00B9 886D 6185 B18A 290A  02B8 2C21 2B82 7EC6 0287
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01014f4bfbeb633dff7d4b64c24928130d64101fea4d505626a12d76b37ef8b5caab0a",
+            "fingerprint": "00b9886d6185b18a290a02b82c212b827ec60287",
+            "host": "keybase.io",
+            "key_id": "2c212b827ec60287",
+            "kid": "01014f4bfbeb633dff7d4b64c24928130d64101fea4d505626a12d76b37ef8b5caab0a",
+            "uid": "93e292bbe1cce1d83a359871c38b4519",
+            "username": "iamaaditya"
+        },
+        "service": {
+            "hostname": "iamaaditya.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1474685562,
+    "expire_in": 157680000,
+    "prev": "53ebd31574ee4da907326359af356f1e0c4956ea1fbb8d1d2e35d417cf626c83",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.56
+Comment: https://keybase.io/crypto
+
+yMIjAnicrZJbSBRRGMfXS9paUohYpkhNQYQX5sx9FnqJwjLKpItBynbOnDPrpO6s
+s+MdwQIzzcWM6MEgyUAQzShTQjEsQlORiihCoSJYCCNCihITtjNWT/XYefk4H7/v
+f/7/j/M4McaVELUS2VkY927gbdTMwxuVrsLwQl09g0xcy3jqmVKyWkgZJkHbW2pg
+xsOwgAWCLiAdESTxPNZ1GQtIEjROUDkF8CyWBIroBApYZEWJkyDgsCwhXia6gkQN
+QsRCJovRDb+PWAHL8NuOLItURZGwBBQRAQVyKgtZDimcxgGnyESTWE6R6WCJGXQm
+qDkEgyTHMGmPXryr9v7B/2fflatyKk84lUOIAE0jACs85EVVkYHGK0gQgeqAQWL5
+YTmhtAHLIcSGXQuZhiyG9qsMjTirdbL8xeT4DLukEv1KFrBM29TMMkqU2HYg6HEU
+7NqAM1JNkPe3mBcZfkw3SieqiBU0TD/jAZTUbMNRB4IsSIpIY2UxpCZgWMRrOIQo
+SwpLj/MOqaKSIk8Q5mlfIETAUGVlnpNoNKjzoqQDwmqCKkoEAh0hBQPMEV7EApA1
+nW5MU3jGiVfhNxmPRG1CH5UMGj4/tCstwjQ8Gi+KdUUluOLWRDs/zZXg3vjn/1lr
+4yOnn9oZ3gwrO68vf3rq4rHZNuP8oHs5rbf5am34TdK51pP3uz6xrmBE2df87VD+
+cPJ8bGBb/4tFYyLcu6shPS3tsl4Q8byPHpICWmLuiOdSV2xbirnsP3uwZjTcOz2Y
+dPx5S7F1exRk7/lY19O+v7nXHrvWujd5diqzutM71Dd3IHX3l+ToC00dT+oXOr/e
+WlqXuflB1ffQsJp0055o+rFcFpo8gnM/nBiYEAri2faO9K0pd2K0hby7nlBTY2jL
+Umi8pTHzMCTz15M6Zgrnjt6bHyiXV3rOuIvq5/O5U+4W96ucz8WLk5tSu5Nfbrjy
+bHJxbH3Fjv6i5tfq9smy7pGfAa5HBg==
+=lsZd
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/iamaaditya
+
+==================================================================

@@ -1,0 +1,9 @@
+---
+title: Probability and Statistics
+---
+
+## Articles
+ * [Visualizing Bayes Theorem]( <https://oscarbonilla.com/2009/05/visualizing-bayes-theorem/>)
+
+## Resources
+ * TODO 

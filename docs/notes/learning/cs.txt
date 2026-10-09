@@ -1,0 +1,32 @@
+====Learning Resources in CS====
+
+===Full Courses===
+
+==PHYS771 Quantum Computing Since Democritus==
+http://www.scottaaronson.com/democritus/
+Description: This course tries to connect quantum computing to the wider intellectual world. We'll start out with various scientific, mathematical, or philosophical problems that predate quantum computing: for example, the measurement problem, P versus NP, the existence of secure cryptography, the Humean problem of induction, or the possibility of closed timelike curves. We'll then examine in what ways, if any, quantum computing affects how we should think about the problem. To keep things grounded, each session will end with a concrete puzzle that students will be expected to have thought about (if not solved) by the next session. The class format will strongly encourage participation, discussion, and debate. 
+
+
+==Standord Engineering Everywhere (SEE)== 
+http://see.stanford.edu/see/courses.aspx
+
+**Introduction to Computer Science**
+  * Programming Methodology CS106A
+  * Programming Abstractions CS106B
+  * Programming Paradigms CS107
+
+**Artificial Intelligence**
+  * Introduction to Robotics CS223A
+  * Natural Language Processing CS224N
+  * Machine Learning CS229
+
+**Linear Systems and Optimization**
+  * The Fourier Transform and its Applications EE261
+  * Introduction to Linear Dynamical Systems EE263
+  * Convex Optimization I EE364A
+  * Convex Optimization II EE364B
+
+**Additional School of Engineering Courses**
+  * Programming Massively Parallel Processors CS193G
+  * iPhone Application Programming CS193P
+  * Seminars and Webinars
