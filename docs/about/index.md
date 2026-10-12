@@ -141,16 +141,6 @@ and listening to classical Indian songs.
   Algorithms and Data Compression.
 </div>
 
-<div class="timeline-item" markdown="1">
-<p class="timeline-role">Senior Systems Engineer, Infosys Labs</p>
-<p class="timeline-org">Infosys Limited</p>
-<p class="timeline-when">2009 – 2013 · India</p>
-
-* Developed a new algorithm to visualize large unstructured datasets.
-* Implemented various machine learning algorithms on Map-Reduce (Mahout).
-* Analyzed fault measures in distributed optimization problems (PICPC 2012).
-</div>
-
 </div>
 
 ## Publications
