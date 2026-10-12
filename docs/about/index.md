@@ -4,10 +4,18 @@ title: About
 
 <div class="hero" markdown="1">
 
-**Aaditya (Adi) Prakash** · Principal Machine Learning Scientist in Drug Discovery
-{: .hero-sub }
+Aaditya (Adi) Prakash
+{: .hero-title }
 
-Boston, Massachusetts · [Google Scholar](https://scholar.google.com/citations?hl=en&user=P-jHG4cAAAAJ){ .chip }
+<div class="hero-sub" markdown="1">
+
+* Principal ML Scientist
+* AI x Healthcare
+* PhD Machine Learning
+
+</div>
+
+[Google Scholar](https://scholar.google.com/citations?hl=en&user=P-jHG4cAAAAJ){ .chip }
 [LinkedIn](https://www.linkedin.com/in/aaditya-prakash){ .chip }
 [GitHub](https://github.com/iamaaditya){ .chip }
 <a class="chip email-link" data-user="adi.prakash.ml" data-domain="gmail.com">adi.prakash.ml [at] gmail [dot] com</a>

@@ -116,6 +116,19 @@
   line-height: 1.55 !important;
 }
 
+/* .hero-sub may wrap a list of short facts (about page) */
+.hero-sub ul {
+  margin: 0 !important;
+}
+
+.hero-sub li {
+  margin-bottom: 0.2em !important;
+}
+
+.hero-sub li::marker {
+  color: var(--md-accent-fg-color);
+}
+
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
